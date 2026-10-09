@@ -18,7 +18,7 @@ const {
 
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const pageTitle = fullTitle ? title : `${title} | ${SITE.name}`;
-const ogImage = new URL(image, SITE.url).href;
+const ogImage = new URL(image || '/og-default.png', SITE.url).href;
 ---
 <!doctype html>
 <html lang="en">

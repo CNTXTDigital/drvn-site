@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import AppCard from '../components/AppCard.astro';
+import { allPosts, formatDate, readingMinutes, related } from '../lib/posts.js';
+import { SITE } from '../site.js';
+
+export function getStaticPaths() {
+  return allPosts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const more = related(post.slug, 4);
+const url = `${SITE.url}/${post.slug}/`;
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: post.title,
+      description: post.description,
+      image: post.image ? [post.image] : undefined,
+      datePublished: post.published,
+      dateModified: post.modified,
+      mainEntityOfPage: url,
+      author: post.author ? { '@type': 'Person', name: post.author } : undefined,
+      publisher: { '@type': 'Organization', name: 'DRVN, LLC', logo: { '@type': 'ImageObject', url: `${SITE.url}/drvn-logo.svg` } },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+        { '@type': 'ListItem', position: 2, name: 'Articles', item: `${SITE.url}/blog/` },
+        { '@type': 'ListItem', position: 3, name: post.title, item: url },
+      ],
+    },
+  ],
+};
+---
+<Base
+  title={post.seoTitle || post.title}
+  description={post.description}
+  image={post.image}
+  type="article"
+  published={post.published}
+  modified={post.modified}
+  jsonld={jsonld}
+>
+  <div class="wrap layout">
+    <article class="main">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Articles</a>{post.cluster && <span class="cluster">{post.cluster}</span>}</nav>
+      <h1>{post.title}</h1>
+      {post.dek && <p class="dek">{post.dek}</p>}
+      <div class="meta">
+        {post.author && <><span class="by">By {post.author}</span><span>·</span></>}
+        <time datetime={post.published}>{formatDate(post.published)}</time>
+        <span>·</span>
+        <span>{readingMinutes(post.html)} min read</span>
+      </div>
+      {post.image && <img class="hero-img" src={post.image} alt="" width="1400" height="736" />}
+      <div class="prose" set:html={post.html} />
+      {post.sources?.length > 0 && (
+        <section class="sources" aria-label="Sources">
+          <div class="eyebrow">Sources</div>
+          <ul>{post.sources.map((s) => <li>{s}</li>)}</ul>
+        </section>
+      )}
+    </article>
+
+    <aside class="rail">
+      <div class="sticky">
+        <AppCard />
+        <div class="more">
+          <div class="eyebrow">More for parents</div>
+          <ul>
+            {more.map((p) => <li><a href={`/${p.slug}/`}>{p.title}</a></li>)}
+          </ul>
+        </div>
+        <div class="state">
+          <p class="h">What does your state require?</p>
+          <p>Permit age, supervised hours, night and passenger rules.</p>
+          <a class="link-arrow" href="/guide/">State guide</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .layout { display: grid; grid-template-columns: minmax(0, var(--read)) 300px; gap: 72px; justify-content: space-between; padding-top: 48px; }
+  .crumbs { display: flex; gap: 14px; align-items: center; }
+  .crumbs a { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cluster { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); }
+  .dek { margin: -4px 0 20px; font-size: 22px; line-height: 1.45; color: var(--ink-3); font-weight: 500; }
+  .by { color: var(--ink-2); font-weight: 600; }
+  .sources { margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .sources ul { margin: 10px 0 0; padding-left: 1.1em; font-size: 14px; line-height: 1.55; color: var(--muted); }
+  .crumbs a::before { content: '← '; }
+  h1 { font-size: clamp(32px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.022em; line-height: 1.1; margin: 18px 0 16px; text-wrap: pretty; }
+  .meta { display: flex; gap: 10px; font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+  .hero-img { width: 100%; border-radius: 14px; margin-bottom: 36px; aspect-ratio: 1.9/1; object-fit: cover; background: var(--surface-2); }
+  .rail { padding-top: 64px; }
+  .sticky { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 28px; }
+  .more ul { list-style: none; margin: 12px 0 0; padding: 0; }
+  .more li { border-bottom: 1px solid var(--line); }
+  .more li:last-child { border-bottom: 0; }
+  .more a { display: block; padding: 11px 0; font-size: 15px; line-height: 1.4; font-weight: 600; text-decoration: none; color: var(--ink-2); }
+  .more a:hover { color: var(--blue); }
+  .state { background: var(--surface-2); border-radius: 12px; padding: 18px 20px; font-size: 14px; color: var(--ink-3); }
+  .state .h { margin: 0 0 4px; font-weight: 700; color: var(--ink); font-size: 15px; }
+  .state p { margin: 0 0 10px; }
+  @media (max-width: 980px) {
+    .layout { grid-template-columns: 1fr; gap: 40px; padding-top: 32px; }
+    .rail { padding-top: 0; }
+    .sticky { position: static; }
+  }
+</style>

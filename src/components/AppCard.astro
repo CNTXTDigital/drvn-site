@@ -1,0 +1,21 @@
+---
+import { SITE } from '../site.js';
+const { compact = false } = Astro.props;
+---
+<aside class:list={['appcard', { compact }]} aria-label="Get the DRVN app">
+  <div class="eyebrow">The DRVN app</div>
+  <p class="h">The plan, in the car with you.</p>
+  <p class="s">Hours and routes logged while you drive, lesson plans for each stage, and a skills checklist so nothing gets skipped. Free.</p>
+  <div class="stores">
+    <a class="btn btn-sm" href={SITE.appStore} rel="noopener">App Store</a>
+    <a class="link-arrow" href={SITE.googlePlay} rel="noopener">Google Play</a>
+  </div>
+</aside>
+
+<style>
+  .appcard { border: 1px solid var(--line-2); border-radius: 16px; padding: 24px; background: var(--surface); box-shadow: 0 18px 40px -28px rgba(10,108,165,.35); display: flex; flex-direction: column; gap: 10px; }
+  .h { margin: 0; font-size: 21px; font-weight: 700; color: var(--blue); line-height: 1.25; }
+  .s { margin: 0 0 6px; font-size: 15px; line-height: 1.55; color: var(--ink-3); }
+  .stores { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .stores .link-arrow { font-size: 15px; }
+</style>

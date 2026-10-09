@@ -1,0 +1,37 @@
+---
+import { SITE } from '../site.js';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap grid">
+    <div>
+      <img src="/drvn-logo.svg" alt="DRVN" width="92" height="32" class="flogo" />
+      <p class="tag">{SITE.tagline}</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="/guide/">State guide</a>
+      <a href="/blog/">Articles</a>
+      <a href="/#get-the-app">Get the app</a>
+      <a href={SITE.trafficSchool} rel="sponsored noopener">Traffic school</a>
+      <a href="/privacy-policy/">Privacy policy</a>
+    </nav>
+    <div class="social">
+      <a href={SITE.social.facebook} rel="noopener">Facebook</a>
+      <a href={SITE.social.instagram} rel="noopener">Instagram</a>
+      <a href={SITE.social.twitter} rel="noopener">X / Twitter</a>
+    </div>
+  </div>
+  <div class="wrap legal">© {year} DRVN, LLC. All rights reserved.</div>
+</footer>
+
+<style>
+  .site-footer { background: #0E2433; color: #B9C7D0; margin-top: 96px; padding: 56px 0 32px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+  .flogo { height: 30px; width: auto; filter: brightness(0) invert(1); opacity: .92; }
+  .tag { margin: 14px 0 0; max-width: 22em; }
+  nav, .social { display: flex; flex-direction: column; gap: 10px; }
+  a { color: #E6EEF3; text-decoration: none; }
+  a:hover { color: var(--cyan-light); }
+  .legal { margin-top: 40px; padding-top: 22px; border-top: 1px solid #23394A; font-size: 13px; color: #7F93A1; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; gap: 28px; } }
+</style>

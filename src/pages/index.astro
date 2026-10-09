@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { allPosts } from '../lib/posts.js';
+import { SITE } from '../site.js';
+
+const latest = allPosts.slice(0, 3);
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', name: 'DRVN, LLC', url: SITE.url, logo: `${SITE.url}/drvn-logo.svg`,
+      sameAs: Object.values(SITE.social) },
+    { '@type': 'MobileApplication', name: 'DRVN', operatingSystem: 'iOS, Android', applicationCategory: 'EducationApplication',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, downloadUrl: [SITE.appStore, SITE.googlePlay] },
+  ],
+};
+---
+<Base
+  title="DRVN — The plan for parents teaching a teen to drive"
+  fullTitle
+  description="Nobody teaches you how to teach them. DRVN is the plan: one priority before each drive, practice hours tracked while you drive, and a clear view of what's still missing."
+  jsonld={jsonld}
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="copy">
+        <div class="rule"></div>
+        <h1>Nobody teaches you how to teach them.</h1>
+        <p class="lead">Everybody has the facts about teen driving. You need a plan that works in the car.</p>
+        <p class="body">DRVN is the plan. One priority before each drive. Hours and roads tracked while you drive. And a running picture of where you've actually been — night, weather, highway, the parts that never quite happen on their own.</p>
+        <div class="ctas" id="get-the-app">
+          <a class="btn" href={SITE.appStore} rel="noopener">Start your plan</a>
+          <a class="link-arrow" href="/guide/">Find your state's requirements</a>
+        </div>
+        <div class="micro">Free for parents and teens · <a href={SITE.appStore} rel="noopener">iOS</a> and <a href={SITE.googlePlay} rel="noopener">Android</a></div>
+      </div>
+
+      <div class="plan-card" aria-label="Example of the DRVN plan">
+        <div class="row">
+          <div class="eyebrow">Supervised hours</div>
+          <div class="val">22h 30m of 50</div>
+        </div>
+        <div class="bar"><span style="width:45%"></span></div>
+        <hr />
+        <div class="row start"><div class="eyebrow">Tonight's drive</div><span class="pill">20 MIN</span></div>
+        <div class="focus">Unprotected left turns</div>
+        <p class="note">Signals with no green arrow, then a stop sign. Pick a route with two or three of each and let them tell you when the gap is big enough.</p>
+        <hr />
+        <div class="eyebrow">Where you've actually been</div>
+        <div class="tiles">
+          <div class="tile"><span>Night</span><b>4h 10m</b></div>
+          <div class="tile"><span>Highway</span><b>1h 25m</b></div>
+          <div class="tile empty"><span>Rain</span><b>—</b></div>
+          <div class="tile empty"><span>Gravel</span><b>—</b></div>
+        </div>
+        <p class="note small">Two conditions you haven't driven in yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap how" id="how-it-works">
+    <div class="eyebrow">How it works</div>
+    <h2>Your state sets eligibility. You set readiness.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Know the rules</h3>
+        <p>Permit age, supervised hours, night and passenger limits — in plain language for your state.</p>
+        <a class="link-arrow" href="/guide/">State guide</a>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Drive with a plan</h3>
+        <p>Pick one thing to work on before you pull out of the driveway. DRVN's lesson plans tell you what comes next.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Keep an honest log</h3>
+        <p>Start a drive and DRVN records the time and the route — so fifteen hours never gets mistaken for fifty.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap articles">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Written for the passenger seat</div>
+        <h2>Latest articles</h2>
+      </div>
+      <a class="link-arrow" href="/blog/">All articles</a>
+    </div>
+    <div class="grid3">
+      {latest.map((p) => <PostCard post={p} />)}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { border-bottom: 1px solid var(--line); }
+  .hero-grid { display: grid; grid-template-columns: 1fr 470px; gap: 64px; padding-top: 72px; padding-bottom: 80px; align-items: start; }
+  .copy { display: flex; flex-direction: column; gap: 24px; }
+  h1 { font-size: clamp(40px, 6vw, 68px); font-weight: 800; line-height: 1.03; letter-spacing: -0.028em; text-wrap: pretty; }
+  .lead { margin: 0; font-size: 22px; line-height: 1.5; font-weight: 500; color: var(--ink-2); max-width: 26em; }
+  .body { margin: 0; font-size: 19px; line-height: 1.6; color: var(--ink-3); max-width: 34em; }
+  .ctas { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 4px; }
+  .ctas .link-arrow { font-size: 17px; }
+  .micro { font-size: 14px; font-weight: 500; color: var(--muted); }
+  .micro a { color: inherit; }
+
+  .plan-card { border: 1px solid var(--line-2); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px; background: var(--surface); box-shadow: 0 18px 40px -24px rgba(10,108,165,.28); }
+  .row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .row.start { justify-content: flex-start; align-items: center; }
+  .val { font-size: 14px; font-weight: 700; color: var(--blue); }
+  .bar { height: 8px; border-radius: 4px; background: #EDF3F7; overflow: hidden; }
+  .bar span { display: block; height: 8px; background: var(--green); border-radius: 4px; }
+  hr { border: 0; height: 1px; background: #EDF3F7; margin: 6px 0; }
+  .pill { background: var(--cyan-tint); color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: .06em; padding: 4px 9px; border-radius: 5px; }
+  .focus { font-size: 27px; font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; color: var(--blue); }
+  .note { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-3); }
+  .note.small { font-size: 13px; color: var(--muted); }
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+  .tile { background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 10px; display: flex; flex-direction: column; gap: 5px; }
+  .tile span { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted-2); }
+  .tile b { font-size: 16px; color: var(--ink); }
+  .tile.empty { background: var(--surface); border-style: dashed; border-color: #C6D3DB; }
+  .tile.empty span, .tile.empty b { color: #9AA8B2; }
+
+  .how { padding-top: 88px; }
+  .how h2, .articles h2 { font-size: clamp(30px, 4vw, 40px); margin-top: 10px; }
+  .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 36px; margin-top: 40px; }
+  .step { display: flex; flex-direction: column; gap: 10px; }
+  .num { width: 36px; height: 36px; border-radius: 50%; background: var(--cyan-tint); color: var(--blue); font-weight: 800; display: grid; place-items: center; }
+  .step h3 { font-size: 22px; }
+  .step p { margin: 0; font-size: 17px; color: var(--ink-3); }
+
+  .articles { padding-top: 96px; }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 36px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 32px; }
+
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 44px; }
+    .steps, .grid3 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 420px) { .tiles { grid-template-columns: repeat(2, minmax(0,1fr)); } .plan-card { padding: 20px; } }
+</style>

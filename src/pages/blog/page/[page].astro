@@ -1,0 +1,17 @@
+---
+import Base from '../../../layouts/Base.astro';
+import BlogList from '../../../components/BlogList.astro';
+import { allPosts } from '../../../lib/posts.js';
+import { POSTS_PER_PAGE } from '../../../site.js';
+
+// Keeps the /blog/page/2/ … URLs WordPress used. Page 1 lives at /blog/ (old /blog/page/1/ redirects there).
+export function getStaticPaths() {
+  const total = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  return Array.from({ length: total - 1 }, (_, i) => ({ params: { page: String(i + 2) }, props: { page: i + 2, total } }));
+}
+const { page, total } = Astro.props;
+const start = (page - 1) * POSTS_PER_PAGE;
+---
+<Base title={`Articles for parents — page ${page}`} description={`Articles for parents teaching a teen to drive, page ${page} of ${total}.`}>
+  <BlogList posts={allPosts.slice(start, start + POSTS_PER_PAGE)} page={page} totalPages={total} />
+</Base>

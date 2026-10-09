@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page not found" noindex>
+  <section class="wrap nf">
+    <div class="rule"></div>
+    <h1>That page took a wrong turn.</h1>
+    <p>It may have moved when we rebuilt the site. These are good places to pick back up:</p>
+    <ul>
+      <li><a href="/guide/">Teen Driving Guide — your state's requirements</a></li>
+      <li><a href="/blog/">Articles for parents</a></li>
+      <li><a href="/">DRVN home</a></li>
+    </ul>
+  </section>
+</Base>
+<style>
+  .nf { padding-top: 80px; max-width: 720px; display: flex; flex-direction: column; gap: 18px; }
+  h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; }
+  p { margin: 0; font-size: 19px; color: var(--ink-3); }
+  ul { margin: 0; padding-left: 1.2em; font-size: 18px; line-height: 2; }
+</style>

@@ -8,7 +8,7 @@ published: "2026-10-09T12:05:00Z"
 cluster: "The Money"
 sources:
   - "CarInsurance.com 2026 analysis — average cost of adding a teen driver, by age and by state"
-  - "MoneyGeek carrier comparison — defensive driving, good student and student-away discounts"
+  - "MoneyGeek carrier comparison — good student and student-away discounts"
   - "CHOP Center for Injury Research and Prevention, Teen Driving Plan randomized trial"
 ---
 
@@ -71,9 +71,6 @@ So here is what a family can actually get a discount for today:
 - Enrolling in driver's ed. Not doing well in it. Enrolling.
 - Grades. A B average typically earns something in the range of 8 to 20%.
 - Going away to college without the car — often 5 to 35%.
-- Completing a defensive driving course — except that at most major carriers, that discount is only offered to drivers over fifty or fifty-five.
-
-Read that last one twice. The one item on the list that is explicitly about driving skill is, at most companies, unavailable to the driver who needs it most.
 
 What appears nowhere on the list, at any carrier: how many hours your teenager practiced, in what conditions, or how well they actually drive.
 

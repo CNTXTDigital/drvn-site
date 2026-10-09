@@ -16,6 +16,8 @@ const articles = await Promise.all(
       cluster: fm.cluster,
       author: fm.author || 'Robert Abbott',
       image: fm.image || null,
+      imageSm: fm.imageSm || null,
+      imageAlt: fm.imageAlt || '',
       published: fm.published,
       modified: fm.modified || fm.published,
       sources: fm.sources || [],

@@ -5,6 +5,9 @@ seoTitle: "What Should My Teen Practice Driving? The Six Environments That Matte
 dek: "A thirty-second test, and the two your family is almost certainly skipping."
 description: "Most teenagers get licensed having practiced in two driving environments. Here are the six they need, which two get skipped, and how to plan them around your town."
 published: "2026-10-09T12:03:00Z"
+image: "/images/articles/a14-rural-road.jpg"
+imageSm: "/images/articles/a14-rural-road-800.jpg"
+imageAlt: "A long, straight rural two-lane road with no shoulder between fields and trees."
 cluster: "The Permit Year"
 sources:
   - "CHOP Teen Driving Plan randomized trial (six environments, one to two hours each; 15% vs. 6%)"

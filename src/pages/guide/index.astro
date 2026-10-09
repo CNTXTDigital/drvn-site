@@ -30,6 +30,10 @@ const jsonld = {
     <p class="lead">From your state's requirements to the practice that actually builds a safe driver. The state sets eligibility. You set readiness.</p>
   </section>
 
+  <div class="wrap banner">
+    <img src="/images/site/g01-guide-road.jpg" srcset="/images/site/g01-guide-road-800.jpg 800w, /images/site/g01-guide-road.jpg 1600w" sizes="(max-width: 1120px) 100vw, 1072px" alt="A wide, tree-lined road at golden hour, seen from the driver's seat." width="1600" height="842" fetchpriority="high" />
+  </div>
+
   <section class="wrap cols">
     <div>
       <h2>Six steps to a license</h2>
@@ -57,6 +61,8 @@ const jsonld = {
   .top .lead { max-width: 40em; }
   h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -0.025em; }
   .lead { margin: 0; font-size: 21px; color: var(--ink-3); }
+  .banner { margin-top: 40px; }
+  .banner img { width: 100%; aspect-ratio: 2.6 / 1; object-fit: cover; border-radius: 18px; }
   .cols { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 64px; margin-top: 56px; }
   h2 { font-size: 30px; margin-bottom: 24px; }
   h2#states { margin-top: 64px; }

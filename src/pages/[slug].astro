@@ -56,7 +56,7 @@ const jsonld = {
         <span>·</span>
         <span>{readingMinutes(post.html)} min read</span>
       </div>
-      {post.image && <img class="hero-img" src={post.image} alt="" width="1400" height="736" />}
+      {post.image && <img class="hero-img" src={post.image} srcset={post.imageSm ? `${post.imageSm} 800w, ${post.image} 1600w` : undefined} sizes="(max-width: 980px) 100vw, 680px" alt={post.imageAlt || ""} width="1600" height="842" fetchpriority="high" />}
       <div class="prose" set:html={post.html} />
       {post.sources?.length > 0 && (
         <section class="sources" aria-label="Sources">
@@ -96,7 +96,8 @@ const jsonld = {
   .sources ul { margin: 10px 0 0; padding-left: 1.1em; font-size: 14px; line-height: 1.55; color: var(--muted); }
   .crumbs a::before { content: '← '; }
   h1 { font-size: clamp(32px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.022em; line-height: 1.1; margin: 18px 0 16px; text-wrap: pretty; }
-  .meta { display: flex; gap: 10px; font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+  .meta > * { white-space: nowrap; }
   .hero-img { width: 100%; border-radius: 14px; margin-bottom: 36px; aspect-ratio: 1.9/1; object-fit: cover; background: var(--surface-2); }
   .rail { padding-top: 64px; }
   .sticky { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 28px; }

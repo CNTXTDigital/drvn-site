@@ -5,6 +5,9 @@ seoTitle: "The Most Dangerous Thing Your Kid Will Do: Getting a Driver's License
 dek: "Four kids in, here's what I got wrong the first time — and what the research says almost everybody gets wrong."
 description: "The risk spikes the day supervision ends, and state hour requirements aren't a safety standard. What a parent of four got wrong — and what to do instead."
 published: "2026-10-09T12:06:00Z"
+image: "/images/articles/a01-parent-teen.jpg"
+imageSm: "/images/articles/a01-parent-teen-800.jpg"
+imageAlt: "A father in the passenger seat watches his teenage daughter drive."
 cluster: "The Reckoning"
 sources:
   - "IIHS, Fatality Facts: Teenagers (2024 data) — deaths and per-mile crash rates"

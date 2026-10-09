@@ -81,6 +81,22 @@ const jsonld = {
     </div>
   </section>
 
+  <section class="wrap app" id="the-app">
+    <div class="app-copy">
+      <div class="eyebrow">The DRVN app</div>
+      <h2>The plan, in the car with you.</h2>
+      <p>Start a drive and DRVN logs the time and the route while you ride along. The lesson plan shows where you are in the year and what comes next, so a twenty-minute errand still counts for something.</p>
+      <div class="stores">
+        <a class="btn" href={SITE.appStore} rel="noopener">Get it on the App Store</a>
+        <a class="link-arrow" href={SITE.googlePlay} rel="noopener">Google Play</a>
+      </div>
+    </div>
+    <div class="phones">
+      <img src="/images/app/h01-drive-in-progress.jpg" alt="DRVN app screen showing a drive in progress with the route on a map, time and miles." width="700" height="1478" loading="lazy" />
+      <img src="/images/app/h02-lesson-plan.jpg" alt="DRVN app lesson plan screen showing progress through parking, lane changes, left turns, highway merging and other skills." width="700" height="1478" loading="lazy" />
+    </div>
+  </section>
+
   <section class="wrap articles">
     <div class="head">
       <div>
@@ -133,6 +149,14 @@ const jsonld = {
   .step h3 { font-size: 22px; }
   .step p { margin: 0; font-size: 17px; color: var(--ink-3); }
 
+  .app { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 96px; padding: 56px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 24px; }
+  .app-copy { display: flex; flex-direction: column; gap: 16px; }
+  .app h2 { font-size: clamp(28px, 3.6vw, 38px); }
+  .app p { margin: 0; font-size: 18px; color: var(--ink-3); }
+  .stores { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+  .phones { display: flex; gap: 22px; justify-content: center; }
+  .phones img { width: 46%; max-width: 250px; border-radius: 28px; border: 6px solid #0E2433; box-shadow: 0 24px 50px -24px rgba(10,108,165,.45); }
+  .phones img:last-child { margin-top: 48px; }
   .articles { padding-top: 96px; }
   .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 36px; }
   .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 32px; }
@@ -140,6 +164,7 @@ const jsonld = {
   @media (max-width: 980px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 44px; }
     .steps, .grid3 { grid-template-columns: 1fr; }
+    .app { grid-template-columns: 1fr; padding: 32px 22px; gap: 36px; }
   }
   @media (max-width: 420px) { .tiles { grid-template-columns: repeat(2, minmax(0,1fr)); } .plan-card { padding: 20px; } }
 </style>

@@ -6,7 +6,7 @@ const H = headingLevel;
 <article class="card">
   <a href={`/${post.slug}/`} class="img" tabindex="-1" aria-hidden="true">
     {post.image
-      ? <img src={post.image} alt="" loading="lazy" width="700" height="368" />
+      ? <img src={post.imageSm || post.image} alt="" loading="lazy" width="800" height="421" />
       : <span class="ph"><span class="ph-k">{post.cluster || 'DRVN'}</span></span>}
   </a>
   <div class="body">

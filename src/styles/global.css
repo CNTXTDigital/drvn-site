@@ -63,7 +63,7 @@ h1, h2, h3, h4 { color: var(--blue); line-height: 1.15; letter-spacing: -0.015em
 /* Long-form article body */
 .prose { font-size: 19px; line-height: 1.7; color: var(--ink-2); }
 .prose p { margin: 0 0 1.15em; }
-.prose h2 { font-size: 28px; margin: 1.6em 0 0.6em; }
+.prose h2 { font-size: 27px; margin: 1.3em 0 0.5em; }
 .prose h3 { font-size: 22px; margin: 1.4em 0 0.5em; }
 .prose h4 { font-size: 19px; margin: 1.3em 0 0.4em; }
 .prose ul, .prose ol { margin: 0 0 1.2em; padding-left: 1.3em; }
@@ -71,6 +71,6 @@ h1, h2, h3, h4 { color: var(--blue); line-height: 1.15; letter-spacing: -0.015em
 .prose strong { color: var(--ink); }
 .prose img { border-radius: var(--radius); margin: 1.5em 0; }
 .prose blockquote p { margin: 0; }
-.prose blockquote { margin: 1.5em 0; padding: 4px 0 4px 22px; border-left: 4px solid var(--cyan); color: var(--blue); font-size: 22px; font-weight: 600; }
+.prose blockquote { margin: 1.2em 0; padding: 4px 0 4px 22px; border-left: 4px solid var(--cyan); color: var(--blue); font-size: 22px; font-weight: 600; }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 16px; }
 .prose th, .prose td { border-bottom: 1px solid var(--line); padding: 10px 8px; text-align: left; }

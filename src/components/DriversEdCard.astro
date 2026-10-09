@@ -8,7 +8,7 @@ const isAceable = offer.provider === 'Aceable';
 <aside class="edcard" aria-label="Online driver's ed partner">
   <div class="brand">
     {isAceable
-      ? <img class="logo" src="/images/partners/aceable-logo.png" alt="Aceable" width="237" height="52" loading="lazy" />
+      ? <img class="logo" src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" loading="lazy" />
       : <img class="logo" src="/images/partners/driversed-logo.png" alt="DriversEd.com" width="458" height="101" loading="lazy" />}
     <span class="tag">Partner</span>
   </div>
@@ -19,9 +19,9 @@ const isAceable = offer.provider === 'Aceable';
 </aside>
 
 <style>
-  .edcard { border: 1px solid var(--line-2); border-radius: 16px; padding: 24px; background: var(--surface); display: flex; flex-direction: column; gap: 10px; }
+  .edcard { border: 1px solid var(--line-2); border-radius: 16px; padding: 20px; background: var(--surface); display: flex; flex-direction: column; gap: 8px; }
   .brand { display: flex; align-items: center; justify-content: space-between; }
-  .logo { height: 30px; width: auto; }
+  .logo { height: 26px; width: auto; }
   .tag { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); }
   .h { margin: 4px 0 0; font-size: 19px; font-weight: 700; color: var(--blue); line-height: 1.25; }
   .s { margin: 0 0 6px; font-size: 15px; line-height: 1.55; color: var(--ink-3); }

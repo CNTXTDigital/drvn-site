@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../site.js';
+import { SITE, DRIVERS_ED } from '../site.js';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
       <a href="/guide/">State guide</a>
       <a href="/blog/">Articles</a>
       <a href="/#the-app">Get the app</a>
-      <a href={SITE.trafficSchool} rel="sponsored noopener">Traffic school</a>
+      <a href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Online Drivers Ed Course</a>
       <a href="/privacy-policy/">Privacy policy</a>
     </nav>
     <div class="social">

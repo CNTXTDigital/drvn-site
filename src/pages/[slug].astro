@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import AppCard from '../components/AppCard.astro';
+import DriversEdCard from '../components/DriversEdCard.astro';
 import { allPosts, formatDate, readingMinutes, related } from '../lib/posts.js';
 import { SITE } from '../site.js';
 
@@ -69,6 +70,7 @@ const jsonld = {
     <aside class="rail">
       <div class="sticky">
         <AppCard />
+        <DriversEdCard />
         <div class="more">
           <div class="eyebrow">More for parents</div>
           <ul>

@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import { allPosts } from '../lib/posts.js';
-import { SITE } from '../site.js';
+import { SITE, DRIVERS_ED } from '../site.js';
 
 const latest = allPosts.slice(0, 3);
 const jsonld = {
@@ -30,7 +30,7 @@ const jsonld = {
         <p class="body">DRVN is the plan. One priority before each drive. Hours and roads tracked while you drive. And a running picture of where you've actually been — night, weather, highway, the parts that never quite happen on their own.</p>
         <div class="ctas" id="get-the-app">
           <a class="btn" href={SITE.appStore} rel="noopener">Start your plan</a>
-          <a class="link-arrow" href="/guide/">Find your state's requirements</a>
+          <a class="link-arrow" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find a driver's ed class</a>
         </div>
         <div class="micro">Free for parents and teens · <a href={SITE.appStore} rel="noopener">iOS</a> and <a href={SITE.googlePlay} rel="noopener">Android</a></div>
       </div>

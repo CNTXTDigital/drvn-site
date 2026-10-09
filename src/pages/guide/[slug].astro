@@ -5,7 +5,7 @@ import AppCard from '../../components/AppCard.astro';
 import DriversEdCard from '../../components/DriversEdCard.astro';
 import StateSteps from '../../components/StateSteps.astro';
 import StatePicker from '../../components/StatePicker.astro';
-import { states, stateBySt, cities, citiesBySt, nearbyByType } from '../../lib/guide.js';
+import { states, stateBySt, cities, citiesBySt } from '../../lib/guide.js';
 import { SITE } from '../../site.js';
 
 export function getStaticPaths() {
@@ -18,15 +18,13 @@ export function getStaticPaths() {
 const { kind, st, city } = Astro.props;
 const s = stateBySt[st];
 const c = kind === 'city' ? city : null;
-const nearby = c ? nearbyByType(c) : null;
-const localCount = nearby ? new Set(Object.values(nearby).flat().map((p) => p.id)).size : 0;
 const otherCities = citiesBySt[st] || [];
 const place = c ? `${c.city}, ${st}` : s.sname;
 
 const title = c ? `${c.city}, ${s.sname} Teen Driving Guide` : `${s.sname} Teen Driving Guide`;
 const req = [s.s3duration, s.s1duration].filter(Boolean).join(' ');
 const description = c
-  ? `How a teen gets a driver's license in ${c.city}, ${st}: ${s.sname} permit and license requirements${localCount ? `, plus ${localCount} nearby driving schools and exam locations` : ''}.`
+  ? `How a teen gets a driver's license in ${c.city}, ${st}: ${s.sname} permit age, driver's ed, supervised hours, the road test and insurance.`
   : `The six steps to a teen driver's license in ${s.sname}: permit age, driver's ed, supervised hours, the road test and insurance. ${req}`.slice(0, 300);
 
 const crumbs = [
@@ -56,19 +54,19 @@ const jsonld = {
     <h1>{title}</h1>
     <p class="lead">
       {c
-        ? <>What parents and teens need to know about getting a driver’s license in {c.city}, {st}{localCount > 0 && <> — with {localCount} driving schools and exam locations nearby</>}.</>
+        ? <>What parents and teens need to know about getting a driver’s license in {c.city}, {st}: six steps, from the first class to the insurance call.</>
         : <>What parents need to know about the learn-to-drive process in {s.sname}: six steps, from the first class to the insurance call.</>}
     </p>
   </section>
 
   <section class="wrap cols">
     <div class="main">
-      <StateSteps state={s} city={c?.city} nearby={nearby} />
+      <StateSteps state={s} city={c?.city} />
 
       {otherCities.length > 0 && (
         <section class="cities" aria-labelledby="cities-h">
           <h2 id="cities-h">{c ? `More ${s.sname} city guides` : `${s.sname} city guides`}</h2>
-          <p>Local driving schools and exam locations for the most popular {s.sname} cities.</p>
+          <p>Guides for the most popular {s.sname} cities.</p>
           <ul>
             {otherCities.map((x) => <li>{x.slug === c?.slug ? <span aria-current="page">{x.city}</span> : <a href={x.url}>{x.city}</a>}</li>)}
           </ul>

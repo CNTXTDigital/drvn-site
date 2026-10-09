@@ -1,11 +1,10 @@
 ---
 // The six steps to a license for one state, with that state's requirements.
-// On a city page, pass `city` and `nearby` (from nearbyByType) to list local places under each step.
-import PlaceList from './PlaceList.astro';
+// On a city page, pass `city` to localize the wording.
 import { fillCity, article } from '../lib/guide.js';
 import { driversEdLink, SITE } from '../site.js';
 
-const { state: s, city, nearby } = Astro.props;
+const { state: s, city } = Astro.props;
 const name = s.sname;
 const area = city ? `${city}, ${name}` : name;
 const f = (v) => fillCity(v, city);
@@ -16,12 +15,10 @@ const steps = [
     t: `Enroll in ${article(name)} ${name} driver’s ed program`,
     rows: [['When', s.s1when], ['Duration', s.s1duration], ['Why', s.s1why], ['Where', s.s1where], [null, s.s1extra]],
     online: true,
-    places: nearby && { title: `In-person driver’s ed programs near ${city}`, list: nearby.cls },
   },
   {
     t: `Pass the ${name} learner’s permit exam`,
     rows: [['When', s.s2when], ['What you’ll need', s.s2what], ['Why', s.s2why], ['Where', s.s2where], [null, s.s2extra]],
-    places: nearby && { title: `Where to take the permit exam around ${city}`, list: nearby.reg },
   },
   {
     t: `Practice driving on ${name} roads with a parent`,
@@ -31,12 +28,10 @@ const steps = [
   {
     t: `Practice driving with an instructor in ${name}`,
     rows: [['When', s.s4when], ['What you’ll need', s.s4what], ['Duration', s.s4duration], [null, s.s4extra]],
-    places: nearby && { title: `Driving instructors in the ${area} area`, list: nearby.car },
   },
   {
     t: `Take the ${name} driver’s license exam`,
     rows: [['When', s.s5when], ['What you’ll need', s.s5what], ['Where', s.s5where], [null, s.s5extra]],
-    places: nearby && { title: `Where to take the road test around ${city}`, list: nearby.exam },
   },
   {
     t: `Add your teen to your car insurance in ${name}`,
@@ -71,7 +66,6 @@ const steps = [
             <a class="btn btn-sm" href={SITE.appStore} rel="noopener">Get the app</a>
           </div>
         )}
-        {st.places && <PlaceList title={st.places.title} places={st.places.list} />}
       </div>
     </li>
   ))}

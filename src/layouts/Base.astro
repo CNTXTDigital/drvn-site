@@ -14,9 +14,10 @@ const {
   noindex = false,
   jsonld,
   fullTitle = false,
+  canonicalPath,
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const canonical = new URL(canonicalPath || Astro.url.pathname, SITE.url).href;
 const pageTitle = fullTitle ? title : `${title} | ${SITE.name}`;
 const ogImage = new URL(image || '/og-default.png', SITE.url).href;
 ---

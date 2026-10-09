@@ -5,6 +5,8 @@
 var REDIRECTS = {
   '/teendrivingroadmap/': '/guide/',
   '/state-guide/': '/guide/',
+  '/guide/search/': '/guide/',
+  '/query.php': '/guide/',
   '/blog/page/1/': '/blog/',
   '/listing/': '/',
   '/gone/': '/',

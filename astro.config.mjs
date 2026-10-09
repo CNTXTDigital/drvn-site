@@ -8,7 +8,8 @@ export default defineConfig({
   build: { format: 'directory' },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404'),
+      // Skip the 404 page and the /listing/{id}/ short-URL redirects.
+      filter: (page) => !page.includes('/404') && !/\/listing\/\d+\/$/.test(page),
     }),
   ],
 });

@@ -3,7 +3,8 @@ import Base from '../../layouts/Base.astro';
 import AppCard from '../../components/AppCard.astro';
 import DriversEdCard from '../../components/DriversEdCard.astro';
 import { DRIVERS_ED } from '../../site.js';
-import states from '../../data/states.json';
+import StatePicker from '../../components/StatePicker.astro';
+import { states } from '../../lib/guide.js';
 
 // The six steps from the original Teen Driving Guide (/teendrivingroadmap/, now redirected here).
 const steps = [
@@ -30,6 +31,7 @@ const jsonld = {
     <div class="rule"></div>
     <h1>Teen Driving Guide</h1>
     <p class="lead">From your state's requirements to the practice that actually builds a safe driver. The state sets eligibility. You set readiness.</p>
+    <div class="pick"><StatePicker /></div>
   </section>
 
   <div class="wrap banner">
@@ -47,9 +49,9 @@ const jsonld = {
 
       {states.length > 0 && (
         <>
-          <h2 id="states">Choose your state</h2>
+          <h2 id="states">Teen driving guides by state</h2>
           <ul class="states">
-            {states.map((s) => <li><a href={`/guide/${s.slug}/`}>{s.name}</a></li>)}
+            {states.map((s) => <li><a href={`/guide/${s.slug}/`}>{s.sname}</a></li>)}
           </ul>
         </>
       )}
@@ -62,6 +64,7 @@ const jsonld = {
   .top { padding-top: 32px; display: flex; flex-direction: column; gap: 12px; }
   .top .lead { max-width: 40em; }
   h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -0.025em; }
+  .pick { margin-top: 6px; }
   .lead { margin: 0; font-size: 21px; color: var(--ink-3); }
   .banner { margin-top: 24px; }
   .banner img { width: 100%; aspect-ratio: 3.2 / 1; object-fit: cover; border-radius: 18px; }

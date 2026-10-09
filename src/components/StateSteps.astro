@@ -1,0 +1,103 @@
+---
+// The six steps to a license for one state, with that state's requirements.
+// On a city page, pass `city` and `nearby` (from nearbyByType) to list local places under each step.
+import PlaceList from './PlaceList.astro';
+import { fillCity, article } from '../lib/guide.js';
+import { driversEdLink, SITE } from '../site.js';
+
+const { state: s, city, nearby } = Astro.props;
+const name = s.sname;
+const area = city ? `${city}, ${name}` : name;
+const f = (v) => fillCity(v, city);
+const offer = driversEdLink(s.slug);
+
+const steps = [
+  {
+    t: `Enroll in ${article(name)} ${name} driver’s ed program`,
+    rows: [['When', s.s1when], ['Duration', s.s1duration], ['Why', s.s1why], ['Where', s.s1where], [null, s.s1extra]],
+    online: true,
+    places: nearby && { title: `In-person driver’s ed programs near ${city}`, list: nearby.cls },
+  },
+  {
+    t: `Pass the ${name} learner’s permit exam`,
+    rows: [['When', s.s2when], ['What you’ll need', s.s2what], ['Why', s.s2why], ['Where', s.s2where], [null, s.s2extra]],
+    places: nearby && { title: `Where to take the permit exam around ${city}`, list: nearby.reg },
+  },
+  {
+    t: `Practice driving on ${name} roads with a parent`,
+    rows: [['When', s.s3when], ['What you’ll need', s.s3what], ['Duration', s.s3duration], ['Where', s.s3where], [null, s.s3extra]],
+    app: true,
+  },
+  {
+    t: `Practice driving with an instructor in ${name}`,
+    rows: [['When', s.s4when], ['What you’ll need', s.s4what], ['Duration', s.s4duration], [null, s.s4extra]],
+    places: nearby && { title: `Driving instructors in the ${area} area`, list: nearby.car },
+  },
+  {
+    t: `Take the ${name} driver’s license exam`,
+    rows: [['When', s.s5when], ['What you’ll need', s.s5what], ['Where', s.s5where], [null, s.s5extra]],
+    places: nearby && { title: `Where to take the road test around ${city}`, list: nearby.exam },
+  },
+  {
+    t: `Add your teen to your car insurance in ${name}`,
+    rows: [['When', s.s6when], ['What you’ll need', s.s6what], ['Where', s.s6where], [null, s.s6extra]],
+  },
+].map((st) => ({ ...st, rows: st.rows.map(([k, v]) => [k, f(v)]).filter(([, v]) => v && String(v).trim()) }));
+---
+<ol class="steps">
+  {steps.map((st, i) => (
+    <li id={`step${i + 1}`}>
+      <span class="n">{i + 1}</span>
+      <div class="body">
+        <h2>{st.t}</h2>
+        <dl>
+          {st.rows.map(([k, v]) => (k ? <div class="row"><dt>{k}</dt><dd>{v}</dd></div> : <p class="extra">{v}</p>))}
+        </dl>
+        {st.online && (
+          <div class="online">
+            <div>
+              <p class="oh">Online driver’s ed for {name}</p>
+              <p class="os">{offer.provider} offers state-certified online courses your teen can complete at home.</p>
+            </div>
+            <a class="btn btn-sm" href={offer.url} rel="sponsored noopener" target="_blank">Find an online driver’s ed course</a>
+          </div>
+        )}
+        {st.app && (
+          <div class="online app">
+            <div>
+              <p class="oh">Track every practice hour with DRVN</p>
+              <p class="os">Log hours and routes as you drive, follow lesson plans for each stage, and check off skills. Free.</p>
+            </div>
+            <a class="btn btn-sm" href={SITE.appStore} rel="noopener">Get the app</a>
+          </div>
+        )}
+        {st.places && <PlaceList title={st.places.title} places={st.places.list} />}
+      </div>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 22px; }
+  .steps > li { display: flex; gap: 18px; align-items: flex-start; scroll-margin-top: 80px; }
+  .n { flex: 0 0 40px; height: 40px; border-radius: 50%; background: var(--cyan-tint); color: var(--blue); font-weight: 800; display: grid; place-items: center; }
+  .body { flex: 1; min-width: 0; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+  .steps > li:last-child .body { border-bottom: 0; }
+  h2 { font-size: 22px; margin: 6px 0 10px; }
+  dl { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .row { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 12px; font-size: 16px; line-height: 1.55; }
+  dt { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-2); padding-top: 3px; }
+  dd { margin: 0; color: var(--ink-2); }
+  .extra { margin: 2px 0 0; font-size: 16px; color: var(--ink-2); }
+  .online { margin-top: 14px; display: flex; gap: 16px; align-items: center; justify-content: space-between; background: var(--cyan-tint); border-radius: 12px; padding: 14px 16px; }
+  .online.app { background: var(--surface-2); }
+  .oh { margin: 0; font-weight: 700; color: var(--blue); font-size: 16px; }
+  .os { margin: 2px 0 0; font-size: 14px; color: var(--ink-3); }
+  .online .btn { flex: none; }
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 1fr; gap: 0; }
+    .online { flex-direction: column; align-items: flex-start; }
+    .steps > li { gap: 12px; }
+    .n { flex-basis: 32px; height: 32px; font-size: 15px; }
+  }
+</style>

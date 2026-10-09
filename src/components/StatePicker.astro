@@ -1,0 +1,24 @@
+---
+// State dropdown that jumps to /guide/{state}/ (as the old site's selector did).
+import { states } from '../lib/guide.js';
+const { current, label = 'Choose your state' } = Astro.props;
+---
+<form class="picker" action="/guide/" method="get" data-state-picker>
+  <label for="state-pick" class="sr-only">{label}</label>
+  <select id="state-pick" name="state">
+    <option value="">{label}</option>
+    {states.map((s) => <option value={s.slug} selected={s.slug === current}>{s.sname}</option>)}
+  </select>
+  <button class="btn btn-sm" type="submit">View guide</button>
+</form>
+<script>
+  for (const f of document.querySelectorAll<HTMLFormElement>('[data-state-picker]')) {
+    const go = () => { const v = (f.elements.namedItem('state') as HTMLSelectElement).value; if (v) location.href = `/guide/${v}/`; };
+    f.addEventListener('submit', (e) => { e.preventDefault(); go(); });
+    f.querySelector('select')?.addEventListener('change', go);
+  }
+</script>
+<style>
+  .picker { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  select { font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--surface); color: var(--ink); min-width: 240px; }
+</style>

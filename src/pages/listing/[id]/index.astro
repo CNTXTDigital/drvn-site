@@ -1,0 +1,13 @@
+---
+// /listing/{id}/ forwarded to the full listing URL on the old site; keep that behavior.
+import { listings } from '../../../lib/guide.js';
+import { SITE } from '../../../site.js';
+export function getStaticPaths() {
+  return listings.map((l) => ({ params: { id: String(l.id) }, props: { to: `/listing/${l.id}/${l.path}/` } }));
+}
+const { to } = Astro.props;
+const abs = new URL(to, SITE.url).href;
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Redirecting…</title><meta name="robots" content="noindex" /><link rel="canonical" href={abs} /><meta http-equiv="refresh" content={`0; url=${to}`} /></head>
+<body><a href={to}>Continue</a></body></html>

@@ -99,7 +99,7 @@ node(around:{near},{lat},{lon})["railway"="level_crossing"]->.lc;
 .lc out count;
 node(around:{near},{lat},{lon})["highway"="traffic_signals"]->.ts;
 .ts out count;
-way(around:{wide},{lat},{lon})["highway"~"^(unclassified|tertiary|track|residential)$"]["surface"~"^(gravel|unpaved|dirt|compacted|fine_gravel|ground)$"]->.gv;
+way(around:{wide},{lat},{lon})["highway"~"^(unclassified|tertiary)$"]["surface"~"^(gravel|unpaved|dirt|compacted|fine_gravel)$"]->.gv;
 .gv out count;
 way(around:{near},{lat},{lon})["highway"~"^(motorway|trunk|primary)$"]["lanes"~"^[4-9]$"]->.ml;
 .ml out count;"""

@@ -22,10 +22,12 @@ const otherCities = citiesBySt[st] || [];
 const place = c ? `${c.city}, ${st}` : s.sname;
 
 const title = c ? `${c.city}, ${s.sname} Teen Driving Guide` : `${s.sname} Teen Driving Guide`;
-const req = [s.s3duration, s.s1duration].filter(Boolean).join(' ');
+const r = s.req;
+const short = (v) => String(v || '').split(/[;(]/)[0].trim().replace(/\.$/, '');
+const facts = `Permit at ${short(r.permitMinAge)}; license at ${short(r.licenseMinAge)}.`;
 const description = c
-  ? `How a teen gets a driver's license in ${c.city}, ${st}: ${s.sname} permit age, driver's ed, supervised hours, the road test and insurance.`
-  : `The six steps to a teen driver's license in ${s.sname}: permit age, driver's ed, supervised hours, the road test and insurance. ${req}`.slice(0, 300);
+  ? `How a teen gets a driver's license in ${c.city}, ${st}: ${s.sname} permit age, driver's ed, supervised hours and the road test. ${facts}`.slice(0, 300)
+  : `The ${s.sname} teen driver's license, step by step: driver's ed, the learner's permit, supervised hours, the road test and new-driver rules. ${facts} Checked October 2026.`.slice(0, 300);
 
 const crumbs = [
   { name: 'Home', item: `${SITE.url}/` },
@@ -39,7 +41,8 @@ const jsonld = {
     {
       '@type': 'HowTo',
       name: `How a teen gets a driver's license in ${place}`,
-      step: ['s1', 's2', 's3', 's4', 's5', 's6'].map((k, i) => ({ '@type': 'HowToStep', position: i + 1, text: s[`${k}when`] || s[`${k}what`] || '' })).filter((x) => x.text),
+      step: [r.driversEd, r.permitMinAge && `Learner's permit: minimum age ${r.permitMinAge}`, r.supervisedHours, r.roadTest, r.restrictions]
+        .filter(Boolean).map((text, i) => ({ '@type': 'HowToStep', position: i + 1, text })),
     },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, ...b })) },
   ],
@@ -81,7 +84,7 @@ const jsonld = {
     <aside class="side">
       <div class="sticky">
         <AppCard />
-        <DriversEdCard state={s.slug} />
+        {r.onlineDriversEd && <DriversEdCard state={s.slug} />}
       </div>
     </aside>
   </section>

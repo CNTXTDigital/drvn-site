@@ -31,7 +31,8 @@ roadsRows.push(
     : { k: 'Roundabouts', v: 'None within 5 miles.', tip: 'If you’ll drive somewhere that has them, practice one before it matters.' }
 );
 if (r.railCrossings > 0) roadsRows.push({ k: 'Rail crossings', v: `${n(r.railCrossings)} within 5 miles.`, tip: 'Talk through it the first time: look both ways, never stop on the tracks.' });
-if (r.unpavedRoads >= 20) roadsRows.push({ k: 'Gravel roads', v: 'Unpaved roads within 15 miles.', tip: 'Loose surfaces brake and steer differently. Practice at low speed before it’s a surprise.' });
+// Only meaningful outside dense cities, where 'unpaved' in map data is mostly park paths and alleys.
+if (r.unpavedRoads >= 20 && r.trafficSignals < 300) roadsRows.push({ k: 'Gravel roads', v: 'Unpaved roads within 15 miles.', tip: 'Loose surfaces brake and steer differently. Practice at low speed before it’s a surprise.' });
 
 const seasonRows = [];
 if (c) {

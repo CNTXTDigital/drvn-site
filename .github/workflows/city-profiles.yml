@@ -1,0 +1,41 @@
+name: Build city profiles
+
+# Gathers stable local data (roads, climate normals, daylight) for city guide pages
+# and commits it to src/data/guide/city-profiles.json. Run manually, or by editing
+# scripts/city-profiles-targets.txt (one city slug per line, or ALL).
+on:
+  workflow_dispatch:
+    inputs:
+      cities:
+        description: 'City slugs separated by spaces, or ALL'
+        required: true
+        default: 'columbus-oh'
+  push:
+    branches: [main]
+    paths: ['scripts/city-profiles-targets.txt']
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests astral timezonefinder
+      - name: Build profiles
+        run: |
+          TARGETS="${{ github.event.inputs.cities }}"
+          if [ -z "$TARGETS" ]; then TARGETS=$(grep -v '^#' scripts/city-profiles-targets.txt | xargs); fi
+          python scripts/city_profiles.py $TARGETS
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/guide/city-profiles.json
+          git diff --cached --quiet || git commit -m "Update city profiles"
+          git pull --rebase -q origin main && git push

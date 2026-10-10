@@ -1,0 +1,7 @@
+# City slugs to (re)build, one per line, or ALL
+columbus-oh
+denver-co
+phoenix-az
+boston-ma
+dubuque-ia
+buffalo-ny

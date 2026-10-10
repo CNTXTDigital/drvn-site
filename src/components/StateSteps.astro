@@ -24,7 +24,7 @@ const steps = [
     online: r.onlineDriversEd,
   },
   {
-    t: `Get ${name === 'New Hampshire' ? 'started' : `a ${name} learner’s permit`}`,
+    t: `Get ${name === 'New Hampshire' ? 'started' : `${/^[AEIOU]/.test(name) ? 'an' : 'a'} ${name} learner’s permit`}`,
     rows: [['Minimum age', r.permitMinAge], ['The test', r.permitTest], ['What to bring', r.permitDocuments]],
   },
   {

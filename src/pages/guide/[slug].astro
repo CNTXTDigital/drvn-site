@@ -5,6 +5,8 @@ import AppCard from '../../components/AppCard.astro';
 import DriversEdCard from '../../components/DriversEdCard.astro';
 import StateSteps from '../../components/StateSteps.astro';
 import StatePicker from '../../components/StatePicker.astro';
+import CityProfile from '../../components/CityProfile.astro';
+import profiles from '../../data/guide/city-profiles.json';
 import { states, stateBySt, cities, citiesBySt } from '../../lib/guide.js';
 import { SITE } from '../../site.js';
 
@@ -18,6 +20,7 @@ export function getStaticPaths() {
 const { kind, st, city } = Astro.props;
 const s = stateBySt[st];
 const c = kind === 'city' ? city : null;
+const profile = c ? profiles[c.slug] : null;
 const otherCities = citiesBySt[st] || [];
 const place = c ? `${c.city}, ${st}` : s.sname;
 
@@ -25,8 +28,13 @@ const title = c ? `${c.city}, ${s.sname} Teen Driving Guide` : `${s.sname} Teen 
 const r = s.req;
 const short = (v) => String(v || '').split(/[;(]/)[0].trim().replace(/\.$/, '');
 const facts = `Permit at ${short(r.permitMinAge)}; license at ${short(r.licenseMinAge)}.`;
+const pr = profile;
+const hwy = pr ? [...(pr.roads?.interstates || []), ...(pr.roads?.usRoutes || [])].slice(0, 3) : [];
+const local = pr ? [hwy.length ? `highways ${hwy.join(', ')}` : null, pr.climate ? `about ${Math.round(pr.climate.snowInches)} in of snow a year` : null].filter(Boolean).join('; ') : '';
 const description = c
-  ? `How a teen gets a driver's license in ${c.city}, ${st}: ${s.sname} permit age, driver's ed, supervised hours and the road test. ${facts}`.slice(0, 300)
+  ? (pr
+    ? `Teaching a teen to drive in ${c.city}, ${st}: where to practice (${local}), when it gets dark, and ${s.sname}'s permit and license rules. ${facts}`
+    : `How a teen gets a driver's license in ${c.city}, ${st}: ${s.sname} permit age, driver's ed, supervised hours and the road test. ${facts}`).slice(0, 300)
   : `The ${s.sname} teen driver's license, step by step: driver's ed, the learner's permit, supervised hours, the road test and new-driver rules. ${facts} Checked October 2026.`.slice(0, 300);
 
 const crumbs = [
@@ -64,6 +72,8 @@ const jsonld = {
 
   <section class="wrap cols">
     <div class="main">
+      {profile && <CityProfile city={c.city} state={s} profile={profile} />}
+      {profile && <h2 class="req-h">{s.sname} requirements</h2>}
       <StateSteps state={s} city={c?.city} />
 
       {otherCities.length > 0 && (
@@ -91,6 +101,7 @@ const jsonld = {
 </Base>
 
 <style>
+  .req-h { font-size: 26px; margin: 0 0 14px; }
   .top { padding-top: 28px; display: flex; flex-direction: column; gap: 10px; }
   .crumbs { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); flex-wrap: wrap; }
   .crumbs a { font-weight: 600; text-decoration: none; }

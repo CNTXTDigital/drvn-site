@@ -1,0 +1,95 @@
+---
+// "Practice plan for {City}": local, stable facts a parent can plan around.
+// Data: scripts/city_profiles.py → data/guide/city-profiles.json
+// (OpenStreetMap roads, NOAA 1991–2020 climate normals, computed daylight).
+const { city, state: s, profile: p } = Astro.props;
+const r = p.roads || {};
+const c = p.climate;
+const d = p.daylight;
+const list = (a) => (a.length <= 2 ? a.join(' and ') : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
+const n = (x) => Number(x || 0).toLocaleString('en-US');
+const highways = [...(r.interstates || []), ...(r.usRoutes || [])].slice(0, 6);
+
+const roadsRows = [];
+if (highways.length) {
+  roadsRows.push({
+    k: 'Highways',
+    v: `${list(highways)} within 15 miles.`,
+    tip: `Save the first merge for a quiet Sunday morning on ${highways[0]}: one on-ramp, one exit, and back. Then add a weekday at a busier time.`,
+  });
+} else {
+  roadsRows.push({ k: 'Highways', v: 'No interstate or U.S. highway within 15 miles.', tip: 'Plan a dedicated trip for highway merging before the road test. It won’t happen on errands.' });
+}
+roadsRows.push(
+  r.trafficSignals > 0
+    ? { k: 'Traffic signals', v: `${n(r.trafficSignals)} signalized intersections within 5 miles.`, tip: 'Plenty of material for unprotected left turns: signals with no green arrow.' }
+    : { k: 'Traffic signals', v: 'Few signalized intersections nearby.', tip: 'Busy signals and left turns need a trip into a larger town.' }
+);
+roadsRows.push(
+  r.roundabouts > 0
+    ? { k: 'Roundabouts', v: `${n(r.roundabouts)} within 5 miles.`, tip: 'Practice yielding at entry and choosing the lane before you’re in it.' }
+    : { k: 'Roundabouts', v: 'None within 5 miles.', tip: 'If you’ll drive somewhere that has them, practice one before it matters.' }
+);
+if (r.railCrossings > 0) roadsRows.push({ k: 'Rail crossings', v: `${n(r.railCrossings)} within 5 miles.`, tip: 'Talk through it the first time: look both ways, never stop on the tracks.' });
+if (r.unpavedRoads >= 20) roadsRows.push({ k: 'Gravel roads', v: 'Unpaved roads within 15 miles.', tip: 'Loose surfaces brake and steer differently. Practice at low speed before it’s a surprise.' });
+
+const seasonRows = [];
+if (c) {
+  if (c.snowInches >= 6) {
+    seasonRows.push({ k: 'Snow', v: `About ${Math.round(c.snowInches)} inches a year.`, tip: 'After the first real snowfall, find an empty lot and practice braking and recovering from a slide.', link: '/weather-driving-practice/' });
+  } else if (c.snowInches >= 1) {
+    seasonRows.push({ k: 'Snow', v: `About ${Math.round(c.snowInches)} inches a year, a few days at most.`, tip: 'Snow days are rare enough to miss. If one comes, use it.', link: '/weather-driving-practice/' });
+  } else {
+    seasonRows.push({ k: 'Snow', v: 'Rare to none.', tip: 'Rain is the weather to practice in here.', link: '/weather-driving-practice/' });
+  }
+  if (c.wetDays) seasonRows.push(c.wetDays < 40
+    ? { k: 'Rain', v: `Only about ${c.wetDays} days a year with measurable rain.`, tip: 'Rain is rare enough that most teens never practice in it. The first hour is the slickest, so when it comes, go drive.' }
+    : { k: 'Rain', v: `${c.wetDays} days a year with measurable rain or snow.`, tip: 'Count a wet drive as its own lesson: longer following distance, earlier braking.' });
+  if (c.freezeNights >= 20) seasonRows.push({ k: 'Freezing nights', v: `${c.freezeNights} nights a year below freezing.`, tip: 'Early-morning bridges and shaded curves can ice before the rest of the road.' });
+}
+if (d) {
+  seasonRows.push({
+    k: 'Daylight',
+    v: `Earliest sunset ${d.earliestSunset} (${d.earliestSunsetDate}); latest ${d.latestSunset} (${d.latestSunsetDate}).`,
+    tip: `Night hours are easiest to log from November through January, when the drive home after ${d.novSunset} is already in the dark.`,
+  });
+}
+---
+<section class="profile" aria-labelledby="pp-h">
+  <h2 id="pp-h">Practice plan for {city}</h2>
+  <p class="intro">Your state sets the hours. Where you spend them is up to you. What’s around {city} to practice on, and when:</p>
+  <div class="cards">
+    <div class="card">
+      <p class="ch">Roads to practice on</p>
+      <dl>{roadsRows.map((x) => <div><dt>{x.k}</dt><dd><b>{x.v}</b> {x.tip}</dd></div>)}</dl>
+      <a class="more" href="/six-driving-environments-teen-practice/">The six driving environments to cover</a>
+    </div>
+    <div class="card">
+      <p class="ch">Seasons and light</p>
+      <dl>{seasonRows.map((x) => <div><dt>{x.k}</dt><dd><b>{x.v}</b> {x.tip}</dd></div>)}</dl>
+      <a class="more" href="/weather-driving-practice/">How to practice in weather</a>
+    </div>
+  </div>
+  <p class="src">
+    Road data © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener" target="_blank">OpenStreetMap contributors</a>.{' '}
+    {c && <>Climate: NOAA U.S. Climate Normals 1991–2020, {c.stationName} station{c.stationMiles >= 1 && <> ({c.stationMiles} miles away)</>}. </>}
+    Sunset times computed for {city}. Permit and road tests are run by <a href={s.req.agencyUrl} rel="noopener" target="_blank">{s.req.agency}</a>.
+  </p>
+</section>
+
+<style>
+  .profile { margin-bottom: 36px; }
+  h2 { font-size: 26px; margin-bottom: 6px; }
+  .intro { margin: 0 0 16px; font-size: 17px; color: var(--ink-3); }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { border: 1px solid var(--line-2); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .ch { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); }
+  dl { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  dt { font-weight: 700; color: var(--blue); font-size: 15px; }
+  dd { margin: 2px 0 0; font-size: 15px; line-height: 1.5; color: var(--ink-3); }
+  dd b { color: var(--ink); font-weight: 600; }
+  .more { margin-top: auto; padding-top: 4px; font-size: 14px; font-weight: 700; text-decoration: none; }
+  .more::after { content: ' →'; }
+  .src { margin: 12px 0 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+  @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+</style>

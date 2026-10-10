@@ -1,0 +1,265 @@
+{
+ "phoenix-az": {
+  "center": [
+   33.57215,
+   -112.09013
+  ],
+  "centerSource": "census",
+  "roads": {
+   "interstates": [
+    "I-10",
+    "I-17"
+   ],
+   "usRoutes": [
+    "US-60"
+   ],
+   "roundabouts": 35,
+   "railCrossings": 91,
+   "trafficSignals": 481,
+   "unpavedRoads": 195,
+   "multiLaneWays": 693
+  },
+  "climate": {
+   "station": "USC00028598",
+   "stationName": "Tolleson 1 E",
+   "stationMiles": 12.1,
+   "snowInches": 0.2,
+   "snowDays": 0.0,
+   "wetDays": 18,
+   "freezeNights": null,
+   "hotDays": null
+  },
+  "daylight": {
+   "tz": "America/Phoenix",
+   "earliestSunset": "5:19 p.m.",
+   "earliestSunsetDate": "November 30",
+   "earliestDark": "5:47 p.m.",
+   "latestSunset": "7:42 p.m.",
+   "latestSunsetDate": "June 24",
+   "novSunset": "5:25 p.m."
+  },
+  "built": "2026-10-10"
+ },
+ "denver-co": {
+  "center": [
+   39.76185,
+   -104.88111
+  ],
+  "centerSource": "census",
+  "roads": {
+   "interstates": [
+    "I-25",
+    "I-70",
+    "I-76",
+    "I-225",
+    "I-270"
+   ],
+   "usRoutes": [
+    "US-6",
+    "US-36",
+    "US-85",
+    "US-87",
+    "US-285"
+   ],
+   "roundabouts": 44,
+   "railCrossings": 351,
+   "trafficSignals": 1281,
+   "unpavedRoads": 766,
+   "multiLaneWays": 854
+  },
+  "climate": {
+   "station": "USW00023062",
+   "stationName": "Denver-Stapleton",
+   "stationMiles": 0.6,
+   "snowInches": 49.0,
+   "snowDays": 15.9,
+   "wetDays": 38,
+   "freezeNights": 156,
+   "hotDays": null
+  },
+  "daylight": {
+   "tz": "America/Denver",
+   "earliestSunset": "4:34 p.m.",
+   "earliestSunsetDate": "December 2",
+   "earliestDark": "5:05 p.m.",
+   "latestSunset": "8:31 p.m.",
+   "latestSunsetDate": "June 22",
+   "novSunset": "4:43 p.m."
+  },
+  "built": "2026-10-10"
+ },
+ "dubuque-ia": {
+  "center": [
+   42.4989,
+   -90.70726
+  ],
+  "centerSource": "census",
+  "roads": {
+   "interstates": [],
+   "usRoutes": [
+    "US-20",
+    "US-52",
+    "US-61",
+    "US-151"
+   ],
+   "roundabouts": 10,
+   "railCrossings": 61,
+   "trafficSignals": 162,
+   "unpavedRoads": 124,
+   "multiLaneWays": 4
+  },
+  "climate": {
+   "station": "USC00132364",
+   "stationName": "Dubuque L&D 11",
+   "stationMiles": 4.2,
+   "snowInches": 36.1,
+   "snowDays": 12.4,
+   "wetDays": 72,
+   "freezeNights": 133,
+   "hotDays": null
+  },
+  "daylight": {
+   "tz": "America/Chicago",
+   "earliestSunset": "4:29 p.m.",
+   "earliestSunsetDate": "December 3",
+   "earliestDark": "5:02 p.m.",
+   "latestSunset": "8:44 p.m.",
+   "latestSunsetDate": "June 26",
+   "novSunset": "4:40 p.m."
+  },
+  "built": "2026-10-10"
+ },
+ "boston-ma": {
+  "center": [
+   42.33855,
+   -71.01825
+  ],
+  "centerSource": "census",
+  "roads": {
+   "interstates": [
+    "I-90",
+    "I-93",
+    "I-95"
+   ],
+   "usRoutes": [
+    "US-1",
+    "US-3",
+    "US-20"
+   ],
+   "roundabouts": 23,
+   "railCrossings": 188,
+   "trafficSignals": 2362,
+   "unpavedRoads": 1246,
+   "multiLaneWays": 558
+  },
+  "climate": {
+   "station": "USW00014739",
+   "stationName": "Boston",
+   "stationMiles": 1.6,
+   "snowInches": 49.2,
+   "snowDays": 11.1,
+   "wetDays": 77,
+   "freezeNights": 92,
+   "hotDays": null
+  },
+  "daylight": {
+   "tz": "America/New_York",
+   "earliestSunset": "4:11 p.m.",
+   "earliestSunsetDate": "December 2",
+   "earliestDark": "4:43 p.m.",
+   "latestSunset": "8:24 p.m.",
+   "latestSunsetDate": "June 21",
+   "novSunset": "4:21 p.m."
+  },
+  "built": "2026-10-10"
+ },
+ "buffalo-ny": {
+  "center": [
+   42.89249,
+   -78.85969
+  ],
+  "centerSource": "census",
+  "roads": {
+   "interstates": [
+    "I-90",
+    "I-190",
+    "I-290",
+    "I-990"
+   ],
+   "usRoutes": [
+    "US-20",
+    "US-219"
+   ],
+   "roundabouts": 21,
+   "railCrossings": 176,
+   "trafficSignals": 634,
+   "unpavedRoads": 431,
+   "multiLaneWays": 365
+  },
+  "climate": {
+   "station": "USW00014733",
+   "stationName": "Buffalo",
+   "stationMiles": 7.3,
+   "snowInches": 95.4,
+   "snowDays": 25.6,
+   "wetDays": 94,
+   "freezeNights": 124,
+   "hotDays": null
+  },
+  "daylight": {
+   "tz": "America/New_York",
+   "earliestSunset": "4:40 p.m.",
+   "earliestSunsetDate": "December 5",
+   "earliestDark": "5:13 p.m.",
+   "latestSunset": "8:58 p.m.",
+   "latestSunsetDate": "June 25",
+   "novSunset": "4:51 p.m."
+  },
+  "built": "2026-10-10"
+ },
+ "columbus-oh": {
+  "center": [
+   39.98394,
+   -82.98488
+  ],
+  "centerSource": "census",
+  "roads": {
+   "interstates": [
+    "I-70",
+    "I-71",
+    "I-270",
+    "I-670"
+   ],
+   "usRoutes": [
+    "US-23",
+    "US-33",
+    "US-62"
+   ],
+   "roundabouts": 30,
+   "railCrossings": 63,
+   "trafficSignals": 845,
+   "unpavedRoads": 47,
+   "multiLaneWays": 1162
+  },
+  "climate": {
+   "station": "USW00014821",
+   "stationName": "John Glenn Intl Ap",
+   "stationMiles": 5.7,
+   "snowInches": 28.2,
+   "snowDays": 8.8,
+   "wetDays": 82,
+   "freezeNights": 103,
+   "hotDays": null
+  },
+  "daylight": {
+   "tz": "America/New_York",
+   "earliestSunset": "5:06 p.m.",
+   "earliestSunsetDate": "December 1",
+   "earliestDark": "5:37 p.m.",
+   "latestSunset": "9:04 p.m.",
+   "latestSunsetDate": "June 22",
+   "novSunset": "5:15 p.m."
+  },
+  "built": "2026-10-10"
+ }
+}

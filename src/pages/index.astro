@@ -24,7 +24,7 @@ const jsonld = {
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="copy">
-        <div class="rule"></div>
+        <img class="brandmark" src="/drvn-logo.svg" alt="DRVN" width="714" height="251" fetchpriority="high" />
         <h1>Nobody teaches you how to teach them.</h1>
         <p class="lead">Everybody has the facts about teen driving. You need a plan that works in the car.</p>
         <p class="body">DRVN is the plan. One priority before each drive. Hours and roads tracked while you drive. And a running picture of where you've actually been — night, weather, highway, the parts that never quite happen on their own.</p>
@@ -33,6 +33,10 @@ const jsonld = {
           <a class="link-arrow" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find an online driver's ed course</a>
         </div>
         <div class="micro">Free for parents and teens · <a href={SITE.appStore} rel="noopener">iOS</a> and <a href={SITE.googlePlay} rel="noopener">Android</a></div>
+        <div class="proof">
+          <a href="/guide/"><b>All 50 states</b><span>Teen license rules, checked October 2026 against each state's licensing agency</span></a>
+          <a href="/blog/"><b>Written from the passenger seat</b><span>Practical guidance for the twenty minutes before dinner, not the textbook</span></a>
+        </div>
       </div>
 
       <div class="plan-card" aria-label="Example of the DRVN plan">
@@ -115,6 +119,13 @@ const jsonld = {
   .hero { border-bottom: 1px solid var(--line); }
   .hero-grid { display: grid; grid-template-columns: 1fr 470px; gap: 56px; padding-top: 44px; padding-bottom: 48px; align-items: start; }
   .copy { display: flex; flex-direction: column; gap: 18px; }
+  .brandmark { width: clamp(190px, 24vw, 300px); height: auto; margin-bottom: 6px; }
+  .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--line); max-width: 40em; }
+  .proof a { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
+  .proof b { color: var(--blue); font-size: 16px; }
+  .proof span { color: var(--ink-3); font-size: 14px; line-height: 1.45; }
+  .proof a:hover b { text-decoration: underline; }
+  @media (max-width: 640px) { .proof { grid-template-columns: 1fr; } }
   h1 { font-size: clamp(40px, 6vw, 68px); font-weight: 800; line-height: 1.03; letter-spacing: -0.028em; text-wrap: pretty; }
   .lead { margin: 0; font-size: 22px; line-height: 1.5; font-weight: 500; color: var(--ink-2); max-width: 26em; }
   .body { margin: 0; font-size: 19px; line-height: 1.6; color: var(--ink-3); max-width: 34em; }

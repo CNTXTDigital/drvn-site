@@ -7,7 +7,7 @@ description: "Why left turns are hard for new drivers, how to practice judging g
 published: "2026-10-11T15:01:00Z"
 image: "/images/articles/a21-left-turns.jpg"
 imageSm: "/images/articles/a21-left-turns-800.jpg"
-imageAlt: "A teen driver waiting at an intersection at dusk with oncoming headlights."
+imageAlt: "From the back seat, a teen driver waits to turn left across traffic at a busy intersection at dusk."
 cluster: "The Skills"
 territory: "practice"
 sources:

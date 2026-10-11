@@ -7,7 +7,7 @@ description: "Practice drives turning into fights? How to give a teen driver fee
 published: "2026-10-11T14:00:00Z"
 image: "/images/articles/a18-feedback.jpg"
 imageSm: "/images/articles/a18-feedback-800.jpg"
-imageAlt: "A father and teenage son talking beside the car after a drive."
+imageAlt: "A mother and her teenage son talk beside the car after a practice drive."
 cluster: "The Permit Year"
 territory: "permit-year"
 sources: []

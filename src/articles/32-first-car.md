@@ -7,7 +7,7 @@ description: "How to choose a teen's first car: the IIHS safety rules, what it r
 published: "2026-10-11T15:30:00Z"
 image: "/images/articles/a32-first-car.jpg"
 imageSm: "/images/articles/a32-first-car-800.jpg"
-imageAlt: "A teenage girl and her father looking under the hood of a used car."
+imageAlt: "A father and his teenage daughter look under the hood of a used car in the driveway."
 cluster: "The Handoff"
 territory: "rules-costs"
 sources:

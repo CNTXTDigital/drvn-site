@@ -7,7 +7,7 @@ description: "What to do in a skid, a tire blowout, brake failure and a hard eme
 published: "2026-10-11T15:00:00Z"
 image: "/images/articles/a26-skids.jpg"
 imageSm: "/images/articles/a26-skids-800.jpg"
-imageAlt: "A car sliding through a turn in an empty snowy parking lot."
+imageAlt: "A car sliding sideways across an empty, snow-covered parking lot."
 cluster: "The Skills"
 territory: "practice"
 sources:

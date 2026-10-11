@@ -7,7 +7,7 @@ description: "Usage-based insurance programs track braking, speed, phone use and
 published: "2026-10-11T16:02:00Z"
 image: "/images/articles/a10-usage-based.jpg"
 imageSm: "/images/articles/a10-usage-based-800.jpg"
-imageAlt: "A leather wallet with coins next to a smartphone on a table."
+imageAlt: "A teen driver with a phone in a dashboard mount showing a driving-score app."
 cluster: "The Money"
 territory: "rules-costs"
 sources:

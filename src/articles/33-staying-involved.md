@@ -7,7 +7,7 @@ description: "Research found teens with involved, supportive parents had half th
 published: "2026-10-11T15:31:00Z"
 image: "/images/articles/a33-staying-involved.jpg"
 imageSm: "/images/articles/a33-staying-involved-800.jpg"
-imageAlt: "A teen driving in the rain while a parent in the passenger seat points ahead."
+imageAlt: "From the back seat, a mother rides along as her teenage daughter drives in the rain."
 cluster: "The Handoff"
 territory: "risk"
 sources:

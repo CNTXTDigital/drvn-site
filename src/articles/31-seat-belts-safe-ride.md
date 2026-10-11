@@ -7,7 +7,7 @@ description: "In 2024, 51% of teen drivers who died were unbuckled and 22% of te
 published: "2026-10-11T04:45:00Z"
 image: "/images/articles/a31-seat-belt.jpg"
 imageSm: "/images/articles/a31-seat-belt-800.jpg"
-imageAlt: "A hand fastening a seat belt buckle."
+imageAlt: "A teenager buckles her seat belt in the driver’s seat."
 cluster: "The Real Risks"
 territory: "risk"
 sources:

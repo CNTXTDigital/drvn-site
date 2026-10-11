@@ -7,7 +7,7 @@ description: "Dashcams found teens were inattentive or doing something else in 5
 published: "2026-10-11T04:43:00Z"
 image: "/images/articles/a29-phones.jpg"
 imageSm: "/images/articles/a29-phones-800.jpg"
-imageAlt: "A driver’s hands on the wheel with a phone stowed in the center console."
+imageAlt: "A teen driver reaches toward the dashboard screen while driving."
 cluster: "The Real Risks"
 territory: "risk"
 howWeKnow: true

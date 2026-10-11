@@ -25,7 +25,7 @@ const otherCities = citiesBySt[st] || [];
 const place = c ? `${c.city}, ${st}` : s.sname;
 
 const title = c ? `${c.city}, ${s.sname} Teen Driving Guide` : `${s.sname} Teen Driving Guide`;
-const seoTitle = c ? `${c.city}, ${s.sname} Teen Driving Guide: Permit and License Rules` : `${s.sname} Teen Driving Laws and Permit Requirements`;
+const seoTitle = c ? title : `${s.sname} Teen Driving Laws and Permit Requirements`;
 const r = s.req;
 const short = (v) => String(v || '').split(/[;(]/)[0].trim().replace(/\.$/, '');
 const facts = `Permit at ${short(r.permitMinAge)}; license at ${short(r.licenseMinAge)}.`;

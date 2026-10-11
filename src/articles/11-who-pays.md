@@ -7,7 +7,7 @@ description: "Owning a car costs thousands a year before a teen is added to the 
 published: "2026-10-11T16:03:00Z"
 image: "/images/articles/a11-who-pays.jpg"
 imageSm: "/images/articles/a11-who-pays-800.jpg"
-imageAlt: "A hand holding a gas pump nozzle in a car’s fuel door."
+imageAlt: "A teenage girl paying at the gas pump beside her car."
 cluster: "The Money"
 territory: "rules-costs"
 sources:

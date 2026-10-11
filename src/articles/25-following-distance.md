@@ -7,7 +7,7 @@ description: "How to teach a teen the three-second rule, when to leave more room
 published: "2026-10-11T15:03:00Z"
 image: "/images/articles/a25-following-distance.jpg"
 imageSm: "/images/articles/a25-following-distance-800.jpg"
-imageAlt: "A view from behind an SUV on a two-lane road, with space between the cars and a road sign ahead."
+imageAlt: "A driver’s view of a car well ahead on a two-lane country road."
 cluster: "The Skills"
 territory: "practice"
 sources:

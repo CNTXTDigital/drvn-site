@@ -7,7 +7,7 @@ description: "State minimum liability limits can be as low as $25,000 per person
 published: "2026-10-11T16:01:00Z"
 image: "/images/articles/a09-liability.jpg"
 imageSm: "/images/articles/a09-liability-800.jpg"
-imageAlt: "An auto insurance page with the bodily injury liability line highlighted, next to car keys."
+imageAlt: "Two teenagers at a kitchen table, one highlighting a line on an insurance document, with car keys nearby."
 cluster: "The Money"
 territory: "rules-costs"
 sources:

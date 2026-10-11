@@ -7,7 +7,7 @@ description: "Online or in-person driver's ed? What to check before you pay: sta
 published: "2026-10-11T14:11:00Z"
 image: "/images/articles/a37-choosing-drivers-ed.jpg"
 imageSm: "/images/articles/a37-choosing-drivers-ed-800.jpg"
-imageAlt: "A teenage girl working through an online course on a laptop."
+imageAlt: "A teenage boy studies an online driver’s ed course on his laptop."
 cluster: "Navigating the System"
 territory: "rules-costs"
 sources: []

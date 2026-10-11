@@ -7,7 +7,7 @@ description: "Your teen just got their permit. Where to go for the first drive, 
 published: "2026-10-11T14:01:00Z"
 image: "/images/articles/a15-first-drive.jpg"
 imageSm: "/images/articles/a15-first-drive-800.jpg"
-imageAlt: "A teenage girl adjusting the rearview mirror before her first drive."
+imageAlt: "A teenage girl adjusts the rearview mirror while her father watches from the passenger seat."
 cluster: "The Permit Year"
 territory: "permit-year"
 sources: []

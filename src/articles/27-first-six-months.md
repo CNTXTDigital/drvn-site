@@ -7,7 +7,7 @@ description: "New drivers crash most in their first months alone. A month-by-mon
 published: "2026-10-11T04:41:00Z"
 image: "/images/articles/a27-first-six-months.jpg"
 imageSm: "/images/articles/a27-first-six-months-800.jpg"
-imageAlt: "A parent holding a mug watches a car pull away from the house."
+imageAlt: "A mother watches from the porch as her teenage son backs out of the driveway alone."
 cluster: "The Real Risks"
 territory: "risk"
 howWeKnow: true

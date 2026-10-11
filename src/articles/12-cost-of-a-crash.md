@@ -7,7 +7,7 @@ description: "An at-fault crash raises premiums about 49% on average, for three 
 published: "2026-10-11T16:04:00Z"
 image: "/images/articles/a12-crash-cost.jpg"
 imageSm: "/images/articles/a12-crash-cost-800.jpg"
-imageAlt: "A calculator and a notebook of handwritten figures on a desk."
+imageAlt: "A teenager holds a repair estimate in an auto shop while a damaged car sits on the lift behind him."
 cluster: "The Money"
 territory: "rules-costs"
 sources:

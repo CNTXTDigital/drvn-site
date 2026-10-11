@@ -5,6 +5,9 @@ seoTitle: "Should My Teen Pay for Gas and Insurance? How to Split Driving Costs"
 dek: "A car looks free from the driver's seat. Showing a teenager the real bill, and handing them a piece of it, changes how they think about the keys."
 description: "Owning a car costs thousands a year before a teen is added to the policy. How to show your teen the real numbers, what share they could cover, and why it can make them a better driver."
 published: "2026-10-11T16:03:00Z"
+image: "/images/articles/a11-who-pays.jpg"
+imageSm: "/images/articles/a11-who-pays-800.jpg"
+imageAlt: "A hand holding a gas pump nozzle in a car’s fuel door."
 cluster: "The Money"
 sources:
   - aaa-driving-costs-2025

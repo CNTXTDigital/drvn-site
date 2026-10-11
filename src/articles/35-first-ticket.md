@@ -5,6 +5,9 @@ seoTitle: "Teen Got a Speeding Ticket? What Parents Should Know"
 dek: "A ticket during the first year can raise the insurance bill, extend license restrictions and, handled right, teach more than a lecture ever could."
 description: "What a teen's first traffic ticket actually changes: insurance, provisional license rules and points. Plus whether to fight it, traffic school, and how to talk about it."
 published: "2026-10-11T15:33:00Z"
+image: "/images/articles/a35-first-ticket.jpg"
+imageSm: "/images/articles/a35-first-ticket-800.jpg"
+imageAlt: "A traffic citation on a wooden table beside car keys and a phone."
 cluster: "The Handoff"
 sources:
   - ci-speeding-ticket

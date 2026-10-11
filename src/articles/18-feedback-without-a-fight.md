@@ -5,6 +5,9 @@ seoTitle: "Teaching Your Teen to Drive Without Fighting: How to Give Feedback"
 dek: "The car is a terrible place to have an argument and a great place to learn. The difference is mostly when you say things, and how."
 description: "Practice drives turning into fights? How to give a teen driver feedback that lands: before, during and after the drive, plus what to do when it all goes sideways."
 published: "2026-10-11T14:00:00Z"
+image: "/images/articles/a18-feedback.jpg"
+imageSm: "/images/articles/a18-feedback-800.jpg"
+imageAlt: "A father and teenage son talking beside the car after a drive."
 cluster: "The Permit Year"
 sources: []
 ---

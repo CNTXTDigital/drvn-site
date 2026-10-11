@@ -5,6 +5,9 @@ seoTitle: "Teen's First Time Driving: A Parent's Plan for the First Drive"
 dek: "The first drive sets the tone for the whole permit year. Keep it short, keep it empty, and keep it boring."
 description: "Your teen just got their permit. Where to go for the first drive, what to cover in order, what to skip, and how to end it so they want to do it again tomorrow."
 published: "2026-10-11T14:01:00Z"
+image: "/images/articles/a15-first-drive.jpg"
+imageSm: "/images/articles/a15-first-drive-800.jpg"
+imageAlt: "A teenage girl adjusting the rearview mirror before her first drive."
 cluster: "The Permit Year"
 sources: []
 ---

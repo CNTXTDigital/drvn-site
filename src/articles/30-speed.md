@@ -5,6 +5,9 @@ seoTitle: "Teen Drivers and Speeding: What Parents Should Teach"
 dek: "Speeding shows up in a third of fatal crashes involving teen drivers. The fix isn't a lecture about limits. It's teaching speed for conditions."
 description: "Speeding was a factor for a third of teen drivers in fatal crashes in 2024. Why new drivers misjudge speed, how to practice choosing it, and the habits that carry over from the passenger seat."
 published: "2026-10-11T04:44:00Z"
+image: "/images/articles/a30-speed.jpg"
+imageSm: "/images/articles/a30-speed-800.jpg"
+imageAlt: "A speedometer at dusk with a 65 mph speed limit sign outside."
 cluster: "The Real Risks"
 sources:
   - nhtsa-teen

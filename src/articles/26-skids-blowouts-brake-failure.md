@@ -5,6 +5,9 @@ seoTitle: "How to Teach a Teen Driver What to Do in a Skid, Blowout or Brake Fai
 dek: "Every instinct in a driving emergency is wrong. The only fix is to replace the instinct before the emergency, not during it."
 description: "What to do in a skid, a tire blowout, brake failure and a hard emergency stop, how to practice the parts you safely can, and how to talk through the rest."
 published: "2026-10-11T15:00:00Z"
+image: "/images/articles/a26-skids.jpg"
+imageSm: "/images/articles/a26-skids-800.jpg"
+imageAlt: "A car sliding through a turn in an empty snowy parking lot."
 cluster: "The Skills"
 sources:
   - ca-handbook-safe

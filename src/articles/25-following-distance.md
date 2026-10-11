@@ -5,6 +5,9 @@ seoTitle: "Teaching Teen Drivers Following Distance (the Three-Second Rule)"
 dek: "Space is the cheapest safety feature in the car. New drivers give it away constantly, because nobody taught them how to measure it."
 description: "How to teach a teen the three-second rule, when to leave more room, what to do about tailgaters, and why following distance is a habit you can see from the passenger seat."
 published: "2026-10-11T15:03:00Z"
+image: "/images/articles/a25-following-distance.jpg"
+imageSm: "/images/articles/a25-following-distance-800.jpg"
+imageAlt: "A view from behind an SUV on a two-lane road, with space between the cars and a road sign ahead."
 cluster: "The Skills"
 sources:
   - ca-handbook-roads

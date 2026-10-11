@@ -5,6 +5,9 @@ seoTitle: "How to Teach a Teen to Make Left Turns Safely"
 dek: "An unprotected left turn asks a new driver to judge speed, distance and gaps all at once. It's learnable, but only with a lot of reps."
 description: "Why left turns are hard for new drivers, how to practice judging gaps, the wheels-straight rule, and a step-by-step progression from quiet streets to busy roads."
 published: "2026-10-11T15:01:00Z"
+image: "/images/articles/a21-left-turns.jpg"
+imageSm: "/images/articles/a21-left-turns-800.jpg"
+imageAlt: "A teen driver waiting at an intersection at dusk with oncoming headlights."
 cluster: "The Skills"
 sources:
   - curry-2011

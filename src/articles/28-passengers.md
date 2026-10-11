@@ -5,6 +5,9 @@ seoTitle: "Teen Drivers and Passengers: How Friends Change Crash Risk"
 dek: "One friend raises a new driver's risk. Three can quadruple it. An adult in the car cuts it sharply."
 description: "Each teen passenger adds to a new driver's crash risk. What the research shows, what your state allows, and how to set a passenger rule your teen can actually live with."
 published: "2026-10-11T04:42:00Z"
+image: "/images/articles/a28-passengers.jpg"
+imageSm: "/images/articles/a28-passengers-800.jpg"
+imageAlt: "A teen driver with a smiling friend holding a phone in the passenger seat."
 cluster: "The Real Risks"
 sources:
   - aaaf-passengers-2012

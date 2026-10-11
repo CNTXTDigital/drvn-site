@@ -5,6 +5,9 @@ seoTitle: "Teen Drivers, Seat Belts and Drinking: The Two Rules That Matter Most
 dek: "Half of the teen drivers killed in 2024 weren't buckled. One rule fixes that. The other makes sure they call you instead of driving."
 description: "In 2024, 51% of teen drivers who died were unbuckled and 22% of teen drivers in fatal crashes had been drinking. The two family rules that should have no exceptions."
 published: "2026-10-11T04:45:00Z"
+image: "/images/articles/a31-seat-belt.jpg"
+imageSm: "/images/articles/a31-seat-belt-800.jpg"
+imageAlt: "A hand fastening a seat belt buckle."
 cluster: "The Real Risks"
 sources:
   - nhtsa-teen

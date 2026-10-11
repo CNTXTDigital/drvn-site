@@ -5,6 +5,9 @@ seoTitle: "Best Car for a Teen Driver: What IIHS Says to Look For"
 dek: "Teens are the riskiest drivers on the road, and they tend to drive the least safe cars. A few simple rules fix most of that."
 description: "Teen drivers killed in crashes are more likely to be in small, old cars. IIHS's four rules for a teen's car, how to find a safe one under $10,000, and the mistakes to skip."
 published: "2026-10-11T15:30:00Z"
+image: "/images/articles/a32-first-car.jpg"
+imageSm: "/images/articles/a32-first-car-800.jpg"
+imageAlt: "A teenage girl and her father looking under the hood of a used car."
 cluster: "The Handoff"
 sources:
   - iihs-teens

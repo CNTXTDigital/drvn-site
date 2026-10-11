@@ -5,6 +5,9 @@ seoTitle: "How to Choose a Driver's Ed Course for Your Teen (Online vs. In Perso
 dek: "The certificate is the same either way. What you want to know is whether the course will fit your kid, your schedule and your state's rules."
 description: "Online or in-person driver's ed? What to check before you pay: state approval, behind-the-wheel hours, timing, cost, and the questions to ask a driving school."
 published: "2026-10-11T14:11:00Z"
+image: "/images/articles/a37-choosing-drivers-ed.jpg"
+imageSm: "/images/articles/a37-choosing-drivers-ed-800.jpg"
+imageAlt: "A teenage girl working through an online course on a laptop."
 cluster: "Navigating the System"
 sources: []
 ---

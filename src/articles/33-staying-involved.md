@@ -5,6 +5,9 @@ seoTitle: "How to Stay Involved in Your Teen's Driving After They Get a License"
 dek: "Teens whose parents set clear rules and stay supportive crash about half as often. The trick is being involved in a way they'll actually accept."
 description: "Research found teens with involved, supportive parents had half the crash risk. How to stay in the loop after the license: ride-alongs, check-ins, tracking apps, and when to let go."
 published: "2026-10-11T15:31:00Z"
+image: "/images/articles/a33-staying-involved.jpg"
+imageSm: "/images/articles/a33-staying-involved-800.jpg"
+imageAlt: "A teen driving in the rain while a parent in the passenger seat points ahead."
 cluster: "The Handoff"
 sources:
   - ginsburg-2009

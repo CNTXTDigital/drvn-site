@@ -5,6 +5,9 @@ seoTitle: "Teen Driver's First Six Months After License: A Parent's Plan"
 dek: "The license is when the risk peaks, not when it ends. Here's how to hand over the keys in pieces."
 description: "New drivers crash most in their first months alone. A month-by-month plan for handing over independence after the license, and what to keep doing together."
 published: "2026-10-11T04:41:00Z"
+image: "/images/articles/a27-first-six-months.jpg"
+imageSm: "/images/articles/a27-first-six-months-800.jpg"
+imageAlt: "A parent holding a mug watches a car pull away from the house."
 cluster: "The Real Risks"
 sources:
   - nhtsa-teen

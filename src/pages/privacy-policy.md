@@ -1,78 +1,109 @@
 ---
 layout: ../layouts/Prose.astro
 title: Privacy Policy
-description: How DRVN LLC collects, uses and protects information in the DRVN app and on drvnapp.com.
+description: What information DRVN collects in the app and on drvnapp.com, how it's used and shared, and the choices you have.
 ---
 
-DRVN LLC built the DRVN app as a Free app. This SERVICE is provided by DRVN LLC at no cost and is intended for use as is.
+**Effective date: October 1, 2026**
 
-This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
+DRVN, LLC ("DRVN," "we," "our," or "us") provides digital tools, mobile applications, and educational resources designed to help parents and teens manage the process of learning to drive.
 
-If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+We take privacy seriously, particularly because DRVN may be used by families and young drivers. This Privacy Policy explains what information we collect, how we use it, when it may be shared, and the choices available to users.
 
-The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at DRVN unless otherwise defined in this Privacy Policy.
+## Information we collect
 
-### Information Collection and Use
+Depending on how you use DRVN, we may collect the following types of information:
 
-For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to name, e-mail, phone number. The information that we request will be retained by us and used as described in this privacy policy.
+**Account information.** Information you provide when creating or managing an account, such as your name, email address, login credentials, and account role.
 
-The app does use third party services that may collect information used to identify you.
+**Parent and teen account information.** Information used to connect parent and teen accounts and manage shared driving progress.
 
-### Personal and Sensitive User Data
+**Driving activity.** Information related to supervised driving activity, which may include drive time, mileage, dates, routes, practice history, skills, lesson progress, and driving conditions.
 
-The DRVN app accesses, collects, uses and shares personal and sensitive user data acquired through the app only for the purposes of enabling app functionality and other policy-conforming purposes reasonably expected by the user.
+**Location information.** If you enable location services, DRVN may collect location data necessary to record driving routes, mileage, or related driving activity.
 
-DRVN may transfer data as necessary to service providers or for legal reasons such as to comply with a valid governmental request, applicable law, or as part of a merger or acquisition with legally adequate notice to users.
+**Device and technical information.** We may collect information such as device type, operating system, app version, IP address, identifiers, crash information, and diagnostic data.
 
-We will handle all personal and sensitive user data securely.
+**Website and analytics information.** When you visit drvnapp.com, we may collect standard usage information through cookies, analytics tools, or similar technologies.
 
-We do not sell personal or sensitive user data.
+**Communications.** If you contact us, request information, subscribe to updates, or provide feedback, we may retain the information you provide.
 
-### Location Data
+## How we use information
 
-This app uses third party services to collect location data to enable DRVN to track each driving session for purposes of logging the route and mileage of each drive. This tracking feature is active only when the app is open and a driving session is active.
+We use information collected through DRVN to:
 
-### Log Data
+- Provide and operate the DRVN app and website.
+- Connect parent and teen accounts.
+- Record supervised driving activity.
+- Track practice time and progress.
+- Provide driving lessons, skill guidance, and progress information.
+- Improve the performance, usability, and reliability of DRVN.
+- Communicate with users about their accounts, support requests, product updates, or service information.
+- Protect the security and integrity of DRVN.
+- Comply with legal requirements.
 
-We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.
+We do not use driving information to determine whether a teen should receive a driver's license, insurance coverage, or any other official qualification.
 
-### Cookies
+## How information is shared
 
-Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your device internal memory.
+We do not sell personal information.
 
-This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collection information and to improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
+We may share information with service providers that help us operate DRVN, such as cloud hosting, analytics, authentication, customer support, email, or technical-service providers. These providers are permitted to use information only as necessary to provide services to DRVN and are subject to appropriate privacy and security obligations.
 
-### Data Collection and Storage
+We may also disclose information when required by law, to protect the rights or safety of DRVN or others, or in connection with a merger, acquisition, financing, or sale of the business.
 
-You may request that your user account and data be deleted from DRVN.  This will result in your user information no longer being stored and your drive data removed. To request your information be deleted, [send an email](mailto:info@drvnapp.com) with your request and a confirmation will be sent to you once this deletion is completed.
+## Information shared between parents and teens
 
-### Service Providers
+DRVN is designed around shared supervised-driving activity. Certain information may therefore be visible to linked parent and teen accounts, including practice history, driving time, skills, progress, and other information related to the learning process.
 
-We may employ third-party companies and individuals due to the following reasons:
+Information recorded within a linked DRVN account may be accessible to other members of that account relationship.
 
-- To facilitate our Service;
-- To provide the Service on our behalf;
-- To perform Service-related services; or
-- To assist us in analyzing how our Service is used.
+## Children and teen users
 
-We want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
+DRVN is intended for parents and teens who are of legal age to begin the learner-driver process in their jurisdiction.
 
-### Security
+**DRVN is not intended for children under 13, and we do not knowingly collect personal information from children under 13.**
 
-We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+If we learn that personal information has been collected from a child under 13 without appropriate authorization, we will take steps to delete it. If you believe a child under 13 has provided personal information to DRVN, please contact us at [info@drvnapp.com](mailto:info@drvnapp.com).
 
-### Links to Other Sites
+## Data retention
 
-This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+We retain personal information for as long as necessary to provide DRVN, maintain required business records, comply with legal obligations, resolve disputes, and protect the security of our services.
 
-### Children’s Privacy
+When an account is deleted, we delete or de-identify associated personal information except where retention is required by law or necessary for legitimate business purposes.
 
-These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.
+## Account and data deletion
 
-### Changes to This Privacy Policy
+You may request deletion of your DRVN account and associated personal information through the DRVN app or by emailing [info@drvnapp.com](mailto:info@drvnapp.com). We may need to verify your identity before completing a deletion request. See [Contact and privacy requests](/contact/) for details.
 
-We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+## Your privacy choices
 
-### Contact Us
+Depending on where you live, you may have rights regarding your personal information, including the right to request access, correction, deletion, or information about how your data is used. Residents of certain states, including California, may have additional privacy rights under applicable law.
 
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.
+To submit a request, contact:
+
+**DRVN, LLC**  
+120 S Main Street  
+Maquoketa, Iowa 52060  
+[info@drvnapp.com](mailto:info@drvnapp.com)
+
+## Security
+
+We use reasonable administrative, technical, and organizational safeguards designed to protect personal information. No electronic transmission or storage system can be guaranteed to be completely secure, however, and we cannot guarantee absolute security.
+
+## Third-party links and services
+
+DRVN may link to third-party websites or services, including driver's education providers, app stores, government agencies, and other resources. Their privacy practices are governed by their own policies, not this Privacy Policy.
+
+## Changes to this policy
+
+We may update this Privacy Policy as DRVN evolves or as legal requirements change. When we make material changes, we will update the effective date and provide additional notice where appropriate.
+
+## Contact us
+
+Questions about this Privacy Policy or DRVN's privacy practices may be directed to:
+
+**DRVN, LLC**  
+120 S Main Street  
+Maquoketa, Iowa 52060  
+[info@drvnapp.com](mailto:info@drvnapp.com)

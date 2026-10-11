@@ -63,6 +63,7 @@ const steps = [
             <div>
               <p class="oh">Online driver’s ed for {name}</p>
               <p class="os">{offer.provider} offers state-certified online courses your teen can complete at home.</p>
+              <p class="os fine-aff">DRVN may earn a referral fee if you enroll through this link.</p>
             </div>
             <a class="btn btn-sm" href={offer.url} rel="sponsored noopener" target="_blank">Find an online driver’s ed course</a>
           </div>
@@ -114,4 +115,5 @@ const steps = [
     .steps > li { gap: 12px; }
     .n { flex-basis: 32px; height: 32px; font-size: 15px; }
   }
+  .fine-aff { font-size: 12.5px; margin-top: 4px; opacity: .8; }
 </style>

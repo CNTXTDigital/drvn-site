@@ -16,7 +16,6 @@ const year = new Date().getFullYear();
       <a href="/evidence/">Evidence library</a>
       <a href="/about/#standards">Editorial standards</a>
       <a href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Online Drivers Ed Course</a>
-      <a href="/privacy-policy/">Privacy policy</a>
     </nav>
     <div class="social">
       <a href={SITE.social.facebook} rel="noopener">Facebook</a>
@@ -24,7 +23,16 @@ const year = new Date().getFullYear();
       <a href={SITE.social.twitter} rel="noopener">X / Twitter</a>
     </div>
   </div>
-  <div class="wrap legal"><span>Copyright © 2016–{year} DRVN, LLC. All rights reserved.</span></div>
+  <div class="wrap legal">
+    <nav class="legal-links" aria-label="Legal">
+      <a href="/privacy-policy/">Privacy</a><span aria-hidden="true">·</span>
+      <a href="/terms/">Terms</a><span aria-hidden="true">·</span>
+      <a href="/affiliate-disclosure/">Affiliate Disclosure</a><span aria-hidden="true">·</span>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="disclaimer">DRVN provides educational information and tools to support supervised driver practice. It is not a substitute for professional driver instruction, official state licensing requirements, or the judgment of a qualified supervising driver. Licensing laws and requirements change. Always verify current requirements with your state's licensing agency.</p>
+    <span>Copyright © 2016–{year} DRVN, LLC. All rights reserved.</span>
+  </div>
 </footer>
 
 <style>
@@ -36,5 +44,8 @@ const year = new Date().getFullYear();
   a { color: #E6EEF3; text-decoration: none; }
   a:hover { color: var(--cyan-light); }
   .legal { display: flex; flex-direction: column; gap: 4px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #23394A; font-size: 13px; color: #7F93A1; }
+  .legal-links { flex-direction: row; flex-wrap: wrap; gap: 6px 10px; font-size: 14px; }
+  .legal-links a { color: #C9D6DE; }
+  .disclaimer { margin: 6px 0 4px; max-width: 62em; line-height: 1.5; }
   @media (max-width: 760px) { .grid { grid-template-columns: 1fr; gap: 28px; } }
 </style>

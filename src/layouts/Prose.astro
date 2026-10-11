@@ -2,7 +2,7 @@
 import Base from './Base.astro';
 const { frontmatter } = Astro.props;
 ---
-<Base title={frontmatter.title} description={frontmatter.description}>
+<Base title={frontmatter.title} description={frontmatter.description} crumbs={[{ name: frontmatter.title, path: Astro.url.pathname }]}>
   <article class="wrap page">
     <div class="rule"></div>
     <h1>{frontmatter.title}</h1>

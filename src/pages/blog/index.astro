@@ -6,6 +6,6 @@ import { POSTS_PER_PAGE } from '../../site.js';
 
 const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 ---
-<Base title="Articles for parents teaching a teen to drive" description="Practical articles for parents teaching a teen to drive: practice plans, the 50-hour rule, night and weather driving, and the move to solo driving.">
+<Base title="Articles for parents teaching a teen to drive" description="Practical articles for parents teaching a teen to drive: practice plans, the 50-hour rule, night and weather driving, and the move to solo driving." crumbs={[{ name: 'Learn', path: '/learn/' }, { name: 'All articles', path: '/blog/' }]}>
   <BlogList posts={allPosts.slice(0, POSTS_PER_PAGE)} page={1} totalPages={totalPages} />
 </Base>

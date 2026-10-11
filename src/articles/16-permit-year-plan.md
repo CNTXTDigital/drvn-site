@@ -10,8 +10,9 @@ imageSm: "/images/articles/a16-calendar-800.jpg"
 imageAlt: "A parent marking practice drives on a year-at-a-glance calendar at the kitchen table."
 cluster: "The Permit Year"
 sources:
-  - "Sequencing and environment structure follow the CHOP Teen Driving Plan framework"
-  - "IIHS 2024 nighttime teen fatality data"
+  - chop-tdp
+  - mirman-2014
+  - iihs-teens
 ---
 
 A permit year has a shape, and it is almost always the same shape.

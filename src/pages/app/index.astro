@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { SITE } from '../../site.js';
+import { APP_ID, ORG_ID, FOUNDER_ID } from '../../lib/schema.js';
 
 const steps = [
   { n: 1, title: 'Pair', body: 'Parent and teen share one plan and one record of every drive.', img: '/images/app/lesson-plan.jpg', alt: 'DRVN lesson plan' },
@@ -13,14 +14,21 @@ const features = [
   { icon: 'log', title: 'Progress', body: 'Every drive in one log, adding up toward your state’s requirement and beyond it.' },
 ];
 const jsonld = {
-  '@context': 'https://schema.org',
-  '@type': 'MobileApplication',
+  '@type': ['SoftwareApplication', 'MobileApplication'],
+  '@id': APP_ID,
   name: 'DRVN',
+  url: `${SITE.url}/app/`,
+  description: 'A practice-driving plan and log for parents teaching a teen to drive: one priority before each drive, drive time and night time logged while you drive, and the skills and roads still to cover.',
   operatingSystem: 'iOS, Android',
-  applicationCategory: 'EducationApplication',
-  description: 'A practice-driving plan and log for parents teaching a teen to drive.',
+  applicationCategory: 'EducationalApplication',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  installUrl: [SITE.appStore, SITE.googlePlay],
   downloadUrl: [SITE.appStore, SITE.googlePlay],
+  screenshot: ['drive-in-progress', 'lesson-plan', 'skills-checklist', 'lesson-progress', 'drive-map', 'drive-log'].map((n) => `${SITE.url}/images/app/${n}.jpg`),
+  publisher: { '@id': ORG_ID },
+  author: { '@id': ORG_ID },
+  creator: { '@id': FOUNDER_ID },
+  audience: { '@type': 'Audience', audienceType: 'Parents of teen drivers' },
 };
 ---
 <Base
@@ -28,6 +36,7 @@ const jsonld = {
   description="Know what to practice before you pull out of the driveway, log the hours while you drive, and see what you haven’t covered yet. Free for parents and teens on iOS and Android."
   image="/images/app/drive-in-progress.jpg"
   jsonld={jsonld}
+  crumbs={[{ name: 'DRVN app', path: '/app/' }]}
 >
   <section class="top">
     <div class="wrap hero">

@@ -10,8 +10,10 @@ imageSm: "/images/articles/a24-rain-night-800.jpg"
 imageAlt: "Heavy rain on a windshield at night, with taillights blurred on the wet highway ahead."
 cluster: "The Skills"
 sources:
-  - "IIHS, Graduated licensing laws table — state supervised-hour and inclement-weather provisions (accessed September 2026)"
-  - "FHWA Road Weather Management Program — Rain & Flooding, and Road Weather Management Performance Measures, derived from NHTSA data"
+  - iihs-gdl
+  - penndot
+  - sd-dps
+  - fhwa-rain
 ---
 
 My four kids learned to drive in Ohio, which is not a dry place. All four cleared fifty hours of supervised practice, which is more than the state asked for, and between them that adds up to a lot of time in a car with me in the passenger seat.
@@ -32,9 +34,9 @@ That's the whole story. Four kids, a full permit year each, and I couldn't tell 
 
 Here's the part I only learned recently.
 
-Almost every state in the country tells you how many of your teenager's supervised hours have to happen after dark. Usually ten. Colorado wants ten, California wants ten, Iowa wants two.
+[Almost every state in the country](https://www.iihs.org/research-areas/teenagers/graduated-licensing-laws-table) tells you how many of your teenager's supervised hours have to happen after dark. Usually ten. Colorado wants ten, California wants ten, Iowa wants two.
 
-Two states say anything at all about weather. Pennsylvania asks for five hours, South Dakota asks for ten. Alaska sort of counts, except it lets night driving satisfy the same requirement, so in practice it doesn't.
+Two states say anything at all about weather. [Pennsylvania asks for five hours](https://www.pa.gov/agencies/penndot/traveling-in-pa/safety/traffic-safety-driver-topics/young-driver), [South Dakota asks for ten](https://dps.sd.gov/driver-licensing/south-dakota-licensing-information/teen-drivers). Alaska sort of counts, except it lets night driving satisfy the same requirement, so in practice it doesn't.
 
 Everywhere else, the number of hours a new driver has to spend in rain before driving alone in it is zero.
 
@@ -46,7 +48,7 @@ Which means the thing I'd been quietly filing as my own sloppiness was mostly a 
 
 When people hear weather practice they picture snow. A parking lot, a teenager, some orange cones. It's the dramatic version and it's what leads the news every January.
 
-But by the Federal Highway Administration's numbers, about three quarters of weather-related crashes happen on wet pavement, and roughly half happen while it is actively raining.
+But by the [Federal Highway Administration's numbers](https://ops.fhwa.dot.gov/weather/weather_events/rain_flooding.htm), about three quarters of weather-related crashes happen on wet pavement, and roughly half happen while it is actively raining.
 
 Snow is regional and seasonal. Rain is everywhere, most of the year, including every state where nobody owns an ice scraper. If you're only going to practice one of them, it isn't snow.
 

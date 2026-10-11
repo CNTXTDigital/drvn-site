@@ -10,9 +10,11 @@ imageSm: "/images/articles/a13-practice-log-800.jpg"
 imageAlt: "A handwritten practice-driving log and car keys on the passenger seat at dusk."
 cluster: "The Permit Year"
 sources:
-  - "CHOP Center for Injury Research and Prevention, Teen Driving Plan randomized trial (15% vs. 6% assessment termination; variety across six environments)"
-  - "IIHS recommendation of 70 supervised hours"
-  - "Ohio BMV and Iowa DOT supervised-driving requirements"
+  - mirman-2014
+  - chop-tdp
+  - iihs-teens
+  - ohio-bmv
+  - iowa-dot
 ---
 
 My wife was looking at our son's logged practice time and said, "Fifteen hours? That can't be right. It feels like fifty."
@@ -59,7 +61,7 @@ Which means the number on that form describes almost nothing about the driver it
 
 ## The study I wish someone had handed me
 
-In a randomized controlled trial, researchers gave one group of families a structured practice program — specific goals, deliberate variety, night driving, bad weather. The other group practiced the way families normally practice.
+In a [randomized controlled trial](https://pubmed.ncbi.nlm.nih.gov/24957844/), researchers gave one group of families a structured practice program — specific goals, deliberate variety, night driving, bad weather. The other group practiced the way families normally practice.
 
 Then they put all of the teenagers through an on-road safety evaluation.
 
@@ -107,7 +109,7 @@ Three questions. Maybe four minutes. No additional hours required.
 
 ## So what number should you use?
 
-If you want a target, use 70. That's what the Insurance Institute for Highway Safety recommends, and it's roughly double what some states ask for. Ohio wanted 50 hours from my kids. Iowa, where I live now, asks for 20.
+If you want a target, use 70. That's what the [Insurance Institute for Highway Safety recommends](https://www.iihs.org/research-areas/teenagers), and it's roughly double what some states ask for. [Ohio wanted 50 hours](https://bmv.ohio.gov/DL-GDL.ASPX) from my kids. Iowa, where I live now, [asks for 20](https://iowadot.gov/media/7147/download).
 
 But the number is the least important part of the plan, and there's a better test. Before you sign anything, see whether you can answer these:
 

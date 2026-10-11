@@ -10,9 +10,12 @@ imageSm: "/images/articles/a14-rural-road-800.jpg"
 imageAlt: "A long, straight rural two-lane road with no shoulder between fields and trees."
 cluster: "The Permit Year"
 sources:
-  - "CHOP Teen Driving Plan randomized trial (six environments, one to two hours each; 15% vs. 6%)"
-  - "IIHS 2024 data on nighttime teen fatalities and on urban/rural fatality comparison (41% of deaths, 31% of vehicle miles; 1.56 vs. 1.01 deaths per 100 million miles)"
-  - "Ohio BMV and Iowa DOT night-hour requirements"
+  - mirman-2014
+  - chop-tdp
+  - iihs-urban-rural
+  - iihs-teens
+  - ohio-bmv
+  - iowa-dot
 ---
 
 Here is a test. It takes about thirty seconds.
@@ -28,7 +31,7 @@ Think back over the last month of practice driving with your teenager, and count
 
 Most parents, counting honestly, come up with two. Sometimes three.
 
-That number is the finding underneath all the research on practice driving. In a randomized trial, the families whose teenagers practiced across all six environments — an hour or two minimum in each — cut their teen's rate of failing an on-road safety evaluation from 15% to 6%. Those families weren't driving more. They were driving in more places.
+That number is the finding underneath all the research on practice driving. In a [randomized trial](https://pubmed.ncbi.nlm.nih.gov/24957844/), the families whose teenagers practiced across all six environments — an hour or two minimum in each — cut their teen's rate of failing an on-road safety evaluation from 15% to 6%. Those families weren't driving more. They were driving in more places.
 
 ## Why almost everyone scores two
 
@@ -60,7 +63,7 @@ Rural roads and bad weather.
 
 Rural roads get skipped because there is usually no reason to drive one. Nothing you need is out there. Which means the only way it happens is on purpose — a forty-minute loop on a Sunday that accomplishes nothing except the thing it accomplishes.
 
-It's worth knowing what you're skipping. Nationally, 41% of traffic deaths happen on rural roads, which carry 31% of the miles driven. Per mile, the rural fatality rate runs about half again the urban one. This is not a regional concern for people who live near cornfields — it's the road type that punishes inexperience hardest, and almost every teenager ends up on one eventually.
+It's worth knowing what you're skipping. Nationally, [41% of traffic deaths happen on rural roads](https://www.iihs.org/topics/fatality-statistics/detail/urban-rural-comparison), which carry 31% of the miles driven. Per mile, the rural fatality rate runs about half again the urban one. This is not a regional concern for people who live near cornfields — it's the road type that punishes inexperience hardest, and almost every teenager ends up on one eventually.
 
 Bad weather gets skipped because it is genuinely unappealing. The first hard rain of the fall arrives, it's dark, everyone is tired, and you think: not tonight. That's a completely reasonable decision, made a dozen times, and the result is that their first hard rain happens without you in the car.
 
@@ -70,11 +73,11 @@ Bad weather gets skipped because it is genuinely unappealing. The first hard rai
 
 Of the six, darkness is the only environment any state bothers to quantify.
 
-Ohio requires ten of its fifty supervised hours to be at night. Iowa requires two of its twenty.
+[Ohio requires ten](https://bmv.ohio.gov/DL-GDL.ASPX) of its fifty supervised hours to be at night. [Iowa requires two](https://iowadot.gov/media/7147/download) of its twenty.
 
 Two hours. That is a couple of drives home from a basketball game.
 
-Meanwhile, 35% of teen driving fatalities happen between 9 p.m. and 3 a.m., and more than half fall between 6 p.m. and 3 a.m. A disproportionate share of the risk lives after dark, and in a lot of states the requirement covering it is a rounding error.
+Meanwhile, [35% of teen driving fatalities](https://www.iihs.org/research-areas/teenagers) happen between 9 p.m. and 3 a.m., and more than half fall between 6 p.m. and 3 a.m. A disproportionate share of the risk lives after dark, and in a lot of states the requirement covering it is a rounding error.
 
 If you take one number out of this article: whatever your state asks for at night, multiply it.
 

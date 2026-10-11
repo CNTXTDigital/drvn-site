@@ -11,8 +11,11 @@ const areas = AREAS.map((a) => {
 const featured = new Set(AREAS.map((a) => a.article));
 const otherNew = allPosts.filter((p) => p.isNew && !featured.has(p.slug));
 const jsonld = {
-  '@context': 'https://schema.org',
   '@type': 'CollectionPage',
+  '@id': 'https://www.drvnapp.com/learn/#webpage',
+  url: 'https://www.drvnapp.com/learn/',
+  isPartOf: { '@id': 'https://www.drvnapp.com/#website' },
+  publisher: { '@id': 'https://www.drvnapp.com/#organization' },
   name: 'Learn: the DRVN Guide for parents',
   hasPart: areas.filter((a) => a.post).map((a) => ({ '@type': 'Article', headline: a.post.title, url: `https://www.drvnapp.com/${a.post.slug}/` })),
 };
@@ -22,6 +25,7 @@ const jsonld = {
   description="Straight answers for parents teaching a teen to drive: readiness, what to practice, real risks, the permit year, and the rules and costs. Start with the full guide or jump to your question."
   image="/images/site/guide-hero.jpg"
   jsonld={jsonld}
+  crumbs={[{ name: 'Learn', path: '/learn/' }]}
 >
   <section class="top">
     <div class="wrap hero">

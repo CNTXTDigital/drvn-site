@@ -1,4 +1,7 @@
 ---
+import SourceList from '../../components/SourceList.astro';
+import { sourcesFor, claimsUsedIn, citationLD } from '../../lib/evidence.js';
+import { articleLD, breadcrumbLD } from '../../lib/schema.js';
 // Pillar guide: Teen Driving Safety for Parents. Copy of record is the DRVN design canvas
 // ("Teen Driving Safety for Parents — /teen-driving-safety/"), last reviewed October 2026.
 import Base from '../../layouts/Base.astro';
@@ -97,23 +100,14 @@ const more = [
   { t: 'The Permit Year, Month by Month', href: '/permit-year-practice-plan/' },
 ];
 const url = `${SITE.url}/teen-driving-safety/`;
+const sources = sourcesFor('teen-driving-safety', ['iihs-teens', 'nhtsa-teen', 'iowa-dot', 'ohio-bmv', 'mirman-2014', 'chop-tdp', 'cdc-risk', 'cdc-prevention', 'cdc-danger-zones']);
+const claims = claimsUsedIn('teen-driving-safety');
 const jsonld = {
-  '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Article',
-      headline: 'Teen Driving Safety for Parents: What You Actually Need to Know',
+    articleLD({ url, headline: 'Teen Driving Safety for Parents: What You Actually Need to Know',
       description: 'Your state tells you when your kid can drive. It doesn’t tell you when they’re ready. Here’s the part nobody hands you.',
-      image: [`${SITE.url}/images/site/guide-hero.jpg`],
-      author: { '@type': 'Person', name: 'Robert Abbott', url: `${SITE.url}/about/#founder` },
-      publisher: { '@type': 'Organization', name: 'DRVN, LLC', logo: { '@type': 'ImageObject', url: `${SITE.url}/drvn-logo.svg` } },
-      datePublished: '2026-10-11', dateModified: '2026-10-11', mainEntityOfPage: url,
-    },
-    { '@type': 'BreadcrumbList', itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
-      { '@type': 'ListItem', position: 2, name: 'Learn', item: `${SITE.url}/learn/` },
-      { '@type': 'ListItem', position: 3, name: 'Teen Driving Safety for Parents', item: url },
-    ] },
+      image: '/images/site/guide-hero.jpg', published: '2026-10-11T12:00:00Z', modified: '2026-10-11T12:00:00Z', citation: citationLD(sources), section: 'The DRVN Guide' }),
+    breadcrumbLD([{ name: 'Learn', path: '/learn/' }, { name: 'Teen Driving Safety for Parents', path: '/teen-driving-safety/' }]),
   ],
 };
 ---
@@ -170,7 +164,7 @@ const jsonld = {
 <p>Judgment is slower. As an experienced driver, you’re tracking a dozen things without noticing: the pedestrian drifting toward the crosswalk, brake lights four cars up, the car nosing out of a driveway, the truck leaning toward your lane. Nobody taught you that list. You picked it up over years.</p>
 <div style="display: flex; gap: 20px; align-items: center; background: #E6F5FC; border-radius: 14px; padding: 18px 22px; margin: 6px 0 22px">
 <div style="font-size: 46px; font-weight: 800; color: #0A6CA5; letter-spacing: -0.03em; line-height: 1; white-space: nowrap">4×+</div>
-<div style="font-size: 16px; line-height: 1.5; color: #2E3B45">Per mile driven, drivers 16 to 19 crash at more than four times the rate of drivers 20 and older. <span style="color: #6B7A85">— Insurance Institute for Highway Safety</span></div>
+<div style="font-size: 16px; line-height: 1.5; color: #2E3B45">Per mile driven, drivers 16 to 19 crash at more than four times the rate of drivers 20 and older. <span style="color: #6B7A85">— <a href="https://www.iihs.org/research-areas/teenagers">Insurance Institute for Highway Safety</a></span></div>
 </div>
 <p>That isn’t because teenagers are bad drivers. It’s because the skills that make someone a good driver come from exposure, and they haven’t had much.</p>
 <p>So supervised practice isn’t really about teaching them to work the car. It’s about giving them enough miles to start understanding what’s happening around it.</p>
@@ -179,7 +173,7 @@ const jsonld = {
 <section class="q" id="when-risk-is-highest">
 <h2>When is a new driver most at risk?</h2>
 <p class="answer">Passing the road test doesn’t end the dangerous period. It starts it.</p>
-<p>NHTSA notes that teens rarely crash while an adult is supervising. Their highest crash rates come in the first six months of driving alone.</p>
+<p><a href="https://www.nhtsa.gov/road-safety/teen-driving">NHTSA notes</a> that teens rarely crash while an adult is supervising. Their highest crash rates come in the first six months of driving alone.</p>
 <p>Think about what changes that day. Yesterday, you were in the passenger seat watching traffic, spotting trouble and quietly fixing things. Today, they’re doing all of it by themselves.</p>
 <p>Their experience didn’t jump when the license printed. Their responsibility did.</p>
 <p class="pull">Treat the license as a handoff, not a graduation.</p>
@@ -190,9 +184,9 @@ const jsonld = {
 <p class="answer">Start with your state’s number, then plan past it.</p>
 <p>The Insurance Institute for Highway Safety’s best-practice standard is at least 70 supervised hours, and most states require less. All four of my kids learned in Ohio, which asks for 50. I live in Iowa now, which asks for 20. Same kind of kid, very different number.</p>
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 4px 0 24px">
-<div style="border: 1px solid #DCE7EE; border-radius: 12px; padding: 14px 16px"><div class="eyebrow">Iowa</div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">20 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 28%; height: 8px; border-radius: 4px; background: #41B6E5"></div></div></div>
-<div style="border: 1px solid #DCE7EE; border-radius: 12px; padding: 14px 16px"><div class="eyebrow">Ohio</div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">50 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 71%; height: 8px; border-radius: 4px; background: #41B6E5"></div></div></div>
-<div style="border: 1px solid #0A6CA5; border-radius: 12px; padding: 14px 16px; background: #F6FAFC"><div class="eyebrow" style="color: #0A6CA5">IIHS best practice</div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">70 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 100%; height: 8px; border-radius: 4px; background: #0A6CA5"></div></div></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 12px; padding: 14px 16px"><div class="eyebrow"><a style="color: inherit" href="https://iowadot.gov/media/7147/download">Iowa</a></div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">20 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 28%; height: 8px; border-radius: 4px; background: #41B6E5"></div></div></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 12px; padding: 14px 16px"><div class="eyebrow"><a style="color: inherit" href="https://bmv.ohio.gov/DL-GDL.ASPX">Ohio</a></div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">50 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 71%; height: 8px; border-radius: 4px; background: #41B6E5"></div></div></div>
+<div style="border: 1px solid #0A6CA5; border-radius: 12px; padding: 14px 16px; background: #F6FAFC"><div class="eyebrow" style="color: #0A6CA5"><a style="color: inherit" href="https://www.iihs.org/research-areas/teenagers">IIHS best practice</a></div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">70 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 100%; height: 8px; border-radius: 4px; background: #0A6CA5"></div></div></div>
 </div>
 <p>And hours are a blunt tool anyway. Picture two kids with 50 hours each. One drove the same three routes all year. The other drove neighborhoods, busy commercial roads, rural two-lanes, interstates, rush hour, dark and rain.</p>
 <p>Same number in the log. Very different drivers.</p>
@@ -202,7 +196,7 @@ const jsonld = {
 <section class="q" id="structured-practice">
 <h2>Does structured practice actually make a difference?</h2>
 <p class="answer">Yes, and there’s good evidence for it.</p>
-<p>Researchers at Children’s Hospital of Philadelphia tested a program called the TeenDrivingPlan, built to get families practicing in more kinds of places, including at night and in bad weather, with parents more involved as coaches. When the teens were later evaluated on the road, the difference showed up:</p>
+<p>Researchers at Children’s Hospital of Philadelphia <a href="https://pubmed.ncbi.nlm.nih.gov/24957844/">tested</a> a program called the TeenDrivingPlan, built to get families practicing in more kinds of places, including at night and in bad weather, with parents more involved as coaches. When the teens were later evaluated on the road, the difference showed up:</p>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 4px 0 22px">
 <div style="background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 12px; padding: 16px 18px"><div style="font-size: 40px; font-weight: 800; color: #45535E; line-height: 1">15%</div><div style="font-size: 15px; color: #45535E; margin-top: 6px">had the road assessment stopped for unsafe driving <b style="color: #212529">without</b> the plan</div></div>
 <div style="background: #E6F5FC; border: 1px solid #CDEBF8; border-radius: 12px; padding: 16px 18px"><div style="font-size: 40px; font-weight: 800; color: #0A6CA5; line-height: 1">6%</div><div style="font-size: 15px; color: #2E3B45; margin-top: 6px">had it stopped <b style="color: #212529">with</b> the plan</div></div>
@@ -219,7 +213,7 @@ const jsonld = {
 <div class="env"><b>Commercial roads</b><span>Cars pulling in and out of driveways, extra lanes, signals to plan for, pedestrians, unprotected left turns.</span></div>
 <div class="env"><b>Highways</b><span>Merging at speed instead of hesitating, judging a moving gap, trucks, staying sharp for a long stretch, picking the right exit.</span></div>
 <div class="env"><b>Rural roads</b><span>Higher speeds, hills and curves that hide what’s ahead, narrow shoulders or none, deer, tractors, gravel.</span></div>
-<div class="env"><b>Night</b><span>The CDC puts teens’ fatal crash rate at night at about three times that of adults 30 to 59, per mile driven.</span></div>
+<div class="env"><b>Night</b><span>The <a href="https://www.cdc.gov/teen-drivers/risk-factors/index.html">CDC puts</a> teens’ fatal crash rate at night at about three times that of adults 30 to 59, per mile driven.</span></div>
 <div class="env" style="grid-column: 1 / -1"><b>Bad weather</b><span>Rain, glare, fog, snow.</span></div>
 </div>
 <p>Early on, protecting a new driver from the hard stuff makes sense. Later, avoiding it creates its own risk: they meet it for the first time alone.</p>
@@ -313,7 +307,7 @@ const jsonld = {
 <section class="q" id="after-the-license">
 <h2>What changes after they get the license?</h2>
 <p class="answer">The riskiest stretch starts when supervision drops off.</p>
-<p>That’s why graduated licensing exists: it hands over independence in stages instead of all at once, and the CDC notes that these systems are proven to reduce crashes and deaths among young drivers.</p>
+<p>That’s why graduated licensing exists: it hands over independence in stages instead of all at once, and the <a href="https://www.cdc.gov/teen-drivers/prevention/index.html">CDC notes</a> that these systems are proven to reduce crashes and deaths among young drivers.</p>
 <p>You can use the same idea even where your state allows more. A new license doesn’t have to mean every road, every hour and every friend on day one. Start with familiar, easier solo trips. Add harder ones as experience builds. Keep doing the tough stuff together for a while.</p>
 <p>The practice doesn’t have to end when the logbook does.</p>
 </section>
@@ -321,7 +315,7 @@ const jsonld = {
 <section class="q" id="teen-passengers">
 <h2>What about teen passengers?</h2>
 <p class="answer">Friends change everything in the car.</p>
-<p>The CDC reports that an unsupervised teen driver’s crash risk goes up with teen or young-adult passengers, and keeps rising with each one added. Its guidance for parents recommends no teen or young-adult passengers for at least the first six months, when you can manage it.</p>
+<p>The <a href="https://www.cdc.gov/teen-drivers/risk-factors/index.html">CDC reports</a> that an unsupervised teen driver’s crash risk goes up with teen or young-adult passengers, and keeps rising with each one added. Its <a href="https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html">guidance for parents</a> recommends no teen or young-adult passengers for at least the first six months, when you can manage it.</p>
 <p>Your state may allow more. You’re allowed to be stricter than the law.</p>
 <p class="pull">A legal privilege doesn’t have to become a family privilege on the same day.</p>
 </section>
@@ -330,7 +324,7 @@ const jsonld = {
 <h2>What about night driving?</h2>
 <p class="answer">Practice it on purpose before the license. Limit it on purpose after.</p>
 <p>At night you see less, hazards show up later, everyone’s more tired, and it’s when a lot of social driving happens. Stack all of that on top of inexperience and you get the CDC number above.</p>
-<p>The CDC suggests keeping newly licensed teens off the road by 9 or 10 p.m. for at least the first six months. That may be stricter than your state. It isn’t a punishment. It’s limiting time in the riskiest hours while experience catches up.</p>
+<p>The <a href="https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html">CDC suggests</a> keeping newly licensed teens off the road by 9 or 10 p.m. for at least the first six months. That may be stricter than your state. It isn’t a punishment. It’s limiting time in the riskiest hours while experience catches up.</p>
 </section>
 
 <section class="q" id="phones-and-distraction">
@@ -355,7 +349,7 @@ const jsonld = {
 <section class="q" id="state-minimum">
 <h2>Should we follow the state minimum or go beyond it?</h2>
 <p class="answer">Meet the minimum, because it’s the law. Go past it whenever your kid needs more.</p>
-<p>Licensing rules vary a lot from state to state, even though learning to drive doesn’t get any easier at the border. IIHS best practices are more conservative than many states on permit age, practice hours, night limits and passengers.</p>
+<p>Licensing rules vary a lot from state to state, even though learning to drive doesn’t get any easier at the border. IIHS <a href="https://www.iihs.org/research-areas/teenagers">best practices</a> are more conservative than many states on permit age, practice hours, night limits and passengers.</p>
 <p>The state has to write one rule for everybody. You only have to decide about one driver. That’s an advantage. Use it.</p>
 </section>
 
@@ -407,6 +401,7 @@ const jsonld = {
 <div class="eyebrow">Where this guidance comes from</div>
 <p style="font-size: 15px; line-height: 1.6; color: #6B7A85; margin: 10px 0 8px">DRVN’s safety guidance leans on NHTSA, the CDC, the Insurance Institute for Highway Safety and the Center for Injury Research and Prevention at Children’s Hospital of Philadelphia, along with peer-reviewed research and official state sources. We’re clear about which is which: what the law requires, what the research shows and what we’d recommend as parents who’ve been through it. Always check your state’s requirements against its official source. <a href="/about/#standards">Our editorial standards</a></p>
 <p style="font-size: 14px; color: #6B7A85; margin: 0"><b style="color: #2E3B45">Last reviewed:</b> October 2026</p>
+<SourceList sources={sources} claims={claims} />
 </section>
 
 </article>

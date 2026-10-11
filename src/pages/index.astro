@@ -4,14 +4,11 @@ import DriversEdCard from '../components/DriversEdCard.astro';
 import StatePicker from '../components/StatePicker.astro';
 import { SITE } from '../site.js';
 import { AREAS } from '../lib/learn.js';
+import { ORG_ID, SITE_ID, APP_ID } from '../lib/schema.js';
 
 const jsonld = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    { '@type': 'Organization', name: 'DRVN, LLC', url: SITE.url, logo: `${SITE.url}/drvn-logo.svg`, sameAs: Object.values(SITE.social) },
-    { '@type': 'MobileApplication', name: 'DRVN', operatingSystem: 'iOS, Android', applicationCategory: 'EducationApplication',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, downloadUrl: [SITE.appStore, SITE.googlePlay] },
-  ],
+  '@type': 'WebPage', '@id': `${SITE.url}/#webpage`, url: `${SITE.url}/`, name: 'DRVN — The plan for parents teaching a teen to drive',
+  isPartOf: { '@id': SITE_ID }, about: { '@id': ORG_ID }, mentions: [{ '@id': APP_ID }],
 };
 const steps = [
   { n: 1, icon: 'book', title: 'Learn what matters', body: 'Practical, parent-to-parent guidance on what actually matters in the car.', href: '/learn/' },

@@ -1,0 +1,223 @@
+{
+  "checked": "October 2026",
+  "sources": {
+    "iihs-teens": { "org": "Insurance Institute for Highway Safety (IIHS)", "title": "Teenagers", "url": "https://www.iihs.org/research-areas/teenagers", "date": "2024 data", "kind": "National crash data" },
+    "iihs-ff-teens": { "org": "IIHS", "title": "Fatality Facts 2024: Teenagers", "url": "https://www.iihs.org/topics/fatality-statistics/detail/teenagers", "date": "2024 data", "kind": "National crash data" },
+    "iihs-urban-rural": { "org": "IIHS", "title": "Fatality Facts 2024: Urban/rural comparison", "url": "https://www.iihs.org/topics/fatality-statistics/detail/urban-rural-comparison", "date": "2024 data", "kind": "National crash data" },
+    "iihs-gdl": { "org": "IIHS", "title": "Graduated licensing laws (state-by-state table)", "url": "https://www.iihs.org/research-areas/teenagers/graduated-licensing-laws-table", "date": "Checked October 2026", "kind": "State law summary" },
+    "nichd-2018": { "org": "National Institute of Child Health and Human Development (NIH)", "title": "Teen crash risk highest during first three months after getting driver’s license", "url": "https://www.nichd.nih.gov/newsroom/news/071018-teen-driving", "date": "July 2018", "kind": "Research summary" },
+    "gershon-2018": { "org": "Journal of Adolescent Health", "title": "Crash Risk and Risky Driving Behavior Among Adolescents During Learner and Independent Driving Periods", "authors": "Gershon P, Ehsani JP, Zhu C, et al.", "url": "https://pubmed.ncbi.nlm.nih.gov/30006026/", "doi": "10.1016/j.jadohealth.2018.04.012", "date": "2018", "kind": "Peer-reviewed study (naturalistic driving)" },
+    "simons-morton-2011": { "org": "American Journal of Public Health", "title": "Crash and Risky Driving Involvement Among Novice Adolescent Drivers and Their Parents", "authors": "Simons-Morton BG, Ouimet MC, Zhang Z, et al.", "url": "https://pubmed.ncbi.nlm.nih.gov/22021319/", "doi": "10.2105/AJPH.2011.300248", "date": "2011", "kind": "Peer-reviewed study (naturalistic driving)" },
+    "mirman-2014": { "org": "JAMA Pediatrics", "title": "Effect of the Teen Driving Plan on the Driving Performance of Teenagers Before Licensure: A Randomized Clinical Trial", "authors": "Mirman JH, Curry AE, Winston FK, et al.", "url": "https://pubmed.ncbi.nlm.nih.gov/24957844/", "doi": "10.1001/jamapediatrics.2014.252", "date": "2014", "kind": "Randomized controlled trial" },
+    "chop-tdp": { "org": "Children’s Hospital of Philadelphia, Center for Injury Research and Prevention", "title": "TeenDrivingPlan Research", "url": "https://injury.research.chop.edu/teen-driving-safety/teendrivingplan", "date": "Checked October 2026", "kind": "Research summary" },
+    "cdc-risk": { "org": "Centers for Disease Control and Prevention (CDC)", "title": "Risk Factors for Teen Drivers", "url": "https://www.cdc.gov/teen-drivers/risk-factors/index.html", "date": "Reviewed August 2025", "kind": "Public health guidance" },
+    "cdc-about": { "org": "CDC", "title": "Teen Drivers", "url": "https://www.cdc.gov/teen-drivers/about/index.html", "date": "2020 data", "kind": "Public health data" },
+    "cdc-prevention": { "org": "CDC", "title": "Reducing Risk for Teen Drivers", "url": "https://www.cdc.gov/teen-drivers/prevention/index.html", "date": "Checked October 2026", "kind": "Public health guidance" },
+    "cdc-danger-zones": { "org": "CDC, Parents Are the Key", "title": "Eight Danger Zones", "url": "https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html", "date": "Checked October 2026", "kind": "Public health guidance" },
+    "nhtsa-teen": { "org": "National Highway Traffic Safety Administration (NHTSA)", "title": "Teen Driving", "url": "https://www.nhtsa.gov/road-safety/teen-driving", "date": "Checked October 2026", "kind": "Federal safety guidance" },
+    "nhtsa-811598": { "org": "NHTSA", "title": "The Role of Supervised Driving in a Graduated Driver Licensing Program (Traffic Tech DOT HS 811 598)", "url": "https://www.nhtsa.gov/document/role-supervised-driving-graduated-driver-licensing-program", "date": "April 2012", "kind": "Federal research brief" },
+    "fhwa-rain": { "org": "Federal Highway Administration (FHWA), Road Weather Management Program", "title": "Rain and Flooding", "url": "https://ops.fhwa.dot.gov/weather/weather_events/rain_flooding.htm", "date": "Page updated September 2024", "kind": "Federal crash data" },
+    "ci-teen-cost": { "org": "CarInsurance.com", "title": "How much does it cost to add a teenager to car insurance?", "url": "https://www.carinsurance.com/Articles/adding-teen-driver-cost.aspx", "date": "Updated August 2026", "kind": "Industry rate analysis" },
+    "moneygeek-good-student": { "org": "MoneyGeek", "title": "Good student discounts", "url": "https://www.moneygeek.com/insurance/auto/good-student-discounts/", "date": "Updated October 2026", "kind": "Industry rate analysis" },
+    "ohio-bmv": { "org": "Ohio Bureau of Motor Vehicles", "title": "Graduated Driver Licensing", "url": "https://bmv.ohio.gov/DL-GDL.ASPX", "date": "Checked October 2026", "kind": "Official state source" },
+    "iowa-dot": { "org": "Iowa Department of Transportation", "title": "The Parent’s Supervised Driving Program (PDF)", "url": "https://iowadot.gov/media/7147/download", "date": "2021 edition", "kind": "Official state source" },
+    "arkansas-dfa": { "org": "Arkansas Department of Finance and Administration", "title": "Learner’s and Intermediate License", "url": "https://dfa.arkansas.gov/driver-services/license-id-and-permits/graduated-licenses/learners-and-intermediate-license", "date": "Checked October 2026", "kind": "Official state source" },
+    "penndot": { "org": "Pennsylvania Department of Transportation", "title": "Young Driver", "url": "https://www.pa.gov/agencies/penndot/traveling-in-pa/safety/traffic-safety-driver-topics/young-driver", "date": "Checked October 2026", "kind": "Official state source" },
+    "sd-dps": { "org": "South Dakota Department of Public Safety", "title": "Teen Drivers", "url": "https://dps.sd.gov/driver-licensing/south-dakota-licensing-information/teen-drivers", "date": "Checked October 2026", "kind": "Official state source" }
+  },
+  "groups": [
+    {
+      "id": "state-minimums",
+      "title": "State minimums are a legal floor, not a readiness standard",
+      "intro": "Every state sets a minimum amount of supervised practice. The numbers vary so widely that they can’t all describe what a new driver needs.",
+      "claims": [
+        {
+          "id": "supervised-hours-vary",
+          "claim": "Required supervised practice ranges from none to 65 hours depending on the state. The IIHS best-practice recommendation is at least 70.",
+          "evidence": "Arkansas requires no set number of supervised hours and issues a learner’s license at 14. Iowa requires 20 hours (2 at night) before an intermediate license. Ohio requires 50 (10 at night). Pennsylvania requires 65. IIHS lists at least 70 hours of supervised practice among its graduated-licensing best practices.",
+          "strength": "Official state sources and IIHS",
+          "caveat": "Requirements change. Our state guides show what each state requires today and when we last checked it.",
+          "sources": ["iihs-gdl", "iihs-teens", "arkansas-dfa", "iowa-dot", "ohio-bmv", "penndot"],
+          "usedIn": ["most-dangerous-thing-teen-drivers-license", "50-hour-myth-driving-practice", "teen-driving-safety"]
+        },
+        {
+          "id": "weather-hours",
+          "claim": "Only three states require any supervised practice in bad weather, and one of them lets night driving count instead.",
+          "evidence": "Pennsylvania requires 5 of its 65 hours in poor weather. South Dakota requires 10 of 50 in inclement weather. Alaska requires 10 of 40 hours “at night or in inclement weather,” so night driving alone satisfies it. No other state’s supervised-driving requirement mentions weather.",
+          "strength": "Official state sources and IIHS",
+          "caveat": "Based on the IIHS table and state sources as of October 2026.",
+          "sources": ["iihs-gdl", "penndot", "sd-dps"],
+          "usedIn": ["weather-driving-practice"]
+        }
+      ]
+    },
+    {
+      "id": "supervision-ends",
+      "title": "The riskiest stretch starts when supervision ends",
+      "intro": "Learner drivers with a parent beside them crash rarely. Risk jumps when they start driving alone, and it stays high for months.",
+      "claims": [
+        {
+          "id": "first-six-months",
+          "claim": "Teens rarely crash while an adult is supervising. Their highest crash rates come in the first six months of driving alone.",
+          "evidence": "NHTSA: novice teen drivers “rarely crash while they are being supervised by adults, but have the highest crash rates of all age groups during the first 6 months of unsupervised driving.”",
+          "strength": "Federal safety guidance",
+          "caveat": "",
+          "sources": ["nhtsa-teen", "nhtsa-811598"],
+          "usedIn": ["teen-driving-safety"]
+        },
+        {
+          "id": "eight-times",
+          "claim": "Crashes and near-crashes were eight times as frequent in teens’ first three months of licensed driving as in their last three months on a permit.",
+          "evidence": "In a naturalistic study, cameras and sensors recorded 90 Virginia teenagers through their permit period and first year of licensed driving. Crash and near-crash rates rose eightfold in the first three months after licensure compared with the previous three months on the permit, and risky driving such as hard braking rose fourfold. The learner period itself was relatively safe.",
+          "strength": "Peer-reviewed naturalistic driving study (NICHD and Virginia Tech Transportation Institute)",
+          "caveat": "One study of 90 teens in one state. Most recorded events were near-crashes, not crashes.",
+          "sources": ["nichd-2018", "gershon-2018"],
+          "usedIn": ["most-dangerous-thing-teen-drivers-license"]
+        },
+        {
+          "id": "risk-stays-high",
+          "claim": "Time behind the wheel alone doesn’t bring a new driver’s risk down quickly.",
+          "evidence": "In the 2018 study, teens’ crash and near-crash rate did not decline over their first year of independent driving. In an earlier NICHD cohort of 42 teens followed for 18 months, rates did come down, but they remained far above adult levels at the end.",
+          "strength": "Peer-reviewed naturalistic driving studies",
+          "caveat": "The two studies differ on whether rates fall during the first year. Both show risk well above adults’ throughout.",
+          "sources": ["nichd-2018", "gershon-2018", "simons-morton-2011"],
+          "usedIn": ["most-dangerous-thing-teen-drivers-license"]
+        }
+      ]
+    },
+    {
+      "id": "scale-of-risk",
+      "title": "How large the risk is",
+      "intro": "The national numbers that frame everything else.",
+      "claims": [
+        {
+          "id": "teen-deaths",
+          "claim": "Per mile driven, drivers 16 to 19 crash at more than four times the rate of drivers 20 and older.",
+          "evidence": "In 2024, 2,899 teenagers (13 to 19) died in the U.S. from crash injuries. The fatal crash rate per mile for drivers 16 to 19 is about three times that of drivers 20 and older; counting police-reported crashes of all severities, it is over four times.",
+          "strength": "National crash data (FARS) analyzed by IIHS",
+          "caveat": "Per-mile rates use 2022 National Household Travel Survey mileage.",
+          "sources": ["iihs-teens", "iihs-ff-teens"],
+          "usedIn": ["most-dangerous-thing-teen-drivers-license", "teen-driving-safety"]
+        },
+        {
+          "id": "leading-cause",
+          "claim": "Motor vehicle crashes are a leading cause of death for U.S. teens.",
+          "evidence": "CDC: about 2,800 teens ages 13 to 19 were killed and about 227,000 injured in motor vehicle crashes in 2020.",
+          "strength": "Public health data (CDC)",
+          "caveat": "CDC’s most recent published counts are for 2020.",
+          "sources": ["cdc-about", "cdc-risk"],
+          "usedIn": []
+        }
+      ]
+    },
+    {
+      "id": "variety",
+      "title": "Varied, deliberate practice makes a measurable difference",
+      "intro": "The strongest evidence on how families practice comes from one randomized trial.",
+      "claims": [
+        {
+          "id": "teen-driving-plan",
+          "claim": "Teens whose families followed a structured plan across varied environments were less likely to fail an on-road driving assessment: 6% versus 15%.",
+          "evidence": "In a randomized trial of 217 parent-teen pairs, the TeenDrivingPlan guided practice across six environments (parking lots, residential streets, intermediate roads, highways, rural roads and commercial districts), plus night and bad weather. Families using it practiced in more environments. Blinded evaluators stopped the on-road assessment for unsafe driving for 6% of those teens, compared with 15% of teens who used only the state driver’s manual.",
+          "strength": "Randomized controlled trial (Children’s Hospital of Philadelphia)",
+          "caveat": "The authors describe the result as preliminary evidence: the difference just missed conventional statistical significance (P = .06). The research was funded by State Farm.",
+          "sources": ["mirman-2014", "chop-tdp"],
+          "usedIn": ["most-dangerous-thing-teen-drivers-license", "what-a-teen-driver-costs", "50-hour-myth-driving-practice", "six-driving-environments-teen-practice", "permit-year-practice-plan", "teen-driving-safety"]
+        }
+      ]
+    },
+    {
+      "id": "conditions",
+      "title": "Where and when the risk concentrates",
+      "intro": "Night, passengers, rural roads and wet pavement each carry more than their share of crashes.",
+      "claims": [
+        {
+          "id": "night",
+          "claim": "More than half of teen driving deaths happen between 6 p.m. and 3 a.m.",
+          "evidence": "IIHS: 35% of teen driving fatalities in 2024 occurred between 9 p.m. and 3 a.m., and 53% between 6 p.m. and 3 a.m. CDC: per mile driven, the fatal crash rate at night for drivers 16 to 19 is about three times that of drivers 30 to 59.",
+          "strength": "National crash data (IIHS, CDC)",
+          "caveat": "",
+          "sources": ["iihs-teens", "cdc-risk"],
+          "usedIn": ["six-driving-environments-teen-practice", "permit-year-practice-plan", "teen-driving-safety"]
+        },
+        {
+          "id": "passengers",
+          "claim": "Each teen or young-adult passenger adds to an unsupervised teen driver’s crash risk.",
+          "evidence": "CDC: “The presence of teen or young adult passengers increases the crash risk of unsupervised teen drivers. This risk increases with each additional teen or young adult passenger.”",
+          "strength": "Public health guidance (CDC, citing peer-reviewed studies)",
+          "caveat": "",
+          "sources": ["cdc-risk"],
+          "usedIn": ["teen-driving-safety"]
+        },
+        {
+          "id": "rural",
+          "claim": "Rural roads carry about a third of U.S. driving and more than 40% of traffic deaths.",
+          "evidence": "In 2024, 41% of U.S. traffic deaths occurred on rural roads, which carried 31% of vehicle miles traveled. The death rate per 100 million miles was 1.56 on rural roads and 1.01 on urban roads.",
+          "strength": "National crash data (FARS) analyzed by IIHS",
+          "caveat": "All ages, not teen-specific.",
+          "sources": ["iihs-urban-rural"],
+          "usedIn": ["six-driving-environments-teen-practice"]
+        },
+        {
+          "id": "wet-pavement",
+          "claim": "Most weather-related crashes happen on wet pavement, not in snow or ice.",
+          "evidence": "FHWA: 75% of weather-related vehicle crashes occur on wet pavement and 47% happen during rainfall.",
+          "strength": "Federal crash data (FHWA, from NHTSA data)",
+          "caveat": "FHWA does not state which years these averages cover. Its newer 2019–2023 analysis finds 77% of weather-related crashes happen in rain or mist.",
+          "sources": ["fhwa-rain"],
+          "usedIn": ["weather-driving-practice"]
+        }
+      ]
+    },
+    {
+      "id": "after-license",
+      "title": "What helps after the license",
+      "intro": "Graduated licensing works by handing over independence in stages. Parents can apply the same idea.",
+      "claims": [
+        {
+          "id": "gdl-works",
+          "claim": "Graduated driver licensing reduces teen crashes and deaths.",
+          "evidence": "CDC: research consistently shows graduated licensing systems reduce teen crashes and deaths, with reductions of about 19% in injury crashes and 21% in fatal crashes among 16-year-olds.",
+          "strength": "Public health guidance (CDC, citing a 2015 meta-analysis)",
+          "caveat": "",
+          "sources": ["cdc-prevention"],
+          "usedIn": ["teen-driving-safety"]
+        },
+        {
+          "id": "first-six-months-limits",
+          "claim": "CDC recommends no teen passengers and no driving after 9 or 10 p.m. for at least the first six months of a license.",
+          "evidence": "CDC’s Parents Are the Key: “no teen or young adult passengers for at least the first six months” and “make sure your teen is off the road by 9 or 10 pm for at least the first six months of licensed driving.”",
+          "strength": "Public health guidance (CDC)",
+          "caveat": "These are recommendations for families, often stricter than state law.",
+          "sources": ["cdc-danger-zones"],
+          "usedIn": ["teen-driving-safety"]
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "title": "The cost lands on parents",
+      "intro": "Insurers price a new driver by age and location, not by how well they were taught.",
+      "claims": [
+        {
+          "id": "insurance-cost",
+          "claim": "Adding a teen to a parent’s car insurance costs about $3,600 a year on average.",
+          "evidence": "CarInsurance.com’s 2026 analysis: an average of $3,594 a year, from $4,050 for a 16-year-old to $3,105 for a 19-year-old. By state, the increase ranges from about 4% in Hawaii to 137% in Maine.",
+          "strength": "Industry rate analysis",
+          "caveat": "Averages of quoted rates; your premium depends on carrier, car and coverage. We refresh these figures every year.",
+          "sources": ["ci-teen-cost"],
+          "usedIn": ["most-dangerous-thing-teen-drivers-license", "what-a-teen-driver-costs"]
+        },
+        {
+          "id": "good-student",
+          "claim": "Good-student discounts typically run 8% to 25%.",
+          "evidence": "MoneyGeek’s 2026 comparison finds good-student discounts of 8% to 25% by state, from 7.5% to 25% across major carriers.",
+          "strength": "Industry rate analysis",
+          "caveat": "Carriers set their own terms and change them.",
+          "sources": ["moneygeek-good-student"],
+          "usedIn": ["what-a-teen-driver-costs"]
+        }
+      ]
+    }
+  ]
+}

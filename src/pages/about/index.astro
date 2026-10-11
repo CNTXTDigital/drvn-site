@@ -3,12 +3,11 @@
 // ("About DRVN — /about/").
 import Base from '../../layouts/Base.astro';
 import { SITE } from '../../site.js';
+import { FOUNDER, ORG_ID, SITE_ID } from '../../lib/schema.js';
 const jsonld = {
-  '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'AboutPage', name: 'About DRVN', url: `${SITE.url}/about/` },
-    { '@type': 'Person', '@id': `${SITE.url}/about/#founder`, name: 'Robert Abbott', jobTitle: 'Founder, DRVN',
-      image: `${SITE.url}/images/site/robert-abbott.jpg`, worksFor: { '@type': 'Organization', name: 'DRVN, LLC', url: SITE.url } },
+    { '@type': 'AboutPage', '@id': `${SITE.url}/about/#webpage`, name: 'About DRVN', url: `${SITE.url}/about/`, about: { '@id': ORG_ID }, mainEntity: { '@id': ORG_ID }, isPartOf: { '@id': SITE_ID } },
+    FOUNDER,
   ],
 };
 ---
@@ -17,6 +16,7 @@ const jsonld = {
   description="Why DRVN exists, how we use evidence (our editorial standards), and the founder, Robert Abbott: a communication designer and father of four who has spent a decade helping parents teach teens to drive."
   image="/images/site/robert-abbott.jpg"
   jsonld={jsonld}
+  crumbs={[{ name: 'About', path: '/about/' }]}
 >
 <div class="pg">
 
@@ -127,7 +127,7 @@ const jsonld = {
 <div class="std"><div class="num">4</div><div><h3>We don’t oversell.</h3><p>Teen driving is serious, and good writing shouldn’t make thin evidence sound strong. A correlation isn’t a cause. One promising study isn’t universal proof. An early survey of DRVN families isn’t a controlled trial.</p><p>Our surveys have shown encouraging signs, including lower crash and violation rates. We treat those as signals, not as proof that DRVN causes a particular outcome. We’d rather be precise than impressive.</p></div></div>
 <div class="std"><div class="num">5</div><div><h3>Experience counts, but it doesn’t replace evidence.</h3><p>Research describes patterns across thousands of drivers. It can’t tell you what’s happening in your passenger seat today. DRVN also draws on a decade of work with parents, teens, instructors and the traffic-safety community, including testimony at the Ohio Statehouse.</p><p>That experience shapes how we read the evidence. It doesn’t stand in for it. We think you need both.</p></div></div>
 <div class="std"><div class="num">6</div><div><h3>We keep things current.</h3><p>Licensing rules vary by state and they change. Our state guides link to the official government source and show when we last checked them. Our major guides get reviewed against current research, too.</p><p>A publish date tells you when something was written. A last-reviewed date tells you when we last made sure it was still right.</p></div></div>
-<div class="std"><div class="num">7</div><div><h3>We show our work.</h3><p>Important claims link to their sources wherever we can manage it. We’re not asking you to trust DRVN instead of NHTSA, the CDC, IIHS, CHOP or your state. We’re trying to tell you what they add up to, and give you a practical way to act on it.</p></div></div>
+<div class="std"><div class="num">7</div><div><h3>We show our work.</h3><p>Important claims link to their sources wherever we can manage it. We’re not asking you to trust DRVN instead of NHTSA, the CDC, IIHS, CHOP or your state. We’re trying to tell you what they add up to, and give you a practical way to act on it. The research behind our guidance is collected, with its limits, in the <a href="/evidence/">DRVN evidence library</a>.</p></div></div>
 <div class="std"><div class="num">8</div><div><h3>We say what we think.</h3><p>DRVN works alongside government, insurers, driving schools, researchers and technology companies. We respect what each of them does. We’ll also say so when the system leaves parents holding a problem nobody has solved.</p><p>Your state sets a minimum. Driver’s ed provides essential instruction. Neither one removes the need for a lot of practice with you. That gap is why DRVN exists.</p></div></div>
 
 <div style="border-top: 1px solid #E7EEF3; padding-top: 22px; margin-top: 8px">
@@ -143,7 +143,7 @@ const jsonld = {
 <div style="background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 24px; padding: 40px 44px">
 <div class="g2" style="display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 44px; align-items: start">
 <div style="display: flex; flex-direction: column; gap: 14px">
-<img src="/images/site/robert-abbott.jpg" alt="Robert Abbott" width="900" height="1125" loading="lazy" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 18%; border-radius: 18px; display: block">
+<img src="/images/site/robert-abbott-headshot.jpg" alt="Robert Abbott, founder of DRVN" width="900" height="1125" loading="lazy" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 22%; border-radius: 18px; display: block">
 <div>
 <div style="font-size: 22px; font-weight: 800; color: #0A6CA5">Robert Abbott</div>
 <div style="font-size: 15px; color: #45535E">Founder, DRVN</div>

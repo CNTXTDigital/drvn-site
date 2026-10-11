@@ -12,6 +12,6 @@ export function getStaticPaths() {
 const { page, total } = Astro.props;
 const start = (page - 1) * POSTS_PER_PAGE;
 ---
-<Base title={`Articles for parents — page ${page}`} description={`Articles for parents teaching a teen to drive, page ${page} of ${total}.`}>
+<Base title={`Articles for parents — page ${page}`} description={`Articles for parents teaching a teen to drive, page ${page} of ${total}.`} crumbs={[{ name: 'Learn', path: '/learn/' }, { name: 'All articles', path: '/blog/' }, { name: `Page ${page}`, path: `/blog/page/${page}/` }]}>
   <BlogList posts={allPosts.slice(start, start + POSTS_PER_PAGE)} page={page} totalPages={total} />
 </Base>

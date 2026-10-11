@@ -10,11 +10,15 @@ imageSm: "/images/articles/a01-parent-teen-800.jpg"
 imageAlt: "A father in the passenger seat watches his teenage daughter drive."
 cluster: "The Reckoning"
 sources:
-  - "IIHS, Fatality Facts: Teenagers (2024 data) — deaths and per-mile crash rates"
-  - "NICHD / Virginia Tech Transportation Institute naturalistic driving study of novice teen drivers — crash and near-crash rates before and after licensure"
-  - "CHOP Center for Injury Research and Prevention, Teen Driving Plan randomized trial"
-  - "Ohio BMV and Iowa DOT supervised-driving requirements; IIHS 70-hour recommendation"
-  - "CarInsurance.com 2026 analysis of the cost of adding a teen driver"
+  - iihs-teens
+  - nichd-2018
+  - gershon-2018
+  - mirman-2014
+  - chop-tdp
+  - ohio-bmv
+  - iowa-dot
+  - arkansas-dfa
+  - ci-teen-cost
 ---
 
 I bought my oldest son a Saab 9-3.
@@ -35,7 +39,7 @@ So most of us do exactly what I did. We handle the car, and then we get into the
 
 ## The number
 
-In 2024, 2,899 American teenagers died from crash injuries. Per mile driven, sixteen-to-nineteen-year-olds have a fatal crash rate about three times that of drivers twenty and over. Count every police-reported crash and it is more than four times.
+In 2024, [2,899 American teenagers died from crash injuries](https://www.iihs.org/research-areas/teenagers). Per mile driven, sixteen-to-nineteen-year-olds have a fatal crash rate about three times that of drivers twenty and over. Count every police-reported crash and it is [more than four times](https://www.iihs.org/research-areas/teenagers).
 
 I'm not going to spend the next thousand words trying to scare you with that number, because frightened parents are not particularly useful. We either white-knuckle the dashboard or decide we would rather not think about it.
 
@@ -43,13 +47,13 @@ What matters is that the risk spikes at a very specific point, and how quickly i
 
 ## The part that changed how I think about all of it
 
-Researchers put cameras and sensors in cars and watched teenagers drive through their first eighteen months.
+Researchers put cameras and sensors in cars and [watched teenagers drive](https://www.nichd.nih.gov/newsroom/news/071018-teen-driving) from their learner's permit through their first year with a license.
 
 While the teenagers were on their permits, with a parent sitting next to them, they drove about as safely as adults. Not "pretty good for beginners." Comparable to adults.
 
 Then they got licensed.
 
-In their first three months driving alone, their rate of crashes and near-crashes was eight times what it had been during their last three months on the permit.
+In their first three months driving alone, their rate of crashes and near-crashes was [eight times](https://pubmed.ncbi.nlm.nih.gov/30006026/) what it had been during their last three months on the permit.
 
 The kid didn't change. The car didn't change. The roads didn't change.
 
@@ -57,19 +61,19 @@ The kid didn't change. The car didn't change. The roads didn't change.
 
 That bothered me more than the crash statistics. I had always assumed the dangerous part was learning to drive. The research suggests the dangerous part is the moment we decide the learning is over and get out of the car.
 
-The next finding was just as uncomfortable. Across that entire first year of solo driving, the rates did not meaningfully improve. Experience, by itself, is not much of a teacher.
+The next finding was just as uncomfortable. Across that entire first year of solo driving, [the rates did not meaningfully improve](https://www.nichd.nih.gov/newsroom/news/071018-teen-driving). Experience, by itself, is not much of a teacher.
 
 Miles alone are not a curriculum. They're just miles.
 
 ## Which brings me to the paperwork
 
-All four of my kids learned to drive in Ohio, where teenagers are required to complete 50 hours of supervised driving, ten of them at night.
+All four of my kids learned to drive in Ohio, where teenagers are [required to complete 50 hours of supervised driving](https://bmv.ohio.gov/DL-GDL.ASPX), ten of them at night.
 
-I live in Iowa now. Here, the requirement is 20 hours, with two at night.
+I live in Iowa now. Here, [the requirement is 20 hours](https://iowadot.gov/media/7147/download), with two at night.
 
 Same kid. Same car. Same developing brain. Less than half the supervised practice requirement because you crossed a state line.
 
-Arkansas requires no supervised hours at all and will issue a permit at fourteen. The Insurance Institute for Highway Safety recommends 70.
+[Arkansas requires no supervised hours at all](https://dfa.arkansas.gov/driver-services/license-id-and-permits/graduated-licenses/learners-and-intermediate-license) and will issue a permit at fourteen. The Insurance Institute for Highway Safety [recommends 70](https://www.iihs.org/research-areas/teenagers).
 
 Nobody can tell you what happens inside a teenager's brain at hour 20 in Iowa that apparently takes until hour 50 in Ohio. Nothing happens. These are not developmental milestones. They are legislative numbers, and every state picks a different disappointing one.
 
@@ -83,7 +87,7 @@ Ohio made me pay for driver's ed four times, so I have contributed enough to the
 
 ## The money, briefly
 
-Adding a teenager to your policy runs about $3,600 a year. In Hawaii that is a 4% bump. In Maine it can be 137%. Your child's actual driving ability has very little to do with that spread.
+Adding a teenager to your policy runs [about $3,600 a year](https://www.carinsurance.com/Articles/adding-teen-driver-cost.aspx). In Hawaii that is a 4% bump. In Maine it can be 137%. Your child's actual driving ability has very little to do with that spread.
 
 I spent years assuming the industry would eventually reward the families doing the work. It doesn't. I later got to ask a room of actuaries why, and [their answer is its own article](/what-a-teen-driver-costs/) — but the short version is that reducing this risk is apparently our department.
 
@@ -99,7 +103,7 @@ Those two goals point in the same direction right up until they don't. That is w
 
 ## The good news — and it's real
 
-In a randomized trial, families who followed a structured practice plan — different environments on purpose, night driving, bad weather — cut their teenager's failure rate on an on-road safety evaluation from 15% to 6%. Roughly the same number of hours. Very different use of them.
+In a [randomized trial](https://pubmed.ncbi.nlm.nih.gov/24957844/), families who followed a structured practice plan — different environments on purpose, night driving, bad weather — cut their teenager's failure rate on an on-road safety evaluation from 15% to 6%. Roughly the same number of hours. Very different use of them.
 
 Not more time. Better time. And it happens to be one of the few variables in this entire process that belongs almost completely to us.
 

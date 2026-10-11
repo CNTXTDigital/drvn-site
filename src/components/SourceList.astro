@@ -1,0 +1,43 @@
+---
+// Linked source list for an article or guide, plus the evidence-library claims it relies on.
+import { EVIDENCE } from '../lib/evidence.js';
+const { sources = [], claims = [] } = Astro.props;
+const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
+---
+{sources.length > 0 && (
+  <section class="sources" aria-labelledby="sources-h" id="sources">
+    <h2 id="sources-h" class="eyebrow">Sources</h2>
+    <ol>
+      {sources.map((s) => (
+        <li>
+          {s.url ? (
+            <>
+              {s.authors && <>{s.authors} </>}
+              <a href={s.url} rel="noopener" target="_blank">{s.title}</a>
+              {s.org && <>. <span class="org">{s.org}</span></>}
+              {s.date && <>, {s.date}</>}
+              {s.doi && <>. <a class="doi" href={`https://doi.org/${s.doi}`} rel="noopener" target="_blank">doi:{s.doi}</a></>}
+              <span class="host"> · {host(s.url)}</span>
+            </>
+          ) : s.title}
+        </li>
+      ))}
+    </ol>
+    {claims.length > 0 && (
+      <p class="lib">
+        The research behind this page, with caveats, is in the <a href="/evidence/">DRVN evidence library</a>:{' '}
+        {claims.map((c, i) => <>{i > 0 && ' · '}<a href={`/evidence/#${c.id}`}>{c.claim.split(/[.:]/)[0]}</a></>)}.
+        Sources checked {EVIDENCE.checked}.
+      </p>
+    )}
+  </section>
+)}
+<style>
+  .sources { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .sources h2 { margin: 0; }
+  ol { margin: 10px 0 0; padding-left: 1.3em; font-size: 14.5px; line-height: 1.55; color: var(--ink-3); }
+  li { margin: 6px 0; overflow-wrap: anywhere; }
+  .org { color: var(--ink-2); }
+  .host { color: var(--muted-2); }
+  .lib { font-size: 14.5px; line-height: 1.6; color: var(--ink-3); margin: 14px 0 0; padding: 12px 14px; background: var(--surface-2); border-radius: 10px; }
+</style>

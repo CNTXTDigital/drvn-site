@@ -10,9 +10,10 @@ imageSm: "/images/articles/a07-kitchen-table-800.jpg"
 imageAlt: "A parent at the kitchen table with an insurance statement, a calculator and car keys."
 cluster: "The Money"
 sources:
-  - "CarInsurance.com 2026 analysis — average cost of adding a teen driver, by age and by state"
-  - "MoneyGeek carrier comparison — good student and student-away discounts"
-  - "CHOP Center for Injury Research and Prevention, Teen Driving Plan randomized trial"
+  - ci-teen-cost
+  - moneygeek-good-student
+  - mirman-2014
+  - chop-tdp
 ---
 
 I went into this expecting to be rewarded.
@@ -72,12 +73,12 @@ Not one of them is a picture of how well your teenager actually drives. They are
 So here is what a family can actually get a discount for today:
 
 - Enrolling in driver's ed. Not doing well in it. Enrolling.
-- Grades. A B average typically earns something in the range of 8 to 20%.
-- Going away to college without the car — often 5 to 35%.
+- Grades. A B average typically earns [something in the range of 8 to 25%](https://www.moneygeek.com/insurance/auto/good-student-discounts/).
+- Going away to college without the car, once the school is more than 100 miles from home.
 
 What appears nowhere on the list, at any carrier: how many hours your teenager practiced, in what conditions, or how well they actually drive.
 
-And it isn't that the industry doesn't know. The most rigorous study we have — the one showing that structured, varied practice cuts a teenager's on-road failure rate from 15% to 6% — was funded by one of the largest carriers in the country. That research is more than a decade old. It has not produced a discount anywhere, including at the company that paid for it.
+And it isn't that the industry doesn't know. The most rigorous study we have — the one showing that structured, varied practice cuts a teenager's on-road failure rate [from 15% to 6%](https://pubmed.ncbi.nlm.nih.gov/24957844/) — was [funded by](https://injury.research.chop.edu/teen-driving-safety/teendrivingplan) one of the largest carriers in the country. That research is more than a decade old. It has not produced a discount anywhere, including at the company that paid for it.
 
 ## Telematics is the industry's real answer
 
@@ -89,7 +90,7 @@ Read the terms before you enroll a seventeen-year-old.
 
 ## What it actually costs
 
-Adding a teenager to a policy runs about $3,600 a year on average — roughly $4,000 at sixteen, sliding down toward $3,100 by nineteen.
+Adding a teenager to a policy runs [about $3,600 a year on average](https://www.carinsurance.com/Articles/adding-teen-driver-cost.aspx) — roughly $4,000 at sixteen, sliding down toward $3,100 by nineteen.
 
 Where you live matters more than almost anything you do. In Hawaii, adding a teen raises a premium about 4%. In Maine, it can be 137%. Same kid, same preparation.
 

@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../site.js';
+import { ORG, WEBSITE, breadcrumbLD } from '../lib/schema.js';
 
 const {
   title,
@@ -15,10 +16,19 @@ const {
   jsonld,
   fullTitle = false,
   canonicalPath,
+  crumbs,
 } = Astro.props;
 
 const canonical = new URL(canonicalPath || Astro.url.pathname, SITE.url).href;
 const pageTitle = fullTitle ? title : `${title} | ${SITE.name}`;
+// One JSON-LD graph per page: the organization and website, the page's own entities, and
+// breadcrumbs (from the crumbs prop) unless the page supplies its own BreadcrumbList.
+const pageNodes = !jsonld ? [] : jsonld['@graph'] ? jsonld['@graph'] : [Object.fromEntries(Object.entries(jsonld).filter(([k]) => k !== '@context'))];
+const hasCrumbs = pageNodes.some((n) => n['@type'] === 'BreadcrumbList');
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [ORG, WEBSITE, ...pageNodes.filter((n) => n['@id'] !== ORG['@id']), ...(crumbs && !hasCrumbs && !noindex ? [breadcrumbLD(crumbs)] : [])],
+};
 const ogImage = new URL(image || '/og-default.png', SITE.url).href;
 ---
 <!doctype html>
@@ -49,7 +59,7 @@ const ogImage = new URL(image || '/og-default.png', SITE.url).href;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" />
 
-  {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  {!noindex && <script type="application/ld+json" set:html={JSON.stringify(graph)} />}
 
   <!-- Google Tag Manager -->
   <script is:inline define:vars={{ gtm: SITE.gtm }}>

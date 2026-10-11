@@ -4,6 +4,9 @@ import AppCard from '../components/AppCard.astro';
 import DriversEdCard from '../components/DriversEdCard.astro';
 import { allPosts, formatDate, readingMinutes, related } from '../lib/posts.js';
 import { SITE } from '../site.js';
+import SourceList from '../components/SourceList.astro';
+import { sourcesFor, claimsUsedIn, citationLD } from '../lib/evidence.js';
+import { articleLD, breadcrumbLD } from '../lib/schema.js';
 
 export function getStaticPaths() {
   return allPosts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
@@ -12,28 +15,12 @@ export function getStaticPaths() {
 const { post } = Astro.props;
 const more = related(post.slug, 4);
 const url = `${SITE.url}/${post.slug}/`;
+const sources = post.isNew ? sourcesFor(post.slug, post.sources) : [];
+const claims = claimsUsedIn(post.slug);
 const jsonld = {
-  '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Article',
-      headline: post.title,
-      description: post.description,
-      image: post.image ? [post.image] : undefined,
-      datePublished: post.published,
-      dateModified: post.modified,
-      mainEntityOfPage: url,
-      author: post.author ? { '@type': 'Person', name: post.author } : undefined,
-      publisher: { '@type': 'Organization', name: 'DRVN, LLC', logo: { '@type': 'ImageObject', url: `${SITE.url}/drvn-logo.svg` } },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
-        { '@type': 'ListItem', position: 2, name: 'Articles', item: `${SITE.url}/blog/` },
-        { '@type': 'ListItem', position: 3, name: post.title, item: url },
-      ],
-    },
+    articleLD({ url, headline: post.title, description: post.description, image: post.image, published: post.published, modified: post.modified, citation: citationLD(sources), section: post.cluster, byOrg: !post.author }),
+    breadcrumbLD([{ name: 'Articles', path: '/blog/' }, { name: post.title, path: `/${post.slug}/` }]),
   ],
 };
 ---
@@ -52,19 +39,14 @@ const jsonld = {
       <h1>{post.title}</h1>
       {post.dek && <p class="dek">{post.dek}</p>}
       <div class="meta">
-        {post.author && <><span class="by">By {post.author}</span><span>·</span></>}
+        {post.author && <><span class="by">By <a href="/about/#founder" rel="author">{post.author}</a></span><span>·</span></>}
         <time datetime={post.published}>{formatDate(post.published)}</time>
         <span>·</span>
         <span>{readingMinutes(post.html)} min read</span>
       </div>
       {post.image && <img class="hero-img" src={post.image} srcset={post.imageSm ? `${post.imageSm} 800w, ${post.image} 1600w` : undefined} sizes="(max-width: 980px) 100vw, 680px" alt={post.imageAlt || ""} width="1600" height="842" fetchpriority="high" />}
       <div class="prose" set:html={post.html} />
-      {post.sources?.length > 0 && (
-        <section class="sources" aria-label="Sources">
-          <div class="eyebrow">Sources</div>
-          <ul>{post.sources.map((s) => <li>{s}</li>)}</ul>
-        </section>
-      )}
+      <SourceList sources={sources} claims={claims} />
     </article>
 
     <aside class="rail">
@@ -94,8 +76,8 @@ const jsonld = {
   .cluster { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); }
   .dek { margin: 0 0 14px; font-size: 22px; line-height: 1.45; color: var(--ink-3); font-weight: 500; }
   .by { color: var(--ink-2); font-weight: 600; }
-  .sources { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); }
-  .sources ul { margin: 10px 0 0; padding-left: 1.1em; font-size: 14px; line-height: 1.55; color: var(--muted); }
+  .by a { color: inherit; text-decoration: none; }
+  .by a:hover { color: var(--blue); }
   .crumbs a::before { content: '← '; }
   h1 { font-size: clamp(32px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.022em; line-height: 1.1; margin: 12px 0 12px; text-wrap: pretty; }
   .meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 15px; color: var(--muted); margin-bottom: 20px; }

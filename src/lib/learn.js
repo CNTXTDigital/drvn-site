@@ -62,7 +62,7 @@ export const AREAS = [
       { t: 'Is driver’s ed enough?', k: 'Article', href: '/is-drivers-ed-enough/' },
       { t: 'How to choose a driver’s ed course', k: 'Article', href: '/choosing-a-drivers-ed-course/' },
       { t: 'The parent-teen driving agreement (free PDF)', k: 'Article', href: '/parent-teen-driving-agreement/' },
-      { t: 'Your state’s requirements', k: 'State guide', href: '/guide/' },
+      { t: 'Compare teen driving laws in all 50 states', k: 'Reference', href: '/teen-driving-laws-by-state/' },
     ],
   },
 ];

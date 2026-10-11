@@ -1,0 +1,181 @@
+---
+// 50-state comparison of teen licensing requirements, built from the verified state data
+// (src/data/guide/requirements.json). Short values are derived here; edge cases are set by hand
+// in NOTES so the table never oversimplifies a state. Full detail lives on each state guide.
+import Base from '../../layouts/Base.astro';
+import { states } from '../../lib/guide.js';
+
+const first = (t) => String(t || '').split(/ \(|;|,| for | if | with /)[0].replace(/\.$/, '').trim();
+const hoursOf = (t) => {
+  t = String(t || '');
+  if (/does not set|no minimum/i.test(t)) return 'None';
+  const m = t.match(/^\s*(\d+)/);
+  return m ? m[1] : '—';
+};
+const nightOf = (t) => {
+  const m = String(t || '').match(/(\d+)\s*(?:hours?\s*)?(?:at night|after (?:sunset|dark)|during darkness|in inclement weather or darkness)/i);
+  return m ? m[1] : '—';
+};
+const holdOf = (t) => {
+  const s = String(t || '');
+  if (/^No permit/i.test(s)) return 'None';
+  const m = s.match(/(\d+(?:\s*year)?\s*(?:calendar\s*|consecutive\s*)?(?:months?|days|years?)(?: and 1 day| plus 1 day)?)/i);
+  return m ? m[1].replace(/calendar |consecutive /i, '') : first(s);
+};
+const EDU = {
+  required: ['Florida', 'Montana'],
+  optional: ['Alaska', 'Arizona', 'Arkansas', 'Indiana', 'Missouri', 'Oregon', 'South Dakota', 'Tennessee', 'West Virginia', 'Mississippi'],
+  depends: ['Alabama', 'Colorado', 'Nebraska', 'Pennsylvania', 'Wyoming', 'New York'],
+};
+const eduOf = (name, t) =>
+  EDU.depends.includes(name) ? 'Depends' : EDU.optional.includes(name) ? 'Optional' : EDU.required.includes(name) || /^required/i.test(t) ? 'Required' : 'Depends';
+// Hand-set notes where one number would mislead.
+const NOTES = {
+  Alabama: 'Only if no approved driver ed',
+  Arizona: '20 (6 at night) with driver ed; none with an approved program',
+  Massachusetts: '30 with a driver skills program',
+  Minnesota: '40 if a parent takes the supervised-driving class',
+  Mississippi: 'Parent affidavit certifies 50',
+  'North Dakota': 'Only for teens licensed at 14 or 15',
+  Oregon: '50 with approved driver ed',
+  Iowa: 'Plus 10 more (2 at night) for a full license',
+  Pennsylvania: 'Includes 5 in poor weather',
+  'South Dakota': 'Includes 10 in bad weather',
+  Alaska: 'Night or bad weather',
+};
+const rows = states.map((s) => {
+  const r = s.req || {};
+  const h = hoursOf(r.supervisedHours);
+  return {
+    name: s.sname, slug: s.slug, st: s.st,
+    permit: first(r.permitMinAge), hold: holdOf(r.permitHoldingPeriod),
+    hours: h, hoursN: h === 'None' ? 0 : Number(h) || 0, night: nightOf(r.supervisedHours),
+    license: first(r.licenseMinAge), edu: eduOf(s.sname, r.driversEd || ''),
+    note: NOTES[s.sname] || '', checked: r.checked || '2026-10',
+  };
+});
+const most = rows.reduce((a, b) => (b.hoursN > a.hoursN ? b : a));
+const none = rows.filter((r) => r.hours === 'None').map((r) => r.name);
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: 'Teen driver licensing requirements by state',
+  description: 'Permit age, permit holding period, supervised practice hours (and night hours), license age and driver education requirements for all 50 states.',
+  url: 'https://www.drvnapp.com/teen-driving-laws-by-state/',
+  creator: { '@type': 'Organization', name: 'DRVN' },
+  dateModified: '2026-10-11',
+  spatialCoverage: 'United States',
+};
+---
+<Base
+  title="Teen Driving Laws by State: 50-State Comparison"
+  description="Compare every state's teen licensing rules side by side: permit age, how long to hold the permit, supervised practice hours, night hours, license age and driver's ed."
+  jsonld={jsonld}
+  crumbs={[{ name: 'State guides', path: '/guide/' }, { name: 'Compare all 50 states', path: '/teen-driving-laws-by-state/' }]}
+>
+  <section class="wrap top">
+    <div class="rule"></div>
+    <h1>Teen driving laws by state</h1>
+    <p class="lead">Every state sets its own floor for a teen license, and the floors are all over the map. Here they are side by side.</p>
+  </section>
+
+  <div class="wrap banner">
+    <img src="/images/articles/s50-state-table.jpg" srcset="/images/articles/s50-state-table-800.jpg 800w, /images/articles/s50-state-table.jpg 1600w" sizes="(max-width: 1120px) 100vw, 1072px" alt="A U.S. map on a desk surrounded by stacks of state driver handbooks." width="1600" height="842" />
+  </div>
+
+  <section class="wrap intro">
+    <p>Required supervised practice runs from <b>none</b> ({none.join(' and ')}) to <b>{most.hours} hours</b> in {most.name} (or 50 with approved driver ed). The <a href="https://www.iihs.org/research-areas/teenagers" rel="noopener" target="_blank">Insurance Institute for Highway Safety recommends at least 70</a>. None of these numbers is a measure of readiness. They're the legal minimum someone picked. Use the table to see where your state sits, then decide what your family's standard is. More on that in <a href="/50-hour-myth-driving-practice/">The 50-Hour Myth</a>.</p>
+    <p class="fine">Checked against each state's licensing agency in October 2026. Rules change; your state guide links to the official source. Tap a column heading to sort.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="tablewrap">
+      <table class="cmp" data-sortable>
+        <thead>
+          <tr>
+            <th data-key="name" aria-sort="ascending"><button type="button">State</button></th>
+            <th data-key="hours" data-num><button type="button">Supervised hours</button></th>
+            <th data-key="night" data-num><button type="button">At night</button></th>
+            <th data-key="permit"><button type="button">Permit age</button></th>
+            <th data-key="hold"><button type="button">Hold permit</button></th>
+            <th data-key="license"><button type="button">License age</button></th>
+            <th data-key="edu"><button type="button">Driver's ed</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr data-name={r.name} data-permit={r.permit} data-hold={r.hold} data-hours={r.hoursN} data-night={r.night === '—' ? -1 : r.night} data-license={r.license} data-edu={r.edu}>
+              <th scope="row"><a href={`/guide/${r.slug}/`}>{r.name}</a></th>
+              <td class="num"><b>{r.hours}</b>{r.note && <span class="note">{r.note}</span>}</td>
+              <td class="num">{r.night === '—' ? <span class="muted">Not set</span> : r.night}</td>
+              <td>{r.permit}</td>
+              <td>{r.hold}</td>
+              <td>{r.license}</td>
+              <td><span class={`tag ${r.edu.toLowerCase()}`}>{r.edu}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">“Depends” means driver's ed is required only for some ages or license stages, or is one of two ways to qualify. Ages are the earliest allowed; holding periods and age rules can stack, so the earliest real license date may be later. See each state's guide for exceptions.</p>
+  </section>
+
+  <section class="wrap next">
+    <div class="nx">
+      <h2>What the table can't tell you</h2>
+      <p>Whether your teen is ready. The state sets eligibility; you set readiness. Start with <a href="/is-my-teen-ready-to-drive-alone/">Ready Isn't a Feeling</a> and <a href="/six-driving-environments-teen-practice/">The Six Environments</a>.</p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  for (const table of document.querySelectorAll<HTMLTableElement>('table[data-sortable]')) {
+    const body = table.tBodies[0];
+    table.querySelectorAll<HTMLTableCellElement>('th[data-key]').forEach((th) => {
+      th.querySelector('button')?.addEventListener('click', () => {
+        const key = th.dataset.key!; const num = th.hasAttribute('data-num');
+        const dir = th.getAttribute('aria-sort') === 'ascending' ? -1 : 1;
+        table.querySelectorAll('th[aria-sort]').forEach((h) => h.removeAttribute('aria-sort'));
+        th.setAttribute('aria-sort', dir === 1 ? 'ascending' : 'descending');
+        const rows = [...body.rows];
+        rows.sort((a, b) => {
+          const x = a.dataset[key] ?? '', y = b.dataset[key] ?? '';
+          return (num ? Number(x) - Number(y) : x.localeCompare(y, 'en', { numeric: true })) * dir;
+        });
+        rows.forEach((r) => body.appendChild(r));
+      });
+    });
+  }
+</script>
+
+<style>
+  .top { padding-top: 32px; }
+  h1 { font-size: clamp(32px, 4.5vw, 46px); font-weight: 800; margin: 12px 0 10px; color: var(--blue); }
+  .lead { font-size: 19px; line-height: 1.5; color: var(--ink-3); max-width: 40em; margin: 0 0 20px; }
+  .banner img { width: 100%; height: auto; aspect-ratio: 1600 / 520; object-fit: cover; border-radius: 18px; display: block; }
+  .intro { margin-top: 28px; }
+  .intro p { max-width: 46em; font-size: 17px; line-height: 1.6; }
+  .fine { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line-2); border-radius: 14px; margin-top: 12px; }
+  .cmp { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 760px; }
+  .cmp thead th { position: sticky; top: 0; background: var(--surface-2); text-align: left; border-bottom: 1px solid var(--line-2); padding: 0; }
+  .cmp thead button { all: unset; display: block; padding: 12px 14px; font-weight: 700; font-size: 13px; color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+  .cmp thead button:focus-visible { outline: 2px solid var(--cyan); }
+  .cmp thead th[aria-sort='ascending'] button::after { content: ' ↑'; color: var(--blue); }
+  .cmp thead th[aria-sort='descending'] button::after { content: ' ↓'; color: var(--blue); }
+  .cmp td, .cmp tbody th { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+  .cmp tbody th { font-weight: 600; white-space: nowrap; position: sticky; left: 0; background: var(--surface); z-index: 1; }
+  .cmp thead th:first-child { position: sticky; left: 0; z-index: 2; }
+  .cmp tbody tr:hover, .cmp tbody tr:hover th { background: var(--surface-2); }
+  .cmp .num b { font-weight: 700; color: var(--ink); }
+  .note { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; max-width: 16em; line-height: 1.35; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .tag { font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+  .tag.required { background: #E6F5FC; color: #08557F; }
+  .tag.optional { background: #F1F4F6; color: #45535E; }
+  .tag.depends { background: #FFF4DB; color: #7A5300; }
+  .next { margin-top: 36px; }
+  .nx { background: var(--surface-2); border: 1px solid var(--line); border-radius: 18px; padding: 24px 28px; }
+  .nx h2 { margin: 0 0 6px; font-size: 22px; color: var(--blue); }
+  .nx p { margin: 0; font-size: 16.5px; line-height: 1.55; }
+</style>

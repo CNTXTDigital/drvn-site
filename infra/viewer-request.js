@@ -7,6 +7,8 @@ var REDIRECTS = {
   '/state-guide/': '/guide/',
   '/guide/search/': '/guide/',
   '/sitemap.html': '/guide/',
+  '/sitemap.xml': '/sitemap-index.xml',
+  '/sitemap_index.xml': '/sitemap-index.xml',
   '/query.php': '/guide/',
   '/blog/page/1/': '/blog/',
   '/listing/': '/',

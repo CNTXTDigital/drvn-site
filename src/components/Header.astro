@@ -2,6 +2,7 @@
 // Site header: Learn · State guides · DRVN app · About, plus Get the app.
 // On phones the links collapse into a menu button (no script needed).
 const path = Astro.url.pathname;
+const { big = false } = Astro.props;
 const nav = [
   { href: '/learn/', label: 'Learn', match: ['/learn/', '/blog/', '/teen-driving-safety/'] },
   { href: '/guide/', label: 'State guides', match: ['/guide/', '/listing/'] },
@@ -10,7 +11,7 @@ const nav = [
 ];
 const isActive = (n) => n.match.some((m) => path.startsWith(m));
 ---
-<header class="site-header">
+<header class:list={["site-header", { big }]}>
   <div class="wrap bar">
     <div class="left">
       <a href="/" class="logo" aria-label="DRVN home">
@@ -52,9 +53,14 @@ const isActive = (n) => n.match.some((m) => path.startsWith(m));
   .mob nav { position: absolute; right: 0; top: 52px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; box-shadow: 0 18px 40px -22px rgba(10,108,165,.4); padding: 8px; display: flex; flex-direction: column; min-width: 200px; }
   .mob nav a { padding: 12px 14px; border-radius: 8px; font-weight: 600; color: var(--ink-2); text-decoration: none; }
   .mob nav a:hover, .mob nav a[aria-current='page'] { background: var(--surface-2); color: var(--blue); }
+  /* Home page: larger logo to establish the brand */
+  .big .bar { height: 92px; }
+  .big .logo img { height: 52px; }
   @media (max-width: 860px) {
     .desk { display: none; }
     .mob { display: block; }
     .logo img { height: 28px; }
+    .big .bar { height: 76px; }
+    .big .logo img { height: 40px; }
   }
 </style>

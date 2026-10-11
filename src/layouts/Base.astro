@@ -17,6 +17,7 @@ const {
   fullTitle = false,
   canonicalPath,
   crumbs,
+  bigLogo = false,
 } = Astro.props;
 
 const canonical = new URL(canonicalPath || Astro.url.pathname, SITE.url).href;
@@ -70,7 +71,7 @@ const ogImage = new URL(image || '/og-default.png', SITE.url).href;
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
-  <Header />
+  <Header big={bigLogo} />
   <main id="main"><slot /></main>
   <Footer />
 </body>

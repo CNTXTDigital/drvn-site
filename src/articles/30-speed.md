@@ -7,7 +7,7 @@ description: "Speeding was a factor for a third of teen drivers in fatal crashes
 published: "2026-10-11T04:44:00Z"
 image: "/images/articles/a30-speed.jpg"
 imageSm: "/images/articles/a30-speed-800.jpg"
-imageAlt: "A speedometer at dusk with a 65 mph speed limit sign outside."
+imageAlt: "A speedometer needle just past 65 mph at dusk, with a 65 mph speed limit sign outside."
 cluster: "The Real Risks"
 sources:
   - nhtsa-teen

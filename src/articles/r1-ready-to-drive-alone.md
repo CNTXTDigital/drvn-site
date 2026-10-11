@@ -5,6 +5,9 @@ seoTitle: "Is My Teen Ready to Drive Alone? How to Tell (From a Parent)"
 dek: "The state decides when they’re eligible. Whether they’re ready is your call, and you’re not exactly neutral."
 description: "Passing the road test makes them eligible, not ready. Five things to watch for before your teen drives alone, and why the first three months matter most."
 published: "2026-10-11T03:55:00Z"
+image: "/images/articles/ar1-ready-conversation.jpg"
+imageSm: "/images/articles/ar1-ready-conversation-800.jpg"
+imageAlt: "A mother and her teenage son talk beside the family car in a parking lot at sunset."
 cluster: "Readiness"
 sources:
   - nichd-2018

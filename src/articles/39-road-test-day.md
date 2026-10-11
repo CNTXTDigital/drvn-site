@@ -5,6 +5,9 @@ seoTitle: "Teen Road Test Day: What to Expect and What to Do After"
 dek: "Twenty minutes with an examiner ends the permit year. The most important drive of the day is the one after it."
 description: "What the driving test actually checks, what it can’t, how to prepare the week before, and the one decision to make before you leave the parking lot."
 published: "2026-10-11T03:56:00Z"
+image: "/images/articles/a39-road-test-lot.jpg"
+imageSm: "/images/articles/a39-road-test-lot-800.jpg"
+imageAlt: "A father leans into the driver’s window to talk with his daughter at the wheel in a parking lot with traffic cones."
 cluster: "Navigating the System"
 sources:
   - azdot-teen

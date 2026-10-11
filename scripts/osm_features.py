@@ -14,7 +14,7 @@ RURAL = {'unclassified', 'tertiary'}
 class H(osmium.SimpleHandler):
     def __init__(self):
         super().__init__()
-        self.sig, self.lc, self.rb, self.unp, self.hw = [], [], [], [], []
+        self.sig, self.lc, self.rb, self.unp, self.hw, self.place = [], [], [], [], [], []
 
     def node(self, n):
         t = n.tags
@@ -25,6 +25,8 @@ class H(osmium.SimpleHandler):
             self.sig.append(p)
         if t.get('railway') == 'level_crossing':
             self.lc.append(p)
+        if t.get('place') in ('city', 'town', 'village', 'hamlet', 'suburb') and t.get('name'):
+            self.place.append(p + [t.get('name'), t.get('place')])
 
     def way(self, w):
         t = w.tags
@@ -47,7 +49,7 @@ class H(osmium.SimpleHandler):
 if __name__ == '__main__':
     h = H()
     h.apply_file(sys.argv[1], locations=True, idx='flex_mem')
-    out = {'sig': h.sig, 'lc': h.lc, 'rb': h.rb, 'unp': h.unp, 'hw': h.hw}
+    out = {'sig': h.sig, 'lc': h.lc, 'rb': h.rb, 'unp': h.unp, 'hw': h.hw, 'place': h.place}
     with gzip.open(sys.argv[2], 'wt') as f:
         json.dump(out, f, separators=(',', ':'))
     print({k: len(v) for k, v in out.items()})

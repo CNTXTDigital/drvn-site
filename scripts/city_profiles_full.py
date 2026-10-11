@@ -43,7 +43,7 @@ class Layer:
 
 
 def load_features(d):
-    acc = {'sig': [], 'lc': [], 'rb': [], 'unp': [], 'hw': []}
+    acc = {'sig': [], 'lc': [], 'rb': [], 'unp': [], 'hw': [], 'place': []}
     for f in sorted(glob.glob(f'{d}/**/*.json.gz', recursive=True)):
         with gzip.open(f, 'rt') as fh:
             part = json.load(fh)
@@ -110,6 +110,12 @@ def main(features_dir, only=None):
     hw_pts = Layer([p[:2] for p in f['hw']])
     hw_refs = [p[2] for p in f['hw']]
     gaz = load_gazetteer()
+    # OpenStreetMap town-center markers, by lowercase name (they sit downtown, unlike the
+    # Census internal point of very large places such as Alaska's city-boroughs).
+    RANK = {'city': 0, 'town': 1, 'village': 2, 'suburb': 3, 'hamlet': 4}
+    places = {}
+    for lat_, lon_, name, kind in f['place']:
+        places.setdefault(name.lower(), []).append((lat_, lon_, RANK.get(kind, 9)))
     stations = load_stations()
     st_tree = cKDTree(xyz(np.array([s[1] for s in stations]), np.array([s[2] for s in stations])))
     tf = TimezoneFinder()
@@ -118,7 +124,14 @@ def main(features_dir, only=None):
     todo = [c for c in CITIES if not only or c['slug'] in only or c['st'] in only]
     for i, c in enumerate(todo):
         center = gaz.get((c['st'], c['city'].lower()))
-        lat, lon = center if center else (c['lat'], c['lon'])
+        ref_lat, ref_lon = center if center else (c['lat'], c['lon'])
+        cands = [(miles(ref_lat, ref_lon, a, b), r, a, b) for a, b, r in places.get(c['city'].lower(), [])]
+        cands = [x for x in cands if x[0] <= 40]
+        if cands:
+            best = min(cands, key=lambda x: (x[1], x[0]))
+            lat, lon, src = best[2], best[3], 'osm-place'
+        else:
+            lat, lon, src = ref_lat, ref_lon, 'census' if center else 'zip'
         refs = set()
         for j in hw_pts.within(lat, lon, WIDE_MI):
             for part in hw_refs[j].split(';'):
@@ -130,7 +143,7 @@ def main(features_dir, only=None):
         rb_pts = [layers['rb'].pts[j] for j in layers['rb'].within(lat, lon, NEAR_MI)]
         try:
             prof = {
-                'center': [round(lat, 5), round(lon, 5)], 'centerSource': 'census' if center else 'zip',
+                'center': [round(lat, 5), round(lon, 5)], 'centerSource': src,
                 'roads': {
                     'interstates': [r for r in hw if r.startswith(('I-', 'H-'))],
                     'usRoutes': [r for r in hw if r.startswith('US-')],

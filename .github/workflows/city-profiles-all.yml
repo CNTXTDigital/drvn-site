@@ -32,7 +32,7 @@ jobs:
       - name: Download and filter
         run: |
           curl -sSfL --retry 5 --retry-delay 20 -o state.osm.pbf "https://download.geofabrik.de/north-america/us/${{ matrix.state }}-latest.osm.pbf"
-          osmium tags-filter state.osm.pbf n/highway=traffic_signals n/railway=level_crossing w/junction=roundabout w/highway=motorway,trunk w/surface=gravel,unpaved,dirt,compacted,fine_gravel -o small.osm.pbf --overwrite
+          osmium tags-filter state.osm.pbf n/highway=traffic_signals n/railway=level_crossing w/junction=roundabout w/highway=motorway,trunk w/surface=gravel,unpaved,dirt,compacted,fine_gravel n/place=city,town,village,hamlet,suburb -o small.osm.pbf --overwrite
           rm state.osm.pbf
       - run: python scripts/osm_features.py small.osm.pbf features-${{ matrix.state }}.json.gz
       - uses: actions/upload-artifact@v4

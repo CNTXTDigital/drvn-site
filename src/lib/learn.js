@@ -47,8 +47,9 @@ export const AREAS = [
     img: '/images/learn/permit-year.jpg', alt: 'A parent marking practice drives on a year-at-a-glance calendar.',
     article: 'permit-year-practice-plan',
     more: [
+      { t: 'The First Drive: What to Do on Day One', k: 'Article', href: '/teen-first-drive/' },
+      { t: 'What if practicing together turns into a fight?', k: 'Article', href: '/driving-feedback-without-a-fight/' },
       { t: 'Should we follow the state minimum or go beyond it?', k: 'Guide', href: G('state-minimum') },
-      { t: 'What if practicing together turns into a fight?', k: 'Guide', href: G('conflict') },
     ],
   },
   {

@@ -22,13 +22,15 @@ Watch an experienced driver and a new driver on the same road, and one of the cl
 
 They're not being aggressive. They just don't know what the right distance looks like, and at 40 miles an hour, a gap that feels plenty big usually isn't.
 
-## Why it matters so much
+## Why does following distance matter so much?
 
 Following distance is time to react. If the car ahead stops suddenly, the space between you is all the time your teen has to notice, decide, move their foot and stop.
 
 Rear-end crashes are one of the most common kinds there are; NHTSA has put them at [more than 29% of all crashes](https://www.nhtsa.gov/sites/nhtsa.gov/files/811331.pdf). And the errors behind most serious teen crashes, [not scanning for hazards, going too fast for conditions and being distracted](https://www.newswise.com/articles/new-study-pinpoints-what-happens-right-before-teens-crash), are exactly the ones extra space protects against. A little more room turns a lot of mistakes into near-misses instead of crashes.
 
-## The three-second rule
+## What is the three-second rule?
+
+Keep at least three seconds of space between your car and the one ahead. When that car passes a fixed point, count; if you reach the point before you hit three, you're too close.
 
 Distance in feet is useless while driving. Nobody can judge 150 feet at 45 miles an hour. Time works much better.
 
@@ -38,7 +40,7 @@ California's handbook recommends [three seconds of space between you and the veh
 
 > Feet are guesswork at 45 miles an hour. Seconds you can count.
 
-## When to leave more
+## When should a teen leave more space?
 
 Three seconds is the minimum on a dry road in daylight. Add more when:
 
@@ -48,7 +50,7 @@ Three seconds is the minimum on a dry road in daylight. Add more when:
 - **You're behind a motorcycle.** It can stop faster than a car.
 - **Someone is tailgating you.** More on that next.
 
-## When someone's tailgating
+## What should a teen do when someone is tailgating?
 
 A tailgater is scary for a new driver, and the instinct is either to speed up to get away or to brake to make a point. Both are wrong.
 

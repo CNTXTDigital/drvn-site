@@ -26,7 +26,7 @@ A driving agreement fixes that. Not because a piece of paper has any power over 
 
 The best time to agree on the rules is before the road test, while your teen still needs your signature to get there. After the license, every rule feels like something being taken away. Before, it's just the plan.
 
-## What goes in it
+## What should a parent-teen driving agreement include?
 
 Our agreement covers the things families actually argue about:
 

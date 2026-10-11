@@ -10,6 +10,7 @@ imageSm: "/images/articles/a28-passengers-800.jpg"
 imageAlt: "A teen driver with a smiling friend holding a phone in the passenger seat."
 cluster: "The Real Risks"
 territory: "risk"
+howWeKnow: true
 sources:
   - aaaf-passengers-2012
   - aaaf-distraction-2015
@@ -24,9 +25,10 @@ Somebody's choosing music. Somebody's showing a video. Somebody wants to stop fo
 
 That's the whole problem, really. A new driver has very little attention to spare, and friends are designed to take it.
 
-## What a passenger does to the numbers
+## How much do teen passengers increase crash risk?
 
 The AAA Foundation for Traffic Safety looked at the risk of death for 16- and 17-year-old drivers per mile driven. Compared with driving alone, [one passenger under 21 raised it by 44%. Two passengers doubled it. Three or more quadrupled it.](https://aaafoundation.org/teen-driver-risk-relation-age-number-passengers/)
+<p class="src">Source: <a href="https://aaafoundation.org/teen-driver-risk-relation-age-number-passengers/">AAA Foundation for Traffic Safety, Teen Driver Risk in Relation to Age and Number of Passengers, 2012</a> · <a href="/evidence/#passengers">Evidence Library</a></p>
 
 Same study, other direction: a passenger 35 or older cut the risk by 62%. That's you, by the way. The most protective thing in the car is an adult.
 
@@ -42,13 +44,13 @@ The research doesn't sort friends by character. The risk rises with each additio
 
 So make the rule about the number, not the names. It's fairer, it's easier to enforce, and it doesn't turn into a fight about whether you like their friends.
 
-## What your state allows, and what you can add
+## What are the passenger rules for new drivers?
 
 Most states limit passengers for new drivers, but the limits vary a lot, and many expire after a few months. Colorado, for example, allows no passengers under 21 for the first six months, then one, [with siblings exempt](https://www.iihs.org/research-areas/teenagers/graduated-licensing-laws-table). Other states are looser.
 
 The CDC's guidance for parents is simpler: [no teen or young-adult passengers for at least the first six months](https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html). If your state allows more, you're allowed to be stricter. What the law permits on day one and what your family permits on day one can be two different lists.
 
-## A rule they can live with
+## What passenger rule should parents set?
 
 Here's a version that works for a lot of families:
 

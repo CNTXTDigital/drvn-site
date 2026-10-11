@@ -10,6 +10,7 @@ imageSm: "/images/articles/a30-speed-800.jpg"
 imageAlt: "A speedometer needle just past 65 mph at dusk, with a 65 mph speed limit sign outside."
 cluster: "The Real Risks"
 territory: "risk"
+howWeKnow: true
 sources:
   - nhtsa-teen
   - cdc-risk
@@ -19,15 +20,16 @@ Most teenagers learn the speed limit as a target. The sign says 45, so 45 is cor
 
 That's the version of speed we teach without meaning to. It's also the version that gets them in trouble, because the most dangerous speeding isn't 15 over on an empty highway. It's the legal speed on a wet curve at night, or the posted limit through a busy parking-lot entrance on a Friday afternoon.
 
-## How big a factor it is
+## How much does speed contribute to teen crashes?
 
 In 2024, [speeding was a factor for 33% of teen drivers (15 to 18) involved in fatal crashes](https://www.nhtsa.gov/road-safety/teen-driving), according to NHTSA. It's not evenly split. The CDC's numbers show young [male drivers in fatal crashes were about twice as likely as young female drivers to have been speeding](https://www.cdc.gov/teen-drivers/risk-factors/index.html).
+<p class="src">Source: <a href="https://www.nhtsa.gov/road-safety/teen-driving">NHTSA, Teen Driving</a> · <a href="https://www.cdc.gov/teen-drivers/risk-factors/index.html">CDC, Risk Factors for Teen Drivers</a></p>
 
 None of that will surprise anyone who has ridden with a seventeen-year-old who just discovered the on-ramp.
 
 > The sign tells you the most you're allowed. It doesn't tell you what's safe right now.
 
-## Why new drivers get speed wrong
+## Why do new drivers misjudge speed?
 
 Speed is hard to feel. A new driver judges it mostly from the speedometer, not from the road, so they don't yet notice when 40 feels fast for a narrow street or slow for a highway.
 

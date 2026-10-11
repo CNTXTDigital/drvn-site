@@ -21,7 +21,9 @@ That sentence, and what you say next, is one of the most important moments in th
 
 Most new drivers will have some kind of minor crash: a parking-lot scrape, a bump at a stoplight, a mailbox that came out of nowhere. Plan for it the way you'd plan for a flat tire. Then it's a bad afternoon instead of a crisis.
 
-## What they should do, in order
+## What should a teen do after a car accident?
+
+Stop, check for injuries and call 911 if anyone is hurt, move to safety, call a parent, then exchange information and take photos. Don't argue about fault.
 
 Go through this with your teen before it happens. Better yet, put it on a card in the glovebox.
 

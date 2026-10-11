@@ -19,7 +19,7 @@ Don't let them.
 
 Not because they can't. Because the first drive deserves its own place and its own plan, and a busy road on the way home from a government building is neither.
 
-## Where to go
+## Where should a teen's first drive be?
 
 **An empty parking lot.** A church on a weekday, a school on a Saturday, an office park on a Sunday morning. Big, flat, few light poles, nobody around.
 
@@ -41,7 +41,7 @@ Don't try to teach driving on the first drive. Teach the car.
 
 If there's time and energy left, a few practice pulls into a parking space. Badly. Many times. That's how it's supposed to go.
 
-## How long
+## How long should the first drive be?
 
 Twenty or thirty minutes is plenty. Concentration runs out faster than you'd think, and once it's gone, the drive stops teaching anything. End while it's still going well.
 

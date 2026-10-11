@@ -10,6 +10,7 @@ imageSm: "/images/articles/a14-rural-road-800.jpg"
 imageAlt: "A long, straight rural two-lane road with no shoulder between fields and trees."
 cluster: "The Permit Year"
 territory: "practice"
+howWeKnow: true
 sources:
   - mirman-2014
   - chop-tdp
@@ -18,6 +19,8 @@ sources:
   - ohio-bmv
   - iowa-dot
 ---
+
+<div class="short-answer"><span class="sa-k">The short answer</span><p>Before driving alone, a teen should have real practice in six environments: residential streets, commercial roads, highways, rural roads, night and bad weather. Variety builds judgment that repeating the same few routes never will.</p></div>
 
 Here is a test. It takes about thirty seconds.
 
@@ -32,11 +35,12 @@ Think back over the last month of practice driving with your teenager, and count
 
 Most parents, counting honestly, come up with two. Sometimes three.
 
-That number is the finding underneath all the research on practice driving. In a [randomized trial](https://pubmed.ncbi.nlm.nih.gov/24957844/), the families whose teenagers practiced across all six environments — an hour or two minimum in each — cut their teen's rate of failing an on-road safety evaluation from 15% to 6%. Those families weren't driving more. They were driving in more places.
+That number is the finding underneath all the research on practice driving. In a [randomized trial](https://pubmed.ncbi.nlm.nih.gov/24957844/), families given a plan that pushed their teen's practice into more kinds of driving, including night and bad weather, saw the rate of teens failing an on-road safety evaluation drop from 15% to 6%. Those families weren't driving more. They were driving in more places.
+<p class="src">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/24957844/">CHOP TeenDrivingPlan randomized trial, JAMA Pediatrics, 2014</a> · <a href="/evidence/#teen-driving-plan">Evidence Library, including the study’s limits</a></p>
 
-## Why almost everyone scores two
+## Why do most teens practice in only two environments?
 
-It isn't negligence. It's arithmetic.
+Because most practice happens on trips the family was already taking, which means the same few roads over and over. It isn't negligence. It's arithmetic.
 
 Practice happens during errands, because errands are the only time a working parent reliably has. And an errand is by definition a trip you were already taking — to school, to practice, to the store, to the same handful of places you have been driving to for years.
 
@@ -44,7 +48,7 @@ So the practice route list assembles itself out of your household logistics. And
 
 There's a second thing working against you, and it's the same trick that [makes hours feel larger than they are](/50-hour-myth-driving-practice/): range feels like it accumulates when it doesn't. You have spent a great many hours in the passenger seat, so it feels as though you must have covered a lot of ground. You've covered the same ground, many times.
 
-## What each one actually teaches
+## What does each driving environment teach?
 
 **Residential streets.** Vehicle control at low stakes: steering, braking smoothly, holding lane position, and looking further ahead than the hood. Everybody starts here and nobody skips it. The real risk is staying too long, because it's comfortable for both of you.
 
@@ -65,6 +69,7 @@ Rural roads and bad weather.
 Rural roads get skipped because there is usually no reason to drive one. Nothing you need is out there. Which means the only way it happens is on purpose — a forty-minute loop on a Sunday that accomplishes nothing except the thing it accomplishes.
 
 It's worth knowing what you're skipping. Nationally, [41% of traffic deaths happen on rural roads](https://www.iihs.org/topics/fatality-statistics/detail/urban-rural-comparison), which carry 31% of the miles driven. Per mile, the rural fatality rate runs about half again the urban one. This is not a regional concern for people who live near cornfields — it's the road type that punishes inexperience hardest, and almost every teenager ends up on one eventually.
+<p class="src">Source: <a href="https://www.iihs.org/topics/fatality-statistics/detail/urban-rural-comparison">IIHS, Fatality Facts 2024: Urban/rural comparison</a></p>
 
 Bad weather gets skipped because it is genuinely unappealing. The first hard rain of the fall arrives, it's dark, everyone is tired, and you think: not tonight. That's a completely reasonable decision, made a dozen times, and the result is that their first hard rain happens without you in the car.
 
@@ -92,7 +97,11 @@ Then, when it's Tuesday at 5:40 and you have forty minutes before dark, you are 
 
 That is the entire trick, and it's the difference between a plan and a good intention.
 
-## How much of each
+Coverage is one of the five parts of the DRVN Readiness Framework.
+
+<!--drvn:framework-ref-->
+
+## How much practice does each environment need?
 
 An hour or two in every environment is the floor the research supports — six to twelve hours out of a year of practice, which is not a lot to ask.
 

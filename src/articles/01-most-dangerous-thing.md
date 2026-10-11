@@ -10,6 +10,7 @@ imageSm: "/images/articles/a01-parent-teen-800.jpg"
 imageAlt: "A father in the passenger seat watches his teenage daughter drive."
 cluster: "The Reckoning"
 territory: "risk"
+howWeKnow: true
 sources:
   - iihs-teens
   - nichd-2018
@@ -55,6 +56,7 @@ While the teenagers were on their permits, with a parent sitting next to them, t
 Then they got licensed.
 
 In their first three months driving alone, their rate of crashes and near-crashes was [eight times](https://pubmed.ncbi.nlm.nih.gov/30006026/) what it had been during their last three months on the permit.
+<p class="src">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/30006026/">NIH (NICHD) naturalistic driving study, Journal of Adolescent Health, 2018</a> · <a href="/evidence/#eight-times">Evidence Library</a></p>
 
 The kid didn't change. The car didn't change. The roads didn't change.
 

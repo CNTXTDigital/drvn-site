@@ -21,7 +21,7 @@ I understand the feeling. It's also where a lot of families relax too early.
 
 Driver's ed is genuinely useful. It just can't do the whole job, and it was never designed to.
 
-## What driver's ed does well
+## What does driver's ed do well?
 
 A good course teaches the rules of the road, the signs, the right-of-way questions nobody's parents can answer correctly, and the basics of handling a car. A good instructor catches habits a parent misses, and can often get through to a teenager in a way a parent can't. Anyone who has tried to explain a four-way stop to their own kid knows why that matters.
 
@@ -29,7 +29,16 @@ And it seems to help. A University of Nebraska study followed about 150,000 teen
 
 That's a real effect. It's worth being honest about the limits too: families who choose driver's ed may differ from families who don't, and [NHTSA still lists pre-licensure driver ed among approaches that need more evaluation](https://www.nhtsa.gov/book/countermeasures-that-work/young-drivers/countermeasures/unproven-further-evaluation/pre-licensure). So, useful, not magic.
 
-## What it can't do
+## What can't driver's ed do?
+
+It can't give a teen the months of varied, real-world practice that build judgment. There isn't enough time in any course for that.
+
+| Driver's ed | Parent-supervised practice |
+|---|---|
+| Professional instruction | Repeated real-world experience |
+| Limited scheduled time | Months of practice |
+| Core skills | Variety and judgment |
+| Instructor feedback | Ongoing observation |
 
 Look at the size of it. A typical course is a few dozen hours of classroom or online instruction, plus a handful of hours behind the wheel with an instructor. Iowa, where I live now, requires [30 hours of classroom and 6 in the car](/guide/iowa/). Ohio requires [24 classroom hours and 8 behind the wheel](/guide/ohio/).
 

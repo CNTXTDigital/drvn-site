@@ -10,6 +10,7 @@ imageSm: "/images/articles/a23-night-passengers-800.jpg"
 imageAlt: "A teenage driver at the wheel at night with two friends in the back seat and a phone lit up on the console."
 cluster: "The Skills"
 territory: "practice"
+howWeKnow: true
 sources:
   - iihs-teens
   - cdc-risk
@@ -30,18 +31,19 @@ Then your kid gets a license, and the drives that actually happen at night are t
 My kids learned to drive in Ohio, which asks for [10 of the 50 supervised hours to be at night](https://www.bmv.ohio.gov/dl-gdl.aspx). Iowa, where I live now, asks for [two](https://iowadot.gov/mvd/resources/MM691_InstructionPermitCard.pdf). Two hours. That's a couple of trips home from the grocery store with the headlights on.
 
 Compare that to where the risk actually is. [More than half of teen driving deaths happen between 6 p.m. and 3 a.m., and about a third between 9 p.m. and 3 a.m.](https://www.iihs.org/research-areas/teenagers) Per mile driven, [the nighttime fatal crash rate for teen drivers is about three times that of adults in their 30s to 50s](https://www.cdc.gov/teen-drivers/risk-factors/index.html).
+<p class="src">Source: <a href="https://www.iihs.org/research-areas/teenagers">IIHS, Teenagers</a> · <a href="https://www.cdc.gov/teen-drivers/risk-factors/index.html">CDC, Risk Factors for Teen Drivers</a> · <a href="/evidence/#night">Evidence Library</a></p>
 
 So the state asks for a sliver of practice in the conditions that produce a big share of the deaths. That's not a safety standard. It's an afterthought with a number on it.
 
 > Night isn't one more condition. It makes every other condition harder.
 
-## Why night is harder than it looks from the passenger seat
+## Why is night driving harder for new drivers?
 
 At night you see less, and you see it later. Everything a new driver has been using to judge distance and speed — the edge of the road, the shape of the car ahead, the curve coming up — gets thinner. Oncoming headlights take a few seconds of vision away every time they pass. Pedestrians and deer show up at the last second, if at all.
 
 Add the fact that night is when teenagers are tired, and when the social driving happens. A lot of what makes night dangerous isn't darkness by itself. It's darkness stacked on top of fatigue, friends and inexperience, all at once.
 
-## Practice it in stages
+## How should teens practice night driving?
 
 You don't need more nights. You need a sequence. Here's the one I'd use.
 
@@ -59,9 +61,9 @@ You don't need more nights. You need a sequence. Here's the one I'd use.
 
 One habit to coach on every night drive: eyes up and out, not glued to the patch of road in the headlights. Look at the right edge when oncoming lights are bright. Expect what you can't see yet.
 
-## Then limit it, on purpose
+## Should new drivers have a night driving limit?
 
-After the license, the [CDC suggests keeping newly licensed teens off the road by 9 or 10 p.m. for at least the first six months](https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html). Your state's own curfew may be later. [Check what yours says](https://www.iihs.org/research-areas/teenagers/graduated-licensing-laws-table), then decide whether you want a stricter family rule.
+After the license, the [CDC suggests keeping newly licensed teens off the road by 9 or 10 p.m. for at least the first six months](https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html). Your state's own curfew may be later. Before you allow solo night driving, [see how to evaluate readiness after dark](/is-my-teen-ready-to-drive-alone/): the same five signs apply, they just get harder to show at night. [Check what yours says](https://www.iihs.org/research-areas/teenagers/graduated-licensing-laws-table), then decide whether you want a stricter family rule.
 
 That rule isn't a punishment, and it's worth saying so out loud. It's a way to limit time in the riskiest hours while experience catches up. Make it about a date, not a mood: "No solo driving after 10 until spring, and then we'll look at it again." Teenagers can live with a rule that has an end date. Parents can enforce one.
 

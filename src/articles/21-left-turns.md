@@ -23,7 +23,9 @@ They're right to. A left turn on a green light, with no arrow and a steady strea
 
 Experienced drivers do all of that in about a second, without noticing. A sixteen-year-old is doing it consciously, one piece at a time.
 
-## Why it's where crashes come from
+## Why are left turns so dangerous for new drivers?
+
+A left turn across traffic asks a new driver to judge the speed and distance of oncoming cars and pick a safe gap, which is one of the hardest calls in everyday driving. It also stacks up the errors that cause most serious teen crashes.
 
 When researchers at Children's Hospital of Philadelphia looked at serious crashes involving teen drivers, the three most common critical errors were [not scanning enough to spot hazards (21%), going too fast for conditions (21%) and being distracted (20%)](https://www.newswise.com/articles/new-study-pinpoints-what-happens-right-before-teens-crash). Recognition errors, failing to see or process what's there, made up [nearly half of all teen errors](https://doi.org/10.1016/j.aap.2010.10.019).
 

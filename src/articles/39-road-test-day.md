@@ -22,7 +22,7 @@ For a year, you have been in the passenger seat of every single drive. You’ve 
 
 You will be more nervous than they are. That’s normal. Bring something to read. You won’t read it.
 
-## What the test actually checks
+## What does the road test actually check?
 
 Road tests vary by state, but most of them come down to the same basic question: can this person follow the rules of the road for a short drive while someone official is watching?
 
@@ -30,7 +30,7 @@ The examiner is looking at the fundamentals. Full stops behind the line. Signals
 
 Notice what that list is. It’s the stuff your teen learned in the first few months. A road test mostly measures whether the basics hold up under pressure. That’s worth measuring. It’s just not much.
 
-## What it can’t check
+## What can’t the road test check?
 
 No road test includes rain at night. Or an interstate merge at rush hour. Or a two-lane country road with no shoulder and a tractor coming the other way. Or a friend in the passenger seat holding up a phone. It happens in whatever weather shows up, at whatever time you booked, on the streets around one licensing office.
 
@@ -52,7 +52,7 @@ Run the boring checklist the night before. Permit, the practice log or certifica
 
 Practice the full stop. I’d bet more teens lose points on rolling stops than on anything else, mostly because they learned to drive from us.
 
-## If they fail
+## What if my teen fails the road test?
 
 It happens to a lot of kids, and it’s not a disaster. It’s twenty minutes of feedback from a professional who doesn’t love your child and has no reason to be polite about it. That’s worth something.
 

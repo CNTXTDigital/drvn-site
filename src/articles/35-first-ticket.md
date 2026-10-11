@@ -21,7 +21,7 @@ At some point, your teenager will come home quieter than usual, holding a piece 
 
 A first ticket is common, and it isn't the end of the world. It's also not nothing. For a new driver, a ticket can cost more and change more than it would for you, and it's worth understanding both before you decide how to handle it.
 
-## What it can cost
+## How much does a teen's first ticket cost?
 
 The ticket itself is usually the smallest part. The bigger cost shows up at insurance renewal.
 

@@ -20,7 +20,7 @@ It's tempting to accept that. Your kid wants independence, you're tired, and the
 
 But the research says your role doesn't end at the license. It changes.
 
-## What involvement does
+## Does parent involvement still matter after the license?
 
 A study published in *Pediatrics* surveyed more than 5,600 high school students about their parents and their driving. Teens who described their parents as setting clear rules and monitoring their activities in a warm, supportive way, compared with teens whose parents were uninvolved, reported [half the crash risk in the past year, were 71% less likely to drive intoxicated, wore seat belts about twice as often, and sped half as often](https://publications.aap.org/pediatrics/article/124/4/1040/71814/Associations-Between-Parenting-Styles-and-Teen).
 
@@ -42,7 +42,9 @@ Frame it as a favor, not a test. "I'd like to come along the first time you driv
 
 When they tell you about a close call, the most important thing you can do is not punish them for telling you. A teen who reports a near-miss is giving you exactly the information you need. A teen who gets grounded for it learns to stop reporting.
 
-## Tracking apps: decide together, not secretly
+## Should parents use a tracking app for a teen driver?
+
+It can help in the early months if you decide on it together and are open about it. Secret tracking tends to backfire.
 
 Location sharing and driving-monitoring apps can show where your teen is, how fast they drove, how hard they braked, and whether they used the phone. Some families find them useful in the early months. Others find they cause more fights than they prevent.
 

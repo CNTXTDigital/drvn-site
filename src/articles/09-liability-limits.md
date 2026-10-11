@@ -22,13 +22,13 @@ When the premium jumps after adding a teen, there's a tempting place to look for
 
 This is the one cut I'd ask you not to make.
 
-## What liability limits are
+## What are liability limits?
 
 Liability coverage pays for the damage your driver causes to other people: their injuries and their property. The limits are usually written as three numbers, like 25/50/25. That means $25,000 per injured person, $50,000 per crash for all injuries combined, and $25,000 for property damage.
 
 When a crash costs more than those limits, the insurance stops paying. What's left can become the responsibility of the people on the policy.
 
-## How low the minimums are
+## How low are state minimum liability limits?
 
 Every state sets a minimum, and many are low. [Eighteen states set theirs at 25/50/25](https://www.iii.org/article/background-on-compulsory-auto-uninsured-motorists), including Ohio. California only recently [raised its minimum from 15/30/5 to 30/60/15](https://www.insurance.ca.gov/0400-news/0102-alerts/2025/New-Year-Means-New-Changes-for-Insurance.cfm), effective January 2025.
 
@@ -38,7 +38,7 @@ The Insurance Information Institute says it plainly: [you'll likely need more li
 
 > State minimums make insurance affordable. They were never meant to cover a serious crash.
 
-## Why a teen changes the math
+## Why does a teen driver change how much coverage you need?
 
 A new driver doesn't change what a crash costs. They change how likely one is. Teen drivers crash at [several times the rate of older drivers per mile](https://www.iihs.org/research-areas/teenagers), with the highest risk in the first months alone.
 

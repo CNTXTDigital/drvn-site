@@ -10,6 +10,7 @@ imageSm: "/images/articles/a27-first-six-months-800.jpg"
 imageAlt: "A parent holding a mug watches a car pull away from the house."
 cluster: "The Real Risks"
 territory: "risk"
+howWeKnow: true
 sources:
   - nhtsa-teen
   - nhtsa-811598
@@ -18,29 +19,33 @@ sources:
   - cdc-prevention
 ---
 
+<div class="short-answer"><span class="sa-k">The short answer</span><p>The first six months after the license are the riskiest stretch of a teen’s driving life, because supervision ends before experience catches up. Hand over independence in stages: familiar daytime trips first, then night, highways and passengers.</p></div>
+
 The day the license arrives, most families do the same thing. The kid takes the car somewhere. Then somewhere else. By the end of the first week, they are driving the same places, at the same hours, with the same people as any other driver in the house.
 
 That's how it went in our house too. The license felt like the end of the project.
 
 It's actually the start of the most dangerous part.
 
-## Where the risk really is
+## Why are the first six months after licensure so risky?
 
 New drivers almost never crash while a parent is in the car. NHTSA puts it bluntly: novice teens [rarely crash while being supervised, but have the highest crash rates of any age group during their first six months of unsupervised driving](https://www.nhtsa.gov/road-safety/teen-driving).
+<p class="src">Source: <a href="https://www.nhtsa.gov/road-safety/teen-driving">NHTSA, Teen Driving</a></p>
 
 And the risk comes down with experience, just not quickly. A large study of North Carolina teens found [crash rates peak in the first couple of months after licensure and only drop by about 40% over the first year and a half](https://aaafoundation.org/measuring-changes-teenage-driver-crash-characteristics-early-months-driving). That's eighteen months of a teenager learning, mostly by trial and error, with nobody in the passenger seat.
+<p class="src">Source: <a href="https://aaafoundation.org/measuring-changes-teenage-driver-crash-characteristics-early-months-driving">AAA Foundation for Traffic Safety, crash characteristics in the early months of driving, 2011</a> · <a href="/evidence/#first-six-months">Evidence Library</a></p>
 
 So the question isn't whether your kid will be a beginner after the license. They will. The question is how much of their beginning happens in the hardest conditions on day one.
 
 > The state hands over independence in one piece. You don't have to.
 
-## What graduated licensing gets right
+## How does graduated licensing help?
 
 Every state has some version of graduated licensing: a learner stage, then an intermediate license with restrictions, then full privileges. It works. The CDC notes these systems [reduce teen crashes and deaths](https://www.cdc.gov/teen-drivers/prevention/index.html).
 
 But the restrictions in most states are light, and they lift on a fixed date whether your kid is ready or not. The useful idea underneath is simple: hand over the hard stuff gradually. You can run that idea at home, at your own pace, stricter than the law.
 
-## A handoff plan
+## What should the first six months look like?
 
 Here's a version you can adapt. Each step lasts until the last one is boring.
 

@@ -19,7 +19,7 @@ After the first teen insurance quote, the agent often mentions it: an app, or a 
 
 For some families it's genuinely worth it. For others it's an expensive surprise. The difference is mostly in reading the terms before you sign up.
 
-## How these programs work
+## How does usage-based insurance work for teens?
 
 Usage-based insurance, sometimes called telematics, uses a phone app or a plug-in device to record how the car is driven: hard braking, fast acceleration, speed, phone handling, miles driven, and time of day. At renewal, the insurer uses that record to adjust the rate.
 

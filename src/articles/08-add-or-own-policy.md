@@ -19,7 +19,7 @@ When the first insurance quote with a teenager on it arrives, a thought occurs t
 
 It's a reasonable instinct. For most families, it's also the more expensive option, and it doesn't do what it seems to.
 
-## What each one costs
+## Is it cheaper to add a teen to your policy or get them their own?
 
 CarInsurance.com's 2026 data puts it plainly. Adding a 16-year-old to a parent's policy raises it by about [$3,892 a year for a girl and $4,480 for a boy, on average](https://www.carinsurance.com/Articles/car-insurance-16-year-old.aspx). A 16-year-old's own policy averages [$9,846 a year for a girl and $10,928 for a boy](https://www.carinsurance.com/Articles/car-insurance-16-year-old.aspx).
 

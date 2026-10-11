@@ -10,6 +10,7 @@ imageSm: "/images/articles/a29-phones-800.jpg"
 imageAlt: "A driver’s hands on the wheel with a phone stowed in the center console."
 cluster: "The Real Risks"
 territory: "risk"
+howWeKnow: true
 sources:
   - aaaf-distraction-2015
   - cdc-risk
@@ -25,6 +26,7 @@ Then they'll pick a song at a red light. Check a map at forty miles an hour. Ans
 ## What the dashcams saw
 
 The best evidence here comes from cameras. Researchers at the University of Iowa, working with the AAA Foundation, reviewed video from almost 1,700 crashes involving teen drivers. In [58% of them, the driver was inattentive or doing something other than driving](https://aaafoundation.org/using-naturalistic-driving-data-assess-prevalence-environmental-factors-driver-behaviors-teen-driver-crashes/) in the moments before the crash.
+<p class="src">Source: <a href="https://aaafoundation.org/using-naturalistic-driving-data-assess-prevalence-environmental-factors-driver-behaviors-teen-driver-crashes/">AAA Foundation for Traffic Safety and University of Iowa, naturalistic crash video study, 2015</a></p>
 
 The most common distractions were passengers (15%) and phones (12%). Then looking at something inside the car, looking at something outside it, singing, grooming, reaching for things. None of it dramatic. All of it ordinary.
 
@@ -32,13 +34,15 @@ And by their own account, [39% of high school drivers had texted or emailed whil
 
 > A new driver isn't distracted by much. They just don't have much attention to lose.
 
-## Why it hits new drivers harder
+## Why is distraction more dangerous for new drivers?
+
+Because new drivers have no attention to spare. The parts of driving that run on autopilot for you still take real thought for them.
 
 For you, a lot of driving happens on autopilot. Lane position, speed, checking mirrors: you stopped thinking about those years ago, so there's attention left over. It's why you can drive and hold a conversation and only occasionally miss your exit.
 
 A new driver doesn't have that surplus yet. Every part of driving still takes real thought. So the glance that costs you very little costs them a lot, because there was nothing spare to spend.
 
-## A rule that's actually big enough
+## What phone rule should new drivers follow?
 
 Try this one instead: **the phone doesn't get attention while the car is moving.**
 

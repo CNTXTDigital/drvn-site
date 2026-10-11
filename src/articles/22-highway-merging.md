@@ -36,9 +36,9 @@ New drivers look at the highway once, late, from the end of the ramp. Teach them
 
 If the gap they picked closes, they adjust: speed up a little more to get ahead, or ease off to slip behind. The ramp gives them room to do that, as long as they didn't spend it going slowly.
 
-## A progression
+## How should a teen practice highway merging?
 
-Don't start at rush hour. Build it in steps:
+In steps, from quiet on-ramps to busy ones, until they can merge without you calling the gap. Don't start at rush hour. Build it in steps:
 
 1. **The quietest interchange you can find.** A rural highway on a Sunday morning. Long ramp, light traffic. Several times in a row, until it's boring.
 2. **Exits too.** Signal early, move into the exit lane, and slow down on the ramp, not on the highway.
@@ -57,6 +57,8 @@ Once they're on, the next job is space. At highway speed, everything happens fas
 Your instinct on the ramp will match theirs: slow down, be careful. Fight it. Before the ramp, say it out loud: "Use the whole ramp to get up to speed." On the ramp, keep your comments short: "Speed up." "Gap after the blue car." "Signal."
 
 And afterward, ask: "How fast were you going when you merged? How fast was traffic?" The answers usually close the gap on their own.
+
+If highway driving is still inconsistent close to the license date, that matters for readiness. [See how to evaluate whether your teen is ready to drive alone](/is-my-teen-ready-to-drive-alone/), and [learn what else teens should practice before driving alone](/six-driving-environments-teen-practice/).
 
 ## This week
 

@@ -8,6 +8,7 @@ import StatePicker from '../../components/StatePicker.astro';
 import CityProfile from '../../components/CityProfile.astro';
 import profiles from '../../data/guide/city-profiles.json';
 import { states, stateBySt, cities, citiesBySt, CHECKED_LABEL } from '../../lib/guide.js';
+import PlaceSearch from '../../components/PlaceSearch.astro';
 import { SITE } from '../../site.js';
 
 export function getStaticPaths() {
@@ -80,6 +81,14 @@ const jsonld = {
         : <>What parents need to know about the learn-to-drive process in {s.sname}: six steps, from the first class to the insurance call.</>}
     </p>
     <p class="checked">Requirements checked: {CHECKED_LABEL}, against official state licensing sources: <a href={r.agencyUrl} rel="noopener" target="_blank">{r.agency}</a>.</p>
+    {!c && otherCities.length > 0 && (
+      <div class="findcity">
+        <PlaceSearch id="city-search" label={`Find your city’s guide (${otherCities.length} ${s.sname} cities)`} placeholder={`Type your city in ${s.sname}`}
+          places={[...otherCities].sort((a, b) => (b.pop || 0) - (a.pop || 0)).map((x) => ({ l: x.city, u: x.url }))}
+          notFound={`Not listed? ${s.sname}’s requirements apply statewide, and they’re all below. Try a nearby larger city for local practice roads and conditions.`} />
+        <a class="browse" href="#cities-h">or browse all {otherCities.length} city guides ↓</a>
+      </div>
+    )}
   </section>
 
   <section class="wrap cols">
@@ -129,6 +138,11 @@ const jsonld = {
   .req-h { font-size: 26px; margin: 0 0 14px; }
   .checked { margin: 2px 0 0; font-size: 14.5px; color: var(--muted); }
   .checked a { font-weight: 600; }
+  .findcity { display: flex; align-items: flex-end; gap: 10px 24px; flex-wrap: wrap; margin-top: 22px; padding: 20px 22px; background: var(--cyan-tint); border-radius: 14px; }
+  .findcity .ps { flex: 1 1 340px; }
+  .browse { font-size: 15.5px; font-weight: 700; color: var(--blue); text-decoration: none; padding-bottom: 14px; }
+  .browse:hover { text-decoration: underline; }
+  #cities-h { scroll-margin-top: 90px; }
   .bridges { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .bridge { border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
   .bridge h2 { font-size: 20px; margin: 0; line-height: 1.25; }

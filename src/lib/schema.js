@@ -38,7 +38,7 @@ export const FOUNDER = {
   name: 'Robert Abbott',
   url: `${SITE.url}/about/#founder`,
   image: `${SITE.url}/images/site/robert-abbott-headshot.jpg`,
-  jobTitle: 'Founder',
+  jobTitle: 'Founder, DRVN',
   worksFor: { '@id': ORG_ID },
   description: 'Communication designer, entrepreneur and father of four who founded DRVN to help parents teach their teenagers to drive.',
 };
@@ -48,7 +48,7 @@ export const AUTHOR_REF = { '@type': 'Person', '@id': FOUNDER_ID, name: 'Robert 
 // crumbs: [{ name, path }] after Home. The last one is the current page.
 export const breadcrumbLD = (crumbs) => ({
   '@type': 'BreadcrumbList',
-  itemListElement: [{ name: 'Home', path: '/' }, ...crumbs].map((c, i) => ({
+  itemListElement: [{ name: 'DRVN', path: '/' }, ...crumbs].map((c, i) => ({
     '@type': 'ListItem', position: i + 1, name: c.name, item: new URL(c.path, SITE.url).href,
   })),
 });

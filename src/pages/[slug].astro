@@ -25,7 +25,7 @@ const claims = claimsUsedIn(post.slug);
 const jsonld = {
   '@graph': [
     articleLD({ url, headline: post.title, description: post.description, image: post.image, published: post.published, modified: post.modified, citation: citationLD(sources), section: terr ? terr.label : post.cluster, byOrg: !post.author }),
-    breadcrumbLD([{ name: 'Articles', path: '/blog/' }, { name: post.title, path: `/${post.slug}/` }]),
+    breadcrumbLD(terr ? [{ name: 'Learn', path: '/learn/' }, { name: terr.label, path: `/learn/#${terr.id}` }, { name: post.title, path: `/${post.slug}/` }] : [{ name: 'Articles', path: '/blog/' }, { name: post.title, path: `/${post.slug}/` }]),
   ],
 };
 ---

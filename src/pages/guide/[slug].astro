@@ -25,6 +25,7 @@ const otherCities = citiesBySt[st] || [];
 const place = c ? `${c.city}, ${st}` : s.sname;
 
 const title = c ? `${c.city}, ${s.sname} Teen Driving Guide` : `${s.sname} Teen Driving Guide`;
+const seoTitle = c ? `${c.city}, ${s.sname} Teen Driving Guide: Permit and License Rules` : `${s.sname} Teen Driving Laws and Permit Requirements`;
 const r = s.req;
 const short = (v) => String(v || '').split(/[;(]/)[0].trim().replace(/\.$/, '');
 const facts = `Permit at ${short(r.permitMinAge)}; license at ${short(r.licenseMinAge)}.`;
@@ -38,8 +39,8 @@ const description = c
   : `The ${s.sname} teen driver's license, step by step: driver's ed, the learner's permit, supervised hours, the road test and new-driver rules. ${facts} Checked October 2026.`.slice(0, 300);
 
 const crumbs = [
-  { name: 'Home', item: `${SITE.url}/` },
-  { name: 'Teen Driving Guide', item: `${SITE.url}/guide/` },
+  { name: 'DRVN', item: `${SITE.url}/` },
+  { name: 'State Guides', item: `${SITE.url}/guide/` },
   { name: s.sname, item: `${SITE.url}/guide/${s.slug}/` },
   ...(c ? [{ name: c.city, item: `${SITE.url}${c.url}` }] : []),
 ];
@@ -56,7 +57,7 @@ const jsonld = {
   ],
 };
 ---
-<Base title={title} description={description} jsonld={jsonld}>
+<Base title={seoTitle} description={description} jsonld={jsonld}>
   <section class="wrap top">
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">DRVN</a><span>/</span><a href="/guide/">State Guides</a>

@@ -10,8 +10,7 @@ export const SITE = {
   appStore: 'https://apps.apple.com/us/app/drvn/id1244075088',
   googlePlay: 'https://play.google.com/store/apps/details?id=com.contextdigital.drvnpro',
   social: {
-    facebook: 'https://www.facebook.com/drvnapp/',
-    twitter: 'https://twitter.com/drvn_app',
+    facebook: 'https://www.facebook.com/drvnapp',
     instagram: 'https://www.instagram.com/drvnapp/',
   },
 };

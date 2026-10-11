@@ -1,7 +1,7 @@
 ---
 slug: is-my-teen-ready-to-drive-alone
 title: "Ready Isn’t a Feeling: How to Know Your Teen Is Ready to Drive Alone"
-seoTitle: "Is My Teen Ready to Drive Alone? Parent Readiness Guide"
+seoTitle: "Is My Teen Ready to Drive Alone?"
 dek: "The state decides when they’re eligible. Whether they’re ready is your call, and you’re not exactly neutral."
 description: "Learn how to evaluate teen driving readiness using judgment, experience, coverage and independence, not just required hours or a passed road test."
 published: "2026-10-11T03:55:00Z"

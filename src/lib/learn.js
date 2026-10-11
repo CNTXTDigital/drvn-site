@@ -12,6 +12,10 @@ export const AREAS = [
     more: [
       { t: 'Road Test Day: what the test proves, and what it doesn’t', k: 'Article', href: '/teen-road-test-day/' },
       { t: 'The 50-Hour Myth', k: 'Article', href: '/50-hour-myth-driving-practice/' },
+      { t: 'Staying involved after the license', k: 'Article', href: '/staying-involved-after-the-license/' },
+      { t: 'The first car question', k: 'Article', href: '/choosing-a-car-for-a-teen-driver/' },
+      { t: 'The first fender bender', k: 'Article', href: '/teen-first-fender-bender/' },
+      { t: 'Their first ticket', k: 'Article', href: '/teen-first-traffic-ticket/' },
       { t: 'A quick readiness check', k: 'Checklist', href: G('readiness-check') },
     ],
   },

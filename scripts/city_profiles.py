@@ -70,6 +70,9 @@ def overpass(q):
 
 def norm_ref(ref):
     ref = ref.strip()
+    h = re.match(r'^(?:I[\s-]*)?H[\s-]*(\d+)$', ref)  # Hawaii: "I H1", "H-1", "H1"
+    if h:
+        return f'H-{h.group(1)}'
     m = re.match(r'^(I|H|US|SR|State Route|OH|CO|AZ|MA|IA|NY|[A-Z]{2})[\s-]*(\d+[A-Z]?)', ref)
     if not m:
         return None

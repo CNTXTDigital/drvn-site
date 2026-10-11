@@ -48,6 +48,37 @@ The list does the homework for you. Every used pick weighs more than 2,750 pound
 
 So start with the list, not the lot. Pick three or four models that fit your budget. Then go shopping for those cars specifically.
 
+## A quick shortlist
+
+Here's a starting point pulled from the [2026 IIHS list](https://www.iihs.org/ratings/safe-vehicles-for-teens). It's a sampling of the everyday sedans and small SUVs most families will actually find for sale, not the whole list. I left off the luxury models and the three-row SUVs (see seats, below).
+
+**Under $10,000** (IIHS "Good Choices")
+
+| Car | Model years | From about |
+|---|---|---|
+| Chevrolet Equinox (small SUV) | 2014–24 | $5,700 |
+| Chevrolet Malibu (midsize) | 2014–25 | $5,800 |
+| Hyundai Elantra (small) | 2017–25 | $6,100 |
+| Hyundai Sonata (midsize) | 2016–25, built after Oct. 2015 | $6,900 |
+| Mazda 3 (small) | 2014–18, built after Oct. 2013 | $6,900 |
+| Subaru Impreza (small) | 2014–25 | $8,000 |
+| Honda Civic (small) | 2014–25 | $8,100 |
+| Honda Accord (midsize) | 2013–25 | $8,300 |
+| Kia Sportage (small SUV) | 2017–25 | $8,600 |
+| Subaru Crosstrek (small SUV) | 2016–25 | $9,000 |
+
+**Under $20,000** (IIHS "Best Choices," which also require automatic emergency braking and decent headlights)
+
+| Car | Model years | From about |
+|---|---|---|
+| Mazda CX-5 (small SUV) | 2018–25, built after Mar. 2018 | $13,100 |
+| Mazda 3 (small) | Hatchback 2019–25, sedan 2020–25 | $13,200 |
+| Subaru Forester (small SUV) | 2019–25 | $15,900 |
+| Toyota Camry (midsize) | 2019–25 | $17,300 |
+| Subaru Outback (midsize) | 2020–25, built after Oct. 2019 | $18,700 |
+
+"From about" is the IIHS median price for the oldest qualifying model year, as of spring 2026. Newer years cost more, and the "built after" dates matter, so check the build date on the door sticker before you buy.
+
 ## The real price isn't on the window
 
 The sticker is the smallest number you'll deal with. Here's what actually shows up on the credit card statement:

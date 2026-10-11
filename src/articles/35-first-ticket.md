@@ -9,6 +9,7 @@ image: "/images/articles/a35-first-ticket.jpg"
 imageSm: "/images/articles/a35-first-ticket-800.jpg"
 imageAlt: "An Ohio speeding citation on a wooden table beside car keys, a wallet and a phone."
 cluster: "The Handoff"
+territory: "rules-costs"
 sources:
   - ci-speeding-ticket
   - iowa-dot-intermediate

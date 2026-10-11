@@ -9,6 +9,7 @@ image: "/images/articles/aga-driving-agreement.jpg"
 imageSm: "/images/articles/aga-driving-agreement-800.jpg"
 imageAlt: "A teenage girl signs a driving agreement at the kitchen table while her mother points to a line, car keys on the table."
 cluster: "The Handoff"
+territory: "risk"
 sources:
   - cdc-danger-zones
 ---

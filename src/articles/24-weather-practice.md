@@ -9,6 +9,7 @@ image: "/images/articles/a24-rain-night.jpg"
 imageSm: "/images/articles/a24-rain-night-800.jpg"
 imageAlt: "Heavy rain on a windshield at night, with taillights blurred on the wet highway ahead."
 cluster: "The Skills"
+territory: "practice"
 sources:
   - iihs-gdl
   - penndot

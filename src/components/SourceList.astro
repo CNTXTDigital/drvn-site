@@ -6,7 +6,7 @@ const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } 
 ---
 {sources.length > 0 && (
   <section class="sources" aria-labelledby="sources-h" id="sources">
-    <h2 id="sources-h" class="eyebrow">Sources</h2>
+    <div class="sh"><h2 id="sources-h" class="eyebrow">Sources</h2><a class="ev" href="/evidence/">See the research behind this guidance →</a></div>
     <ol>
       {sources.map((s) => (
         <li>
@@ -35,6 +35,8 @@ const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } 
 <style>
   .sources { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); }
   .sources h2 { margin: 0; }
+  .sh { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; }
+  .ev { font-size: 14px; font-weight: 700; text-decoration: none; }
   ol { margin: 10px 0 0; padding-left: 1.3em; font-size: 14.5px; line-height: 1.55; color: var(--ink-3); }
   li { margin: 6px 0; overflow-wrap: anywhere; }
   .org { color: var(--ink-2); }

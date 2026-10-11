@@ -9,6 +9,7 @@ image: "/images/articles/a25-following-distance.jpg"
 imageSm: "/images/articles/a25-following-distance-800.jpg"
 imageAlt: "A view from behind an SUV on a two-lane road, with space between the cars and a road sign ahead."
 cluster: "The Skills"
+territory: "practice"
 sources:
   - ca-handbook-roads
   - ca-handbook-safe

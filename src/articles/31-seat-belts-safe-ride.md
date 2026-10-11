@@ -9,6 +9,7 @@ image: "/images/articles/a31-seat-belt.jpg"
 imageSm: "/images/articles/a31-seat-belt-800.jpg"
 imageAlt: "A hand fastening a seat belt buckle."
 cluster: "The Real Risks"
+territory: "risk"
 sources:
   - nhtsa-teen
   - cdc-risk

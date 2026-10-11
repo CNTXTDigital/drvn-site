@@ -9,6 +9,7 @@ image: "/images/articles/ar1-ready-conversation.jpg"
 imageSm: "/images/articles/ar1-ready-conversation-800.jpg"
 imageAlt: "A mother and her teenage son talk beside the family car in a parking lot at sunset."
 cluster: "Readiness"
+territory: "readiness"
 sources:
   - nichd-2018
   - gershon-2018

@@ -9,6 +9,7 @@ image: "/images/articles/a21-left-turns.jpg"
 imageSm: "/images/articles/a21-left-turns-800.jpg"
 imageAlt: "A teen driver waiting at an intersection at dusk with oncoming headlights."
 cluster: "The Skills"
+territory: "practice"
 sources:
   - curry-2011
   - chop-errors-2011

@@ -1,13 +1,13 @@
 ---
-// Site header: Learn · State guides · DRVN app · About, plus Get the app.
+// Site header: Learn · State Guides · DRVN App · About, plus Get the App. Same on every page.
 // On phones the links collapse into a menu button (no script needed).
 const path = Astro.url.pathname;
 const { big = false } = Astro.props;
 const nav = [
   { href: '/learn/', label: 'Learn', match: ['/learn/', '/blog/', '/teen-driving-safety/'] },
-  { href: '/guide/', label: 'State guides', match: ['/guide/', '/listing/'] },
-  { href: '/app/', label: 'DRVN app', match: ['/app/'] },
-  { href: '/about/', label: 'About', match: ['/about/'] },
+  { href: '/guide/', label: 'State Guides', match: ['/guide/', '/listing/'] },
+  { href: '/app/', label: 'DRVN App', match: ['/app/'] },
+  { href: '/about/', label: 'About', match: ['/about/', '/editorial-standards/', '/evidence/'] },
 ];
 const isActive = (n) => n.match.some((m) => path.startsWith(m));
 ---
@@ -24,7 +24,7 @@ const isActive = (n) => n.match.some((m) => path.startsWith(m));
       </nav>
     </div>
     <div class="right">
-      <a class="btn btn-sm" href="/app/">Get the app</a>
+      <a class="btn btn-sm" href="/app/">Get the App</a>
       <details class="mob">
         <summary aria-label="Menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>

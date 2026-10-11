@@ -9,6 +9,7 @@ image: "/images/articles/a30-speed.jpg"
 imageSm: "/images/articles/a30-speed-800.jpg"
 imageAlt: "A speedometer needle just past 65 mph at dusk, with a 65 mph speed limit sign outside."
 cluster: "The Real Risks"
+territory: "risk"
 sources:
   - nhtsa-teen
   - cdc-risk

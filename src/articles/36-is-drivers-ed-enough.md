@@ -9,6 +9,7 @@ image: "/images/articles/a36-drivers-ed-study.jpg"
 imageSm: "/images/articles/a36-drivers-ed-study-800.jpg"
 imageAlt: "A father and his teenage daughter at the kitchen table with a driver's manual and an online course open on a laptop."
 cluster: "Navigating the System"
+territory: "rules-costs"
 sources:
   - unl-drivers-ed-2015
   - nhtsa-ctw-driver-ed

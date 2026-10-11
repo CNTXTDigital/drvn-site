@@ -9,6 +9,7 @@ image: "/images/articles/a07-kitchen-table.jpg"
 imageSm: "/images/articles/a07-kitchen-table-800.jpg"
 imageAlt: "A parent at the kitchen table with an insurance statement, a calculator and car keys."
 cluster: "The Money"
+territory: "rules-costs"
 sources:
   - ci-teen-cost
   - moneygeek-good-student

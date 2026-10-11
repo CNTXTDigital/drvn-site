@@ -9,6 +9,7 @@ image: "/images/articles/a23-night-passengers.jpg"
 imageSm: "/images/articles/a23-night-passengers-800.jpg"
 imageAlt: "A teenage driver at the wheel at night with two friends in the back seat and a phone lit up on the console."
 cluster: "The Skills"
+territory: "practice"
 sources:
   - iihs-teens
   - cdc-risk

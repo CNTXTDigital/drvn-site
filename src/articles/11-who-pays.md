@@ -9,6 +9,7 @@ image: "/images/articles/a11-who-pays.jpg"
 imageSm: "/images/articles/a11-who-pays-800.jpg"
 imageAlt: "A hand holding a gas pump nozzle in a car’s fuel door."
 cluster: "The Money"
+territory: "rules-costs"
 sources:
   - aaa-driving-costs-2025
   - ci-16-year-old

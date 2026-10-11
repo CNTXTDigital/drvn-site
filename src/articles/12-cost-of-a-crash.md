@@ -9,6 +9,7 @@ image: "/images/articles/a12-crash-cost.jpg"
 imageSm: "/images/articles/a12-crash-cost-800.jpg"
 imageAlt: "A calculator and a notebook of handwritten figures on a desk."
 cluster: "The Money"
+territory: "rules-costs"
 sources:
   - nerdwallet-accident
   - nerdwallet-accident-duration

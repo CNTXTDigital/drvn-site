@@ -9,6 +9,7 @@ image: "/images/articles/a26-skids.jpg"
 imageSm: "/images/articles/a26-skids-800.jpg"
 imageAlt: "A car sliding through a turn in an empty snowy parking lot."
 cluster: "The Skills"
+territory: "practice"
 sources:
   - ca-handbook-safe
   - ny-manual-10

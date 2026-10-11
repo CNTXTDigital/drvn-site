@@ -9,6 +9,7 @@ image: "/images/articles/a14-rural-road.jpg"
 imageSm: "/images/articles/a14-rural-road-800.jpg"
 imageAlt: "A long, straight rural two-lane road with no shoulder between fields and trees."
 cluster: "The Permit Year"
+territory: "practice"
 sources:
   - mirman-2014
   - chop-tdp

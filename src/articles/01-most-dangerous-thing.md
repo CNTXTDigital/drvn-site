@@ -9,6 +9,7 @@ image: "/images/articles/a01-parent-teen.jpg"
 imageSm: "/images/articles/a01-parent-teen-800.jpg"
 imageAlt: "A father in the passenger seat watches his teenage daughter drive."
 cluster: "The Reckoning"
+territory: "risk"
 sources:
   - iihs-teens
   - nichd-2018

@@ -9,6 +9,7 @@ image: "/images/articles/a34-fender-bender.jpg"
 imageSm: "/images/articles/a34-fender-bender-800.jpg"
 imageAlt: "A teenage boy in a parking lot looks at his phone beside a car with a dented front bumper."
 cluster: "The Handoff"
+territory: "rules-costs"
 sources:
   - ca-handbook-collisions
   - iowa-dot-intermediate

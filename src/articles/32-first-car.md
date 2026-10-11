@@ -9,6 +9,7 @@ image: "/images/articles/a32-first-car.jpg"
 imageSm: "/images/articles/a32-first-car-800.jpg"
 imageAlt: "A teenage girl and her father looking under the hood of a used car."
 cluster: "The Handoff"
+territory: "rules-costs"
 sources:
   - iihs-teens
   - iihs-teen-vehicles

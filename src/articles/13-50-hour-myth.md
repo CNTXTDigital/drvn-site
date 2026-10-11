@@ -9,6 +9,7 @@ image: "/images/articles/a13-practice-log.jpg"
 imageSm: "/images/articles/a13-practice-log-800.jpg"
 imageAlt: "A handwritten practice-driving log and car keys on the passenger seat at dusk."
 cluster: "The Permit Year"
+territory: "practice"
 sources:
   - mirman-2014
   - chop-tdp

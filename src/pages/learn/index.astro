@@ -1,17 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { AREAS } from '../../lib/learn.js';
+import { AREAS, MOST_USEFUL } from '../../lib/learn.js';
 import { DRIVERS_ED } from '../../site.js';
 import StatePicker from '../../components/StatePicker.astro';
 import { allPosts, readingMinutes } from '../../lib/posts.js';
 
 const bySlug = Object.fromEntries(allPosts.map((p) => [p.slug, p]));
-const areas = AREAS.map((a) => {
-  const p = bySlug[a.article];
-  return { ...a, post: p, mins: p ? readingMinutes(p.html) : null };
-});
-const featured = new Set(AREAS.map((a) => a.article));
-const otherNew = allPosts.filter((p) => p.isNew && !featured.has(p.slug));
+const card = (slug) => { const p = bySlug[slug]; if (!p) throw new Error(`Learn: no article /${slug}/`); return { ...p, mins: readingMinutes(p.html) }; };
+const areas = AREAS.map((a) => ({ ...a, post: card(a.article), linked: a.links.map(card) }));
+const useful = MOST_USEFUL.map(card);
 const jsonld = {
   '@type': 'CollectionPage',
   '@id': 'https://www.drvnapp.com/learn/#webpage',
@@ -34,87 +31,97 @@ const jsonld = {
       <div class="intro">
         <div class="eyebrow blue">The DRVN Guide</div>
         <h1>Learn what matters before you hand over the keys.</h1>
-        <p>Straight answers for parents, written by a parent who’s done this four times. Start with the full guide, or jump to the question on your mind tonight.</p>
+        <p>Straight answers for parents, grounded in research and nearly ten years of helping families through the learner period. Start with the full guide, or jump to the question on your mind tonight.</p>
       </div>
       <a href="/teen-driving-safety/" class="lead-card">
         <img src="/images/site/guide-hero.jpg" alt="" width="1600" height="842" fetchpriority="high" />
         <div class="lb">
-          <div class="eyebrow blue">Start here · 14 min read</div>
+          <div class="eyebrow blue">Start here · The complete guide</div>
           <div class="lt">Teen Driving Safety for Parents: What You Actually Need to Know</div>
-          <div class="lx">Every question in one place, from the first parking-lot drive to the first solo trip.</div>
-          <div class="lg">Read the full guide →</div>
+          <div class="lx">The complete parent guide to risk, practice, readiness, licensing, and the first months of independent driving.</div>
+          <div class="lg">Read the complete guide →</div>
         </div>
       </a>
     </div>
   </section>
 
-  <section class="wrap chips" aria-label="Jump to">
-    <span class="eyebrow">Jump to</span>
-    {areas.map((a) => <a class="chip" href={`#${a.id}`}>{a.tag}</a>)}
-  </section>
+  <nav class="wrap chips" aria-labelledby="help-h">
+    <h2 id="help-h" class="eyebrow">What do you need help with?</h2>
+    <div class="chip-row">{areas.map((a) => <a class="chip" href={`#${a.id}`}>{a.label}</a>)}</div>
+  </nav>
 
   <section class="wrap">
     {areas.map((a) => (
       <div id={a.id} class="area">
         <div class="aq">
-          <div class="ah"><span class="num">{a.n}</span><span class="eyebrow blue">{a.tag}</span></div>
+          <div class="ah"><span class="num">{a.n}</span><span class="eyebrow blue">{a.label}</span></div>
           <h2>{a.q}</h2>
           <p>{a.blurb}</p>
+          {a.callout && <p class="callout"><span class="ck">{a.callout.k}:</span> {a.callout.t}</p>}
         </div>
         <div class="pair">
-          {a.post && (
-            <a class="feat" href={`/${a.post.slug}/`}>
-              <img src={a.post.imageSm || a.img} alt="" width="800" height="421" loading="lazy" />
-              <div class="fb">
-                <div class="kind blue">Article · {a.mins} min</div>
-                <div class="ft">{a.post.title}</div>
-              </div>
-            </a>
-          )}
+          <a class="feat" href={`/${a.post.slug}/`}>
+            <img src={a.post.imageSm || a.img} alt="" width="800" height="421" loading="lazy" />
+            <div class="fb">
+              <div class="kind blue">Featured · {a.post.mins} min read</div>
+              <div class="ft">{a.post.title}</div>
+            </div>
+          </a>
           <div class="list">
-            {a.more.map((m) => <a class="item" href={m.href}><span>{m.t}</span><span class="kind">{m.k}</span></a>)}
+            {a.linked.map((m) => <a class="item" href={`/${m.slug}/`}><span>{m.title}</span><span class="kind">{m.mins} min</span></a>)}
           </div>
         </div>
       </div>
     ))}
   </section>
 
-  {otherNew.length > 0 && (
-    <section class="wrap more">
-      <h2>More for parents</h2>
-      <ul>{otherNew.map((p) => <li><a href={`/${p.slug}/`}>{p.title}</a></li>)}</ul>
-      <a class="link-arrow" href="/blog/">All articles</a>
-    </section>
-  )}
-  {otherNew.length === 0 && <section class="wrap more"><a class="link-arrow" href="/blog/">All articles</a></section>}
+  <section class="wrap useful" aria-labelledby="useful-h">
+    <h2 id="useful-h">Most useful right now</h2>
+    <div class="ucards">
+      {useful.map((p) => (
+        <a class="ucard" href={`/${p.slug}/`}>
+          <img src={p.imageSm || p.image} alt="" width="800" height="421" loading="lazy" />
+          <div class="ub">
+            <div class="kind blue">{AREAS.find((a) => a.id === p.territory)?.label} · {p.mins} min</div>
+            <div class="ut">{p.title}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+    <a class="link-arrow" href="/blog/">View all articles</a>
+  </section>
 
-  <section class="wrap">
+  <section class="wrap act" aria-labelledby="act-h">
+    <h2 id="act-h" class="act-h">Know what matters. Then put it into action.</h2>
     <div class="close">
       <div class="col cs">
         <div class="ct">
-          <div class="ch">What does your state require?</div>
-          <div class="cx">Permit age, supervised hours, night and passenger rules.</div>
+          <div class="eyebrow">Start with your state</div>
+          <div class="ch">Know the rules where you live.</div>
+          <div class="cx">Get the current permit age, supervised-driving requirements, night and passenger restrictions, and links to official state sources.</div>
         </div>
         <StatePicker id="state-pick-learn" buttonLabel="Find your state guide →" split />
       </div>
       <div class="col ce">
         <div class="ct">
+          <div class="eyebrow">Complete driver’s ed</div>
           <div class="ch">Still need driver’s ed?</div>
-          <div class="cx">State-approved online courses your teen can do at their own pace.</div>
+          <div class="cx">See what your state requires and find an online driver’s education option available where you live.</div>
         </div>
         <div class="cm"><img class="ace-logo" src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" /><span class="eyebrow">Partner</span></div>
         <div class="cbot">
-          <a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find an online course →</a>
+          <a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find driver’s ed →</a>
           <div class="cfine">DRVN may earn a referral fee if you enroll through this link.</div>
         </div>
       </div>
       <div class="col ca">
         <div class="ct">
-          <div class="ch">Ready to put it into practice?</div>
-          <div class="cx">One priority before each drive, with hours logged as you go.</div>
+          <div class="eyebrow light">Use DRVN</div>
+          <div class="ch">Turn the guidance into practice.</div>
+          <div class="cx">DRVN helps you know what to work on, track the experience your teen is building, and see what still needs work before they drive alone.</div>
         </div>
         <div class="cm"><img class="app-icon" src="/images/app/drvn-app-icon.png" alt="DRVN app icon" width="96" height="96" /><span class="cx">Free on iOS and Android</span></div>
-        <div class="cbot"><a class="btn btn-sm" href="/app/">Get the app →</a></div>
+        <div class="cbot"><a class="btn btn-sm" href="/app/">See how DRVN works →</a></div>
       </div>
     </div>
   </section>
@@ -134,8 +141,9 @@ const jsonld = {
   .lt { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.2; letter-spacing: -0.015em; }
   .lx { font-size: 15.5px; color: var(--ink-3); line-height: 1.5; }
   .lg { font-weight: 700; color: var(--blue); font-size: 15px; margin-top: 4px; }
-  .chips { padding-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .chips .eyebrow { margin-right: 6px; }
+  .chips { padding-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .chips h2 { margin: 0; font-size: 13px; }
+  .chip-row { display: flex; gap: 10px; flex-wrap: wrap; }
   .chip { font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink-2); background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; white-space: nowrap; }
   .chip:hover { color: var(--blue); border-color: var(--cyan); }
   .area { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 40px; padding: 32px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 80px; }
@@ -154,11 +162,21 @@ const jsonld = {
   .item { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink-2); font-weight: 600; font-size: 16px; line-height: 1.4; }
   .item:hover { color: var(--blue); }
   .kind { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-2); white-space: nowrap; }
-  .more { padding-top: 32px; }
-  .more h2 { font-size: 24px; margin-bottom: 10px; }
-  .more ul { margin: 0 0 12px; padding-left: 1.1em; }
-  .more li { margin: 6px 0; font-size: 17px; }
-  .close { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto; border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; }
+  .callout { margin-top: 6px !important; padding: 12px 14px; background: var(--cyan-tint); border-radius: 10px; font-size: 15.5px !important; color: var(--ink-2) !important; }
+  .ck { font-weight: 700; color: var(--blue); }
+  .useful { padding-top: 40px; }
+  .useful h2 { font-size: 27px; margin-bottom: 16px; }
+  .ucards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-bottom: 16px; }
+  .ucard { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; overflow: hidden; }
+  .ucard:hover { color: inherit; box-shadow: 0 18px 40px -26px rgba(10,108,165,.45); }
+  .ucard img { width: 100%; aspect-ratio: 1.9 / 1; object-fit: cover; }
+  .ub { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .ut { font-size: 17px; font-weight: 800; line-height: 1.25; color: var(--ink); }
+  .act { padding-top: 48px; }
+  .act-h { font-size: clamp(26px, 3vw, 32px); font-weight: 800; letter-spacing: -0.02em; margin: 0; }
+  .ct .eyebrow { margin-bottom: 6px; }
+  .eyebrow.light { color: var(--cyan-light); }
+  .close { margin-top: 20px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto; border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; }
   .col { grid-row: span 3; display: grid; grid-template-rows: subgrid; row-gap: 18px; padding: 26px 28px; align-items: start; }
   .cs { background: var(--surface-2); }
   .ce { background: var(--surface); border-left: 1px solid var(--line-2); }
@@ -175,12 +193,12 @@ const jsonld = {
   .cbot { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
   .cfine { font-size: 12px; color: var(--muted); }
   @media (max-width: 900px) {
-    .hero, .area, .pair, .close { grid-template-columns: 1fr; }
+    .hero, .area, .pair, .close, .ucards { grid-template-columns: 1fr; }
     .area { gap: 16px; }
     .close { grid-template-rows: none; }
     .col { grid-row: auto; grid-template-rows: none; }
     .ce { border-left: 0; border-top: 1px solid var(--line-2); }
-    .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+    .chip-row { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
   }
   @media (max-width: 520px) { .feat img { width: 110px; flex-basis: 110px; } }
 </style>

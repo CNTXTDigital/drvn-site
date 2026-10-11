@@ -9,6 +9,7 @@ image: "/images/articles/a33-staying-involved.jpg"
 imageSm: "/images/articles/a33-staying-involved-800.jpg"
 imageAlt: "A teen driving in the rain while a parent in the passenger seat points ahead."
 cluster: "The Handoff"
+territory: "risk"
 sources:
   - ginsburg-2009
 ---

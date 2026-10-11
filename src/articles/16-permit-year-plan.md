@@ -9,6 +9,7 @@ image: "/images/articles/a16-calendar.jpg"
 imageSm: "/images/articles/a16-calendar-800.jpg"
 imageAlt: "A parent marking practice drives on a year-at-a-glance calendar at the kitchen table."
 cluster: "The Permit Year"
+territory: "permit-year"
 sources:
   - chop-tdp
   - mirman-2014

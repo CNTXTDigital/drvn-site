@@ -9,6 +9,7 @@ image: "/images/articles/a18-feedback.jpg"
 imageSm: "/images/articles/a18-feedback-800.jpg"
 imageAlt: "A father and teenage son talking beside the car after a drive."
 cluster: "The Permit Year"
+territory: "permit-year"
 sources: []
 ---
 

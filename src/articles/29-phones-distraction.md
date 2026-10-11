@@ -9,6 +9,7 @@ image: "/images/articles/a29-phones.jpg"
 imageSm: "/images/articles/a29-phones-800.jpg"
 imageAlt: "A driver’s hands on the wheel with a phone stowed in the center console."
 cluster: "The Real Risks"
+territory: "risk"
 sources:
   - aaaf-distraction-2015
   - cdc-risk

@@ -9,6 +9,7 @@ image: "/images/articles/a27-first-six-months.jpg"
 imageSm: "/images/articles/a27-first-six-months-800.jpg"
 imageAlt: "A parent holding a mug watches a car pull away from the house."
 cluster: "The Real Risks"
+territory: "risk"
 sources:
   - nhtsa-teen
   - nhtsa-811598

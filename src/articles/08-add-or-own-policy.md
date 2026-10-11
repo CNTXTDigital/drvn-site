@@ -9,6 +9,7 @@ image: "/images/articles/a08-money-bills.jpg"
 imageSm: "/images/articles/a08-money-bills-800.jpg"
 imageAlt: "A man at a kitchen table sorting through car bills, an auto insurance statement, a registration notice and a calculator."
 cluster: "The Money"
+territory: "rules-costs"
 sources:
   - ci-16-year-old
   - naic-teen

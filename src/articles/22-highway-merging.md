@@ -9,6 +9,7 @@ image: "/images/articles/a22-merge-rain.jpg"
 imageSm: "/images/articles/a22-merge-rain-800.jpg"
 imageAlt: "A car on a wet road approaching a highway on-ramp with a merge sign, under a gray sky."
 cluster: "The Skills"
+territory: "practice"
 sources:
   - ca-handbook-roads
   - oregon-manual

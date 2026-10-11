@@ -9,6 +9,7 @@ image: "/images/articles/a28-passengers.jpg"
 imageSm: "/images/articles/a28-passengers-800.jpg"
 imageAlt: "A teen driver with a smiling friend holding a phone in the passenger seat."
 cluster: "The Real Risks"
+territory: "risk"
 sources:
   - aaaf-passengers-2012
   - aaaf-distraction-2015

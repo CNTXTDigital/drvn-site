@@ -9,6 +9,7 @@ image: "/images/articles/a10-usage-based.jpg"
 imageSm: "/images/articles/a10-usage-based-800.jpg"
 imageAlt: "A leather wallet with coins next to a smartphone on a table."
 cluster: "The Money"
+territory: "rules-costs"
 sources:
   - nerdwallet-ubi
   - naic-ubi

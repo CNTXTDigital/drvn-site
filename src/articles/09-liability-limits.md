@@ -9,6 +9,7 @@ image: "/images/articles/a09-liability.jpg"
 imageSm: "/images/articles/a09-liability-800.jpg"
 imageAlt: "An auto insurance page with the bodily injury liability line highlighted, next to car keys."
 cluster: "The Money"
+territory: "rules-costs"
 sources:
   - iii-compulsory
   - cdi-minimums-2025

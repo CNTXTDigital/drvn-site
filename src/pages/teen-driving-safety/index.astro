@@ -18,15 +18,15 @@ const toc = [
  },
  {
   "id": "how-many-hours",
-  "label": "How many hours should they practice?"
+  "label": "How many hours should a teenager practice?"
  },
  {
   "id": "structured-practice",
-  "label": "Does structured practice help?"
+  "label": "Does structured practice actually make a difference?"
  },
  {
   "id": "what-to-experience",
-  "label": "What should they experience first?"
+  "label": "What should teens experience before they drive alone?"
  },
  {
   "id": "skills-that-matter",
@@ -34,11 +34,11 @@ const toc = [
  },
  {
   "id": "how-to-teach",
-  "label": "How do I teach without being an instructor?"
+  "label": "How do I teach without becoming a driving instructor?"
  },
  {
   "id": "conflict",
-  "label": "What if practice turns into a fight?"
+  "label": "What if practicing together turns into a fight?"
  },
  {
   "id": "is-drivers-ed-enough",
@@ -46,51 +46,51 @@ const toc = [
  },
  {
   "id": "road-test",
-  "label": "Doesn’t the road test prove they’re ready?"
+  "label": "Doesn’t passing the road test prove they’re ready?"
  },
  {
   "id": "ready-to-drive-alone",
-  "label": "How do I know they’re ready?"
+  "label": "How do I know when my teenager is ready to drive alone?"
  },
  {
   "id": "after-the-license",
-  "label": "What changes after the license?"
+  "label": "What changes after they get the license?"
  },
  {
   "id": "teen-passengers",
-  "label": "Teen passengers"
+  "label": "What about teen passengers?"
  },
  {
   "id": "night-driving",
-  "label": "Night driving"
+  "label": "What about night driving?"
  },
  {
   "id": "phones-and-distraction",
-  "label": "Phones and distractions"
+  "label": "What about phones and other distractions?"
  },
  {
   "id": "driving-agreement",
-  "label": "A parent-teen driving agreement"
+  "label": "Should we have a parent-teen driving agreement?"
  },
  {
   "id": "state-minimum",
-  "label": "State minimum or beyond?"
+  "label": "Should we follow the state minimum or go beyond it?"
  },
  {
   "id": "doesnt-want-to-practice",
-  "label": "If they don’t want to practice"
+  "label": "What if my teenager doesn’t want to practice?"
  },
  {
   "id": "anxious-teen",
-  "label": "If they’re anxious"
+  "label": "What if my teenager is anxious?"
  },
  {
   "id": "overconfident-teen",
-  "label": "If they’re overconfident"
+  "label": "What if my teenager is overconfident?"
  },
  {
   "id": "readiness-check",
-  "label": "A quick readiness check"
+  "label": "Is my teen ready? A quick check"
  }
 ];
 const more = [
@@ -272,14 +272,10 @@ const jsonld = {
 <p>Driving instructors have shaped DRVN from the beginning for exactly this reason. They don’t see professional lessons and parent practice as competing. Each one needs the other.</p>
 <p class="pull">Driver’s ed teaches. Practice with you turns it into experience.</p>
 
-<aside aria-label="Online driver's ed partner" style="display: flex; gap: 22px; align-items: center; background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 16px; padding: 20px 22px; margin: 0 0 8px">
-<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; align-items: center; gap: 12px"><img src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" style="height: 22px; width: auto; display: block"><span class="eyebrow" style="font-size: 11px">Partner</span></div>
-<div style="font-size: 19px; font-weight: 700; color: #0A6CA5; line-height: 1.25">Still need driver’s ed? Start it online.</div>
-<div style="font-size: 15px; line-height: 1.55; color: #45535E">State-approved courses your teen can do at their own pace. <span style="color: #6B7A85; font-size: 12.5px">DRVN may earn a referral fee if you enroll through this link.</span></div>
+<div class="deeper-inline">
+<div class="eyebrow">Go deeper</div>
+<div class="deeper">{more.map((m) => <a href={m.href}>{m.t}</a>)}</div>
 </div>
-<a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank" style="white-space: nowrap">Find an online course</a>
-</aside>
 </section>
 
 <section class="q" id="road-test">
@@ -419,10 +415,13 @@ const jsonld = {
 <p>Permit age, supervised hours, night and passenger rules.</p>
 <a class="link-arrow" href="/guide/">State guide</a>
 </div>
-<div>
-<div class="eyebrow">Go deeper</div>
-<div class="deeper">{more.map((m) => <a href={m.href}>{m.t}</a>)}</div>
-</div>
+<aside class="ace-rail" aria-label="Online driver's ed partner">
+<div class="ace-top"><img src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" /><span class="eyebrow">Partner</span></div>
+<p class="ace-h">Still need driver’s ed? Start it online.</p>
+<p class="ace-p">State-approved courses your teen can do at their own pace.</p>
+<a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find an online course</a>
+<p class="ace-fine">DRVN may earn a referral fee if you enroll through this link.</p>
+</aside>
 </div>
 </aside>
 </div>
@@ -496,4 +495,14 @@ const jsonld = {
 .printbtn:hover{text-decoration:underline}
 @media (max-width:860px){.idea{left:12px;right:12px;bottom:-30px}.herogrid{gap:52px}}
 @media print{.side,.rail,.top,#app-cta{display:none !important}}
+  .deeper-inline { background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 16px; padding: 20px 22px; margin: 0 0 8px; }
+  .deeper-inline .deeper { margin-top: 10px; }
+  .ace-rail { border: 1px solid #DCE7EE; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 8px; background: var(--surface); }
+  .ace-top { display: flex; align-items: center; gap: 10px; }
+  .ace-top img { height: 20px; width: auto; display: block; }
+  .ace-top .eyebrow { font-size: 11px; }
+  .ace-h { margin: 4px 0 0; font-size: 17px; font-weight: 700; color: #0A6CA5; line-height: 1.25; }
+  .ace-p { margin: 0; font-size: 14.5px; line-height: 1.5; color: #45535E; }
+  .ace-rail .btn { align-self: flex-start; margin-top: 4px; }
+  .ace-fine { margin: 0; font-size: 12px; color: #6B7A85; }
 </style>

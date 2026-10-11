@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { AREAS } from '../../lib/learn.js';
+import { DRIVERS_ED } from '../../site.js';
 import { allPosts, readingMinutes } from '../../lib/posts.js';
 
 const bySlug = Object.fromEntries(allPosts.map((p) => [p.slug, p]));
@@ -95,6 +96,17 @@ const jsonld = {
         </div>
         <a class="link-arrow" href="/guide/">Find your state guide</a>
       </div>
+      <div class="ce">
+        <div>
+          <div class="ce-top"><img src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" /><span class="eyebrow">Partner</span></div>
+          <div class="ch">Still need driver’s ed?</div>
+          <div class="cx">State-approved online courses your teen can do at their own pace.</div>
+        </div>
+        <div class="cbot">
+          <a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find an online course</a>
+          <div class="cfine">DRVN may earn a referral fee if you enroll through this link.</div>
+        </div>
+      </div>
       <div class="ca">
         <div>
           <div class="ch">Ready to put it into practice?</div>
@@ -143,17 +155,25 @@ const jsonld = {
   .more h2 { font-size: 24px; margin-bottom: 10px; }
   .more ul { margin: 0 0 12px; padding-left: 1.1em; }
   .more li { margin: 6px 0; font-size: 17px; }
-  .close { margin-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; }
-  .cs, .ca { padding: 26px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .close { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; }
+  .cs, .ca, .ce { padding: 26px 28px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  .cx { margin-top: 4px; }
+  .ce { background: var(--surface); border-left: 1px solid var(--line-2); }
+  .ce-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .ce-top img { height: 20px; width: auto; display: block; }
+  .ce-top .eyebrow { font-size: 11px; }
+  .cbot { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cfine { font-size: 12px; color: var(--muted); }
   .cs { background: var(--surface-2); }
   .ca { background: var(--blue); }
-  .ch { font-size: 21px; font-weight: 800; color: var(--blue); }
+  .ch { font-size: 20px; font-weight: 800; color: var(--blue); }
   .cx { font-size: 15.5px; color: var(--ink-3); }
   .ca .ch { color: #fff; }
   .ca .cx { color: #E6F5FC; }
   @media (max-width: 900px) {
     .hero, .area, .pair, .close { grid-template-columns: 1fr; }
     .area { gap: 16px; }
+    .ce { border-left: 0; border-top: 1px solid var(--line-2); }
     .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
   }
   @media (max-width: 520px) { .feat img { width: 110px; flex-basis: 110px; } }

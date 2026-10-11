@@ -34,8 +34,10 @@ export const AREAS = [
     img: '/images/learn/risk.jpg', alt: 'Heavy rain on a windshield at night, with taillights on the wet highway ahead.',
     article: 'most-dangerous-thing-teen-drivers-license',
     more: [
-      { t: 'When is a new driver most at risk?', k: 'Guide', href: G('when-risk-is-highest') },
-      { t: 'Passengers, night driving and phones', k: 'Guide', href: G('teen-passengers') },
+      { t: 'The First Six Months Alone', k: 'Article', href: '/first-six-months-teen-driver/' },
+      { t: 'The Friend in the Passenger Seat', k: 'Article', href: '/teen-driver-passengers/' },
+      { t: 'Night Driving', k: 'Article', href: '/teen-night-driving/' },
+      { t: 'Phones and Distraction', k: 'Article', href: '/teen-driving-phones-distraction/' },
     ],
   },
   {

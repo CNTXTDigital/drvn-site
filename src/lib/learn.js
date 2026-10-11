@@ -8,10 +8,10 @@ export const AREAS = [
     short: 'How to judge real readiness, not just legal eligibility.',
     blurb: 'The state decides when they’re eligible. You decide when they’re ready. Here’s how to tell.',
     img: '/images/learn/readiness.jpg', alt: 'A handwritten practice-driving log and car keys on the passenger seat at dusk.',
-    article: '50-hour-myth-driving-practice',
+    article: 'is-my-teen-ready-to-drive-alone',
     more: [
-      { t: 'How do I know they’re ready to drive alone?', k: 'Guide', href: G('ready-to-drive-alone') },
-      { t: 'Doesn’t passing the road test prove they’re ready?', k: 'Guide', href: G('road-test') },
+      { t: 'Road Test Day: what the test proves, and what it doesn’t', k: 'Article', href: '/teen-road-test-day/' },
+      { t: 'The 50-Hour Myth', k: 'Article', href: '/50-hour-myth-driving-practice/' },
       { t: 'A quick readiness check', k: 'Checklist', href: G('readiness-check') },
     ],
   },

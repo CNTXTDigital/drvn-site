@@ -23,7 +23,9 @@
     "iowa-dot": { "org": "Iowa Department of Transportation", "title": "The Parent’s Supervised Driving Program (PDF)", "url": "https://iowadot.gov/media/7147/download", "date": "2021 edition", "kind": "Official state source" },
     "arkansas-dfa": { "org": "Arkansas Department of Finance and Administration", "title": "Learner’s and Intermediate License", "url": "https://dfa.arkansas.gov/driver-services/license-id-and-permits/graduated-licenses/learners-and-intermediate-license", "date": "Checked October 2026", "kind": "Official state source" },
     "penndot": { "org": "Pennsylvania Department of Transportation", "title": "Young Driver", "url": "https://www.pa.gov/agencies/penndot/traveling-in-pa/safety/traffic-safety-driver-topics/young-driver", "date": "Checked October 2026", "kind": "Official state source" },
-    "sd-dps": { "org": "South Dakota Department of Public Safety", "title": "Teen Drivers", "url": "https://dps.sd.gov/driver-licensing/south-dakota-licensing-information/teen-drivers", "date": "Checked October 2026", "kind": "Official state source" }
+    "sd-dps": { "org": "South Dakota Department of Public Safety", "title": "Teen Drivers", "url": "https://dps.sd.gov/driver-licensing/south-dakota-licensing-information/teen-drivers", "date": "Checked October 2026", "kind": "Official state source" },
+    "azdot-teen": { "org": "Arizona Department of Transportation, MVD", "title": "Teen permit and license requirements", "url": "https://azdot.gov/mvd/services/driver-services/teen-drivers/permit-and-license-requirements", "date": "Checked October 2026", "kind": "Official state source" },
+    "odot-first-rain": { "org": "Oregon Department of Transportation", "title": "First rains after dry spell can mean slick roads", "url": "https://content.govdelivery.com/accounts/ORDOT/bulletins/32f6cde", "date": "September 2022", "kind": "Agency safety guidance" }
   },
   "groups": [
     {
@@ -72,7 +74,7 @@
           "strength": "Peer-reviewed naturalistic driving study (NICHD and Virginia Tech Transportation Institute)",
           "caveat": "One study of 90 teens in one state. Most recorded events were near-crashes, not crashes.",
           "sources": ["nichd-2018", "gershon-2018"],
-          "usedIn": ["most-dangerous-thing-teen-drivers-license"]
+          "usedIn": ["most-dangerous-thing-teen-drivers-license", "is-my-teen-ready-to-drive-alone", "teen-road-test-day"]
         },
         {
           "id": "risk-stays-high",
@@ -81,7 +83,7 @@
           "strength": "Peer-reviewed naturalistic driving studies",
           "caveat": "The two studies differ on whether rates fall during the first year. Both show risk well above adults’ throughout.",
           "sources": ["nichd-2018", "gershon-2018", "simons-morton-2011"],
-          "usedIn": ["most-dangerous-thing-teen-drivers-license"]
+          "usedIn": ["most-dangerous-thing-teen-drivers-license", "is-my-teen-ready-to-drive-alone"]
         }
       ]
     },

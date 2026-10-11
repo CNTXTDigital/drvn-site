@@ -14,6 +14,7 @@ sources:
   - penndot
   - sd-dps
   - fhwa-rain
+  - odot-first-rain
 ---
 
 My four kids learned to drive in Ohio, which is not a dry place. All four cleared fifty hours of supervised practice, which is more than the state asked for, and between them that adds up to a lot of time in a car with me in the passenger seat.
@@ -73,11 +74,11 @@ I'd put that third one up against any other twenty minutes in the permit year. A
 
 ## One thing worth telling them
 
-A road is at its most slippery in the first ten or fifteen minutes of rain after a dry stretch, when the oil and rubber that have been collecting on it lift and mix with the water before the rain washes them off.
+A road is at its most slippery when rain first falls after a dry stretch, when the oil and grease that have been collecting on it [come up all at once and mix with the water](https://content.govdelivery.com/accounts/ORDOT/bulletins/32f6cde). Oregon's transportation department puts it plainly: the first hours of rain after a dry spell are when the trouble is.
 
 Worth saying out loud, partly because it's true and partly because it's the kind of fact that gets a seventeen-year-old briefly interested in the road as a surface rather than as a thing that's simply there.
 
-It also means the most treacherous ten minutes of a rainy day are the exact ten minutes you are most likely to look outside and say we'll go tomorrow.
+It also means the most treacherous stretch of a rainy day is the exact moment you are most likely to look outside and say we'll go tomorrow.
 
 ## The part that isn't up to you
 

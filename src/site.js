@@ -2,6 +2,7 @@
 export const SITE = {
   name: 'DRVN',
   url: 'https://www.drvnapp.com',
+  ga4: 'G-WJ7SMQ1RRQ',
   tagline: 'The plan for parents teaching a teen to drive.',
   defaultDescription:
     'DRVN is the plan for parents teaching a teen to drive: one priority before each drive, hours and roads tracked while you drive, and a clear picture of what is still missing.',

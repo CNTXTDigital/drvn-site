@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../site.js';
 import { ORG, WEBSITE, breadcrumbLD } from '../lib/schema.js';
+import { allPosts } from '../lib/posts.js';
+// Readiness article paths, for the readiness_click analytics event.
+const READINESS = allPosts.filter((p) => p.territory === 'readiness').map((p) => `/${p.slug}/`);
 
 const {
   title,
@@ -61,11 +64,57 @@ const ogImage = new URL(image || '/og-default.png', SITE.url).href;
 
   {!noindex && <script type="application/ld+json" set:html={JSON.stringify(graph)} />}
 
-  <!-- Google Tag Manager -->
-  <script is:inline define:vars={{ gtm: SITE.gtm }}>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
-    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
+  <!-- Analytics: Google Tag Manager (existing container) plus GA4 events for G-WJ7SMQ1RRQ.
+       Runs only on www.drvnapp.com. On staging, add ?ga_debug=1 to test (sends GA4 debug events). -->
+  <script is:inline define:vars={{ gtm: SITE.gtm, ga4: SITE.ga4, readiness: READINESS }}>
+    (function(){
+      var prod = location.hostname === 'www.drvnapp.com';
+      var dbg = false;
+      try { if (/[?&]ga_debug=1/.test(location.search)) sessionStorage.setItem('ga_debug','1'); dbg = sessionStorage.getItem('ga_debug') === '1'; } catch (e) {}
+      if (!prod && !dbg) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      if (prod) {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
+      }
+      var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4; document.head.appendChild(g);
+      gtag('js', new Date());
+      // Page views come from the Tag Manager container in production; on staging debug, gtag sends them.
+      gtag('config', ga4, dbg ? { debug_mode: true } : { send_page_view: false });
+      function send(name, params) { gtag('event', name, Object.assign({ page_path: location.pathname }, params || {})); }
+      if (location.pathname === '/app/') send('app_page_view');
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        var u; try { u = new URL(a.href, location.href); } catch (err) { return; }
+        var text = (a.innerText || '').trim().replace(/\s+/g, ' ').slice(0, 100);
+        var p = { link_url: u.href, link_text: text };
+        var host = u.hostname.replace(/^www\./, '');
+        if (host === 'apps.apple.com') return send('app_store_click', p);
+        if (host === 'play.google.com') return send('google_play_click', p);
+        if (/^go\.(aceable|driversed)\.com$/.test(u.hostname)) { p.provider = u.hostname.split('.')[1]; return send('affiliate_click', p); }
+        var internal = host === 'drvnapp.com' || u.hostname === location.hostname;
+        if (!internal) {
+          if (a.closest('.prose, .sources, .src, .claim, .biblio, .verified')) { p.source_domain = host; return send('research_source_click', p); }
+          return;
+        }
+        var path = u.pathname;
+        if (location.pathname === '/learn/') {
+          var sec = a.closest('[id].area');
+          var terr = (u.hash && path === '/learn/') ? u.hash.slice(1) : (sec ? sec.id : null);
+          if (terr) send('learn_territory_click', { territory: terr, link_url: u.href, link_text: text });
+        }
+        if (path === '/teen-driving-safety/') return send('guide_click', p);
+        if (readiness.indexOf(path) !== -1) return send('readiness_click', p);
+        if (path.indexOf('/guide/') === 0) return send('state_guide_click', p);
+        if (path === '/evidence/') return send('evidence_library_click', p);
+        if (path === '/editorial-standards/') return send('editorial_standards_click', p);
+        if (path === '/app/') return send('app_cta_click', p);
+      }, true);
+    })();
   </script>
 </head>
 <body>

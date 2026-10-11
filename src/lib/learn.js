@@ -61,7 +61,7 @@ export const AREAS = [
     more: [
       { t: 'Is driver’s ed enough?', k: 'Article', href: '/is-drivers-ed-enough/' },
       { t: 'How to choose a driver’s ed course', k: 'Article', href: '/choosing-a-drivers-ed-course/' },
-      { t: 'A parent-teen driving agreement', k: 'Guide', href: G('driving-agreement') },
+      { t: 'The parent-teen driving agreement (free PDF)', k: 'Article', href: '/parent-teen-driving-agreement/' },
       { t: 'Your state’s requirements', k: 'State guide', href: '/guide/' },
     ],
   },

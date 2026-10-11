@@ -12,7 +12,6 @@ export const AREAS = [
     img: '/images/learn/readiness.jpg', alt: 'A handwritten practice-driving log and car keys on the passenger seat at dusk.',
     article: 'is-my-teen-ready-to-drive-alone',
     links: ['50-hour-myth-driving-practice', 'teen-road-test-day'],
-    callout: { k: 'A useful readiness test', t: 'How much of the driving are you still doing from the passenger seat?' },
   },
   {
     id: 'practice', n: 2, tag: 'Practice', label: 'Practice', q: 'What should we actually practice?',

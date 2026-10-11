@@ -1,0 +1,156 @@
+---
+import Base from '../../layouts/Base.astro';
+import { AREAS } from '../../lib/learn.js';
+import { allPosts, readingMinutes } from '../../lib/posts.js';
+
+const bySlug = Object.fromEntries(allPosts.map((p) => [p.slug, p]));
+const areas = AREAS.map((a) => {
+  const p = bySlug[a.article];
+  return { ...a, post: p, mins: p ? readingMinutes(p.html) : null };
+});
+const featured = new Set(AREAS.map((a) => a.article));
+const otherNew = allPosts.filter((p) => p.isNew && !featured.has(p.slug));
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Learn: the DRVN Guide for parents',
+  hasPart: areas.filter((a) => a.post).map((a) => ({ '@type': 'Article', headline: a.post.title, url: `https://www.drvnapp.com/${a.post.slug}/` })),
+};
+---
+<Base
+  title="Learn: what parents need to know before handing over the keys"
+  description="Straight answers for parents teaching a teen to drive: readiness, what to practice, real risks, the permit year, and the rules and costs. Start with the full guide or jump to your question."
+  image="/images/site/guide-hero.jpg"
+  jsonld={jsonld}
+>
+  <section class="top">
+    <div class="wrap hero">
+      <div class="intro">
+        <div class="eyebrow blue">The DRVN Guide</div>
+        <h1>Learn what matters before you hand over the keys.</h1>
+        <p>Straight answers for parents, written by a parent who’s done this four times. Start with the full guide, or jump to the question on your mind tonight.</p>
+      </div>
+      <a href="/teen-driving-safety/" class="lead-card">
+        <img src="/images/site/guide-hero.jpg" alt="" width="1600" height="842" fetchpriority="high" />
+        <div class="lb">
+          <div class="eyebrow blue">Start here · 14 min read</div>
+          <div class="lt">Teen Driving Safety for Parents: What You Actually Need to Know</div>
+          <div class="lx">Every question in one place, from the first parking-lot drive to the first solo trip.</div>
+          <div class="lg">Read the full guide →</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap chips" aria-label="Jump to">
+    <span class="eyebrow">Jump to</span>
+    {areas.map((a) => <a class="chip" href={`#${a.id}`}>{a.tag}</a>)}
+  </section>
+
+  <section class="wrap">
+    {areas.map((a) => (
+      <div id={a.id} class="area">
+        <div class="aq">
+          <div class="ah"><span class="num">{a.n}</span><span class="eyebrow blue">{a.tag}</span></div>
+          <h2>{a.q}</h2>
+          <p>{a.blurb}</p>
+        </div>
+        <div class="pair">
+          {a.post && (
+            <a class="feat" href={`/${a.post.slug}/`}>
+              <img src={a.post.imageSm || a.img} alt="" width="800" height="421" loading="lazy" />
+              <div class="fb">
+                <div class="kind blue">Article · {a.mins} min</div>
+                <div class="ft">{a.post.title}</div>
+              </div>
+            </a>
+          )}
+          <div class="list">
+            {a.more.map((m) => <a class="item" href={m.href}><span>{m.t}</span><span class="kind">{m.k}</span></a>)}
+          </div>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  {otherNew.length > 0 && (
+    <section class="wrap more">
+      <h2>More for parents</h2>
+      <ul>{otherNew.map((p) => <li><a href={`/${p.slug}/`}>{p.title}</a></li>)}</ul>
+      <a class="link-arrow" href="/blog/">All articles</a>
+    </section>
+  )}
+  {otherNew.length === 0 && <section class="wrap more"><a class="link-arrow" href="/blog/">All articles</a></section>}
+
+  <section class="wrap">
+    <div class="close">
+      <div class="cs">
+        <div>
+          <div class="ch">What does your state require?</div>
+          <div class="cx">Permit age, supervised hours, night and passenger rules.</div>
+        </div>
+        <a class="link-arrow" href="/guide/">Find your state guide</a>
+      </div>
+      <div class="ca">
+        <div>
+          <div class="ch">Ready to put it into practice?</div>
+          <div class="cx">One priority before each drive, with hours logged as you go.</div>
+        </div>
+        <a class="btn btn-sm" href="/app/">Get the app →</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .eyebrow.blue, .kind.blue { color: var(--blue); }
+  .top { background: linear-gradient(var(--surface-2), var(--surface)); border-bottom: 1px solid var(--line); }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) 480px; gap: 48px; padding-top: 40px; padding-bottom: 40px; align-items: center; }
+  .intro { display: flex; flex-direction: column; gap: 14px; }
+  h1 { font-size: clamp(36px, 4.6vw, 54px); font-weight: 800; line-height: 1.05; letter-spacing: -0.026em; text-wrap: pretty; }
+  .intro p { margin: 0; font-size: 20px; line-height: 1.5; color: var(--ink-2); max-width: 30em; }
+  .lead-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line-2); border-radius: 18px; overflow: hidden; box-shadow: 0 18px 40px -26px rgba(10,108,165,.4); }
+  .lead-card:hover { color: inherit; box-shadow: 0 22px 44px -24px rgba(10,108,165,.5); }
+  .lead-card img { width: 100%; aspect-ratio: 2.4 / 1; object-fit: cover; }
+  .lb { padding: 18px 22px 20px; display: flex; flex-direction: column; gap: 6px; }
+  .lt { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.2; letter-spacing: -0.015em; }
+  .lx { font-size: 15.5px; color: var(--ink-3); line-height: 1.5; }
+  .lg { font-weight: 700; color: var(--blue); font-size: 15px; margin-top: 4px; }
+  .chips { padding-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .chips .eyebrow { margin-right: 6px; }
+  .chip { font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink-2); background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; white-space: nowrap; }
+  .chip:hover { color: var(--blue); border-color: var(--cyan); }
+  .area { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 40px; padding: 32px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 80px; }
+  .aq { display: flex; flex-direction: column; gap: 8px; }
+  .ah { display: flex; align-items: center; gap: 10px; }
+  .num { width: 28px; height: 28px; border-radius: 50%; background: var(--cyan-tint); color: var(--blue); font-size: 13px; font-weight: 800; display: grid; place-items: center; }
+  .aq h2 { font-size: 27px; font-weight: 800; }
+  .aq p { margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--ink-3); }
+  .pair { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+  .feat { display: flex; gap: 16px; align-items: stretch; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; overflow: hidden; }
+  .feat:hover { box-shadow: 0 18px 40px -26px rgba(10,108,165,.45); color: inherit; }
+  .feat img { width: 150px; flex: 0 0 150px; object-fit: cover; }
+  .fb { padding: 14px 16px 14px 0; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
+  .ft { font-size: 18px; font-weight: 800; line-height: 1.25; color: var(--ink); }
+  .item { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink-2); font-weight: 600; font-size: 16px; line-height: 1.4; }
+  .item:hover { color: var(--blue); }
+  .kind { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-2); white-space: nowrap; }
+  .more { padding-top: 32px; }
+  .more h2 { font-size: 24px; margin-bottom: 10px; }
+  .more ul { margin: 0 0 12px; padding-left: 1.1em; }
+  .more li { margin: 6px 0; font-size: 17px; }
+  .close { margin-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; }
+  .cs, .ca { padding: 26px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .cs { background: var(--surface-2); }
+  .ca { background: var(--blue); }
+  .ch { font-size: 21px; font-weight: 800; color: var(--blue); }
+  .cx { font-size: 15.5px; color: var(--ink-3); }
+  .ca .ch { color: #fff; }
+  .ca .cx { color: #E6F5FC; }
+  @media (max-width: 900px) {
+    .hero, .area, .pair, .close { grid-template-columns: 1fr; }
+    .area { gap: 16px; }
+    .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+  }
+  @media (max-width: 520px) { .feat img { width: 110px; flex-basis: 110px; } }
+</style>

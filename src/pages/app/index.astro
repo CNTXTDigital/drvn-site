@@ -1,0 +1,156 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../site.js';
+
+const steps = [
+  { n: 1, title: 'Pair', body: 'Parent and teen share one plan and one record of every drive.', img: '/images/app/lesson-plan.jpg', alt: 'DRVN lesson plan' },
+  { n: 2, title: 'Drive', body: 'Pick a focus before you go. DRVN logs the time while you drive.', img: '/images/app/skills-checklist.jpg', alt: 'Skills checklist during a drive, with drive time, night time and miles' },
+  { n: 3, title: 'Review', body: 'See what you covered and what to work on next.', img: '/images/app/lesson-progress.jpg', alt: 'Lesson plan showing the current lesson and completed lessons' },
+];
+const features = [
+  { icon: 'skills', title: 'Skills', body: 'Every skill, lesson by lesson, so you can see what’s been practiced and what hasn’t.' },
+  { icon: 'map', title: 'Experience', body: 'Drive time, night time and the route of every drive on a map, not just a running total.' },
+  { icon: 'log', title: 'Progress', body: 'Every drive in one log, adding up toward your state’s requirement and beyond it.' },
+];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: 'DRVN',
+  operatingSystem: 'iOS, Android',
+  applicationCategory: 'EducationApplication',
+  description: 'A practice-driving plan and log for parents teaching a teen to drive.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  downloadUrl: [SITE.appStore, SITE.googlePlay],
+};
+---
+<Base
+  title="The DRVN app: a plan for every practice drive"
+  description="Know what to practice before you pull out of the driveway, log the hours while you drive, and see what you haven’t covered yet. Free for parents and teens on iOS and Android."
+  image="/images/app/drive-in-progress.jpg"
+  jsonld={jsonld}
+>
+  <section class="top">
+    <div class="wrap hero">
+      <div class="intro">
+        <div class="eyebrow blue">The DRVN app</div>
+        <h1>A plan for every drive.</h1>
+        <p>Know what to practice before you pull out of the driveway, log the hours while you drive, and see what you haven’t covered yet.</p>
+        <div class="ctas">
+          <a class="btn" href="#get">Get the app →</a>
+          <a class="arrow" href="#how">See how it works →</a>
+        </div>
+        <div class="fine">Free for parents and teens · iOS and Android</div>
+      </div>
+      <div class="fan" aria-hidden="false">
+        <div class="phone p-left"><img src="/images/app/drive-log.jpg" alt="DRVN driving log listing each practice drive" width="359" height="618" /></div>
+        <div class="phone p-right"><img src="/images/app/drive-map.jpg" alt="A drive’s route on a map with drive time, night time and miles" width="359" height="784" /></div>
+        <div class="phone p-mid"><img src="/images/app/drive-in-progress.jpg" alt="DRVN logging a drive in progress" width="700" height="1478" fetchpriority="high" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="wrap sec">
+    <div class="eyebrow">How it works</div>
+    <h2>Pair. Drive. Review.</h2>
+    <p class="sub">A simple loop for every practice drive.</p>
+    <div class="trio">
+      {steps.map((s) => (
+        <div class="step">
+          <div class="sh"><span class="n">{s.n}</span><h3>{s.title}</h3></div>
+          <p>{s.body}</p>
+          <div class="shot"><div class="phone cut"><img src={s.img} alt={s.alt} loading="lazy" /></div></div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="eyebrow">What DRVN helps you see</div>
+    <h2>More than hours.</h2>
+    <p class="sub">Fifty hours on the same three roads isn’t fifty hours of experience. DRVN shows you the difference.</p>
+    <div class="trio">
+      {features.map((f) => (
+        <div class="feat">
+          <div class="ic">
+            {f.icon === 'skills' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11" /><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2" /></svg>}
+            {f.icon === 'map' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg>}
+            {f.icon === 'log' && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" /></svg>}
+          </div>
+          <div>
+            <div class="ft">{f.title}</div>
+            <div class="fx">{f.body}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="get" class="wrap sec">
+    <div class="close">
+      <div>
+        <div class="ch">The goal isn’t logging hours.<br />It’s being ready.</div>
+        <p>Your state tells you how much practice is required. DRVN helps you make that practice count.</p>
+      </div>
+      <div class="cr">
+        <div class="stores">
+          <a class="store" href={SITE.appStore} rel="noopener"><small>Download on the</small><b>App Store</b></a>
+          <a class="store" href={SITE.googlePlay} rel="noopener"><small>Get it on</small><b>Google Play</b></a>
+        </div>
+        <div class="cl">
+          <a href="/guide/">Find your state guide →</a>
+          <a href="/teen-driving-safety/">Read the parent guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .eyebrow.blue { color: var(--blue); }
+  .top { background: linear-gradient(var(--surface-2), var(--surface)); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; padding-top: 44px; align-items: center; }
+  .intro { display: flex; flex-direction: column; gap: 16px; padding-bottom: 44px; }
+  h1 { font-size: clamp(44px, 5.4vw, 64px); font-weight: 800; line-height: 1.03; letter-spacing: -0.028em; }
+  .intro p { margin: 0; font-size: 21px; line-height: 1.5; color: var(--ink-2); max-width: 26em; }
+  .ctas { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 6px; }
+  .arrow { font-weight: 600; text-decoration: none; font-size: 17px; }
+  .fine { font-size: 14px; font-weight: 500; color: var(--muted, #6B7A85); }
+  .fan { position: relative; height: 520px; }
+  .phone { background: #fff; border: 6px solid #0E2433; border-radius: 30px; overflow: hidden; aspect-ratio: 9 / 19; box-shadow: 0 26px 50px -26px rgba(10,108,165,.55); }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .fan .phone { position: absolute; }
+  .p-left { left: 4%; top: 70px; width: 31%; transform: rotate(-6deg); }
+  .p-right { right: 4%; top: 70px; width: 31%; transform: rotate(6deg); }
+  .p-mid { left: 31%; top: 10px; width: 38%; z-index: 2; }
+  .sec { padding-top: 52px; }
+  h2 { font-size: clamp(32px, 4vw, 44px); font-weight: 800; margin: 8px 0 6px; letter-spacing: -0.022em; }
+  .sub { margin: 0 0 24px; font-size: 19px; color: var(--ink-3); max-width: 40em; }
+  .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .step { background: var(--surface-2); border: 1px solid var(--line); border-radius: 22px; padding: 26px 28px 0; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+  .sh { display: flex; align-items: center; gap: 12px; }
+  .n { width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; font-size: 15px; display: grid; place-items: center; }
+  h3 { font-size: 26px; font-weight: 800; margin: 0; }
+  .step p { margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--ink-3); min-height: 52px; }
+  .shot { height: 300px; overflow: hidden; display: flex; justify-content: center; margin-top: 14px; }
+  .phone.cut { width: 220px; height: 464px; aspect-ratio: auto; flex: none; border-bottom: 0; border-radius: 30px 30px 0 0; }
+  .feat { border: 1px solid var(--line-2); border-radius: 18px; padding: 22px 24px; display: flex; gap: 16px; align-items: flex-start; }
+  .ic { flex: 0 0 48px; height: 48px; border-radius: 12px; background: var(--cyan-tint); color: var(--blue); display: grid; place-items: center; }
+  .ft { font-size: 20px; font-weight: 800; color: var(--ink); }
+  .fx { font-size: 16px; line-height: 1.55; color: var(--ink-3); margin-top: 4px; }
+  .close { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: center; background: var(--blue); border-radius: 24px; padding: 36px 44px; }
+  .ch { font-size: clamp(28px, 3vw, 36px); font-weight: 800; color: #fff; line-height: 1.12; letter-spacing: -0.02em; }
+  .close p { margin: 10px 0 0; font-size: 18px; color: #E6F5FC; max-width: 30em; }
+  .cr { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .stores, .cl { display: flex; gap: 12px 24px; flex-wrap: wrap; }
+  .store { display: inline-flex; flex-direction: column; justify-content: center; background: #0E2433; color: #fff; text-decoration: none; border-radius: 10px; padding: 8px 18px; min-height: 52px; line-height: 1.15; }
+  .store small { font-size: 11px; color: #B9C7D0; }
+  .store b { font-size: 18px; }
+  .store:hover { color: #fff; background: #15354B; }
+  .cl a { color: #fff; font-weight: 600; text-decoration: none; font-size: 15px; }
+  #how, #get { scroll-margin-top: 80px; }
+  @media (max-width: 900px) {
+    .hero, .trio, .close { grid-template-columns: 1fr; }
+    .fan { height: 330px; max-width: 460px; width: 100%; margin: 0 auto; }
+    .close { padding: 28px 24px; }
+  }
+</style>

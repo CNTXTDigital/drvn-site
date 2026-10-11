@@ -1,39 +1,60 @@
 ---
+// Site header: Learn · State guides · DRVN app · About, plus Get the app.
+// On phones the links collapse into a menu button (no script needed).
 const path = Astro.url.pathname;
 const nav = [
-  { href: '/guide/', label: 'State guide' },
-  { href: '/blog/', label: 'Articles' },
-  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/learn/', label: 'Learn', match: ['/learn/', '/blog/', '/teen-driving-safety/'] },
+  { href: '/guide/', label: 'State guides', match: ['/guide/', '/listing/'] },
+  { href: '/app/', label: 'DRVN app', match: ['/app/'] },
+  { href: '/about/', label: 'About', match: ['/about/'] },
 ];
-const isActive = (href) => href !== '/#how-it-works' && path.startsWith(href);
+const isActive = (n) => n.match.some((m) => path.startsWith(m));
 ---
 <header class="site-header">
   <div class="wrap bar">
-    <a href="/" class="logo" aria-label="DRVN home">
-      <img src="/drvn-logo.svg" alt="DRVN" width="103" height="36" />
-    </a>
-    <nav aria-label="Main">
-      <ul>
-        {nav.map((n) => (
-          <li><a href={n.href} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a></li>
-        ))}
-      </ul>
-      <a class="btn btn-sm" href="/#the-app">Get the app</a>
-    </nav>
+    <div class="left">
+      <a href="/" class="logo" aria-label="DRVN home">
+        <img src="/drvn-logo.svg" alt="DRVN" width="103" height="36" />
+      </a>
+      <nav aria-label="Main" class="desk">
+        <ul>
+          {nav.map((n) => <li><a href={n.href} aria-current={isActive(n) ? 'page' : undefined}>{n.label}</a></li>)}
+        </ul>
+      </nav>
+    </div>
+    <div class="right">
+      <a class="btn btn-sm" href="/app/">Get the app</a>
+      <details class="mob">
+        <summary aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </summary>
+        <nav aria-label="Main (mobile)">
+          {nav.map((n) => <a href={n.href} aria-current={isActive(n) ? 'page' : undefined}>{n.label}</a>)}
+        </nav>
+      </details>
+    </div>
   </div>
 </header>
 
 <style>
   .site-header { border-bottom: 1px solid var(--line); background: var(--surface); position: sticky; top: 0; z-index: 10; }
-  .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-  .logo img { height: 30px; width: auto; }
-  nav { display: flex; align-items: center; gap: 28px; }
-  ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+  .left { display: flex; align-items: center; gap: 44px; }
+  .right { display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 30px; width: auto; display: block; }
+  ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
   ul a { font-size: 15px; font-weight: 600; color: var(--ink-2); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
   ul a:hover, ul a[aria-current='page'] { color: var(--blue); border-bottom-color: var(--cyan); }
-  @media (max-width: 760px) {
-    .bar { height: 64px; }
+  .mob { display: none; position: relative; }
+  .mob summary { list-style: none; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 10px; cursor: pointer; color: var(--ink-2); }
+  .mob summary::-webkit-details-marker { display: none; }
+  .mob[open] summary { background: var(--surface-2); }
+  .mob nav { position: absolute; right: 0; top: 52px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; box-shadow: 0 18px 40px -22px rgba(10,108,165,.4); padding: 8px; display: flex; flex-direction: column; min-width: 200px; }
+  .mob nav a { padding: 12px 14px; border-radius: 8px; font-weight: 600; color: var(--ink-2); text-decoration: none; }
+  .mob nav a:hover, .mob nav a[aria-current='page'] { background: var(--surface-2); color: var(--blue); }
+  @media (max-width: 860px) {
+    .desk { display: none; }
+    .mob { display: block; }
     .logo img { height: 28px; }
-    ul { display: none; }
   }
 </style>

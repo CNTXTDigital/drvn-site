@@ -1,0 +1,222 @@
+---
+// About DRVN: story, editorial standards, founder. Copy of record is the DRVN design canvas
+// ("About DRVN — /about/").
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../site.js';
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'AboutPage', name: 'About DRVN', url: `${SITE.url}/about/` },
+    { '@type': 'Person', '@id': `${SITE.url}/about/#founder`, name: 'Robert Abbott', jobTitle: 'Founder, DRVN',
+      image: `${SITE.url}/images/site/robert-abbott.jpg`, worksFor: { '@type': 'Organization', name: 'DRVN, LLC', url: SITE.url } },
+  ],
+};
+---
+<Base
+  title="About DRVN: the hard part isn’t getting them licensed"
+  description="Why DRVN exists, how we use evidence (our editorial standards), and the founder, Robert Abbott: a communication designer and father of four who has spent a decade helping parents teach teens to drive."
+  image="/images/site/robert-abbott.jpg"
+  jsonld={jsonld}
+>
+<div class="pg">
+
+<div style="border-bottom: 1px solid #E7EEF3; background: #FFFFFF">
+<nav class="wrap sub" aria-label="About DRVN" style="display: flex; gap: 32px">
+<a href="#story" class="on" aria-current="true">Our story</a>
+<a href="#standards">Editorial standards</a>
+<a href="#founder">Robert Abbott, founder</a>
+</nav>
+</div>
+
+
+<section class="hero" style="background: linear-gradient(#F6FAFC, #FFFFFF); border-bottom: 1px solid #E7EEF3">
+<div class="wrap g2" style="display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 56px; padding-top: 52px; padding-bottom: 52px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div class="eyebrow">About DRVN</div>
+<div style="width: 44px; height: 5px; background: #41B6E5; border-radius: 3px"></div>
+<h1 style="font-size: 60px; font-weight: 800; line-height: 1.04; letter-spacing: -0.028em; max-width: 13em">The hard part isn’t getting them licensed. It’s getting them ready.</h1>
+<p style="margin: 0; font-size: 23px; line-height: 1.45; font-weight: 500; color: #2E3B45; max-width: 26em">When it was my turn to teach, I found plenty of information and almost nothing that helped in the car, in the moment it mattered. So I built DRVN.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 15px; color: #6B7A85"><span style="color: #2E3B45; font-weight: 700">Robert Abbott</span><span>·</span><span>DRVN founder</span><span>·</span><span>Father of 4</span><span>·</span><span>Communication designer, entrepreneur</span></div>
+</div>
+<img src="/images/site/robert-abbott.jpg" alt="Robert Abbott holding out a set of car keys in front of an SUV" width="900" height="1125" fetchpriority="high" style="width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 18px; display: block; box-shadow: 0 24px 50px -28px rgba(10,108,165,.45)">
+</div>
+</section>
+
+
+<section id="story" class="wrap" style="padding-top: 48px">
+<div class="read prose">
+<p style="font-size: 21px">In 2015, I started teaching my oldest son to drive. I knew the stakes. Crashes are one of the biggest risks teenagers face, and the jump from permit to driving alone is a big part of why. Knowing that didn’t make the teaching any easier. I got in the passenger seat without a plan, which I suspect is how most of us do it.</p>
+<p>There was no shortage of information. The state had its requirements. Driver’s ed covered the fundamentals. Insurance companies made it very clear this was going to be expensive. What nobody offered was the practical part: <strong>a plan for what to actually do once we were in the car.</strong></p>
+<p>Around the same time, I’d started riding motorcycles again. On a bike, you learn quickly that knowing the rules isn’t the same as being safe. Safe is seeing trouble early, guessing what the other driver is about to do, and making good decisions before they turn into emergencies, all of it practiced enough times that it becomes automatic.</p>
+<p>Those are learned skills. Nobody was helping parents teach them.</p>
+<p>I’ve spent my career in digital strategy and experience design, building tools that make complicated things easier for people to use. So I looked at it the way I’d look at any design problem:</p>
+</div>
+</section>
+
+<section class="wrap" style="padding-top: 8px; padding-bottom: 8px">
+<div style="background: #0A6CA5; border-radius: 22px; padding: 40px 48px; color: #FFFFFF; max-width: 900px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: #BFE7F8; margin-bottom: 12px">The question behind DRVN</div>
+<div style="font-size: 32px; font-weight: 800; line-height: 1.22; letter-spacing: -0.02em">If we know experience makes new drivers safer, how do we help ordinary parents give their kids that experience on purpose, consistently, in a normal busy week?</div>
+<div style="font-size: 18px; color: #E6F5FC; margin-top: 16px; font-weight: 600">DRVN is my answer.</div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top: 24px">
+<div class="read prose">
+<h2>What’s happened since</h2>
+</div>
+<div class="stats" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 6px 0 28px; max-width: 900px">
+<div style="border: 1px solid #DCE7EE; border-radius: 14px; padding: 18px 20px"><div style="font-size: 36px; font-weight: 800; color: #0A6CA5; line-height: 1.05">2016</div><div style="font-size: 15px; color: #45535E; margin-top: 6px">DRVN launched</div></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 14px; padding: 18px 20px"><div style="font-size: 36px; font-weight: 800; color: #0A6CA5; line-height: 1.05">1,500+</div><div style="font-size: 15px; color: #45535E; margin-top: 6px">young drivers trained with DRVN</div></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 14px; padding: 18px 20px"><div style="font-size: 22px; font-weight: 800; color: #0A6CA5; line-height: 1.2; min-height: 43px; display: flex; align-items: flex-end">Ohio Statehouse</div><div style="font-size: 15px; color: #45535E; margin-top: 6px">testimony on young-driver safety</div></div>
+</div>
+<div class="read prose">
+<p>Since then, DRVN has been part of training more than 1,500 young drivers, and it keeps getting better through real use and through conversations with people who see teen driving from every side: driving instructors, traffic-safety researchers, state officials, insurance professionals, legislators, and a lot of parents and teenagers.</p>
+<p>I’ve testified at Ohio Statehouse hearings on young-driver safety and presented DRVN’s approach at safety conferences. Driving instructors have been especially important along the way. Their role is essential, but their time with a student is short. Parents provide most of the practice. DRVN helps make that time count.</p>
+<p>Early surveys of DRVN families showed encouraging signs, including lower crash and violation rates. Those surveys were observational, not a controlled study, so we don’t present them as proof. They did back up what parents and instructors were already telling us: structure changes how families practice.</p>
+
+<h2>Why there are articles here, too</h2>
+<p>It became clear pretty quickly that parents need help before the first drive. What are the real risks? What does my state’s requirement actually tell me, and what doesn’t it? Which skills matter? How much practice is enough? How will I know when they’re ready?</p>
+<p>That’s why DRVN publishes guides and articles alongside the app. They do the same job: help you turn the permit year into preparation for the real world, not preparation for a test. <a href="/teen-driving-safety/">Start with the parent’s guide →</a></p>
+
+<h2>What DRVN isn’t</h2>
+</div>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 900px; margin: 0 0 24px">
+<div style="background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 14px; padding: 20px 22px">
+<div class="eyebrow" style="margin-bottom: 10px">It isn’t</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 17px; color: #45535E">
+<div>A replacement for driver’s ed.</div>
+<div>A replacement for your state’s requirements.</div>
+<div>One formula that fits every new driver.</div>
+</div>
+</div>
+<div style="background: #E6F5FC; border: 1px solid #CDEBF8; border-radius: 14px; padding: 20px 22px">
+<div class="eyebrow" style="margin-bottom: 10px; color: #0A6CA5">It is</div>
+<div style="font-size: 19px; font-weight: 700; line-height: 1.4; color: #0A6CA5">A practical plan for the part of learning to drive that happens between lessons, over months, in your own car.</div>
+</div>
+</div>
+<div class="read prose">
+<p>Sooner or later, every new driver meets heavy traffic, a hard merge, a dark country road, an impatient driver, a split-second decision or something they’ve never seen before. The question is whether they’ve met enough of it while you’re still in the passenger seat.</p>
+</div>
+</section>
+
+<section class="wrap" style="padding-top: 16px; padding-bottom: 8px">
+<div style="text-align: center; padding: 48px 24px; border-top: 1px solid #E7EEF3; border-bottom: 1px solid #E7EEF3">
+<div style="width: 44px; height: 5px; background: #41B6E5; border-radius: 3px; margin: 0 auto 18px"></div>
+<div style="font-size: 44px; font-weight: 800; color: #0A6CA5; letter-spacing: -0.025em; line-height: 1.1">The state sets eligibility.<br />You set readiness.</div>
+<div style="font-size: 19px; color: #45535E; margin-top: 14px">That’s where DRVN starts. <span style="font-style: italic">— Robert Abbott</span></div>
+</div>
+</section>
+
+
+<section id="standards" class="wrap" style="padding-top: 56px">
+<div class="eyebrow">Editorial standards</div>
+<h2 style="font-size: 40px; font-weight: 800; margin: 10px 0 14px; max-width: 16em">Practical advice still needs real evidence.</h2>
+<p style="margin: 0 0 28px; font-size: 20px; line-height: 1.55; color: #2E3B45; max-width: 34em">Parents don’t need more information. They need to know what it means when they’re sitting next to a new driver. That asks two things of us at once: take the evidence seriously, and make it useful.</p>
+
+<div class="tiers" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0 0 12px">
+<div style="border: 1px solid #DCE7EE; border-radius: 14px; padding: 18px 20px; background: #FFFFFF"><div class="eyebrow" style="color: #45535E">The law</div><div style="font-size: 20px; font-weight: 700; color: #212529; margin-top: 6px; line-height: 1.3">tells you what’s required.</div><div style="font-size: 14px; color: #6B7A85; margin-top: 8px">We label it a requirement.</div></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 14px; padding: 18px 20px; background: #F6FAFC"><div class="eyebrow" style="color: #45535E">Research</div><div style="font-size: 20px; font-weight: 700; color: #212529; margin-top: 6px; line-height: 1.3">tells you what lowers risk.</div><div style="font-size: 14px; color: #6B7A85; margin-top: 8px">We label it a recommendation.</div></div>
+<div style="border: 1px solid #0A6CA5; border-radius: 14px; padding: 18px 20px; background: #E6F5FC"><div class="eyebrow" style="color: #0A6CA5">You</div><div style="font-size: 20px; font-weight: 700; color: #0A6CA5; margin-top: 6px; line-height: 1.3">decide what your teen needs.</div><div style="font-size: 14px; color: #45535E; margin-top: 8px">When we weigh in, we call it our point of view.</div></div>
+</div>
+
+<div class="read" style="margin-top: 28px">
+<div class="std"><div class="num">1</div><div><h3>We start with the best sources.</h3><p>When we say something factual about crash risk, driver behavior, licensing rules or safety outcomes, we go to primary sources first: NHTSA, the CDC, the Insurance Institute for Highway Safety, the Center for Injury Research and Prevention at Children’s Hospital of Philadelphia, peer-reviewed research, state motor vehicle agencies and state law. When the original research is available, we use it instead of someone’s summary of it.</p></div></div>
+<div class="std"><div class="num">2</div><div><h3>We keep requirements and recommendations separate.</h3><p>Your state’s supervised-hours minimum is a legal requirement. It isn’t a recommendation for how much practice your teen needs to become a capable driver. So we label the difference every time.</p></div></div>
+<div class="std"><div class="num">3</div><div><h3>We write for the car, not the bookshelf.</h3><p>Ten years of building DRVN with families has taught us that parents rarely need another list of statistics. They need to know what to do differently because of them. If research says newly licensed drivers face a spike in risk, the useful question is what you should do in those first months.</p><p>Evidence matters most when it changes what happens on a Tuesday night drive.</p></div></div>
+<div class="std"><div class="num">4</div><div><h3>We don’t oversell.</h3><p>Teen driving is serious, and good writing shouldn’t make thin evidence sound strong. A correlation isn’t a cause. One promising study isn’t universal proof. An early survey of DRVN families isn’t a controlled trial.</p><p>Our surveys have shown encouraging signs, including lower crash and violation rates. We treat those as signals, not as proof that DRVN causes a particular outcome. We’d rather be precise than impressive.</p></div></div>
+<div class="std"><div class="num">5</div><div><h3>Experience counts, but it doesn’t replace evidence.</h3><p>Research describes patterns across thousands of drivers. It can’t tell you what’s happening in your passenger seat today. DRVN also draws on a decade of work with parents, teens, instructors and the traffic-safety community, including testimony at the Ohio Statehouse.</p><p>That experience shapes how we read the evidence. It doesn’t stand in for it. We think you need both.</p></div></div>
+<div class="std"><div class="num">6</div><div><h3>We keep things current.</h3><p>Licensing rules vary by state and they change. Our state guides link to the official government source and show when we last checked them. Our major guides get reviewed against current research, too.</p><p>A publish date tells you when something was written. A last-reviewed date tells you when we last made sure it was still right.</p></div></div>
+<div class="std"><div class="num">7</div><div><h3>We show our work.</h3><p>Important claims link to their sources wherever we can manage it. We’re not asking you to trust DRVN instead of NHTSA, the CDC, IIHS, CHOP or your state. We’re trying to tell you what they add up to, and give you a practical way to act on it.</p></div></div>
+<div class="std"><div class="num">8</div><div><h3>We say what we think.</h3><p>DRVN works alongside government, insurers, driving schools, researchers and technology companies. We respect what each of them does. We’ll also say so when the system leaves parents holding a problem nobody has solved.</p><p>Your state sets a minimum. Driver’s ed provides essential instruction. Neither one removes the need for a lot of practice with you. That gap is why DRVN exists.</p></div></div>
+
+<div style="border-top: 1px solid #E7EEF3; padding-top: 22px; margin-top: 8px">
+<div class="eyebrow" style="margin-bottom: 8px">Corrections</div>
+<p style="margin: 0; font-size: 17.5px; line-height: 1.65; color: #45535E">Getting it right matters more than defending what we already published. When credible new information changes our understanding, we update the page, and we note meaningful corrections where they happen. Questions about our sources or methods are always welcome. <a href="mailto:info@drvnapp.com">Contact us</a></p>
+</div>
+<p style="margin: 28px 0 0; padding: 4px 0 4px 22px; border-left: 4px solid #41B6E5; color: #0A6CA5; font-size: 23px; line-height: 1.4; font-weight: 700">Evidence first. Practical enough to use. Honest about what we know and what we don’t.</p>
+</div>
+</section>
+
+
+<section id="founder" class="wrap" style="padding-top: 64px">
+<div style="background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 24px; padding: 40px 44px">
+<div class="g2" style="display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 44px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<img src="/images/site/robert-abbott.jpg" alt="Robert Abbott" width="900" height="1125" loading="lazy" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 18%; border-radius: 18px; display: block">
+<div>
+<div style="font-size: 22px; font-weight: 800; color: #0A6CA5">Robert Abbott</div>
+<div style="font-size: 15px; color: #45535E">Founder, DRVN</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #45535E; border-top: 1px solid #DCE7EE; padding-top: 12px">
+<div>Communication designer · father of four</div>
+<div>Usability research, Apple Advanced Technology Group</div>
+<div>Ohio Statehouse testimony, young-driver safety</div>
+</div>
+</div>
+<div class="prose" style="font-size: 18px">
+<div class="eyebrow" style="margin-bottom: 10px">The founder</div>
+<p>Robert Abbott is a communication designer, entrepreneur and father of four who has spent the last decade on a deceptively hard problem: helping parents teach their teenagers to drive.</p>
+<p>It started at home. In 2015 he began teaching his oldest son to drive and found that the help available to parents didn’t match the job. There was plenty of information: state requirements, safety statistics, driver’s ed, log sheets and warnings. What was missing was a practical way to turn months of supervised driving into real experience.</p>
+<p>Riding motorcycles again around the same time sharpened the point. On a bike, reading the road and anticipating other drivers isn’t optional. Those are learned skills, and new drivers need more of the right experiences, in the right order, while someone is still beside them.</p>
+<p>Robert came at it as a design problem. Early in his career he did usability research in Apple’s Advanced Technology Group, and he has since built a career designing digital experiences and engagement strategies for organizations around the world. Instead of treating teen driving as an information problem, he treated it as an experience problem. How do you make progress visible? How do you help parents know what to practice next? How do you get a teen onto different kinds of roads instead of the same familiar ones? How do you turn safety research into something a family can use on a Tuesday night after dinner?</p>
+<p>Those questions became DRVN. It launched in 2016 and has since been part of training more than 1,500 young drivers. Robert has testified at Ohio Statehouse hearings on young-driver safety and presented at safety conferences, and he counts driving instructors among DRVN’s most valuable collaborators.</p>
+<p>He’s quick to say he isn’t a traffic-safety researcher. He’s a parent and a designer who became convinced that families were being handed one of the riskiest transitions of adolescence without a usable plan. DRVN relies on researchers, safety organizations, instructors and government agencies for the evidence. His job has been connecting it to the family car.</p>
+<p style="margin: 0">The goal hasn’t changed since he first sat in the passenger seat: not just getting a teenager a license, but <strong>helping them become the driver you want them to be once you’re not in the car anymore.</strong></p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="app" class="wrap" style="padding-top: 48px">
+<div class="g2" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; padding: 32px 44px; background: #FFFFFF; border: 1px solid #DCE7EE; border-radius: 24px; box-shadow: 0 18px 40px -28px rgba(10,108,165,.35)">
+<div>
+<div class="eyebrow">The DRVN app</div>
+<div style="font-size: 32px; font-weight: 800; color: #0A6CA5; letter-spacing: -0.02em; line-height: 1.15; margin: 8px 0 8px">The plan, in the car with you.</div>
+<div style="font-size: 17px; color: #45535E; max-width: 34em">One priority before each drive. Hours logged while you drive. A clear view of what you haven’t covered yet. Free for parents and teens.</div>
+</div>
+<div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap">
+<a class="btn" href="/app/">Start your plan</a>
+<a class="arrow" href={SITE.googlePlay} rel="noopener">Google Play →</a>
+</div>
+</div>
+</section>
+
+
+</div>
+</Base>
+
+<style>
+
+
+
+.pg{font-family:'Figtree','Segoe UI','Helvetica Neue',Arial,sans-serif;color:#212529;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.pg *{box-sizing:border-box}
+.pg h1,.pg h2,.pg h3{color:#0A6CA5;margin:0;letter-spacing:-0.015em;line-height:1.15}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.read{max-width:680px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#7B8A94}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#86B404;color:#1C2A00;font-weight:700;font-size:17px;text-decoration:none;padding:15px 28px;border-radius:10px}
+.btn:hover{color:#1C2A00;filter:brightness(.95)}
+.btn-sm{font-size:15px;padding:10px 18px;border-radius:8px}
+.arrow{font-weight:600;text-decoration:none}
+.navlinks a{font-size:15px;font-weight:600;color:#2E3B45;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.navlinks a:hover,.navlinks a.on{color:#0A6CA5;border-bottom-color:#41B6E5}
+.sub a{font-size:15px;font-weight:600;color:#45535E;text-decoration:none;padding:14px 0;border-bottom:3px solid transparent}
+.sub a:hover,.sub a.on{color:#0A6CA5;border-bottom-color:#41B6E5}
+.prose{font-size:19px;line-height:1.7;color:#2E3B45}
+.prose p{margin:0 0 1.1em}
+.prose strong{color:#212529}
+.prose h2{font-size:30px;font-weight:800;margin:40px 0 14px}
+.std{border-top:1px solid #E7EEF3;padding:22px 0 4px;display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px}
+.num{width:36px;height:36px;border-radius:50%;background:#E6F5FC;color:#0A6CA5;font-weight:800;display:grid;place-items:center;font-size:16px}
+.std h3{font-size:22px;font-weight:700;margin:4px 0 8px}
+.std p{margin:0 0 .8em;font-size:17.5px;line-height:1.65;color:#45535E}
+.ph{background:repeating-linear-gradient(135deg,#F6FAFC 0 14px,#EEF5F9 14px 28px);border:1px dashed #C6D3DB;border-radius:18px;display:grid;place-items:center;text-align:center;color:#6B7A85;font-size:14px;font-weight:600;padding:20px}
+.foot a{color:#E6EEF3;text-decoration:none}.foot a:hover{color:#42C7F2}
+@media (max-width:860px){.navlinks{display:none !important}.g2{grid-template-columns:1fr !important}.stats{grid-template-columns:1fr !important}.tiers{grid-template-columns:1fr !important}.footgrid{grid-template-columns:1fr !important}.hero h1{font-size:40px !important}.sub{overflow-x:auto}}
+
+.sub { display: flex; gap: 32px; }
+section[id] { scroll-margin-top: 80px; }
+</style>

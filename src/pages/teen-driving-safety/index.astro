@@ -1,0 +1,497 @@
+---
+// Pillar guide: Teen Driving Safety for Parents. Copy of record is the DRVN design canvas
+// ("Teen Driving Safety for Parents — /teen-driving-safety/"), last reviewed October 2026.
+import Base from '../../layouts/Base.astro';
+import { DRIVERS_ED, SITE } from '../../site.js';
+
+const toc = [
+ {
+  "id": "why-teens-are-at-risk",
+  "label": "Why are teen drivers at greater risk?"
+ },
+ {
+  "id": "when-risk-is-highest",
+  "label": "When is a new driver most at risk?"
+ },
+ {
+  "id": "how-many-hours",
+  "label": "How many hours should they practice?"
+ },
+ {
+  "id": "structured-practice",
+  "label": "Does structured practice help?"
+ },
+ {
+  "id": "what-to-experience",
+  "label": "What should they experience first?"
+ },
+ {
+  "id": "skills-that-matter",
+  "label": "What skills matter most?"
+ },
+ {
+  "id": "how-to-teach",
+  "label": "How do I teach without being an instructor?"
+ },
+ {
+  "id": "conflict",
+  "label": "What if practice turns into a fight?"
+ },
+ {
+  "id": "is-drivers-ed-enough",
+  "label": "Is driver’s ed enough?"
+ },
+ {
+  "id": "road-test",
+  "label": "Doesn’t the road test prove they’re ready?"
+ },
+ {
+  "id": "ready-to-drive-alone",
+  "label": "How do I know they’re ready?"
+ },
+ {
+  "id": "after-the-license",
+  "label": "What changes after the license?"
+ },
+ {
+  "id": "teen-passengers",
+  "label": "Teen passengers"
+ },
+ {
+  "id": "night-driving",
+  "label": "Night driving"
+ },
+ {
+  "id": "phones-and-distraction",
+  "label": "Phones and distractions"
+ },
+ {
+  "id": "driving-agreement",
+  "label": "A parent-teen driving agreement"
+ },
+ {
+  "id": "state-minimum",
+  "label": "State minimum or beyond?"
+ },
+ {
+  "id": "doesnt-want-to-practice",
+  "label": "If they don’t want to practice"
+ },
+ {
+  "id": "anxious-teen",
+  "label": "If they’re anxious"
+ },
+ {
+  "id": "overconfident-teen",
+  "label": "If they’re overconfident"
+ },
+ {
+  "id": "readiness-check",
+  "label": "A quick readiness check"
+ }
+];
+const more = [
+  { t: 'The Most Dangerous Thing Your Kid Will Ever Do Is Get a Driver’s License', href: '/most-dangerous-thing-teen-drivers-license/' },
+  { t: 'The 50-Hour Myth: Why the Number in Your Log Is the Wrong Number', href: '/50-hour-myth-driving-practice/' },
+  { t: 'The Six Environments Every Teen Needs Before They Drive Alone', href: '/six-driving-environments-teen-practice/' },
+  { t: 'The Permit Year, Month by Month', href: '/permit-year-practice-plan/' },
+];
+const url = `${SITE.url}/teen-driving-safety/`;
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Teen Driving Safety for Parents: What You Actually Need to Know',
+      description: 'Your state tells you when your kid can drive. It doesn’t tell you when they’re ready. Here’s the part nobody hands you.',
+      image: [`${SITE.url}/images/site/guide-hero.jpg`],
+      author: { '@type': 'Person', name: 'Robert Abbott', url: `${SITE.url}/about/#founder` },
+      publisher: { '@type': 'Organization', name: 'DRVN, LLC', logo: { '@type': 'ImageObject', url: `${SITE.url}/drvn-logo.svg` } },
+      datePublished: '2026-10-11', dateModified: '2026-10-11', mainEntityOfPage: url,
+    },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Learn', item: `${SITE.url}/learn/` },
+      { '@type': 'ListItem', position: 3, name: 'Teen Driving Safety for Parents', item: url },
+    ] },
+  ],
+};
+---
+<Base
+  title="Teen Driving Safety for Parents: What You Actually Need to Know"
+  description="Your state tells you when your kid can drive. It doesn’t tell you when they’re ready. Risk, practice hours, what to practice, readiness, passengers, night driving and phones, from a parent who has done it four times."
+  image="/images/site/guide-hero.jpg"
+  type="article"
+  published="2026-10-11T12:00:00Z"
+  modified="2026-10-11T12:00:00Z"
+  jsonld={jsonld}
+>
+<div class="pg">
+<section class="top">
+<div class="wrap herogrid">
+<div class="hcopy">
+<div class="crumb"><a href="/learn/">← Learn</a><span class="eyebrow">The essentials</span></div>
+<h1>Teen Driving Safety for Parents: What You Actually Need to Know</h1>
+<p class="dek">Your state tells you when your kid can drive. It doesn’t tell you when they’re ready. Here’s the part nobody hands you.</p>
+<div class="meta"><span class="by">By <a href="/about/#founder">Robert Abbott</a></span><span>·</span><span>Founder, DRVN</span><span>·</span><span>Last reviewed October 2026</span><span>·</span><span>14 min read</span></div>
+</div>
+<div class="hviz">
+<img src="/images/site/guide-hero.jpg" alt="" width="1600" height="842" fetchpriority="high" />
+<div class="idea"><div class="eyebrow">The one idea</div><div class="it">The state sets eligibility. You set readiness.</div></div>
+</div>
+</div>
+</section>
+
+<div class="wrap layout">
+<aside class="side" aria-label="On this page">
+<div class="stick">
+<div class="eyebrow tl">What do you need to know?</div>
+<nav class="toc">{toc.map((t) => <a href={`#${t.id}`}>{t.label}</a>)}</nav>
+</div>
+</aside>
+<article class="prose" style="min-width: 0">
+
+<details class="mtoc">
+<summary>What do you need to know? ({toc.length} questions)</summary>
+<nav class="toc">{toc.map((t) => <a href={`#${t.id}`}>{t.label}</a>)}</nav>
+</details>
+
+<p style="font-size: 21px">Teaching a teenager to drive is one of the few parenting jobs where a mistake can change a life in a couple of seconds. And the help you get for it is surprisingly thin.</p>
+<p>Your state tells you when your kid can get a permit, how many hours to log, whether they need driver’s ed, and when they can take the road test. All of that answers a legal question: when is this person eligible to drive alone?</p>
+<p>You get the harder question.</p>
+<p style="font-size: 24px; font-weight: 800; color: #0A6CA5; line-height: 1.3; letter-spacing: -0.01em">Is my kid actually ready to drive without me?</p>
+<p>Those aren’t the same thing. I’ve done this four times. The first time, I didn’t know the difference.</p>
+<p>Here’s the good news. The permit period gives you something nobody else gets: months of real driving with an experienced adult sitting right there. This guide is about using that time well.</p>
+
+<section class="q" id="why-teens-are-at-risk">
+<h2>Why are teen drivers at greater risk?</h2>
+<p class="answer">Mostly, they haven’t seen enough yet.</p>
+<p>The mechanics come fast. Steering, braking, parking, signaling: you can watch those improve week to week.</p>
+<p>Judgment is slower. As an experienced driver, you’re tracking a dozen things without noticing: the pedestrian drifting toward the crosswalk, brake lights four cars up, the car nosing out of a driveway, the truck leaning toward your lane. Nobody taught you that list. You picked it up over years.</p>
+<div style="display: flex; gap: 20px; align-items: center; background: #E6F5FC; border-radius: 14px; padding: 18px 22px; margin: 6px 0 22px">
+<div style="font-size: 46px; font-weight: 800; color: #0A6CA5; letter-spacing: -0.03em; line-height: 1; white-space: nowrap">4×+</div>
+<div style="font-size: 16px; line-height: 1.5; color: #2E3B45">Per mile driven, drivers 16 to 19 crash at more than four times the rate of drivers 20 and older. <span style="color: #6B7A85">— Insurance Institute for Highway Safety</span></div>
+</div>
+<p>That isn’t because teenagers are bad drivers. It’s because the skills that make someone a good driver come from exposure, and they haven’t had much.</p>
+<p>So supervised practice isn’t really about teaching them to work the car. It’s about giving them enough miles to start understanding what’s happening around it.</p>
+</section>
+
+<section class="q" id="when-risk-is-highest">
+<h2>When is a new driver most at risk?</h2>
+<p class="answer">Passing the road test doesn’t end the dangerous period. It starts it.</p>
+<p>NHTSA notes that teens rarely crash while an adult is supervising. Their highest crash rates come in the first six months of driving alone.</p>
+<p>Think about what changes that day. Yesterday, you were in the passenger seat watching traffic, spotting trouble and quietly fixing things. Today, they’re doing all of it by themselves.</p>
+<p>Their experience didn’t jump when the license printed. Their responsibility did.</p>
+<p class="pull">Treat the license as a handoff, not a graduation.</p>
+</section>
+
+<section class="q" id="how-many-hours">
+<h2>How many hours should a teenager practice?</h2>
+<p class="answer">Start with your state’s number, then plan past it.</p>
+<p>The Insurance Institute for Highway Safety’s best-practice standard is at least 70 supervised hours, and most states require less. All four of my kids learned in Ohio, which asks for 50. I live in Iowa now, which asks for 20. Same kind of kid, very different number.</p>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 4px 0 24px">
+<div style="border: 1px solid #DCE7EE; border-radius: 12px; padding: 14px 16px"><div class="eyebrow">Iowa</div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">20 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 28%; height: 8px; border-radius: 4px; background: #41B6E5"></div></div></div>
+<div style="border: 1px solid #DCE7EE; border-radius: 12px; padding: 14px 16px"><div class="eyebrow">Ohio</div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">50 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 71%; height: 8px; border-radius: 4px; background: #41B6E5"></div></div></div>
+<div style="border: 1px solid #0A6CA5; border-radius: 12px; padding: 14px 16px; background: #F6FAFC"><div class="eyebrow" style="color: #0A6CA5">IIHS best practice</div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">70 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 100%; height: 8px; border-radius: 4px; background: #0A6CA5"></div></div></div>
+</div>
+<p>And hours are a blunt tool anyway. Picture two kids with 50 hours each. One drove the same three routes all year. The other drove neighborhoods, busy commercial roads, rural two-lanes, interstates, rush hour, dark and rain.</p>
+<p>Same number in the log. Very different drivers.</p>
+<p>That’s why we talk about <strong>coverage, not just hours</strong>. Repetition builds skill. Variety builds judgment, because driving almost never hands you the same situation twice. <a href="/guide/">Look up your state’s requirements →</a></p>
+</section>
+
+<section class="q" id="structured-practice">
+<h2>Does structured practice actually make a difference?</h2>
+<p class="answer">Yes, and there’s good evidence for it.</p>
+<p>Researchers at Children’s Hospital of Philadelphia tested a program called the TeenDrivingPlan, built to get families practicing in more kinds of places, including at night and in bad weather, with parents more involved as coaches. When the teens were later evaluated on the road, the difference showed up:</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 4px 0 22px">
+<div style="background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 12px; padding: 16px 18px"><div style="font-size: 40px; font-weight: 800; color: #45535E; line-height: 1">15%</div><div style="font-size: 15px; color: #45535E; margin-top: 6px">had the road assessment stopped for unsafe driving <b style="color: #212529">without</b> the plan</div></div>
+<div style="background: #E6F5FC; border: 1px solid #CDEBF8; border-radius: 12px; padding: 16px 18px"><div style="font-size: 40px; font-weight: 800; color: #0A6CA5; line-height: 1">6%</div><div style="font-size: 15px; color: #2E3B45; margin-top: 6px">had it stopped <b style="color: #212529">with</b> the plan</div></div>
+</div>
+<p>That doesn’t mean there’s one perfect program. It means practicing on purpose is a different thing from piling up miles. Know what you’re working on. Go find different kinds of roads. Coach a little less each month.</p>
+</section>
+
+<section class="q" id="what-to-experience">
+<h2>What should teens experience before they drive alone?</h2>
+<p class="answer">More than the parking lot and the drive to school.</p>
+<p>Most families start in the right spot: a parking lot or a quiet street, where a new driver can learn how the car responds without too much coming at them. The trouble is staying there. Comfort can look a lot like competence when the scenery never changes.</p>
+<p>Before driving alone, your teen should have real time in each of these:</p>
+<div class="envs">
+<div class="env"><b>Commercial roads</b><span>Cars pulling in and out of driveways, extra lanes, signals to plan for, pedestrians, unprotected left turns.</span></div>
+<div class="env"><b>Highways</b><span>Merging at speed instead of hesitating, judging a moving gap, trucks, staying sharp for a long stretch, picking the right exit.</span></div>
+<div class="env"><b>Rural roads</b><span>Higher speeds, hills and curves that hide what’s ahead, narrow shoulders or none, deer, tractors, gravel.</span></div>
+<div class="env"><b>Night</b><span>The CDC puts teens’ fatal crash rate at night at about three times that of adults 30 to 59, per mile driven.</span></div>
+<div class="env" style="grid-column: 1 / -1"><b>Bad weather</b><span>Rain, glare, fog, snow.</span></div>
+</div>
+<p>Early on, protecting a new driver from the hard stuff makes sense. Later, avoiding it creates its own risk: they meet it for the first time alone.</p>
+<p class="pull">The first time your teen merges into fast traffic, drives a dark country road or gets caught in a downpour shouldn’t be the first time you’re not in the car.</p>
+<p>Add it gradually. Not all at once. But add it.</p>
+</section>
+
+<section class="q" id="skills-that-matter">
+<h2>What skills matter most?</h2>
+<p class="answer">The ones they use without you saying anything.</p>
+<p>It’s tempting to judge progress by how smooth the drive feels. Smooth is nice. The better question is what they’re noticing and deciding without you.</p>
+<p>Over time, a developing driver should get better at looking farther down the road, spotting trouble before it’s urgent, keeping a safe following distance, choosing speed for conditions and judging gaps. They should merge without freezing or making someone else brake. Change lanes the same careful way every time. See the pedestrian and the cyclist before you point them out. Let a missed exit go instead of making a sudden move to save it.</p>
+<p>Every “watch that car,” “slow down” or “check your mirror” means you’re doing part of the driving. That’s exactly right while they’re learning. What matters is that you need to say it less over time.</p>
+<p class="pull">The best sign of readiness isn’t how well they drive while you’re coaching. It’s how little coaching they need.</p>
+</section>
+
+<section class="q" id="how-to-teach">
+<h2>How do I teach without becoming a driving instructor?</h2>
+<p class="answer">Stop treating every drive as more time for the log.</p>
+<p>You don’t have to recreate driver’s ed. Instructors have training you don’t, and they matter. Your job is different: the volume, the repetition and the variety that a handful of professional lessons can’t cover.</p>
+<div class="bda">
+<div><b>Before</b>Pick one thing. Following distance. Highway merges. A safe gap for a left turn. Narrow enough to actually focus on.</div>
+<div><b>During</b>Coach when you need to, but don’t narrate every decision.</div>
+<div><b>After</b>Two minutes. What felt hard? What surprised you? What did you notice too late?</div>
+</div>
+<p>When they make a bad call, figure out which kind it was before you correct it. Did they not see it? See it and misjudge it? Know what to do and react too slowly? Get distracted? Those are different problems, and they need different practice.</p>
+
+<aside id="app-cta" aria-label="Get the DRVN app" style="display: flex; gap: 20px; align-items: center; border: 1px solid #DCE7EE; border-radius: 16px; padding: 20px 22px; margin: 8px 0 8px; box-shadow: 0 18px 40px -28px rgba(10,108,165,.35)">
+<div style="flex: 1; min-width: 0">
+<div class="eyebrow">The DRVN app</div>
+<div style="font-size: 21px; font-weight: 700; color: #0A6CA5; line-height: 1.25; margin: 4px 0 4px">One priority before each drive.</div>
+<div style="font-size: 15px; line-height: 1.55; color: #45535E">It picks the thing to work on, logs the hours while you drive, and shows the conditions you haven’t covered yet. Free.</div>
+</div>
+<a class="btn btn-sm" href="/app/" style="white-space: nowrap">Start your plan</a>
+</aside>
+</section>
+
+<section class="q" id="conflict">
+<h2>What if practicing together turns into a fight?</h2>
+<p class="answer">Some tension is normal. The goal isn’t a silent car. It’s a useful one.</p>
+<p>Teaching your own kid to drive is a strange assignment. You’re trying to stay calm while someone you love learns a high-stakes skill in real time. They’re trying to learn while being watched by the person whose approval matters most. If you’ve ever stomped on the imaginary brake on the passenger side, you know the feeling.</p>
+<ul>
+<li>Give instructions early, not at the last second and at full volume.</li>
+<li>Be specific about what needs to change.</li>
+<li>Keep driving feedback separate from whatever else you’re arguing about this week.</li>
+<li>If either of you is too frustrated to keep going safely, pull over and call it.</li>
+</ul>
+<p>And know the difference between a mistake and an attitude problem. New drivers will brake late, pick the wrong gap and drive you a little crazy. That’s why you’re there. The real concern is a kid who doesn’t notice their mistakes, won’t take coaching or acts like the risk doesn’t apply to them.</p>
+</section>
+
+<section class="q" id="is-drivers-ed-enough">
+<h2>Is driver’s ed enough?</h2>
+<p class="answer">No, and that’s not a knock on driver’s ed.</p>
+<p>A good instructor builds the fundamentals, catches things a parent misses and can often get through to a teenager in a way a parent can’t. It’s one of the best tools you have. But instructor time is limited, and the experience it takes to become a capable driver builds over months and across a lot of different situations.</p>
+<p>Driving instructors have shaped DRVN from the beginning for exactly this reason. They don’t see professional lessons and parent practice as competing. Each one needs the other.</p>
+<p class="pull">Driver’s ed teaches. Practice with you turns it into experience.</p>
+
+<aside aria-label="Online driver's ed partner" style="display: flex; gap: 22px; align-items: center; background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 16px; padding: 20px 22px; margin: 0 0 8px">
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 12px"><img src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" style="height: 22px; width: auto; display: block"><span class="eyebrow" style="font-size: 11px">Partner</span></div>
+<div style="font-size: 19px; font-weight: 700; color: #0A6CA5; line-height: 1.25">Still need driver’s ed? Start it online.</div>
+<div style="font-size: 15px; line-height: 1.55; color: #45535E">State-approved courses your teen can do at their own pace. <span style="color: #6B7A85; font-size: 12.5px">DRVN may earn a commission when you enroll through this link.</span></div>
+</div>
+<a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank" style="white-space: nowrap">Find an online course</a>
+</aside>
+</section>
+
+<section class="q" id="road-test">
+<h2>Doesn’t passing the road test prove they’re ready?</h2>
+<p class="answer">It proves they met your state’s standard during one short test.</p>
+<p>That matters. It just doesn’t cover much. No road test includes night driving, rain, an unfamiliar interstate, a tailgater, a blind rural curve or a chatty friend in the passenger seat. The test has to end. Real driving doesn’t.</p>
+<p>The state is asking, “Has this person met the requirements for a license?” You still get to ask, “What are they ready to do with it?”</p>
+</section>
+
+<section class="q" id="ready-to-drive-alone">
+<h2>How do I know when my teenager is ready to drive alone?</h2>
+<p class="answer">Watch what they do, not how you feel.</p>
+<p>Honestly, you’ll probably never feel completely comfortable watching them back out of the driveway alone the first time. Readiness doesn’t mean that feeling goes away. Instead, ask:</p>
+<ul class="checks">
+<li><span class="tick">?</span>Can they get through an ordinary drive without reminders about speed, following distance, signals, lane position, scanning or right of way?</li>
+<li><span class="tick">?</span>Do they spot a problem forming before you point it out?</li>
+<li><span class="tick">?</span>Can they handle something unfamiliar without getting overwhelmed?</li>
+<li><span class="tick">?</span>When they make a mistake, can they keep from making a second one on top of it?</li>
+<li><span class="tick">?</span>Do they know when conditions are beyond them?</li>
+</ul>
+<p>And the big one:</p>
+<p class="pull">If you weren’t sitting there, would they have seen what you just saw?</p>
+<p>If the answer is often no, keep practicing. Needing more time isn’t failing.</p>
+</section>
+
+<section class="q" id="after-the-license">
+<h2>What changes after they get the license?</h2>
+<p class="answer">The riskiest stretch starts when supervision drops off.</p>
+<p>That’s why graduated licensing exists: it hands over independence in stages instead of all at once, and the CDC notes that these systems are proven to reduce crashes and deaths among young drivers.</p>
+<p>You can use the same idea even where your state allows more. A new license doesn’t have to mean every road, every hour and every friend on day one. Start with familiar, easier solo trips. Add harder ones as experience builds. Keep doing the tough stuff together for a while.</p>
+<p>The practice doesn’t have to end when the logbook does.</p>
+</section>
+
+<section class="q" id="teen-passengers">
+<h2>What about teen passengers?</h2>
+<p class="answer">Friends change everything in the car.</p>
+<p>The CDC reports that an unsupervised teen driver’s crash risk goes up with teen or young-adult passengers, and keeps rising with each one added. Its guidance for parents recommends no teen or young-adult passengers for at least the first six months, when you can manage it.</p>
+<p>Your state may allow more. You’re allowed to be stricter than the law.</p>
+<p class="pull">A legal privilege doesn’t have to become a family privilege on the same day.</p>
+</section>
+
+<section class="q" id="night-driving">
+<h2>What about night driving?</h2>
+<p class="answer">Practice it on purpose before the license. Limit it on purpose after.</p>
+<p>At night you see less, hazards show up later, everyone’s more tired, and it’s when a lot of social driving happens. Stack all of that on top of inexperience and you get the CDC number above.</p>
+<p>The CDC suggests keeping newly licensed teens off the road by 9 or 10 p.m. for at least the first six months. That may be stricter than your state. It isn’t a punishment. It’s limiting time in the riskiest hours while experience catches up.</p>
+</section>
+
+<section class="q" id="phones-and-distraction">
+<h2>What about phones and other distractions?</h2>
+<p class="answer">A new driver doesn’t have much attention to spare.</p>
+<p>Things you do on autopilot still take real thought for them, so a text, a playlist, navigation or a lively conversation makes a hard job harder.</p>
+<p>“Don’t text and drive” is too small a rule. Try this one: <strong>the phone doesn’t get attention while the car is moving.</strong> Set navigation before you leave. Turn on driving focus. If something really needs attention, pull over.</p>
+<p>And yes, they’ve been watching us drive for sixteen years. The rule we model will beat the rule we announce every time. (This one stings a little for all of us.)</p>
+</section>
+
+<section class="q" id="driving-agreement">
+<h2>Should we have a parent-teen driving agreement?</h2>
+<p class="answer">Yes. Most family driving arguments start with an assumption nobody said out loud.</p>
+<p>Talk through passengers, night driving, phones, seat belts, alcohol and drugs, weather, where the car can go, who else can drive it, and what happens when a rule gets broken. Write it down before you need it.</p>
+<div style="background: #0A6CA5; border-radius: 16px; padding: 24px 26px; margin: 6px 0 22px; color: #FFFFFF">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: #BFE7F8; margin-bottom: 8px">The rule above all the others</div>
+<div style="font-size: 26px; font-weight: 800; line-height: 1.2; letter-spacing: -0.015em">Your kid can always call you for a safe ride home.</div>
+<div style="font-size: 16.5px; line-height: 1.55; color: #E6F5FC; margin-top: 10px">If alcohol, drugs, exhaustion, an unsafe driver or a bad situation is involved, getting home safe is the only goal that night. The parenting conversation can wait until morning.</div>
+</div>
+</section>
+
+<section class="q" id="state-minimum">
+<h2>Should we follow the state minimum or go beyond it?</h2>
+<p class="answer">Meet the minimum, because it’s the law. Go past it whenever your kid needs more.</p>
+<p>Licensing rules vary a lot from state to state, even though learning to drive doesn’t get any easier at the border. IIHS best practices are more conservative than many states on permit age, practice hours, night limits and passengers.</p>
+<p>The state has to write one rule for everybody. You only have to decide about one driver. That’s an advantage. Use it.</p>
+</section>
+
+<section class="q" id="doesnt-want-to-practice">
+<h2>What if my teenager doesn’t want to practice?</h2>
+<p class="answer">Then the license can wait.</p>
+<p>Getting it at the earliest possible age isn’t a milestone anyone has to hit. If your teen dodges practice, avoids the hard stuff, brushes off coaching or isn’t showing good judgment, holding off is completely reasonable.</p>
+<p>Wanting the license and being ready for it don’t always arrive together. Some kids want it badly before their skills are there. Others have the skills and are nervous to use them. The calendar doesn’t fix either one.</p>
+<p>The goal isn’t a license at a certain age. <strong>It’s a capable driver.</strong></p>
+</section>
+
+<section class="q" id="anxious-teen">
+<h2>What if my teenager is anxious?</h2>
+<p class="answer">Anxiety doesn’t have to stop the process, but it should change the pace.</p>
+<p>Build difficulty slowly. A nervous driver might need several drives in one setting before adding the next layer: a smaller shopping district before the busy one, the highway on a quiet Sunday morning before rush hour. Confidence should come from things going well, not just from being told it’ll be fine.</p>
+<p>If the anxiety is bad enough that they can’t take in information or drive safely, a professional instructor offers a different setting and can help you figure out whether more support makes sense. There’s no prize for rushing.</p>
+</section>
+
+<section class="q" id="overconfident-teen">
+<h2>What if my teenager is overconfident?</h2>
+<p class="answer">Don’t argue about it. Change the scenery.</p>
+<p>A few good months can convince a kid they’ve got this, and they stop thinking about everything they haven’t seen yet. Instead of debating whether they’re a “good driver,” go somewhere unfamiliar. Heavier traffic. Night. Rural roads. A tricky merge or a busy intersection.</p>
+<p>Real skill holds up when conditions change. Familiarity usually doesn’t.</p>
+</section>
+
+<section class="q" id="readiness-check">
+<h2>The goal isn’t the license</h2>
+<p>To your teenager, a license means freedom. To you, after months of practice and years as the family taxi, it might mean relief. Both are fair.</p>
+<p>But the license was never the point of the permit year. The point is getting to where your kid has seen enough, practiced enough and built enough judgment that you’re ready to let them make the calls without you.</p>
+<p>That takes experience. Variety. Judgment. And a parent who stays in the passenger seat long enough for all three to show up.</p>
+<p class="pull">The real question isn’t whether they can pass the test. It’s whether they can handle what comes after it, when nobody’s sitting next to them.</p>
+
+<div style="border: 1px solid #DCE7EE; border-top: 5px solid #86B404; border-radius: 16px; padding: 24px 26px; margin: 10px 0 20px; background: #FFFFFF">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px">
+<h3 style="font-size: 24px; font-weight: 800">A quick readiness check</h3>
+<button type="button" class="printbtn" onclick="window.print()">Print this checklist</button>
+</div>
+<p style="font-size: 16px; color: #45535E; margin: 0 0 10px">Before regular solo driving, your teen should be able to:</p>
+<ul class="checks">
+<li><span class="tick">✓</span>Control the car consistently</li><li><span class="tick">✓</span>Look well past the car directly ahead</li><li><span class="tick">✓</span>Spot hazards as they develop</li><li><span class="tick">✓</span>Adjust speed for conditions and keep a safe following distance</li><li><span class="tick">✓</span>Handle neighborhoods, commercial roads, highways and rural roads</li><li><span class="tick">✓</span>Drive at night and in reasonable bad weather</li><li><span class="tick">✓</span>Merge, change lanes and judge gaps without steady coaching from you</li><li><span class="tick">✓</span>Recover calmly from a mistake</li><li><span class="tick">✓</span>Leave the phone alone</li><li><span class="tick">✓</span>Recognize when a situation is beyond them, and ask for help instead of taking the risk</li>
+</ul>
+<p style="font-size: 16.5px; color: #45535E; margin: 0 0 8px">None of it has to be perfect. It just needs to belong more and more to them, and less to the person in the passenger seat. If you’re still supplying a lot of the judgment, that’s not failure. It means more practice.</p>
+<p style="font-size: 17px; font-weight: 700; color: #212529; margin: 0">There’s very little downside to more supervised driving. There can be a big one to stopping too soon.</p>
+</div>
+<p>That’s the job you’ve been handed. DRVN exists to make it a little easier.</p>
+</section>
+
+<section style="margin-top: 36px; padding-top: 18px; border-top: 1px solid #E7EEF3">
+<div class="eyebrow">Where this guidance comes from</div>
+<p style="font-size: 15px; line-height: 1.6; color: #6B7A85; margin: 10px 0 8px">DRVN’s safety guidance leans on NHTSA, the CDC, the Insurance Institute for Highway Safety and the Center for Injury Research and Prevention at Children’s Hospital of Philadelphia, along with peer-reviewed research and official state sources. We’re clear about which is which: what the law requires, what the research shows and what we’d recommend as parents who’ve been through it. Always check your state’s requirements against its official source. <a href="/about/#standards">Our editorial standards</a></p>
+<p style="font-size: 14px; color: #6B7A85; margin: 0"><b style="color: #2E3B45">Last reviewed:</b> October 2026</p>
+</section>
+
+</article>
+<aside class="rail" aria-label="Related">
+<div class="stick">
+<div class="statebox">
+<p class="sh">What does your state require?</p>
+<p>Permit age, supervised hours, night and passenger rules.</p>
+<a class="link-arrow" href="/guide/">State guide</a>
+</div>
+<div>
+<div class="eyebrow">Go deeper</div>
+<div class="deeper">{more.map((m) => <a href={m.href}>{m.t}</a>)}</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</Base>
+
+<style>
+
+
+
+.pg{font-family:'Figtree','Segoe UI','Helvetica Neue',Arial,sans-serif;color:#212529;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.pg *{box-sizing:border-box}
+.pg h1,.pg h2,.pg h3{color:#0A6CA5;margin:0;letter-spacing:-0.015em;line-height:1.15}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#7B8A94}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#86B404;color:#1C2A00;font-weight:700;font-size:17px;text-decoration:none;padding:15px 28px;border-radius:10px}
+.btn:hover{color:#1C2A00;filter:brightness(.95)}
+.btn-sm{font-size:15px;padding:10px 18px;border-radius:8px}
+.arrow{font-weight:600;text-decoration:none}
+.navlinks a{font-size:15px;font-weight:600;color:#2E3B45;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.navlinks a:hover{color:#0A6CA5;border-bottom-color:#41B6E5}
+.toc a{display:block;padding:7px 0 7px 14px;margin-left:-2px;border-left:2px solid #E7EEF3;font-size:14.5px;line-height:1.35;font-weight:600;color:#45535E;text-decoration:none}
+.toc a:hover{color:#0A6CA5;border-left-color:#41B6E5}
+.toc a.on{color:#0A6CA5;border-left-color:#41B6E5}
+.prose{font-size:19px;line-height:1.7;color:#2E3B45}
+.prose p{margin:0 0 1.1em}
+.prose strong{color:#212529}
+.prose ul{margin:0 0 1.2em;padding-left:1.3em}
+.prose li{margin:.4em 0}
+.q{scroll-margin-top:90px;padding-top:40px;margin-top:8px;border-top:1px solid #E7EEF3}
+.q h2{font-size:28px;font-weight:800;margin:0 0 14px}
+.answer{font-size:22px;line-height:1.45;font-weight:600;color:#212529;margin:0 0 16px}
+.pull{margin:8px 0 24px;padding:4px 0 4px 22px;border-left:4px solid #41B6E5;color:#0A6CA5;font-size:23px;line-height:1.4;font-weight:700}
+.envs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:4px 0 24px}
+.env{background:#F6FAFC;border:1px solid #E7EEF3;border-radius:12px;padding:16px 18px}
+.env b{display:block;color:#0A6CA5;font-size:17px;margin-bottom:4px}
+.env span{font-size:15.5px;line-height:1.5;color:#45535E}
+.bda{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:4px 0 24px}
+.bda div{border:1px solid #DCE7EE;border-radius:12px;padding:16px 18px;font-size:15.5px;line-height:1.5;color:#45535E}
+.bda b{display:block;font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#0A6CA5;margin-bottom:6px}
+.checks{list-style:none;padding:0;margin:0 0 20px}
+.checks li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #E7EEF3;font-size:17.5px;line-height:1.5;margin:0}
+.checks li:last-child{border-bottom:0}
+.tick{flex:0 0 22px;height:22px;border-radius:50%;background:#E6F5FC;color:#0A6CA5;display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:2px}
+.foot a{color:#E6EEF3;text-decoration:none}.foot a:hover{color:#42C7F2}
+.mtoc{display:none}
+@media (max-width:1100px){.rail{display:none}.layout{grid-template-columns:240px minmax(0,1fr) !important}}
+@media (max-width:860px){.layout{grid-template-columns:1fr !important}.side{display:none}.mtoc{display:block}.navlinks{display:none !important}.envs,.bda{grid-template-columns:1fr}.herogrid{grid-template-columns:1fr !important}.footgrid{grid-template-columns:1fr !important}}
+
+.pg .top{border-bottom:1px solid #E7EEF3;background:linear-gradient(#F6FAFC,#FFFFFF)}
+.herogrid{display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:56px;padding-top:40px;padding-bottom:44px;align-items:center}
+.hcopy{display:flex;flex-direction:column;gap:16px}
+.crumb{display:flex;gap:14px;align-items:center}.crumb a{font-size:14px;font-weight:600;text-decoration:none}
+.pg h1{font-size:clamp(34px,4.4vw,52px);font-weight:800;line-height:1.06;letter-spacing:-0.025em;text-wrap:pretty}
+.dek{margin:0;font-size:22px;line-height:1.45;font-weight:500;color:#45535E;max-width:30em}
+.meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:15px;color:#6B7A85}.meta>*{white-space:nowrap}.by{color:#2E3B45;font-weight:600}.by a{color:inherit;text-decoration:none}
+.hviz{position:relative}.hviz img{width:100%;aspect-ratio:1.25/1;object-fit:cover;border-radius:18px;display:block}
+.idea{position:absolute;left:-28px;bottom:-22px;right:40px;background:#FFFFFF;border:1px solid #DCE7EE;border-radius:14px;padding:18px 20px;box-shadow:0 18px 40px -24px rgba(10,108,165,.35)}
+.idea .eyebrow{margin-bottom:6px}.it{font-size:22px;font-weight:800;line-height:1.2;color:#0A6CA5;letter-spacing:-0.015em}
+.layout{display:grid;grid-template-columns:250px minmax(0,680px) 260px;gap:48px;justify-content:space-between;padding-top:40px}
+.stick{position:sticky;top:88px;display:flex;flex-direction:column;gap:16px}
+.tl{margin-bottom:-4px}
+.mtoc{border:1px solid #DCE7EE;border-radius:12px;padding:14px 18px;margin-bottom:24px}
+.mtoc summary{font-size:16px;font-weight:700;color:#0A6CA5;cursor:pointer}
+.mtoc .toc{margin-top:10px}
+.statebox{background:#F6FAFC;border-radius:12px;padding:18px 20px;font-size:14px;color:#45535E}
+.statebox p{margin:0 0 10px}.statebox .sh{margin:0 0 4px;font-weight:700;color:#212529;font-size:15px}
+.deeper{margin-top:8px}.deeper a{display:block;padding:11px 0;font-size:15px;line-height:1.4;font-weight:600;text-decoration:none;color:#2E3B45;border-bottom:1px solid #E7EEF3}
+.deeper a:hover{color:#0A6CA5}
+.printbtn{font:inherit;font-size:15px;font-weight:600;color:#0A6CA5;background:none;border:0;padding:0;cursor:pointer}
+.printbtn:hover{text-decoration:underline}
+@media (max-width:860px){.idea{left:12px;right:12px;bottom:-30px}.herogrid{gap:52px}}
+@media print{.side,.rail,.top,#app-cta{display:none !important}}
+</style>

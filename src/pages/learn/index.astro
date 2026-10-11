@@ -3,11 +3,11 @@ import Base from '../../layouts/Base.astro';
 import { AREAS, MOST_USEFUL } from '../../lib/learn.js';
 import { DRIVERS_ED } from '../../site.js';
 import StatePicker from '../../components/StatePicker.astro';
-import { allPosts, readingMinutes } from '../../lib/posts.js';
+import { allPosts, readingMinutes, inTerritory } from '../../lib/posts.js';
 
 const bySlug = Object.fromEntries(allPosts.map((p) => [p.slug, p]));
 const card = (slug) => { const p = bySlug[slug]; if (!p) throw new Error(`Learn: no article /${slug}/`); return { ...p, mins: readingMinutes(p.html) }; };
-const areas = AREAS.map((a) => ({ ...a, post: card(a.article), linked: a.links.map(card) }));
+const areas = AREAS.map((a) => ({ ...a, post: card(a.article), linked: a.links.map(card), count: inTerritory(a.id).length }));
 const useful = MOST_USEFUL.map(card);
 const jsonld = {
   '@type': 'CollectionPage',
@@ -68,6 +68,7 @@ const jsonld = {
           </a>
           <div class="list">
             {a.linked.map((m) => <a class="item" href={`/${m.slug}/`}><span>{m.title}</span><span class="kind">{m.mins} min</span></a>)}
+            <a class="more" href={`/learn/${a.id}/`}>Explore all {a.count} {a.label.replace(/^The /, "")} articles →</a>
           </div>
         </div>
       </div>
@@ -155,6 +156,8 @@ const jsonld = {
   .feat { display: flex; gap: 16px; align-items: stretch; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; overflow: hidden; }
   .feat:hover { box-shadow: 0 18px 40px -26px rgba(10,108,165,.45); color: inherit; }
   .feat { min-height: 168px; }
+  .more { display: inline-block; margin-top: 14px; font-size: 16px; font-weight: 700; color: var(--blue); text-decoration: none; }
+  .more:hover { text-decoration: underline; }
   .feat img { width: 150px; flex: 0 0 150px; object-fit: cover; align-self: stretch; height: auto; min-height: 100%; }
   .fb { padding: 14px 16px 14px 0; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
   .ft { font-size: 18px; font-weight: 800; line-height: 1.25; color: var(--ink); }

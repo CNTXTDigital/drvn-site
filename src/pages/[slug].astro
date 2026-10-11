@@ -25,7 +25,7 @@ const claims = claimsUsedIn(post.slug);
 const jsonld = {
   '@graph': [
     articleLD({ url, headline: post.title, description: post.description, image: post.image, published: post.published, modified: post.modified, citation: citationLD(sources), section: terr ? terr.label : post.cluster, byOrg: !post.author }),
-    breadcrumbLD(terr ? [{ name: 'Learn', path: '/learn/' }, { name: terr.label, path: `/learn/#${terr.id}` }, { name: post.title, path: `/${post.slug}/` }] : [{ name: 'Articles', path: '/blog/' }, { name: post.title, path: `/${post.slug}/` }]),
+    breadcrumbLD(terr ? [{ name: 'Learn', path: '/learn/' }, { name: terr.label, path: `/learn/${terr.id}/` }, { name: post.title, path: `/${post.slug}/` }] : [{ name: 'Articles', path: '/blog/' }, { name: post.title, path: `/${post.slug}/` }]),
   ],
 };
 ---
@@ -41,7 +41,7 @@ const jsonld = {
   <div class="wrap layout">
     <article class="main">
       {terr
-        ? <><nav class="bc" aria-label="Breadcrumb"><a href="/">DRVN</a><span>/</span><a href="/learn/">Learn</a><span>/</span><a href={`/learn/#${terr.id}`}>{terr.label}</a><span>/</span><span aria-current="page">{post.title.split(':')[0]}</span></nav><a class="terr" href={`/learn/#${terr.id}`}>{terr.label}</a></>
+        ? <><nav class="bc" aria-label="Breadcrumb"><a href="/">DRVN</a><span>/</span><a href="/learn/">Learn</a><span>/</span><a href={`/learn/${terr.id}/`}>{terr.label}</a><span>/</span><span aria-current="page">{post.title.split(':')[0]}</span></nav><a class="terr" href={`/learn/${terr.id}/`}>{terr.label}</a></>
         : <nav class="bc" aria-label="Breadcrumb"><a href="/">DRVN</a><span>/</span><a href="/blog/">Articles</a></nav>}
       <h1>{post.title}</h1>
       {post.dek && <p class="dek">{post.dek}</p>}
@@ -67,7 +67,7 @@ const jsonld = {
               </a>
             ))}
           </div>
-          <a class="link-arrow" href={`/learn/#${terr.id}`}>All of {terr.label} on Learn</a>
+          <a class="link-arrow" href={`/learn/${terr.id}/`}>All {terr.label.replace(/^The /, "")} articles</a>
         </section>
       )}
       <SourceList sources={sources} claims={claims} />

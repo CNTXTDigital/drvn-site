@@ -35,8 +35,8 @@ export default defineConfig({
   build: { format: 'directory' },
   integrations: [
     sitemap({
-      // Skip the 404 page and the retired /listing/ redirect pages.
-      filter: (page) => !page.includes('/404') && !page.includes('/listing/'),
+      // Skip the 404 page and the redirect-only pages (/listing/, /blog/page/N/).
+      filter: (page) => !page.includes('/404') && !page.includes('/listing/') && !page.includes('/blog/page/'),
       serialize(item) {
         const path = new URL(item.url).pathname;
         const d = LASTMOD.get(path) || (path.startsWith('/guide/') && path !== '/guide/' ? guideDate : null);

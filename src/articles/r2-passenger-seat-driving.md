@@ -10,6 +10,7 @@ imageSm: "/images/articles/ar2-passenger-seat-800.jpg"
 imageAlt: "A father rides calmly in the passenger seat while his teenage daughter drives."
 cluster: "Readiness"
 territory: "readiness"
+also: ["permit-year"]
 sources:
   - goodwin-2014
   - nichd-2018

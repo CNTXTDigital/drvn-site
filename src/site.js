@@ -16,7 +16,6 @@ export const SITE = {
   },
 };
 
-export const POSTS_PER_PAGE = 5;
 
 // Online driver's ed affiliate links (partner: Aceable). Use driversEdLink(state) everywhere
 // so a state-specific offer is used when one exists and the general Aceable offer otherwise.

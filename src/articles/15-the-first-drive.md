@@ -10,6 +10,7 @@ imageSm: "/images/articles/a15-first-drive-800.jpg"
 imageAlt: "A teenage girl adjusts the rearview mirror while her father watches from the passenger seat."
 cluster: "The Permit Year"
 territory: "permit-year"
+also: ["practice"]
 sources: []
 ---
 

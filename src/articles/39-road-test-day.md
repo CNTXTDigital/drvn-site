@@ -10,6 +10,7 @@ imageSm: "/images/articles/a39-road-test-lot-800.jpg"
 imageAlt: "A father leans into the driver’s window to talk with his daughter at the wheel in a parking lot with traffic cones."
 cluster: "Navigating the System"
 territory: "readiness"
+also: ["permit-year"]
 sources:
   - azdot-teen
   - nichd-2018

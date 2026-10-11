@@ -22,6 +22,7 @@ const articles = await Promise.all(
       dek: fm.dek,
       cluster: fm.cluster,
       territory: fm.territory || null,
+      also: fm.also || [],
       author: fm.author || 'Robert Abbott',
       image: fm.image || null,
       imageSm: fm.imageSm || null,
@@ -45,6 +46,9 @@ for (const p of [...articles, ...legacy]) {
 
 // Newest first. Legacy WordPress posts keep their original slugs at the site root.
 export const allPosts = [...articles, ...legacy].sort((a, b) => b.published.localeCompare(a.published));
+
+/** Articles listed under a pillar: its own (territory) plus those tagged into it (also), newest first. */
+export const inTerritory = (id) => allPosts.filter((p) => p.territory === id || (p.also || []).includes(id));
 
 export const formatDate = (iso) =>
   new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });

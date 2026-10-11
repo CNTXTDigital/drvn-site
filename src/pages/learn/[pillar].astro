@@ -1,0 +1,17 @@
+---
+// Pillar pages: /learn/readiness/, /learn/practice/, ... Every article in the pillar
+// (primary territory or `also:`), with the featured article from Learn pinned first.
+import Base from '../../layouts/Base.astro';
+import ArticleList from '../../components/ArticleList.astro';
+import { AREAS } from '../../lib/learn.js';
+import { inTerritory } from '../../lib/posts.js';
+export function getStaticPaths() {
+  return AREAS.map((a) => ({ params: { pillar: a.id }, props: { area: a } }));
+}
+const { area } = Astro.props;
+const all = inTerritory(area.id);
+const posts = [...all.filter((p) => p.slug === area.article), ...all.filter((p) => p.slug !== area.article)];
+---
+<Base title={`${area.label}: Teen Driving Articles for Parents`} description={`${area.q} ${area.short} Every DRVN article on ${area.label.toLowerCase()} for parents teaching a teen to drive.`.slice(0, 160)} crumbs={[{ name: 'Learn', path: '/learn/' }, { name: area.label, path: `/learn/${area.id}/` }]}>
+  <ArticleList eyebrow={area.label} title={area.q} intro={area.blurb} posts={posts} active={area.id} />
+</Base>

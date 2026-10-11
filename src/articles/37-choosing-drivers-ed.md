@@ -10,6 +10,7 @@ imageSm: "/images/articles/a37-choosing-drivers-ed-800.jpg"
 imageAlt: "A teenage boy studies an online driver’s ed course on his laptop."
 cluster: "Navigating the System"
 territory: "rules-costs"
+also: ["permit-year"]
 sources: []
 ---
 

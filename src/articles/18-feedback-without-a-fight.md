@@ -10,6 +10,7 @@ imageSm: "/images/articles/a18-feedback-800.jpg"
 imageAlt: "A mother and her teenage son talk beside the car after a practice drive."
 cluster: "The Permit Year"
 territory: "permit-year"
+also: ["practice"]
 sources: []
 ---
 

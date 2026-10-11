@@ -1,7 +1,8 @@
 // The five DRVN content territories. Learn (/learn/) has one section per territory:
 // a question heading, a short explanation, one featured article and two supporting links.
 // Every article's frontmatter sets `territory:` to one of these ids; the article page shows
-// the label (linking to /learn/#id) and recommends more from the same territory.
+// the label (linking to its pillar page, /learn/{id}/) and recommends more from the same territory.
+// An article can also list secondary pillars in `also:`; it then appears on those pillar pages too.
 // The home page cards use id, tag, q, short and img.
 
 export const AREAS = [

@@ -1,17 +1,8 @@
 ---
-import Base from '../../../layouts/Base.astro';
-import BlogList from '../../../components/BlogList.astro';
-import { allPosts } from '../../../lib/posts.js';
-import { POSTS_PER_PAGE } from '../../../site.js';
-
-// Keeps the /blog/page/2/ … URLs WordPress used. Page 1 lives at /blog/ (old /blog/page/1/ redirects there).
+// The paginated list is gone; /blog/ shows every article. These old WordPress-era
+// /blog/page/N/ URLs now forward to /blog/ (noindex, canonical, instant refresh).
 export function getStaticPaths() {
-  const total = Math.ceil(allPosts.length / POSTS_PER_PAGE);
-  return Array.from({ length: total - 1 }, (_, i) => ({ params: { page: String(i + 2) }, props: { page: i + 2, total } }));
+  return Array.from({ length: 11 }, (_, i) => ({ params: { page: String(i + 2) } }));
 }
-const { page, total } = Astro.props;
-const start = (page - 1) * POSTS_PER_PAGE;
 ---
-<Base title={`Articles for parents — page ${page}`} description={`Articles for parents teaching a teen to drive, page ${page} of ${total}.`} crumbs={[{ name: 'Learn', path: '/learn/' }, { name: 'All articles', path: '/blog/' }, { name: `Page ${page}`, path: `/blog/page/${page}/` }]}>
-  <BlogList posts={allPosts.slice(start, start + POSTS_PER_PAGE)} page={page} totalPages={total} />
-</Base>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><meta name="robots" content="noindex"><link rel="canonical" href="https://www.drvnapp.com/blog/"><meta http-equiv="refresh" content="0; url=/blog/"></head><body><p>This page has moved: <a href="/blog/">All articles</a></p></body></html>

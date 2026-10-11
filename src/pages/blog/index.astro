@@ -1,11 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-import BlogList from '../../components/BlogList.astro';
+import ArticleList from '../../components/ArticleList.astro';
 import { allPosts } from '../../lib/posts.js';
-import { POSTS_PER_PAGE } from '../../site.js';
-
-const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 ---
-<Base title="Articles for parents teaching a teen to drive" description="Practical articles for parents teaching a teen to drive: practice plans, the 50-hour rule, night and weather driving, and the move to solo driving." crumbs={[{ name: 'Learn', path: '/learn/' }, { name: 'All articles', path: '/blog/' }]}>
-  <BlogList posts={allPosts.slice(0, POSTS_PER_PAGE)} page={1} totalPages={totalPages} />
+<Base title="Articles for Parents Teaching a Teen to Drive" description="Every DRVN article for parents teaching a teen to drive, newest first: readiness, what to practice, real risks, the permit year, and the rules and costs." crumbs={[{ name: 'Learn', path: '/learn/' }, { name: 'All articles', path: '/blog/' }]}>
+  <ArticleList title="Articles for parents" intro="Teaching a teen to drive, from the passenger seat. Practical, specific, and written by a parent who has done it four times." posts={allPosts} active="all" />
 </Base>

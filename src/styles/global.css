@@ -61,11 +61,13 @@ h1, h2, h3, h4 { color: var(--blue); line-height: 1.15; letter-spacing: -0.015em
 :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
 
 /* Long-form article body */
-.prose { font-size: 19px; line-height: 1.7; color: var(--ink-2); }
+.prose { font-size: 18px; line-height: 1.7; color: var(--ink-2); }
+/* Opening paragraph: the first paragraph of an article (.lede) or a paragraph marked .lead */
+.lede > p:first-child, .prose p.lead { font-size: 24px; line-height: 1.5; color: var(--ink); }
 .prose p { margin: 0 0 1.15em; }
-.prose h2 { font-size: 27px; margin: 1.3em 0 0.5em; }
+.prose h2 { font-size: 24px; margin: 1.3em 0 0.5em; }
 .prose h3 { font-size: 22px; margin: 1.4em 0 0.5em; }
-.prose h4 { font-size: 19px; margin: 1.3em 0 0.4em; }
+.prose h4 { font-size: 18px; margin: 1.3em 0 0.4em; }
 .prose ul, .prose ol { margin: 0 0 1.2em; padding-left: 1.3em; }
 .prose li { margin: 0.35em 0; }
 .prose strong { color: var(--ink); }
@@ -111,6 +113,10 @@ h1, h2, h3, h4 { color: var(--blue); line-height: 1.15; letter-spacing: -0.015em
 .prose .signs .not-yet { background: var(--surface-2); }
 .prose th { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
 @media (max-width: 640px) {
+  .prose { font-size: 17px; }
+  .lede > p:first-child, .prose p.lead { font-size: 20px; }
+  .prose h2 { font-size: 22px; }
+  .dek { font-size: 21px !important; }
   .prose .signs { grid-template-columns: 1fr; }
   .prose .fw-list li { grid-template-columns: 30px minmax(0, 1fr); }
   .prose .fw-list li span { grid-column: 2; }

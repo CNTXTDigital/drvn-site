@@ -154,7 +154,7 @@ const jsonld = {
 <nav class="toc">{toc.map((t) => <a href={`#${t.id}`}>{t.label}</a>)}</nav>
 </details>
 
-<p style="font-size: 21px">Teaching a teenager to drive is one of the few parenting jobs where a mistake can change a life in a couple of seconds. And the help you get for it is surprisingly thin.</p>
+<p class="lead">Teaching a teenager to drive is one of the few parenting jobs where a mistake can change a life in a couple of seconds. And the help you get for it is surprisingly thin.</p>
 <p>Your state tells you when your kid can get a permit, how many hours to log, whether they need driver’s ed, and when they can take the road test. All of that answers a legal question: when is this person eligible to drive alone?</p>
 <p>You get the harder question.</p>
 <p style="font-size: 24px; font-weight: 800; color: #0A6CA5; line-height: 1.3; letter-spacing: -0.01em">Is my kid actually ready to drive without me?</p>
@@ -494,7 +494,7 @@ const jsonld = {
 .toc a{display:block;padding:7px 0 7px 14px;margin-left:-2px;border-left:2px solid #E7EEF3;font-size:14.5px;line-height:1.35;font-weight:600;color:#45535E;text-decoration:none}
 .toc a:hover{color:#0A6CA5;border-left-color:#41B6E5}
 .toc a.on{color:#0A6CA5;border-left-color:#41B6E5}
-.prose{font-size:19px;line-height:1.7;color:#2E3B45}
+.prose{font-size:18px;line-height:1.7;color:#2E3B45}
 .prose p{margin:0 0 1.1em}
 .prose strong{color:#212529}
 .prose ul{margin:0 0 1.2em;padding-left:1.3em}
@@ -524,7 +524,7 @@ const jsonld = {
 .hcopy{display:flex;flex-direction:column;gap:16px}
 .crumb{display:flex;gap:14px;align-items:center}.crumb a{font-size:14px;font-weight:600;text-decoration:none}
 .pg h1{font-size:clamp(34px,4.4vw,52px);font-weight:800;line-height:1.06;letter-spacing:-0.025em;text-wrap:pretty}
-.dek{margin:0;font-size:22px;line-height:1.45;font-weight:500;color:#45535E;max-width:30em}
+.dek{margin:0;font-size:24px;line-height:1.4;font-weight:500;color:#45535E;max-width:30em}
 .meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:15px;color:#6B7A85}.meta>*{white-space:nowrap}.by{color:#2E3B45;font-weight:600}.by a{color:inherit;text-decoration:none}
 .hviz{position:relative}.hviz img{width:100%;aspect-ratio:1.25/1;object-fit:cover;border-radius:18px;display:block}
 .idea{position:absolute;left:-28px;bottom:-22px;right:40px;background:#FFFFFF;border:1px solid #DCE7EE;border-radius:14px;padding:18px 20px;box-shadow:0 18px 40px -24px rgba(10,108,165,.35)}
@@ -542,6 +542,7 @@ const jsonld = {
 .printbtn{font:inherit;font-size:15px;font-weight:600;color:#0A6CA5;background:none;border:0;padding:0;cursor:pointer}
 .printbtn:hover{text-decoration:underline}
 @media (max-width:860px){.idea{left:12px;right:12px;bottom:-30px}.herogrid{gap:52px}}
+@media (max-width:640px){.prose{font-size:17px}.prose p.lead{font-size:20px}.q h2{font-size:22px}}
 @media print{.side,.rail,.top,#app-cta{display:none !important}}
   .deeper-inline { background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 16px; padding: 20px 22px; margin: 0 0 8px; }
   .deeper-inline .deeper { margin-top: 10px; }

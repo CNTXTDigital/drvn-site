@@ -18,16 +18,18 @@ if (highways.length) {
     tip: `Save the first merge for a quiet Sunday morning on ${highways[0]}: one on-ramp, one exit, and back. Then add a weekday at a busier time.`,
   });
 } else {
-  roadsRows.push({ k: 'Highways', v: 'No interstate or U.S. highway within 15 miles.', tip: 'Plan a dedicated trip for highway merging before the road test. It won’t happen on errands.' });
+  roadsRows.push({ k: 'Highways', v: 'No interstate or U.S. highway within 15 miles.', tip: 'Highway merging needs a dedicated trip. Until then, practice speed changes and merging on the fastest road in town.' });
 }
 roadsRows.push(
-  r.trafficSignals > 0
+  r.trafficSignals >= 60
     ? { k: 'Traffic signals', v: `${n(r.trafficSignals)} signalized intersections within 5 miles.`, tip: 'Plenty of material for unprotected left turns: signals with no green arrow.' }
+    : r.trafficSignals > 0
+    ? { k: 'Traffic signals', v: `${n(r.trafficSignals)} signalized intersection${r.trafficSignals === 1 ? '' : 's'} within 5 miles.`, tip: 'Enough to start on left turns at a signal. Save busy multi-lane intersections for a trip into a larger town.' }
     : { k: 'Traffic signals', v: 'Few signalized intersections nearby.', tip: 'Busy signals and left turns need a trip into a larger town.' }
 );
 roadsRows.push(
   r.roundabouts > 0
-    ? { k: 'Roundabouts', v: `${n(r.roundabouts)} within 5 miles.`, tip: 'Practice yielding at entry and choosing the lane before you’re in it.' }
+    ? { k: 'Roundabouts', v: r.roundabouts === 1 ? 'One within 5 miles.' : `${n(r.roundabouts)} within 5 miles.`, tip: 'Practice yielding at entry and choosing the lane before you’re in it.' }
     : { k: 'Roundabouts', v: 'None within 5 miles.', tip: 'If you’ll drive somewhere that has them, practice one before it matters.' }
 );
 if (r.railCrossings > 0) roadsRows.push({ k: 'Rail crossings', v: `${n(r.railCrossings)} within 5 miles.`, tip: 'Talk through it the first time: look both ways, never stop on the tracks.' });
@@ -79,7 +81,7 @@ if (d && d.polarDays > 20) {
   </div>
   <p class="src">
     Road data © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener" target="_blank">OpenStreetMap contributors</a>.{' '}
-    {c && <>Climate: NOAA U.S. Climate Normals 1991–2020, {c.stationName} station{c.stationMiles >= 1 && <> ({c.stationMiles} miles away)</>}. </>}
+    {c && <>Climate: NOAA U.S. Climate Normals 1991–2020, {c.stationName} station{c.stationMiles >= 1.5 && <> ({Math.round(c.stationMiles)} miles away)</>}. </>}
     Sunset times computed for {city}. Permit and road tests are run by <a href={s.req.agencyUrl} rel="noopener" target="_blank">{s.req.agency}</a>.
   </p>
 </section>

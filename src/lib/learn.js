@@ -69,6 +69,8 @@ export const AREAS = [
       { t: 'Is driver’s ed enough?', k: 'Article', href: '/is-drivers-ed-enough/' },
       { t: 'How to choose a driver’s ed course', k: 'Article', href: '/choosing-a-drivers-ed-course/' },
       { t: 'The parent-teen driving agreement (free PDF)', k: 'Article', href: '/parent-teen-driving-agreement/' },
+      { t: 'Liability limits: the number that matters most', k: 'Article', href: '/teen-driver-liability-limits/' },
+      { t: 'Add them to your policy, or get them their own?', k: 'Article', href: '/add-teen-to-insurance-or-separate-policy/' },
       { t: 'Compare teen driving laws in all 50 states', k: 'Reference', href: '/teen-driving-laws-by-state/' },
     ],
   },

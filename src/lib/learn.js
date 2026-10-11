@@ -24,7 +24,10 @@ export const AREAS = [
     more: [
       { t: 'Rain, Snow and Ice on Purpose', k: 'Article', href: '/weather-driving-practice/' },
       { t: 'How do I teach without becoming an instructor?', k: 'Guide', href: G('how-to-teach') },
-      { t: 'What skills matter most?', k: 'Guide', href: G('skills-that-matter') },
+      { t: 'Left turns', k: 'Article', href: '/teaching-left-turns/' },
+      { t: 'Highway merging', k: 'Article', href: '/teaching-highway-merging/' },
+      { t: 'Following distance', k: 'Article', href: '/following-distance-teen-drivers/' },
+      { t: 'Skids, blowouts and brake failure', k: 'Article', href: '/skids-blowouts-brake-failure/' },
     ],
   },
   {

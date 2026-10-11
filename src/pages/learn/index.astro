@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { AREAS } from '../../lib/learn.js';
 import { DRIVERS_ED } from '../../site.js';
+import StatePicker from '../../components/StatePicker.astro';
 import { allPosts, readingMinutes } from '../../lib/posts.js';
 
 const bySlug = Object.fromEntries(allPosts.map((p) => [p.slug, p]));
@@ -89,30 +90,31 @@ const jsonld = {
 
   <section class="wrap">
     <div class="close">
-      <div class="cs">
-        <div>
+      <div class="col cs">
+        <div class="ct">
           <div class="ch">What does your state require?</div>
           <div class="cx">Permit age, supervised hours, night and passenger rules.</div>
         </div>
-        <a class="link-arrow" href="/guide/">Find your state guide</a>
+        <StatePicker id="state-pick-learn" buttonLabel="Find your state guide →" split />
       </div>
-      <div class="ce">
-        <div>
-          <div class="ce-top"><img src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" /><span class="eyebrow">Partner</span></div>
+      <div class="col ce">
+        <div class="ct">
           <div class="ch">Still need driver’s ed?</div>
           <div class="cx">State-approved online courses your teen can do at their own pace.</div>
         </div>
+        <div class="cm"><img class="ace-logo" src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" /><span class="eyebrow">Partner</span></div>
         <div class="cbot">
-          <a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find an online course</a>
+          <a class="btn btn-sm" href={DRIVERS_ED.default.url} rel="sponsored noopener" target="_blank">Find an online course →</a>
           <div class="cfine">DRVN may earn a referral fee if you enroll through this link.</div>
         </div>
       </div>
-      <div class="ca">
-        <div>
+      <div class="col ca">
+        <div class="ct">
           <div class="ch">Ready to put it into practice?</div>
           <div class="cx">One priority before each drive, with hours logged as you go.</div>
         </div>
-        <a class="btn btn-sm" href="/app/">Get the app →</a>
+        <div class="cm"><img class="app-icon" src="/images/app/drvn-app-icon.png" alt="DRVN app icon" width="96" height="96" /><span class="cx">Free on iOS and Android</span></div>
+        <div class="cbot"><a class="btn btn-sm" href="/app/">Get the app →</a></div>
       </div>
     </div>
   </section>
@@ -145,7 +147,8 @@ const jsonld = {
   .pair { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: start; }
   .feat { display: flex; gap: 16px; align-items: stretch; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; overflow: hidden; }
   .feat:hover { box-shadow: 0 18px 40px -26px rgba(10,108,165,.45); color: inherit; }
-  .feat img { width: 150px; flex: 0 0 150px; object-fit: cover; }
+  .feat { min-height: 168px; }
+  .feat img { width: 150px; flex: 0 0 150px; object-fit: cover; align-self: stretch; height: auto; min-height: 100%; }
   .fb { padding: 14px 16px 14px 0; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
   .ft { font-size: 18px; font-weight: 800; line-height: 1.25; color: var(--ink); }
   .item { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink-2); font-weight: 600; font-size: 16px; line-height: 1.4; }
@@ -155,24 +158,27 @@ const jsonld = {
   .more h2 { font-size: 24px; margin-bottom: 10px; }
   .more ul { margin: 0 0 12px; padding-left: 1.1em; }
   .more li { margin: 6px 0; font-size: 17px; }
-  .close { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; }
-  .cs, .ca, .ce { padding: 26px 28px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 16px; }
-  .cx { margin-top: 4px; }
-  .ce { background: var(--surface); border-left: 1px solid var(--line-2); }
-  .ce-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-  .ce-top img { height: 20px; width: auto; display: block; }
-  .ce-top .eyebrow { font-size: 11px; }
-  .cbot { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
-  .cfine { font-size: 12px; color: var(--muted); }
+  .close { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto; border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; }
+  .col { grid-row: span 3; display: grid; grid-template-rows: subgrid; row-gap: 18px; padding: 26px 28px; align-items: start; }
   .cs { background: var(--surface-2); }
+  .ce { background: var(--surface); border-left: 1px solid var(--line-2); }
   .ca { background: var(--blue); }
   .ch { font-size: 20px; font-weight: 800; color: var(--blue); }
-  .cx { font-size: 15.5px; color: var(--ink-3); }
+  .cx { font-size: 15.5px; color: var(--ink-3); margin-top: 4px; }
   .ca .ch { color: #fff; }
   .ca .cx { color: #E6F5FC; }
+  .cm { display: flex; align-items: center; gap: 12px; min-height: 46px; }
+  .cm .cx { margin: 0; }
+  .ace-logo { height: 26px; width: auto; display: block; }
+  .cm .eyebrow { font-size: 11px; }
+  .app-icon { width: 46px; height: 46px; border-radius: 11px; display: block; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+  .cbot { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cfine { font-size: 12px; color: var(--muted); }
   @media (max-width: 900px) {
     .hero, .area, .pair, .close { grid-template-columns: 1fr; }
     .area { gap: 16px; }
+    .close { grid-template-rows: none; }
+    .col { grid-row: auto; grid-template-rows: none; }
     .ce { border-left: 0; border-top: 1px solid var(--line-2); }
     .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
   }

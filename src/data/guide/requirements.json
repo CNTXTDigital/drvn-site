@@ -64,7 +64,7 @@
   "onlineDriversEd": true
  },
  "Arkansas": {
-  "agency": "Arkansas Department of Finance and Administration (DFA) Office of Driver Services; testing by Arkansas State Police (ASP)",
+  "agency": "Arkansas Department of Finance and Administration, Office of Driver Services",
   "agencyUrl": "https://www.dfa.arkansas.gov/office/driver-services/licenses-ids-permits/graduated-licenses/learners-and-intermediate-license/",
   "permitMinAge": "14",
   "permitTest": "Written knowledge test and vision screening administered by the Arkansas State Police (an ASP-90 vision referral form from an Arkansas optometrist is needed if the vision screening is failed).",
@@ -219,7 +219,7 @@
   "onlineDriversEd": true
  },
  "Hawaii": {
-  "agency": "Hawaii Department of Transportation (sets statewide rules and driver education program); licenses are issued by the county driver licensing offices (e.g., City and County of Honolulu Department of Customer Services)",
+  "agency": "Hawaii county driver licensing offices",
   "agencyUrl": "https://www.honolulu.gov/csd/graduated-driver-licensing-program-gdl",
   "permitMinAge": "15 years 6 months",
   "permitTest": "Knowledge test on state and county traffic laws plus an eyesight (vision) test.",
@@ -244,7 +244,7 @@
   "onlineDriversEd": true
  },
  "Idaho": {
-  "agency": "Idaho Transportation Department (ITD), Division of Motor Vehicles; licenses issued at county driver's license offices",
+  "agency": "Idaho Transportation Department (ITD)",
   "agencyUrl": "https://itd.idaho.gov/dmv/young-drivers/",
   "permitMinAge": "14 years 6 months (Driver Training/Supervised Instruction Permit)",
   "permitTest": "Vision test is required for the driver training permit; the written knowledge test is taken later before licensing (or before a Class D instruction permit for applicants 17 and older).",
@@ -355,7 +355,7 @@
   "onlineDriversEd": true
  },
  "Kentucky": {
-  "agency": "Kentucky Transportation Cabinet (KYTC), Division of Driver Licensing; knowledge and skills tests are given by Kentucky State Police (KSP)",
+  "agency": "Kentucky Transportation Cabinet, Division of Driver Licensing",
   "agencyUrl": "https://drive.ky.gov/Drivers/Pages/GDLP.aspx",
   "permitMinAge": "15",
   "permitTest": "Written knowledge and vision tests administered by Kentucky State Police (schedule through KSP; bring documents to a KYTC Regional office the same day first).",
@@ -536,7 +536,7 @@
   "onlineDriversEd": true
  },
  "Missouri": {
-  "agency": "Missouri Department of Revenue, Driver License Bureau (testing by the Missouri State Highway Patrol)",
+  "agency": "Missouri Department of Revenue, Driver License Bureau",
   "agencyUrl": "https://dor.mo.gov/driver-license/issuance/graduated-driver-license/details.html",
   "permitMinAge": "15",
   "permitTest": "Vision, road sign recognition, and written knowledge tests at a Missouri State Highway Patrol driver examination station.",

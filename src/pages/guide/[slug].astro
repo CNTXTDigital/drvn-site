@@ -30,7 +30,7 @@ const short = (v) => String(v || '').split(/[;(]/)[0].trim().replace(/\.$/, '');
 const facts = `Permit at ${short(r.permitMinAge)}; license at ${short(r.licenseMinAge)}.`;
 const pr = profile;
 const hwy = pr ? [...(pr.roads?.interstates || []), ...(pr.roads?.usRoutes || [])].slice(0, 3) : [];
-const local = pr ? [hwy.length ? `highways ${hwy.join(', ')}` : null, pr.climate ? `about ${Math.round(pr.climate.snowInches)} in of snow a year` : null].filter(Boolean).join('; ') : '';
+const local = pr ? [hwy.length ? `highways ${hwy.join(', ')}` : null, pr.climate && pr.climate.snowInches >= 1 ? `about ${Math.round(pr.climate.snowInches)} in of snow a year` : null].filter(Boolean).join('; ') : '';
 const description = c
   ? (pr
     ? `Teaching a teen to drive in ${c.city}, ${st}: where to practice (${local}), when it gets dark, and ${s.sname}'s permit and license rules. ${facts}`

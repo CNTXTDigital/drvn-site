@@ -41,6 +41,7 @@ export const FOUNDER = {
   jobTitle: 'Founder, DRVN',
   worksFor: { '@id': ORG_ID },
   description: 'Communication designer, entrepreneur and father of four who founded DRVN to help parents teach their teenagers to drive.',
+  sameAs: ['https://www.linkedin.com/in/robert-abbott/'],
 };
 
 export const AUTHOR_REF = { '@type': 'Person', '@id': FOUNDER_ID, name: 'Robert Abbott', url: `${SITE.url}/about/#founder` };

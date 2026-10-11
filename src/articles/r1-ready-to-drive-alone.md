@@ -45,7 +45,7 @@ I don’t say that because something terrible happened. I say it because it’s 
 
 Readiness isn’t a feeling. You will never feel completely fine watching them back out alone the first time, and if you wait for that feeling you’ll be driving them to college. It’s something you can watch for. Here’s how I’d look.
 
-Count what you say. Take one ordinary drive and keep a quiet tally of every time you speak up to help. “Watch that car.” “Slow down.” “You’ve got a stop sign.” Early on that number is huge, and it should be, because every one of those is you doing part of the driving. Readiness is when that number gets close to zero on a normal drive, and stays there. Not because you bit your tongue. Because there was nothing to say.
+Count what you say. Take one ordinary drive and keep a quiet tally of every time you speak up to help. “Watch that car.” “Slow down.” “You’ve got a stop sign.” Early on that number is huge, and it should be, because every one of those is you doing part of the driving. Readiness is when that number gets close to zero on a normal drive, and stays there. Not because you bit your tongue. Because there was nothing to say. (How to get there on purpose is in [Are You Still Driving From the Passenger Seat?](/stop-coaching-teen-driver/))
 
 Ask them what they see. Every so often, ask, “What are you watching right now?” A ready driver answers fast and specifically: the kid on the bike, the brake lights two cars up, the truck that’s been drifting toward the line. A driver who isn’t ready says “the road,” which is technically correct and tells you everything.
 
@@ -71,7 +71,7 @@ Your state probably does a version of this already with passenger limits and a c
 
 Then they’re not ready yet. The age on the license is the earliest your teen can go, not a deadline.
 
-This is a hard conversation, especially if their friends are already driving. Make it about specific things, not about them. “You’re not ready” lands as a verdict. “I want to see three more night drives and one trip on the interstate where I don’t say anything” is a plan with an end date. Teenagers can work with a plan. Honestly, so can parents.
+This is a hard conversation, especially if their friends are already driving. Make it about specific things, not about them. “You’re not ready” lands as a verdict. “I want to see three more night drives and one trip on the interstate where I don’t say anything” is a plan with an end date. Teenagers can work with a plan. Honestly, so can parents. There's more on how to say it, and on the catch with waiting too long, in [Should Your Teen Wait to Get Their License?](/should-teen-wait-to-get-license/)
 
 And if you realize the gap is because the practice never covered the hard stuff, that isn’t a failure. It’s the most common thing in the world. The fix is the same as it always was, and it’s laid out in [The 50-Hour Myth](/50-hour-myth-driving-practice/): more drives, in more places, with one thing to work on each time.
 

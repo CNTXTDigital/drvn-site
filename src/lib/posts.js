@@ -49,6 +49,9 @@ export const allPosts = [...articles, ...legacy].sort((a, b) => b.published.loca
 export const formatDate = (iso) =>
   new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 
+export const formatMonth = (iso) =>
+  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' });
+
 export const readingMinutes = (html) => {
   const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 230));

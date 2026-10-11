@@ -2,11 +2,12 @@
 import Base from '../layouts/Base.astro';
 import AppCard from '../components/AppCard.astro';
 import DriversEdCard from '../components/DriversEdCard.astro';
-import { allPosts, formatDate, readingMinutes, related, relatedInTerritory } from '../lib/posts.js';
+import { allPosts, formatDate, formatMonth, readingMinutes, related, relatedInTerritory } from '../lib/posts.js';
 import { TERRITORY } from '../lib/learn.js';
 import { SITE } from '../site.js';
 import SourceList from '../components/SourceList.astro';
 import HowWeKnow from '../components/HowWeKnow.astro';
+import AuthorBox from '../components/AuthorBox.astro';
 import { sourcesFor, claimsUsedIn, citationLD } from '../lib/evidence.js';
 import { articleLD, breadcrumbLD } from '../lib/schema.js';
 
@@ -40,19 +41,20 @@ const jsonld = {
   <div class="wrap layout">
     <article class="main">
       {terr
-        ? <a class="terr" href={`/learn/#${terr.id}`}>{terr.label}</a>
-        : <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Articles</a></nav>}
+        ? <><nav class="bc" aria-label="Breadcrumb"><a href="/">DRVN</a><span>/</span><a href="/learn/">Learn</a><span>/</span><a href={`/learn/#${terr.id}`}>{terr.label}</a><span>/</span><span aria-current="page">{post.title.split(':')[0]}</span></nav><a class="terr" href={`/learn/#${terr.id}`}>{terr.label}</a></>
+        : <nav class="bc" aria-label="Breadcrumb"><a href="/">DRVN</a><span>/</span><a href="/blog/">Articles</a></nav>}
       <h1>{post.title}</h1>
       {post.dek && <p class="dek">{post.dek}</p>}
       <div class="meta">
         {post.author && <><span class="by">By <a href="/about/#founder" rel="author">{post.author}</a></span><span>·</span>{terr && <><span>Founder, DRVN</span><span>·</span></>}</>}
         <span>{terr ? 'Published ' : ''}<time datetime={post.published}>{formatDate(post.published)}</time></span>
-        {terr && <><span>·</span><span>Last reviewed <time datetime={post.reviewed}>{formatDate(post.reviewed)}</time></span></>}
+        {terr && <><span>·</span><span>Last reviewed: <time datetime={post.reviewed}>{formatMonth(post.reviewed)}</time></span></>}
         <span>·</span>
         <span>{readingMinutes(post.html)} min read</span>
       </div>
       {post.image && <img class="hero-img" src={post.image} srcset={post.imageSm ? `${post.imageSm} 800w, ${post.image} 1600w` : undefined} sizes="(max-width: 980px) 100vw, 680px" alt={post.imageAlt || ""} width="1600" height="842" fetchpriority="high" />}
       <div class="prose" set:html={post.html} />
+      {terr && <AuthorBox />}
       {post.howWeKnow && <HowWeKnow />}
       {inTerr.length > 0 && (
         <section class="next" aria-labelledby="next-h">

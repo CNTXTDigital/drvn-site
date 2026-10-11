@@ -1,7 +1,7 @@
 ---
 slug: 50-hour-myth-driving-practice
 title: "The 50-Hour Myth: Why the Number in Your Log Is the Wrong Number"
-seoTitle: "50 Hours of Driving Practice: Why the Number Isn't What Matters"
+seoTitle: "How Many Hours Should a Teen Practice Driving?"
 dek: "Your state wants hours. The research says the hours aren't what's doing the work."
 description: "Most states want 20 to 50 supervised hours. A randomized trial found that what happens inside those hours cuts the failure rate by more than half."
 published: "2026-10-09T12:04:00Z"

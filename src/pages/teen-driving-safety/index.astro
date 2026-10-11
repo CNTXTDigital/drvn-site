@@ -1,6 +1,7 @@
 ---
 import SourceList from '../../components/SourceList.astro';
 import HowWeKnow from '../../components/HowWeKnow.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
 import { frameworkRefHTML } from '../../lib/framework.js';
 import { sourcesFor, claimsUsedIn, citationLD } from '../../lib/evidence.js';
 import { articleLD, breadcrumbLD } from '../../lib/schema.js';
@@ -115,8 +116,8 @@ const jsonld = {
 };
 ---
 <Base
-  title="Teen Driving Safety for Parents: What You Actually Need to Know"
-  description="Your state tells you when your kid can drive. It doesn’t tell you when they’re ready. Risk, practice hours, what to practice, readiness, passengers, night driving and phones, from a parent who has done it four times."
+  title="Teen Driving Safety for Parents: A Complete Guide"
+  description="The complete parent guide to teen driving safety: why new drivers are at risk, how many hours to practice, what to practice, how to judge readiness, and rules for passengers, night driving and phones."
   image="/images/site/guide-hero.jpg"
   type="article"
   published="2026-10-11T12:00:00Z"
@@ -127,10 +128,10 @@ const jsonld = {
 <section class="top">
 <div class="wrap herogrid">
 <div class="hcopy">
-<div class="crumb"><a href="/learn/">← Learn</a><span class="eyebrow">The essentials</span></div>
+<nav class="bc" aria-label="Breadcrumb"><a href="/">DRVN</a><span>/</span><a href="/learn/">Learn</a><span>/</span><span aria-current="page">Teen Driving Safety for Parents</span></nav>
 <h1>Teen Driving Safety for Parents: What You Actually Need to Know</h1>
 <p class="dek">Your state tells you when your kid can drive. It doesn’t tell you when they’re ready. Here’s the part nobody hands you.</p>
-<div class="meta"><span class="by">By <a href="/about/#founder">Robert Abbott</a></span><span>·</span><span>Founder, DRVN</span><span>·</span><span>Published <time datetime="2026-10-10">October 10, 2026</time></span><span>·</span><span>Last reviewed <time datetime="2026-10-11">October 11, 2026</time></span><span>·</span><span>14 min read</span><span>·</span><a href="/evidence/">See the research behind this guidance →</a></div>
+<div class="meta"><span class="by">By <a href="/about/#founder">Robert Abbott</a></span><span>·</span><span>Founder, DRVN</span><span>·</span><span>Published <time datetime="2026-10-10">October 10, 2026</time></span><span>·</span><span>Last reviewed: <time datetime="2026-10-11">October 2026</time></span><span>·</span><span>14 min read</span><span>·</span><a href="/evidence/">See the research behind this guidance →</a></div>
 </div>
 <div class="hviz">
 <img src="/images/site/guide-hero.jpg" alt="" width="1600" height="842" fetchpriority="high" />
@@ -448,6 +449,7 @@ const jsonld = {
 <p>That’s the job you’ve been handed. DRVN exists to make it a little easier.</p>
 </section>
 
+<AuthorBox />
 <HowWeKnow />
 <section style="margin-top: 24px">
 <p style="font-size: 15px; line-height: 1.6; color: #6B7A85; margin: 0 0 8px">Licensing requirements vary by state and change. Always check your state’s requirements against its official source.</p>

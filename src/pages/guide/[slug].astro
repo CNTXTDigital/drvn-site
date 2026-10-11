@@ -59,7 +59,7 @@ const jsonld = {
 <Base title={title} description={description} jsonld={jsonld}>
   <section class="wrap top">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/guide/">Guide</a>
+      <a href="/">DRVN</a><span>/</span><a href="/guide/">State Guides</a>
       {c ? <><span>/</span><a href={`/guide/${s.slug}/`}>{s.sname}</a><span>/</span><span aria-current="page">{c.city}</span></> : <><span>/</span><span aria-current="page">{s.sname}</span></>}
     </nav>
     <h1>{title}</h1>
@@ -68,7 +68,7 @@ const jsonld = {
         ? <>What parents and teens need to know about getting a driver’s license in {c.city}, {st}: six steps, from the first class to the insurance call.</>
         : <>What parents need to know about the learn-to-drive process in {s.sname}: six steps, from the first class to the insurance call.</>}
     </p>
-    <p class="checked">Requirements checked {CHECKED_LABEL} against official state licensing sources: <a href={r.agencyUrl} rel="noopener" target="_blank">{r.agency}</a>.</p>
+    <p class="checked">Requirements checked: {CHECKED_LABEL}, against official state licensing sources: <a href={r.agencyUrl} rel="noopener" target="_blank">{r.agency}</a>.</p>
   </section>
 
   <section class="wrap cols">

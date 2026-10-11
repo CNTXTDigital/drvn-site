@@ -1,7 +1,7 @@
 ---
 slug: most-dangerous-thing-teen-drivers-license
 title: "The Most Dangerous Thing Your Kid Will Ever Do Is Get a Driver's License"
-seoTitle: "The Most Dangerous Thing Your Kid Will Do: Getting a Driver's License"
+seoTitle: "Why Are Teen Drivers at Greater Risk? A Parent’s Wake-Up Call"
 dek: "Four kids in, here's what I got wrong the first time — and what the research says almost everybody gets wrong."
 description: "The risk spikes the day supervision ends, and state hour requirements aren't a safety standard. What a parent of four got wrong — and what to do instead."
 published: "2026-10-09T12:06:00Z"

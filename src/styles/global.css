@@ -119,3 +119,9 @@ h1, h2, h3, h4 { color: var(--blue); line-height: 1.15; letter-spacing: -0.015em
 
 .prose .short-answer p, .prose .gt p, .prose .diagnostic p, .prose .signs ul, .prose .framework .fw-note { margin-bottom: 0 !important; }
 .prose .short-answer > *:last-child, .prose .gt > *:last-child { margin-bottom: 0 !important; }
+
+/* Visible breadcrumbs (Stage 2) */
+.bc { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; font-size: 13.5px; color: var(--muted); margin-bottom: 10px; }
+.bc a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.bc a:hover { color: var(--blue); }
+.bc [aria-current] { color: var(--ink-3); }

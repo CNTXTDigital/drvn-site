@@ -54,6 +54,7 @@ const jsonld = {
 >
   <section class="top">
     <div class="wrap head">
+      <nav class="bc" aria-label="Breadcrumb"><a href="/">DRVN</a><span>/</span><a href="/about/">About</a><span>/</span><span aria-current="page">Evidence Library</span></nav>
       <div class="eyebrow blue">Evidence library</div>
       <h1>The research behind DRVN.</h1>
       <p class="lede">Every claim DRVN makes about teen driving risk, practice and cost, with the primary source, the actual figures and the limits of each finding. Our articles cite this library, so when a number changes, it changes here first.</p>
@@ -82,6 +83,7 @@ const jsonld = {
               <h3><a href={`#${c.id}`}>{c.claim}</a></h3>
               <p class="ev">{c.evidence}</p>
               <dl>
+                {c.supports && <div><dt>What it supports</dt><dd>{c.supports}</dd></div>}
                 <div><dt>Evidence type</dt><dd>{c.strength}</dd></div>
                 {c.caveat && <div><dt>Limits</dt><dd>{c.caveat}</dd></div>}
                 <div>

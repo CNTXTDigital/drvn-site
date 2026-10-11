@@ -46,7 +46,7 @@ There are situations where it's worth pricing out:
 
 If the goal is to keep costs down, the levers that usually move are these:
 
-- **The car they drive.** NAIC's consumer guidance notes that [a modestly priced economy car with liability coverage may be more appropriate for a teen](https://content.naic.org/article/consumer-insight-protect-yourself-insuring-teen-driver). More on choosing one in [The First Car Question](/choosing-a-car-for-a-teen-driver/).
+- **The car they drive.** NAIC's consumer guidance notes that [a modestly priced economy car with liability coverage may be more appropriate for a teen](https://content.naic.org/article/consumer-insight-protect-yourself-insuring-teen-driver). More on choosing one in [The First Car](/choosing-a-car-for-a-teen-driver/).
 - **Assigning them to the cheapest car** on the policy, if your insurer allows it.
 - **Discounts:** good student, driver's ed, and student-away if they leave for college without a car. More in [What a Teen Driver Actually Costs](/what-a-teen-driver-costs/).
 - **Shopping around.** The same teen can cost very different amounts at different insurers. Get several quotes before the license date, not after.

@@ -59,6 +59,10 @@
     "nerdwallet-ubi": { "org": "NerdWallet", "title": "Usage-based car insurance", "url": "https://www.nerdwallet.com/insurance/auto/learn/usage-based-car-insurance", "date": "September 2026", "kind": "Consumer guidance" },
     "naic-ubi": { "org": "NAIC", "title": "Telematics / usage-based insurance", "url": "https://content.naic.org/cipr_topics/topic_telematicsusage_based_insurance.htm", "date": "October 2023", "kind": "Regulator reference" },
     "naic-teen": { "org": "NAIC", "title": "Consumer Insight: Protect yourself when insuring a teen driver", "url": "https://content.naic.org/article/consumer-insight-protect-yourself-insuring-teen-driver", "date": "Checked October 2026", "kind": "Regulator guidance" },
+    "carvana-q2-2026": { "org": "Carvana", "title": "Carvana Announces Record Second Quarter 2026 Results (197,325 retail units)", "url": "https://investors.carvana.com/news-releases/2026/07-29-2026-210525685", "date": "July 2026", "kind": "Company financial release" },
+    "carvana-certified": { "org": "Carvana", "title": "Carvana Certified: 7-Day Money Back Guarantee and limited warranty", "url": "https://www.carvana.com/info/certifiedprogram", "date": "Checked October 2026", "kind": "Seller policy" },
+    "ct-ag-carvana-2025": { "org": "Connecticut Attorney General", "title": "Attorney General Tong announces settlement with Carvana following hundreds of consumer complaints", "url": "https://portal.ct.gov/ag/press-releases/2025-press-releases/attorney-general-tong-announces-settlement-with-carvana-following-hundreds-of-consumer-complaints", "date": "January 2025", "kind": "State enforcement action" },
+    "nhtsa-recalls": { "org": "NHTSA", "title": "Check for recalls (VIN lookup)", "url": "https://www.nhtsa.gov/recalls", "date": "Checked October 2026", "kind": "Federal consumer tool" },
     "aaa-driving-costs-2025": { "org": "AAA", "title": "Your Driving Costs 2025: new vehicle costs drop to $11,577", "url": "https://newsroom.aaa.com/2025/09/aaa-new-vehicle-costs-drop-to-11577/", "date": "September 2025", "kind": "Cost study" }
   },
   "groups": [

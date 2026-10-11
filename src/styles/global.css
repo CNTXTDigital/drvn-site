@@ -116,3 +116,6 @@ h1, h2, h3, h4 { color: var(--blue); line-height: 1.15; letter-spacing: -0.015em
   .prose .fw-list li span { grid-column: 2; }
   .prose .diagnostic .dg-q { font-size: 22px; }
 }
+
+.prose .short-answer p, .prose .gt p, .prose .diagnostic p, .prose .signs ul, .prose .framework .fw-note { margin-bottom: 0 !important; }
+.prose .short-answer > *:last-child, .prose .gt > *:last-child { margin-bottom: 0 !important; }

@@ -1,5 +1,7 @@
 ---
 import SourceList from '../../components/SourceList.astro';
+import HowWeKnow from '../../components/HowWeKnow.astro';
+import { frameworkRefHTML } from '../../lib/framework.js';
 import { sourcesFor, claimsUsedIn, citationLD } from '../../lib/evidence.js';
 import { articleLD, breadcrumbLD } from '../../lib/schema.js';
 // Pillar guide: Teen Driving Safety for Parents. Copy of record is the DRVN design canvas
@@ -26,7 +28,7 @@ const toc = [
  },
  {
   "id": "what-to-experience",
-  "label": "What should teens experience before they drive alone?"
+  "label": "What should teens practice before they drive alone?"
  },
  {
   "id": "skills-that-matter",
@@ -46,7 +48,7 @@ const toc = [
  },
  {
   "id": "road-test",
-  "label": "Doesn’t passing the road test prove they’re ready?"
+  "label": "Does passing the road test mean they’re ready?"
  },
  {
   "id": "ready-to-drive-alone",
@@ -66,7 +68,7 @@ const toc = [
  },
  {
   "id": "phones-and-distraction",
-  "label": "What about phones and other distractions?"
+  "label": "What about phones and distraction?"
  },
  {
   "id": "driving-agreement",
@@ -101,7 +103,7 @@ const more = [
   { t: 'The Permit Year, Month by Month', href: '/permit-year-practice-plan/' },
 ];
 const url = `${SITE.url}/teen-driving-safety/`;
-const sources = sourcesFor('teen-driving-safety', ['iihs-teens', 'nhtsa-teen', 'iowa-dot', 'ohio-bmv', 'mirman-2014', 'chop-tdp', 'cdc-risk', 'cdc-prevention', 'cdc-danger-zones']);
+const sources = sourcesFor('teen-driving-safety', ['iihs-teens', 'nhtsa-teen', 'nichd-2018', 'iihs-gdl', 'iowa-dot', 'ohio-bmv', 'mirman-2014', 'chop-tdp', 'cdc-risk', 'cdc-prevention', 'cdc-danger-zones', 'nhtsa-ctw-driver-ed', 'unl-drivers-ed-2015']);
 const claims = claimsUsedIn('teen-driving-safety');
 const jsonld = {
   '@graph': [
@@ -160,21 +162,23 @@ const jsonld = {
 
 <section class="q" id="why-teens-are-at-risk">
 <h2>Why are teen drivers at greater risk?</h2>
-<p class="answer">Mostly, they haven’t seen enough yet.</p>
+<div class="short-answer"><span class="sa-k">The short answer</span><p>Teen drivers crash more mainly because they haven’t had enough experience yet. Per mile driven, drivers 16 to 19 crash at more than four times the rate of drivers 20 and older, and the judgment that prevents crashes comes from exposure, not instruction.</p></div>
 <p>The mechanics come fast. Steering, braking, parking, signaling: you can watch those improve week to week.</p>
 <p>Judgment is slower. As an experienced driver, you’re tracking a dozen things without noticing: the pedestrian drifting toward the crosswalk, brake lights four cars up, the car nosing out of a driveway, the truck leaning toward your lane. Nobody taught you that list. You picked it up over years.</p>
 <div style="display: flex; gap: 20px; align-items: center; background: #E6F5FC; border-radius: 14px; padding: 18px 22px; margin: 6px 0 22px">
 <div style="font-size: 46px; font-weight: 800; color: #0A6CA5; letter-spacing: -0.03em; line-height: 1; white-space: nowrap">4×+</div>
-<div style="font-size: 16px; line-height: 1.5; color: #2E3B45">Per mile driven, drivers 16 to 19 crash at more than four times the rate of drivers 20 and older. <span style="color: #6B7A85">— <a href="https://www.iihs.org/research-areas/teenagers">Insurance Institute for Highway Safety</a></span></div>
+<div style="font-size: 16px; line-height: 1.5; color: #2E3B45">Per mile driven, drivers 16 to 19 crash at more than four times the rate of drivers 20 and older. </div>
 </div>
+<p class="src">Source: <a href="https://www.iihs.org/research-areas/teenagers">IIHS, Teenagers: crash risk by age, 2024 data</a></p>
 <p>That isn’t because teenagers are bad drivers. It’s because the skills that make someone a good driver come from exposure, and they haven’t had much.</p>
 <p>So supervised practice isn’t really about teaching them to work the car. It’s about giving them enough miles to start understanding what’s happening around it.</p>
 </section>
 
 <section class="q" id="when-risk-is-highest">
 <h2>When is a new driver most at risk?</h2>
-<p class="answer">Passing the road test doesn’t end the dangerous period. It starts it.</p>
-<p><a href="https://www.nhtsa.gov/road-safety/teen-driving">NHTSA notes</a> that teens rarely crash while an adult is supervising. Their highest crash rates come in the first six months of driving alone.</p>
+<div class="short-answer"><span class="sa-k">The short answer</span><p>A new driver is most at risk in the first months after getting the license, when supervision ends. Teens rarely crash while an adult is supervising; their highest crash rates come in the first six months of driving alone.</p></div>
+<p><a href="https://www.nhtsa.gov/road-safety/teen-driving">NHTSA’s teen driving guidance</a> makes this point directly. And when <a href="https://www.nichd.nih.gov/newsroom/news/071018-teen-driving">NIH researchers recorded teens’ driving</a>, crash and near-crash rates in the first three months alone were about eight times what they’d been in the last three months on the permit.</p>
+<p class="src">Source: <a href="https://www.nhtsa.gov/road-safety/teen-driving">NHTSA, Teen Driving</a> · <a href="/evidence/#eight-times">NIH (NICHD) naturalistic driving study, 2018</a></p>
 <p>Think about what changes that day. Yesterday, you were in the passenger seat watching traffic, spotting trouble and quietly fixing things. Today, they’re doing all of it by themselves.</p>
 <p>Their experience didn’t jump when the license printed. Their responsibility did.</p>
 <p class="pull">Treat the license as a handoff, not a graduation.</p>
@@ -182,7 +186,7 @@ const jsonld = {
 
 <section class="q" id="how-many-hours">
 <h2>How many hours should a teenager practice?</h2>
-<p class="answer">Start with your state’s number, then plan past it.</p>
+<div class="short-answer"><span class="sa-k">The short answer</span><p>There is no single number that proves readiness. IIHS recommends at least 70 hours of supervised practice, but the variety and quality of that practice matter as much as the total.</p></div>
 <p>The Insurance Institute for Highway Safety’s best-practice standard is at least 70 supervised hours, and most states require less. All four of my kids learned in Ohio, which asks for 50. I live in Iowa now, which asks for 20. Same kind of kid, very different number.</p>
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 4px 0 24px">
 <div style="border: 1px solid #DCE7EE; border-radius: 12px; padding: 14px 16px"><div class="eyebrow"><a style="color: inherit" href="https://iowadot.gov/media/7147/download">Iowa</a></div><div style="font-size: 30px; font-weight: 800; color: #0A6CA5; line-height: 1.1">20 hrs</div><div style="height: 8px; border-radius: 4px; background: #EDF3F7; margin-top: 10px"><div style="width: 28%; height: 8px; border-radius: 4px; background: #41B6E5"></div></div></div>
@@ -191,7 +195,13 @@ const jsonld = {
 </div>
 <p>And hours are a blunt tool anyway. Picture two kids with 50 hours each. One drove the same three routes all year. The other drove neighborhoods, busy commercial roads, rural two-lanes, interstates, rush hour, dark and rain.</p>
 <p>Same number in the log. Very different drivers.</p>
-<p>That’s why we talk about <strong>coverage, not just hours</strong>. Repetition builds skill. Variety builds judgment, because driving almost never hands you the same situation twice. <a href="/guide/">Look up your state’s requirements →</a></p>
+<p>That’s why we talk about <strong>coverage, not just hours</strong>. Repetition builds skill. Variety builds judgment, because driving almost never hands you the same situation twice.</p>
+<div class="guide-types">
+<div class="gt law"><span class="gt-k">State requirement</span><p>Supervised hours range from none in some states to 65 in others. <a href="/teen-driving-laws-by-state/">Find your state’s requirements</a>.</p></div>
+<div class="gt research"><span class="gt-k">Research says</span><p>IIHS best-practice criteria recommend at least 70 hours of supervised practice.</p></div>
+<div class="gt drvn"><span class="gt-k">DRVN recommends</span><p>Don’t judge readiness by hours alone. Track coverage, judgment and independence.</p></div>
+</div>
+<p class="src">Source: <a href="/evidence/#supervised-hours-vary">IIHS graduated licensing laws and state licensing agencies, checked October 2026</a></p>
 </section>
 
 <section class="q" id="structured-practice">
@@ -202,12 +212,13 @@ const jsonld = {
 <div style="background: #F6FAFC; border: 1px solid #E7EEF3; border-radius: 12px; padding: 16px 18px"><div style="font-size: 40px; font-weight: 800; color: #45535E; line-height: 1">15%</div><div style="font-size: 15px; color: #45535E; margin-top: 6px">had the road assessment stopped for unsafe driving <b style="color: #212529">without</b> the plan</div></div>
 <div style="background: #E6F5FC; border: 1px solid #CDEBF8; border-radius: 12px; padding: 16px 18px"><div style="font-size: 40px; font-weight: 800; color: #0A6CA5; line-height: 1">6%</div><div style="font-size: 15px; color: #2E3B45; margin-top: 6px">had it stopped <b style="color: #212529">with</b> the plan</div></div>
 </div>
+<p class="src">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/24957844/">CHOP TeenDrivingPlan randomized trial, JAMA Pediatrics, 2014</a> · <a href="/evidence/#teen-driving-plan">Evidence Library, including the study’s limits</a></p>
 <p>That doesn’t mean there’s one perfect program. It means practicing on purpose is a different thing from piling up miles. Know what you’re working on. Go find different kinds of roads. Coach a little less each month.</p>
 </section>
 
 <section class="q" id="what-to-experience">
-<h2>What should teens experience before they drive alone?</h2>
-<p class="answer">More than the parking lot and the drive to school.</p>
+<h2>What should teens practice before they drive alone?</h2>
+<p class="answer">Every kind of driving they’ll face alone: neighborhoods, commercial roads, highways, rural roads, night and bad weather. Variety builds the judgment that repetition on the same few routes can’t.</p>
 <p>Most families start in the right spot: a parking lot or a quiet street, where a new driver can learn how the car responds without too much coming at them. The trouble is staying there. Comfort can look a lot like competence when the scenery never changes.</p>
 <p>Before driving alone, your teen should have real time in each of these:</p>
 <div class="envs">
@@ -220,6 +231,10 @@ const jsonld = {
 <p>Early on, protecting a new driver from the hard stuff makes sense. Later, avoiding it creates its own risk: they meet it for the first time alone.</p>
 <p class="pull">The first time your teen merges into fast traffic, drives a dark country road or gets caught in a downpour shouldn’t be the first time you’re not in the car.</p>
 <p>Add it gradually. Not all at once. But add it.</p>
+<div class="guide-types">
+<div class="gt research"><span class="gt-k">Research says</span><p>Structured, varied supervised practice improved teens’ on-road performance in a randomized trial.</p></div>
+<div class="gt drvn"><span class="gt-k">DRVN recommends</span><p>Make sure your teen has meaningful experience across residential, commercial, highway, rural, night and adverse conditions before independent driving. <a href="/six-driving-environments-teen-practice/">Learn what teens should practice in each environment</a>.</p></div>
+</div>
 </section>
 
 <section class="q" id="skills-that-matter">
@@ -229,7 +244,7 @@ const jsonld = {
 <p>Over time, a developing driver should get better at looking farther down the road, spotting trouble before it’s urgent, keeping a safe following distance, choosing speed for conditions and judging gaps. They should merge without freezing or making someone else brake. Change lanes the same careful way every time. See the pedestrian and the cyclist before you point them out. Let a missed exit go instead of making a sudden move to save it.</p>
 <p>Every “watch that car,” “slow down” or “check your mirror” means you’re doing part of the driving. That’s exactly right while they’re learning. What matters is that you need to say it less over time.</p>
 <p class="pull">The best sign of readiness isn’t how well they drive while you’re coaching. It’s how little coaching they need.</p>
-<p>Go deeper on the skills: <a href="/teaching-left-turns/">left turns</a> · <a href="/teaching-highway-merging/">highway merging</a> · <a href="/following-distance-teen-drivers/">following distance</a> · <a href="/skids-blowouts-brake-failure/">skids, blowouts and brake failure</a></p>
+<p>See how to teach the hardest skills: <a href="/teaching-left-turns/">left turns</a> · <a href="/teaching-highway-merging/">highway merging</a> · <a href="/following-distance-teen-drivers/">following distance</a> · <a href="/skids-blowouts-brake-failure/">skids, blowouts and brake failure</a></p>
 </section>
 
 <section class="q" id="how-to-teach">
@@ -264,16 +279,31 @@ const jsonld = {
 <li>If either of you is too frustrated to keep going safely, pull over and call it.</li>
 </ul>
 <p>And know the difference between a mistake and an attitude problem. New drivers will brake late, pick the wrong gap and drive you a little crazy. That’s why you’re there. The real concern is a kid who doesn’t notice their mistakes, won’t take coaching or acts like the risk doesn’t apply to them.</p>
-<p><a href="/driving-feedback-without-a-fight/">Read more: Feedback Without a Fight →</a></p>
+<p><a href="/driving-feedback-without-a-fight/">See how to give feedback without a fight →</a></p>
 </section>
 
 <section class="q" id="is-drivers-ed-enough">
 <h2>Is driver’s ed enough?</h2>
-<p class="answer">No, and that’s not a knock on driver’s ed.</p>
+<p class="answer">No. Driver’s ed builds the fundamentals with professional instruction, but it can’t supply the months of varied, real-world practice a new driver needs. The two work together.</p>
 <p>A good instructor builds the fundamentals, catches things a parent misses and can often get through to a teenager in a way a parent can’t. It’s one of the best tools you have. But instructor time is limited, and the experience it takes to become a capable driver builds over months and across a lot of different situations.</p>
 <p>Driving instructors have shaped DRVN from the beginning for exactly this reason. They don’t see professional lessons and parent practice as competing. Each one needs the other.</p>
+<table>
+<thead><tr><th>Driver’s ed</th><th>Parent-supervised practice</th></tr></thead>
+<tbody>
+<tr><td>Professional instruction</td><td>Repeated real-world experience</td></tr>
+<tr><td>Limited scheduled time</td><td>Months of practice</td></tr>
+<tr><td>Core skills</td><td>Variety and judgment</td></tr>
+<tr><td>Instructor feedback</td><td>Ongoing observation</td></tr>
+</tbody>
+</table>
+<div class="guide-types">
+<div class="gt law"><span class="gt-k">State requirement</span><p>Many states require driver’s education for teens under 18; requirements vary. <a href="/teen-driving-laws-by-state/">Compare your state’s rules</a>.</p></div>
+<div class="gt research"><span class="gt-k">Research says</span><p>Evidence on driver’s ed alone is mixed. NHTSA rates pre-licensure driver education as needing further evaluation, while a Nebraska study linked it to fewer crashes and violations.</p></div>
+<div class="gt drvn"><span class="gt-k">DRVN recommends</span><p>Treat driver’s ed as the foundation, not the finish line. Plan months of varied practice with you on top of it.</p></div>
+</div>
+<p class="src">Source: <a href="https://www.nhtsa.gov/book/countermeasures-that-work/young-drivers/countermeasures/unproven-further-evaluation/pre-licensure">NHTSA, Countermeasures That Work: Pre-licensure driver education</a> · <a href="/evidence/">Evidence Library</a></p>
 <p class="pull">Driver’s ed teaches. Practice with you turns it into experience.</p>
-<p><a href="/is-drivers-ed-enough/">Read more: Is Driver’s Ed Enough? →</a> · <a href="/choosing-a-drivers-ed-course/">How to choose a course →</a></p>
+<p><a href="/is-drivers-ed-enough/">See what driver’s ed does well, and what it leaves to you →</a> · <a href="/choosing-a-drivers-ed-course/">How to choose a driver’s ed course →</a></p>
 
 <div class="deeper-inline">
 <div class="eyebrow">Go deeper</div>
@@ -282,16 +312,16 @@ const jsonld = {
 </section>
 
 <section class="q" id="road-test">
-<h2>Doesn’t passing the road test prove they’re ready?</h2>
-<p class="answer">It proves they met your state’s standard during one short test.</p>
+<h2>Does passing the road test mean they’re ready?</h2>
+<div class="short-answer"><span class="sa-k">The short answer</span><p>Passing the road test means your teen met the state’s licensing standard. It does not prove they are ready for every condition they will face alone.</p></div>
 <p>That matters. It just doesn’t cover much. No road test includes night driving, rain, an unfamiliar interstate, a tailgater, a blind rural curve or a chatty friend in the passenger seat. The test has to end. Real driving doesn’t.</p>
 <p>The state is asking, “Has this person met the requirements for a license?” You still get to ask, “What are they ready to do with it?”</p>
-<p><a href="/teen-road-test-day/">Read more: Road Test Day, and what to do that afternoon →</a></p>
+<p><a href="/teen-road-test-day/">See what the road test proves, and what to do that afternoon →</a></p>
 </section>
 
 <section class="q" id="ready-to-drive-alone">
 <h2>How do I know when my teenager is ready to drive alone?</h2>
-<p class="answer">Watch what they do, not how you feel.</p>
+<div class="short-answer"><span class="sa-k">The short answer</span><p>Your teen is ready to start driving alone when the safe decisions on an ordinary drive are coming from them, not from you. Look for control, awareness, judgment, coverage and independence, not just hours or a passed test.</p></div>
 <p>Honestly, you’ll probably never feel completely comfortable watching them back out of the driveway alone the first time. Readiness doesn’t mean that feeling goes away. Instead, ask:</p>
 <ul class="checks">
 <li><span class="tick">?</span>Can they get through an ordinary drive without reminders about speed, following distance, signals, lane position, scanning or right of way?</li>
@@ -303,43 +333,56 @@ const jsonld = {
 <p>And the big one:</p>
 <p class="pull">If you weren’t sitting there, would they have seen what you just saw?</p>
 <p>If the answer is often no, keep practicing. Needing more time isn’t failing.</p>
-<p><a href="/is-my-teen-ready-to-drive-alone/">Read more: Ready Isn’t a Feeling →</a></p>
+<Fragment set:html={frameworkRefHTML()} />
+<p><a href="/is-my-teen-ready-to-drive-alone/">See how to evaluate readiness, sign by sign →</a></p>
 </section>
 
 <section class="q" id="after-the-license">
 <h2>What changes after they get the license?</h2>
-<p class="answer">The riskiest stretch starts when supervision drops off.</p>
+<p class="answer">The riskiest stretch starts when supervision drops off. Hand over independence in stages, not all at once, even where your state allows more.</p>
 <p>That’s why graduated licensing exists: it hands over independence in stages instead of all at once, and the <a href="https://www.cdc.gov/teen-drivers/prevention/index.html">CDC notes</a> that these systems are proven to reduce crashes and deaths among young drivers.</p>
 <p>You can use the same idea even where your state allows more. A new license doesn’t have to mean every road, every hour and every friend on day one. Start with familiar, easier solo trips. Add harder ones as experience builds. Keep doing the tough stuff together for a while.</p>
 <p>The practice doesn’t have to end when the logbook does.</p>
-<p><a href="/first-six-months-teen-driver/">Read more: The First Six Months Alone →</a></p>
+<p><a href="/first-six-months-teen-driver/">See why the first six months after licensure are so risky →</a></p>
 <p>After the license: <a href="/staying-involved-after-the-license/">staying involved</a> · <a href="/choosing-a-car-for-a-teen-driver/">the first car</a> · <a href="/teen-first-fender-bender/">the first fender bender</a> · <a href="/teen-first-traffic-ticket/">the first ticket</a></p>
 </section>
 
 <section class="q" id="teen-passengers">
 <h2>What about teen passengers?</h2>
-<p class="answer">Friends change everything in the car.</p>
+<p class="answer">Teen passengers raise a new driver’s crash risk, and the risk climbs with each one added. The CDC recommends no teen or young-adult passengers for at least the first six months of driving alone.</p>
 <p>The <a href="https://www.cdc.gov/teen-drivers/risk-factors/index.html">CDC reports</a> that an unsupervised teen driver’s crash risk goes up with teen or young-adult passengers, and keeps rising with each one added. Its <a href="https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html">guidance for parents</a> recommends no teen or young-adult passengers for at least the first six months, when you can manage it.</p>
 <p>Your state may allow more. You’re allowed to be stricter than the law.</p>
+<div class="guide-types">
+<div class="gt law"><span class="gt-k">State requirement</span><p>Most states limit teen passengers for new drivers, often for the first six to twelve months. <a href="/teen-driving-laws-by-state/">Check your state’s passenger rule</a>.</p></div>
+<div class="gt research"><span class="gt-k">Research says</span><p>Crash risk rises with each teen or young-adult passenger in the car.</p></div>
+<div class="gt drvn"><span class="gt-k">DRVN recommends</span><p>No friends in the car for the first six months, then one at a time, starting with daytime trips.</p></div>
+</div>
+<p class="src">Source: <a href="https://www.cdc.gov/teen-drivers/risk-factors/index.html">CDC, Risk Factors for Teen Drivers</a> · <a href="https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html">CDC, Eight Danger Zones</a></p>
 <p class="pull">A legal privilege doesn’t have to become a family privilege on the same day.</p>
-<p><a href="/teen-driver-passengers/">Read more: The Friend in the Passenger Seat →</a></p>
+<p><a href="/teen-driver-passengers/">See how to handle the first friend in the passenger seat →</a></p>
 </section>
 
 <section class="q" id="night-driving">
 <h2>What about night driving?</h2>
-<p class="answer">Practice it on purpose before the license. Limit it on purpose after.</p>
+<p class="answer">Night is one of the riskiest times for new drivers: per mile, teens’ fatal crash rate at night is about three times that of adults 30 to 59. Practice it on purpose before the license, and limit it on purpose after.</p>
 <p>At night you see less, hazards show up later, everyone’s more tired, and it’s when a lot of social driving happens. Stack all of that on top of inexperience and you get the CDC number above.</p>
 <p>The <a href="https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html">CDC suggests</a> keeping newly licensed teens off the road by 9 or 10 p.m. for at least the first six months. That may be stricter than your state. It isn’t a punishment. It’s limiting time in the riskiest hours while experience catches up.</p>
-<p><a href="/teen-night-driving/">Read more: Night Driving →</a></p>
+<div class="guide-types">
+<div class="gt law"><span class="gt-k">State requirement</span><p>Most states restrict late-night driving for new drivers. The hours vary by state.</p></div>
+<div class="gt research"><span class="gt-k">Research says</span><p>The CDC recommends newly licensed teens be off the road by 9 or 10 p.m. for at least the first six months.</p></div>
+<div class="gt drvn"><span class="gt-k">DRVN recommends</span><p>Log real night practice during the permit year, then keep solo night driving short and familiar until you’ve seen them handle dark roads with you.</p></div>
+</div>
+<p class="src">Source: <a href="https://www.cdc.gov/teen-drivers/risk-factors/index.html">CDC, Risk Factors for Teen Drivers</a> · <a href="https://www.cdc.gov/teen-drivers/parents-are-the-key/danger-zones.html">CDC, Eight Danger Zones</a></p>
+<p><a href="/teen-night-driving/">See how to practice night driving before the license →</a></p>
 </section>
 
 <section class="q" id="phones-and-distraction">
-<h2>What about phones and other distractions?</h2>
-<p class="answer">A new driver doesn’t have much attention to spare.</p>
+<h2>What about phones and distraction?</h2>
+<p class="answer">A new driver doesn’t have attention to spare, so the rule should be bigger than “don’t text”: the phone gets no attention while the car is moving. Set navigation before leaving and turn on driving focus.</p>
 <p>Things you do on autopilot still take real thought for them, so a text, a playlist, navigation or a lively conversation makes a hard job harder.</p>
 <p>“Don’t text and drive” is too small a rule. Try this one: <strong>the phone doesn’t get attention while the car is moving.</strong> Set navigation before you leave. Turn on driving focus. If something really needs attention, pull over.</p>
 <p>And yes, they’ve been watching us drive for sixteen years. The rule we model will beat the rule we announce every time. (This one stings a little for all of us.)</p>
-<p><a href="/teen-driving-phones-distraction/">Read more: Phones and Distraction →</a></p>
+<p><a href="/teen-driving-phones-distraction/">See how to set a phone rule that actually works →</a></p>
 </section>
 
 <section class="q" id="driving-agreement">
@@ -351,20 +394,20 @@ const jsonld = {
 <div style="font-size: 26px; font-weight: 800; line-height: 1.2; letter-spacing: -0.015em">Your kid can always call you for a safe ride home.</div>
 <div style="font-size: 16.5px; line-height: 1.55; color: #E6F5FC; margin-top: 10px">If alcohol, drugs, exhaustion, an unsafe driver or a bad situation is involved, getting home safe is the only goal that night. The parenting conversation can wait until morning.</div>
 </div>
-<p><a href="/parent-teen-driving-agreement/">Get the free fillable agreement →</a></p>
+<p><a href="/parent-teen-driving-agreement/">Get the free fillable parent-teen driving agreement →</a></p>
 </section>
 
 <section class="q" id="state-minimum">
 <h2>Should we follow the state minimum or go beyond it?</h2>
-<p class="answer">Meet the minimum, because it’s the law. Go past it whenever your kid needs more.</p>
+<p class="answer">Meet the minimum, because it’s the law, and go beyond it wherever your teen needs more. State minimums are a legal floor, not a readiness standard.</p>
 <p>Licensing rules vary a lot from state to state, even though learning to drive doesn’t get any easier at the border. IIHS <a href="https://www.iihs.org/research-areas/teenagers">best practices</a> are more conservative than many states on permit age, practice hours, night limits and passengers.</p>
-<p>The state has to write one rule for everybody. You only have to decide about one driver. That’s an advantage. Use it.</p>
+<p>The state has to write one rule for everybody. You only have to decide about one driver. That’s an advantage. Use it. <a href="/teen-driving-laws-by-state/">Compare teen driving rules in all 50 states</a>.</p>
 </section>
 
 <section class="q" id="doesnt-want-to-practice">
 <h2>What if my teenager doesn’t want to practice?</h2>
 <p class="answer">Then the license can wait.</p>
-<p>Getting it at the earliest possible age isn’t a milestone anyone has to hit. If your teen dodges practice, avoids the hard stuff, brushes off coaching or isn’t showing good judgment, holding off is completely reasonable.</p>
+<p>Getting it at the earliest possible age isn’t a milestone anyone has to hit (<a href="/should-teen-wait-to-get-license/">here’s when waiting makes sense</a>). If your teen dodges practice, avoids the hard stuff, brushes off coaching or isn’t showing good judgment, holding off is completely reasonable.</p>
 <p>Wanting the license and being ready for it don’t always arrive together. Some kids want it badly before their skills are there. Others have the skills and are nervous to use them. The calendar doesn’t fix either one.</p>
 <p>The goal isn’t a license at a certain age. <strong>It’s a capable driver.</strong></p>
 </section>
@@ -373,7 +416,7 @@ const jsonld = {
 <h2>What if my teenager is anxious?</h2>
 <p class="answer">Anxiety doesn’t have to stop the process, but it should change the pace.</p>
 <p>Build difficulty slowly. A nervous driver might need several drives in one setting before adding the next layer: a smaller shopping district before the busy one, the highway on a quiet Sunday morning before rush hour. Confidence should come from things going well, not just from being told it’ll be fine.</p>
-<p>If the anxiety is bad enough that they can’t take in information or drive safely, a professional instructor offers a different setting and can help you figure out whether more support makes sense. There’s no prize for rushing.</p>
+<p>If the anxiety is bad enough that they can’t take in information or drive safely, a professional instructor offers a different setting and can help you figure out whether more support makes sense. There’s no prize for rushing. <a href="/teen-doesnt-want-to-drive/">See how to help a nervous teen build confidence</a>.</p>
 </section>
 
 <section class="q" id="overconfident-teen">
@@ -405,9 +448,9 @@ const jsonld = {
 <p>That’s the job you’ve been handed. DRVN exists to make it a little easier.</p>
 </section>
 
-<section style="margin-top: 36px; padding-top: 18px; border-top: 1px solid #E7EEF3">
-<div class="eyebrow">Where this guidance comes from</div>
-<p style="font-size: 15px; line-height: 1.6; color: #6B7A85; margin: 10px 0 8px">DRVN’s safety guidance leans on NHTSA, the CDC, the Insurance Institute for Highway Safety and the Center for Injury Research and Prevention at Children’s Hospital of Philadelphia, along with peer-reviewed research and official state sources. We’re clear about which is which: what the law requires, what the research shows and what we’d recommend as parents who’ve been through it. Always check your state’s requirements against its official source. <a href="/editorial-standards/">Our editorial standards</a> · <a href="/evidence/">See the research behind this guidance →</a></p>
+<HowWeKnow />
+<section style="margin-top: 24px">
+<p style="font-size: 15px; line-height: 1.6; color: #6B7A85; margin: 0 0 8px">Licensing requirements vary by state and change. Always check your state’s requirements against its official source.</p>
 <p style="font-size: 14px; color: #6B7A85; margin: 0"><b style="color: #2E3B45">Last reviewed:</b> October 2026</p>
 <SourceList sources={sources} claims={claims} />
 </section>

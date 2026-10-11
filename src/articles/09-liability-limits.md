@@ -3,7 +3,7 @@ slug: teen-driver-liability-limits
 title: "Liability Limits: The Number on Your Policy That Matters Most Once Your Teen Drives"
 seoTitle: "Teen Driver Insurance: How Much Liability Coverage Do You Need?"
 dek: "State minimums were set to make insurance affordable, not to cover a serious crash. With a new driver in the house, the gap is your problem."
-description: "State minimum liability limits can be as low as $25,000 per person. Why families with a teen driver should look at higher limits and an umbrella policy, and what they cost."
+description: "State minimum liability limits can be as low as $25,000. Why families with a teen driver should look at higher limits and an umbrella policy, and what they cost."
 published: "2026-10-11T16:01:00Z"
 image: "/images/articles/a09-liability.jpg"
 imageSm: "/images/articles/a09-liability-800.jpg"

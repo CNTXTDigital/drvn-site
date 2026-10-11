@@ -24,7 +24,8 @@ const {
 } = Astro.props;
 
 const canonical = new URL(canonicalPath || Astro.url.pathname, SITE.url).href;
-const pageTitle = fullTitle ? title : `${title} | ${SITE.name}`;
+// Brand suffix only when it fits: Google shows roughly 60 characters of a title.
+const pageTitle = fullTitle || `${title} | ${SITE.name}`.length > 60 ? title : `${title} | ${SITE.name}`;
 // One JSON-LD graph per page: the organization and website, the page's own entities, and
 // breadcrumbs (from the crumbs prop) unless the page supplies its own BreadcrumbList.
 const pageNodes = !jsonld ? [] : jsonld['@graph'] ? jsonld['@graph'] : [Object.fromEntries(Object.entries(jsonld).filter(([k]) => k !== '@context'))];
@@ -104,7 +105,8 @@ const ogImage = new URL(image || '/og-default.png', SITE.url).href;
         var path = u.pathname;
         if (location.pathname === '/learn/') {
           var sec = a.closest('[id].area');
-          var terr = (u.hash && path === '/learn/') ? u.hash.slice(1) : (sec ? sec.id : null);
+          var hashSec = (u.hash && path === '/learn/') ? document.getElementById(u.hash.slice(1)) : null;
+          var terr = (hashSec && hashSec.classList.contains('area')) ? hashSec.id : (sec ? sec.id : null);
           if (terr) send('learn_territory_click', { territory: terr, link_url: u.href, link_text: text });
         }
         if (path === '/teen-driving-safety/') return send('guide_click', p);

@@ -3,7 +3,7 @@ slug: is-drivers-ed-enough
 title: "Is Driver’s Ed Enough? What It Does Well, and the Part That’s Still Yours"
 seoTitle: "Is Driver's Ed Enough for a Teen? What It Covers and What It Doesn't"
 dek: "Driver's ed is one of the best tools you have. It's also a few dozen hours in a process that needs hundreds of decisions on real roads."
-description: "Teens who skipped driver's ed got more tickets and had more crashes in a study of 150,000 Nebraska drivers. What driver's ed does well, what it can't do, and how to make it count."
+description: "In a study of 150,000 Nebraska drivers, teens who skipped driver's ed had more crashes and tickets. What driver's ed does well, and what it can't do."
 published: "2026-10-11T14:10:00Z"
 image: "/images/articles/a36-drivers-ed-study.jpg"
 imageSm: "/images/articles/a36-drivers-ed-study-800.jpg"
@@ -62,7 +62,7 @@ Which is why every state also asks for supervised practice with a parent. The sy
 
 Some states make driver's ed optional or only require it for younger teens. You can still do it. Given the Nebraska numbers and what it costs compared to a single fender bender, it's one of the cheaper safety decisions you'll make. Your [state guide](/guide/) shows what's required where you live.
 
-If cost or scheduling is the obstacle, an online course can handle the classroom part on your teen's schedule. [Aceable](http://go.aceable.com/aff_c?offer_id=4&aff_id=1301) offers state-approved online courses in many states. (DRVN may earn a referral fee if you enroll through this link.) More on choosing one in [How to Choose a Driver's Ed Course](/choosing-a-drivers-ed-course/).
+If cost or scheduling is the obstacle, an online course can handle the classroom part on your teen's schedule. [Aceable](https://go.aceable.com/aff_c?offer_id=4&aff_id=1301) offers state-approved online courses in many states. (DRVN may earn a referral fee if you enroll through this link.) More on choosing one in [How to Choose a Driver's Ed Course](/choosing-a-drivers-ed-course/).
 
 ## The part that's still yours
 

@@ -3,7 +3,7 @@ slug: add-teen-to-insurance-or-separate-policy
 title: "Add Them to Your Policy, or Get Them Their Own?"
 seoTitle: "Add a Teen to Your Car Insurance or Get a Separate Policy?"
 dek: "A separate policy looks like a way to protect your rates. It almost always costs more, and it doesn't protect you the way you'd hope."
-description: "Adding a 16-year-old to a parent's policy costs far less than a separate policy, on average. What each option costs, the liability question, and when a separate policy makes sense."
+description: "Adding a 16-year-old to a parent's policy usually costs far less than a separate one. What each option costs, the liability question, and when separate makes sense."
 published: "2026-10-11T16:00:00Z"
 image: "/images/articles/a08-money-bills.jpg"
 imageSm: "/images/articles/a08-money-bills-800.jpg"

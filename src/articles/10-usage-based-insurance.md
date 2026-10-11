@@ -3,7 +3,7 @@ slug: usage-based-insurance-teen-drivers
 title: "Driving-Tracking Insurance for Teens: When It Helps and When It Backfires"
 seoTitle: "Usage-Based Car Insurance for Teen Drivers: Is It Worth It?"
 dek: "An app that watches how your teen drives can cut the premium. It can also raise it, and it grades the driver you have, not the one you're building."
-description: "Usage-based insurance programs track braking, speed, phone use and time of day. What they can save on a teen policy, how they can raise rates, and the questions to ask before you enroll."
+description: "Usage-based insurance tracks braking, speed, phone use and time of day. What it can save on a teen policy, how it can raise rates, and what to ask first."
 published: "2026-10-11T16:02:00Z"
 image: "/images/articles/a10-usage-based.jpg"
 imageSm: "/images/articles/a10-usage-based-800.jpg"

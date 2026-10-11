@@ -3,7 +3,7 @@ slug: what-a-teen-crash-costs
 title: "What a Crash Actually Costs: The Bill That Keeps Coming for Years"
 seoTitle: "How Much Does an At-Fault Accident Raise Insurance for a Teen?"
 dek: "The repair is the smallest part. An at-fault crash can raise the premium by about half, for three to five years, on a policy that was already expensive."
-description: "An at-fault crash raises premiums about 49% on average, for three to five years. What a teen's crash really costs a family, and why the cheapest crash is the one practice prevents."
+description: "An at-fault crash raises premiums about 49%, for three to five years. What a teen's crash really costs a family, and why the cheapest crash is the one you prevent."
 published: "2026-10-11T16:04:00Z"
 image: "/images/articles/a12-crash-cost.jpg"
 imageSm: "/images/articles/a12-crash-cost-800.jpg"

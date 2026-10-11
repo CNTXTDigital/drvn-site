@@ -31,12 +31,22 @@ const short = (v) => String(v || '').split(/[;(]/)[0].trim().replace(/\.$/, '');
 const facts = `Permit at ${short(r.permitMinAge)}; license at ${short(r.licenseMinAge)}.`;
 const pr = profile;
 const hwy = pr ? [...(pr.roads?.interstates || []), ...(pr.roads?.usRoutes || [])].slice(0, 3) : [];
-const local = pr ? [hwy.length ? `highways ${hwy.join(', ')}` : null, pr.climate && pr.climate.snowInches >= 1 ? `about ${Math.round(pr.climate.snowInches)} in of snow a year` : null].filter(Boolean).join('; ') : '';
+// Meta descriptions stay near 160 characters so search results show them whole:
+// the permit and license ages first, then the local detail that makes each city page distinct.
+const fit = (parts) => { for (const d of parts) if (d.length <= 160) return d; return parts[parts.length - 1]; };
+const cityDesc = () => {
+  const tail = `plus ${s.sname} license rules.`;
+  const opts = [];
+  for (let n = hwy.length; n >= 1; n--) opts.push(`Teen driving in ${c.city}, ${st}: ${facts} Where to practice (${hwy.slice(0, n).join(', ')}), daylight and weather, ${tail}`);
+  opts.push(`Teen driving in ${c.city}, ${st}: ${facts} Where to practice, daylight and weather, ${tail}`);
+  opts.push(`Teen driving in ${c.city}, ${st}: ${facts} Local practice roads and ${s.sname} rules.`);
+  return fit(opts);
+};
 const description = c
   ? (pr
-    ? `Teaching a teen to drive in ${c.city}, ${st}: where to practice (${local}), when it gets dark, and ${s.sname}'s permit and license rules. ${facts}`
-    : `How a teen gets a driver's license in ${c.city}, ${st}: ${s.sname} permit age, driver's ed, supervised hours and the road test. ${facts}`).slice(0, 300)
-  : `The ${s.sname} teen driver's license, step by step: driver's ed, the learner's permit, supervised hours, the road test and new-driver rules. ${facts} Checked October 2026.`.slice(0, 300);
+    ? cityDesc()
+    : fit([`How a teen gets a license in ${c.city}, ${st}: ${s.sname} permit age, driver's ed, supervised hours and road test. ${facts}`, `Teen driver's license in ${c.city}, ${st}: ${facts} ${s.sname} permit and road test rules.`]))
+  : fit([`${s.sname} teen driver's license, step by step: permit, driver's ed, supervised hours, road test and new-driver limits. ${facts}`, `${s.sname} teen driver's license rules: permit, supervised hours and road test. ${facts}`]);
 
 const crumbs = [
   { name: 'DRVN', item: `${SITE.url}/` },

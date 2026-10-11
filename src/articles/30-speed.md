@@ -3,7 +3,7 @@ slug: teen-drivers-speeding
 title: "Speed: Teaching the Number That Isn’t on the Sign"
 seoTitle: "Teen Drivers and Speeding: What Parents Should Teach"
 dek: "Speeding shows up in a third of fatal crashes involving teen drivers. The fix isn't a lecture about limits. It's teaching speed for conditions."
-description: "Speeding was a factor for a third of teen drivers in fatal crashes in 2024. Why new drivers misjudge speed, how to practice choosing it, and the habits that carry over from the passenger seat."
+description: "Speeding was a factor for a third of teen drivers in fatal crashes in 2024. Why new drivers misjudge speed, and how to practice choosing the right one."
 published: "2026-10-11T04:44:00Z"
 image: "/images/articles/a30-speed.jpg"
 imageSm: "/images/articles/a30-speed-800.jpg"

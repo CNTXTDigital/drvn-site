@@ -4,9 +4,9 @@ import { SITE } from '../../site.js';
 import { APP_ID, ORG_ID, FOUNDER_ID } from '../../lib/schema.js';
 
 const steps = [
-  { n: 1, title: 'Pair', body: 'Parent and teen share one plan and one record of every drive.', img: '/images/app/lesson-plan.jpg', alt: 'DRVN lesson plan' },
-  { n: 2, title: 'Drive', body: 'Pick a focus before you go. DRVN logs the time while you drive.', img: '/images/app/skills-checklist.jpg', alt: 'Skills checklist during a drive, with drive time, night time and miles' },
-  { n: 3, title: 'Review', body: 'See what you covered and what to work on next.', img: '/images/app/lesson-progress.jpg', alt: 'Lesson plan showing the current lesson and completed lessons' },
+  { n: 1, title: 'Pair', body: 'Parent and teen share one plan and one record of every drive.', img: '/images/app/lesson-plan.jpg', w: 700, h: 1478, alt: 'DRVN lesson plan' },
+  { n: 2, title: 'Drive', body: 'Pick a focus before you go. DRVN logs the time while you drive.', img: '/images/app/skills-checklist.jpg', w: 362, h: 851, alt: 'Skills checklist during a drive, with drive time, night time and miles' },
+  { n: 3, title: 'Review', body: 'See what you covered and what to work on next.', img: '/images/app/lesson-progress.jpg', w: 358, h: 1071, alt: 'Lesson plan showing the current lesson and completed lessons' },
 ];
 const features = [
   { icon: 'skills', title: 'Skills', body: 'Every skill, lesson by lesson, so you can see what’s been practiced and what hasn’t.' },
@@ -34,7 +34,7 @@ const jsonld = {
 <Base
   title="DRVN App | Plan and Track Teen Driving Practice"
   fullTitle
-  description="Know what to practice before you pull out of the driveway, log the hours while you drive, and see what you haven’t covered yet. Free for parents and teens on iOS and Android."
+  description="Know what to practice before you pull out of the driveway, log the hours as you drive, and see what you haven’t covered yet. Free on iOS and Android."
   image="/images/app/drive-in-progress.jpg"
   jsonld={jsonld}
   crumbs={[{ name: 'DRVN app', path: '/app/' }]}
@@ -68,7 +68,7 @@ const jsonld = {
         <div class="step">
           <div class="sh"><span class="n">{s.n}</span><h3>{s.title}</h3></div>
           <p>{s.body}</p>
-          <div class="shot"><div class="phone cut"><img src={s.img} alt={s.alt} loading="lazy" /></div></div>
+          <div class="shot"><div class="phone cut"><img src={s.img} alt={s.alt} width={s.w} height={s.h} loading="lazy" /></div></div>
         </div>
       ))}
     </div>

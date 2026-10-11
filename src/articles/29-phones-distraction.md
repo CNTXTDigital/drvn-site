@@ -3,7 +3,7 @@ slug: teen-driving-phones-distraction
 title: "Phones and Distraction: The Rule Is Bigger Than “Don’t Text”"
 seoTitle: "Teen Distracted Driving: A Phone Rule That Actually Works"
 dek: "A new driver doesn't have attention to spare. The rule isn't about texting. It's about the phone getting none of it."
-description: "Dashcams found teens were inattentive or doing something else in 58% of their crashes. A simple phone rule, the settings that enforce it, and why what you model matters more than what you say."
+description: "Dashcams found teens were distracted in 58% of their crashes. A simple phone rule, the settings that enforce it, and why what you model matters most."
 published: "2026-10-11T04:43:00Z"
 image: "/images/articles/a29-phones.jpg"
 imageSm: "/images/articles/a29-phones-800.jpg"

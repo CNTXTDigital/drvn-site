@@ -3,7 +3,7 @@ slug: should-teen-wait-to-get-license
 title: "Should Your Teen Wait to Get Their License?"
 seoTitle: "Should My Teen Wait to Get a Driver's License? A Parent's Guide"
 dek: "Sometimes “not yet” is the right answer. Waiting only helps if you spend the time driving, and waiting too long has a catch most parents don't know about."
-description: "When to tell a teen 'not yet' on the driver's license, what waiting actually buys you, why waiting until 18 can skip important protections, and how to say no without a fight."
+description: "When to tell a teen 'not yet' on the license, what waiting actually buys you, why waiting until 18 can skip key protections, and how to say no without a fight."
 published: "2026-10-11T17:05:00Z"
 image: "/images/articles/ar3-should-wait.jpg"
 imageSm: "/images/articles/ar3-should-wait-800.jpg"

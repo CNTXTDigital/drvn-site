@@ -56,11 +56,29 @@ jobs:
         with:
           path: features
           pattern: features-*
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: normals-${{ github.run_id }}
+          restore-keys: normals-
       - run: python scripts/city_profiles_full.py features ${{ github.event.inputs.only }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: city-profiles
+          path: src/data/guide/city-profiles.json
+          retention-days: 14
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/guide/city-profiles.json
-          git diff --cached --quiet || git commit -m "City profiles for all city guides"
-          git pull --rebase -q origin main && git push
+          git status --short | head -20
+          cp src/data/guide/city-profiles.json /tmp/city-profiles.json
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp /tmp/city-profiles.json src/data/guide/city-profiles.json
+            git add src/data/guide/city-profiles.json
+            git diff --cached --quiet && { echo "no changes"; exit 0; }
+            git commit -q -m "City profiles for all city guides" && git push origin HEAD:main && exit 0
+            echo "push failed, retrying"; sleep 15
+          done
+          exit 1

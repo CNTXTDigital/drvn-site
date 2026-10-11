@@ -65,7 +65,8 @@ def cluster_count(points):
     return len(kept)
 
 
-_station_cache = {}
+CACHE = __import__('pathlib').Path('.cache/normals.json')
+_station_cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
 
 
 def station_row(sid):
@@ -162,6 +163,8 @@ def main(features_dir, only=None):
         if (i + 1) % 100 == 0:
             print(f'{i + 1}/{len(todo)} cities, {time.time() - t0:.0f}s, last {c["slug"]}: {json.dumps(prof)[:200]}', flush=True)
     OUT.write_text(json.dumps(out, separators=(',', ':')))
+    CACHE.parent.mkdir(exist_ok=True)
+    CACHE.write_text(json.dumps(_station_cache))
     missing_climate = sum(1 for v in out.values() if not v['climate'])
     print('done', len(out), 'profiles;', missing_climate, 'without climate data')
 

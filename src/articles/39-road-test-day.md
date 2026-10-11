@@ -60,6 +60,10 @@ Ask what the examiner marked. Then make the next few practice drives about exact
 
 And if you suspected they weren’t ready and the test agreed, take a moment to appreciate that the system caught it. That’s the floor doing its job.
 
+Passing tells you they met the state's standard. Whether they're ready to drive alone is a separate call, and DRVN looks at five things to make it: control, awareness, judgment, coverage and independence.
+
+<!--drvn:framework-ref-->
+
 ## If they pass
 
 Congratulations. Take the picture. Let them be proud. It’s a real milestone, and it’s theirs.

@@ -49,6 +49,10 @@ It helps to think of the passenger seat as three different jobs, and to notice w
 
 Most of us move from instructor to a kind of permanent assistant and stay there. The point of the permit year is to spend the last few months mostly in the third job. If you can't, that's the most useful thing you can learn before the license, not after.
 
+In the DRVN Readiness Framework, this is independence: the point where you're no longer supplying a meaningful share of the driving decisions.
+
+<!--drvn:framework-ref-->
+
 ## How to fire yourself, on purpose
 
 **Stop saying "you're clear."** Switch it to a question: "Is it clear?" Then go one step further: "Tell me when you're going, and why." The first few times will be slow. Let them be slow. Somebody behind you will honk. You'll live.

@@ -74,3 +74,45 @@ h1, h2, h3, h4 { color: var(--blue); line-height: 1.15; letter-spacing: -0.015em
 .prose blockquote { margin: 1.2em 0; padding: 4px 0 4px 22px; border-left: 4px solid var(--cyan); color: var(--blue); font-size: 22px; font-weight: 600; }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 16px; }
 .prose th, .prose td { border-bottom: 1px solid var(--line); padding: 10px 8px; text-align: left; }
+
+/* ---- Stage 2 editorial components (used inside .prose) ---- */
+.prose .short-answer { margin: 0 0 1.6em; padding: 18px 22px; background: var(--cyan-tint); border-left: 4px solid var(--cyan); border-radius: 0 12px 12px 0; }
+.prose .short-answer .sa-k, .prose .gt-k, .prose .fw-k { display: block; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+.prose .short-answer p { margin: 0; font-size: 19px; line-height: 1.55; color: var(--ink); font-weight: 500; }
+.prose .src { margin: -0.6em 0 1.2em; font-size: 13.5px; color: var(--muted); }
+.prose .src a { color: var(--muted); text-decoration-color: var(--line-2); }
+.prose .src a:hover { color: var(--blue); }
+.prose .diagnostic { margin: 1.6em 0; padding: 26px 26px; border-radius: 16px; background: var(--blue); color: #fff; text-align: left; }
+.prose .diagnostic .dg-k { display: block; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan-light); margin-bottom: 8px; }
+.prose .diagnostic .dg-q { margin: 0 0 8px; font-size: 26px; line-height: 1.25; font-weight: 800; color: #fff; }
+.prose .diagnostic p { margin: 0; color: #E6F5FC; font-size: 16.5px; }
+.prose .framework { margin: 1.6em 0; padding: 22px 24px; border: 1px solid var(--line-2); border-radius: 16px; background: var(--surface); scroll-margin-top: 90px; }
+.prose .framework h3 { margin: 0 0 8px; font-size: 22px; }
+.prose .framework .fw-intro { margin: 0 0 14px; font-size: 17px; }
+.prose .fw-list { list-style: none; margin: 0 0 14px; padding: 0; counter-reset: fw; }
+.prose .fw-list li { counter-increment: fw; display: grid; grid-template-columns: 34px 130px minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--line); margin: 0; font-size: 16.5px; line-height: 1.5; }
+.prose .fw-list li::before { content: counter(fw); width: 26px; height: 26px; border-radius: 50%; background: var(--cyan-tint); color: var(--blue); font-weight: 800; font-size: 13px; display: grid; place-items: center; }
+.prose .fw-list b { color: var(--blue); }
+.prose .fw-note { margin: 0; font-size: 14px; color: var(--muted); }
+.prose .fw-ref { padding: 12px 16px; background: var(--surface-2); border-radius: 10px; font-size: 15.5px; }
+.prose .fw-ref .fw-k { display: inline; margin-right: 6px; }
+.prose .guide-types { display: grid; gap: 10px; margin: 1.4em 0; }
+.prose .gt { padding: 14px 18px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--surface); }
+.prose .gt p { margin: 0; font-size: 16.5px; line-height: 1.5; }
+.prose .gt.law .gt-k { color: var(--ink-3); }
+.prose .gt.research { background: var(--surface-2); }
+.prose .gt.drvn { background: var(--cyan-tint); border-color: var(--cyan); }
+.prose .signs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 1.2em 0 1.6em; }
+.prose .signs > div { padding: 16px 18px; border-radius: 12px; border: 1px solid var(--line-2); }
+.prose .signs h3 { font-size: 17px; margin: 0 0 8px; }
+.prose .signs ul { margin: 0; padding-left: 1.1em; font-size: 16px; line-height: 1.5; }
+.prose .signs li { margin: 4px 0; }
+.prose .signs .yes { background: var(--surface); }
+.prose .signs .not-yet { background: var(--surface-2); }
+.prose th { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+@media (max-width: 640px) {
+  .prose .signs { grid-template-columns: 1fr; }
+  .prose .fw-list li { grid-template-columns: 30px minmax(0, 1fr); }
+  .prose .fw-list li span { grid-column: 2; }
+  .prose .diagnostic .dg-q { font-size: 22px; }
+}

@@ -29,6 +29,10 @@ Here are the honest reasons to hold off:
 - **The judgment isn't there.** Not the skill. The judgment. Do they speed when they're late? Do they argue about the passenger rule before they even have the license?
 - **Something else is going on.** A hard semester, a rough stretch, a kid who's exhausted all the time. Driving takes attention they might not have right now.
 
+If you want a structure for spotting the gaps, the DRVN Readiness Framework breaks readiness into five parts.
+
+<!--drvn:framework-ref-->
+
 None of these is a character flaw. Every one of them is fixable. That's exactly why they're reasons to wait and not reasons to panic.
 
 ## What waiting actually buys you

@@ -1,4 +1,5 @@
 import legacy from '../data/posts.json';
+import { expandFramework } from './framework.js';
 
 // New articles live as Markdown in src/articles/. Each file's frontmatter sets its URL (slug),
 // title, title tag (seoTitle), meta description, dek, cluster, publish date and sources.
@@ -29,7 +30,8 @@ const articles = await Promise.all(
       modified: fm.modified || fm.published,
       reviewed: fm.reviewed || fm.modified || fm.published,
       sources: fm.sources || [],
-      html: markAffiliateLinks(await m.compiledContent()),
+      html: expandFramework(markAffiliateLinks(await m.compiledContent())),
+      howWeKnow: !!fm.howWeKnow,
       isNew: true,
     };
   })

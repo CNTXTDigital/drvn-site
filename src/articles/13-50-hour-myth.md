@@ -121,6 +121,10 @@ But the number is the least important part of the plan, and there's a better tes
 
 If the answer to any of those is no, the hours don't mean much. If the answer to all of them is yes, the hours probably never mattered.
 
+In the DRVN Readiness Framework, those questions are about coverage and independence, two of the five things that count more than the total in the log.
+
+<!--drvn:framework-ref-->
+
 ## Why I ended up building something
 
 When my oldest was learning, I went looking for a plan and found plenty of information and nothing I could use.

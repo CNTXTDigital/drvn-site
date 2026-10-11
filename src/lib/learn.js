@@ -59,7 +59,8 @@ export const AREAS = [
     img: '/images/learn/rules-costs.jpg', alt: 'A parent at the kitchen table with an insurance statement and car keys.',
     article: 'what-a-teen-driver-costs',
     more: [
-      { t: 'Is driver’s ed enough?', k: 'Guide', href: G('is-drivers-ed-enough') },
+      { t: 'Is driver’s ed enough?', k: 'Article', href: '/is-drivers-ed-enough/' },
+      { t: 'How to choose a driver’s ed course', k: 'Article', href: '/choosing-a-drivers-ed-course/' },
       { t: 'A parent-teen driving agreement', k: 'Guide', href: G('driving-agreement') },
       { t: 'Your state’s requirements', k: 'State guide', href: '/guide/' },
     ],

@@ -2,6 +2,12 @@ import legacy from '../data/posts.json';
 
 // New articles live as Markdown in src/articles/. Each file's frontmatter sets its URL (slug),
 // title, title tag (seoTitle), meta description, dek, cluster, publish date and sources.
+// Affiliate links written into article Markdown get rel="sponsored" and open in a new tab.
+const AFFILIATE_HOSTS = /^https?:\/\/go\.(aceable|driversed)\.com\//;
+const markAffiliateLinks = (html) =>
+  html.replace(/<a href="([^"]+)"/g, (m, href) =>
+    AFFILIATE_HOSTS.test(href) ? `<a href="${href}" rel="sponsored noopener" target="_blank"` : m);
+
 const modules = import.meta.glob('../articles/*.md', { eager: true });
 
 const articles = await Promise.all(
@@ -21,7 +27,7 @@ const articles = await Promise.all(
       published: fm.published,
       modified: fm.modified || fm.published,
       sources: fm.sources || [],
-      html: await m.compiledContent(),
+      html: markAffiliateLinks(await m.compiledContent()),
       isNew: true,
     };
   })

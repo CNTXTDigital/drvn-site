@@ -5,6 +5,11 @@ name: Build city profiles (all cities)
 # profile (roads, NOAA climate normals, daylight), then commits city-profiles.json.
 on:
   workflow_dispatch:
+    inputs:
+      only:
+        description: 'Optional: rebuild only these state codes or city slugs (space-separated); blank = all'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -51,7 +56,7 @@ jobs:
         with:
           path: features
           pattern: features-*
-      - run: python scripts/city_profiles_full.py features
+      - run: python scripts/city_profiles_full.py features ${{ github.event.inputs.only }}
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"

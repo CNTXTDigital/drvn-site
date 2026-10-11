@@ -48,7 +48,13 @@ if (c) {
     : { k: 'Rain', v: `${c.wetDays} days a year with measurable rain or snow.`, tip: 'Count a wet drive as its own lesson: longer following distance, earlier braking.' });
   if (c.freezeNights >= 20) seasonRows.push({ k: 'Freezing nights', v: `${c.freezeNights} nights a year below freezing.`, tip: 'Early-morning bridges and shaded curves can ice before the rest of the road.' });
 }
-if (d) {
+if (d && d.polarDays > 20) {
+  seasonRows.push({
+    k: 'Daylight',
+    v: `${d.polarDays} days a year without a sunset or sunrise.`,
+    tip: 'Night practice happens in the dark months; plan daylight skills like highway merging for summer.',
+  });
+} else if (d) {
   seasonRows.push({
     k: 'Daylight',
     v: `Earliest sunset ${d.earliestSunset} (${d.earliestSunsetDate}); latest ${d.latestSunset} (${d.latestSunsetDate}).`,

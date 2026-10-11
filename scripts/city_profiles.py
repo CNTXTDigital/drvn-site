@@ -70,12 +70,14 @@ def overpass(q):
 
 def norm_ref(ref):
     ref = ref.strip()
-    m = re.match(r'^(I|US|SR|State Route|OH|CO|AZ|MA|IA|NY|[A-Z]{2})[\s-]*(\d+[A-Z]?)', ref)
+    m = re.match(r'^(I|H|US|SR|State Route|OH|CO|AZ|MA|IA|NY|[A-Z]{2})[\s-]*(\d+[A-Z]?)', ref)
     if not m:
         return None
     net, num = m.group(1), m.group(2)
     if net == 'I':
         return f'I-{num}'
+    if net == 'H':  # Hawaii's interstates are signed H-1, H-2, H-3
+        return f'H-{num}'
     if net == 'US':
         return f'US-{num}'
     return None  # state routes are too many and too local to list
@@ -182,24 +184,36 @@ def fmt_time(t):
 
 
 def daylight(lat, lon, tzname):
+    """Earliest and latest sunset of the year. Days with no sunset (far north) are skipped."""
+    from astral.sun import sunset, dusk
     tz = ZoneInfo(tzname)
     loc = LocationInfo(latitude=lat, longitude=lon, timezone=tzname)
     year = 2026
-    days = [dt.date(year, 1, 1) + dt.timedelta(d) for d in range(365)]
-    sunsets = []
-    for d in days:
-        s = sun(loc.observer, date=d, tzinfo=tz)
-        sunsets.append((d, s['sunset'], s['dusk']))
-    early = min(sunsets, key=lambda x: (x[1].hour, x[1].minute))
-    late = max(sunsets, key=lambda x: (x[1].hour, x[1].minute))
-    # Typical school-night dark time in mid-November (after DST ends) and mid-March (before/after DST)
-    nov = next(x for x in sunsets if x[0] == dt.date(year, 11, 15))
+    rows = []
+    for k in range(365):
+        d = dt.date(year, 1, 1) + dt.timedelta(k)
+        try:
+            ss = sunset(loc.observer, date=d, tzinfo=tz)
+        except ValueError:
+            continue
+        rows.append((d, ss))
+    if not rows:
+        return None
+    after_noon = lambda x: (x[1].hour * 60 + x[1].minute - 720) % 1440  # sunsets after midnight count as late
+    early = min(rows, key=after_noon)
+    late = max(rows, key=after_noon)
+    nov = next((x for x in rows if x[0] == dt.date(year, 11, 15)), early)
+    try:
+        dk = fmt_time(dusk(loc.observer, date=early[0], tzinfo=tz))
+    except ValueError:
+        dk = None
     return {
         'tz': tzname,
         'earliestSunset': fmt_time(early[1]), 'earliestSunsetDate': early[0].strftime('%B %-d'),
-        'earliestDark': fmt_time(early[2]),
+        'earliestDark': dk,
         'latestSunset': fmt_time(late[1]), 'latestSunsetDate': late[0].strftime('%B %-d'),
         'novSunset': fmt_time(nov[1]),
+        'polarDays': 365 - len(rows),
     }
 
 

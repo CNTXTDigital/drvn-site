@@ -104,7 +104,7 @@ def climate(lat, lon, stations, st_tree):
     return None
 
 
-def main(features_dir):
+def main(features_dir, only=None):
     f = load_features(features_dir)
     layers = {k: Layer(f[k]) for k in ('sig', 'lc', 'rb', 'unp')}
     hw_pts = Layer([p[:2] for p in f['hw']])
@@ -113,9 +113,10 @@ def main(features_dir):
     stations = load_stations()
     st_tree = cKDTree(xyz(np.array([s[1] for s in stations]), np.array([s[2] for s in stations])))
     tf = TimezoneFinder()
-    out = {}
+    out = json.loads(OUT.read_text()) if (only and OUT.exists()) else {}
     t0 = time.time()
-    for i, c in enumerate(CITIES):
+    todo = [c for c in CITIES if not only or c['slug'] in only or c['st'] in only]
+    for i, c in enumerate(todo):
         center = gaz.get((c['st'], c['city'].lower()))
         lat, lon = center if center else (c['lat'], c['lon'])
         refs = set()
@@ -124,14 +125,14 @@ def main(features_dir):
                 n = norm_ref(part)
                 if n:
                     refs.add(n)
-        key = lambda r: (0 if r.startswith('I-') else 1, int(re.sub(r'\D', '', r.split('-')[1]) or 0))
+        key = lambda r: (0 if r.startswith(('I-', 'H-')) else 1, int(re.sub(r'\D', '', r.split('-')[1]) or 0))
         hw = sorted(refs, key=key)
         rb_pts = [layers['rb'].pts[j] for j in layers['rb'].within(lat, lon, NEAR_MI)]
         try:
             prof = {
                 'center': [round(lat, 5), round(lon, 5)], 'centerSource': 'census' if center else 'zip',
                 'roads': {
-                    'interstates': [r for r in hw if r.startswith('I-')],
+                    'interstates': [r for r in hw if r.startswith(('I-', 'H-'))],
                     'usRoutes': [r for r in hw if r.startswith('US-')],
                     'roundabouts': cluster_count(rb_pts),
                     'railCrossings': len(layers['lc'].within(lat, lon, NEAR_MI)),
@@ -146,11 +147,11 @@ def main(features_dir):
         except Exception as e:
             print('FAILED', c['slug'], e, flush=True)
         if (i + 1) % 100 == 0:
-            print(f'{i + 1}/{len(CITIES)} cities, {time.time() - t0:.0f}s, last {c["slug"]}: {json.dumps(prof)[:200]}', flush=True)
+            print(f'{i + 1}/{len(todo)} cities, {time.time() - t0:.0f}s, last {c["slug"]}: {json.dumps(prof)[:200]}', flush=True)
     OUT.write_text(json.dumps(out, separators=(',', ':')))
     missing_climate = sum(1 for v in out.values() if not v['climate'])
     print('done', len(out), 'profiles;', missing_climate, 'without climate data')
 
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1], set(sys.argv[2:]) or None)

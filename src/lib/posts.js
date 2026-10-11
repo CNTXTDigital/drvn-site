@@ -1,4 +1,7 @@
-import legacy from '../data/posts.json';
+// The 16 WordPress-era posts were retired in October 2026 and redirect to their closest
+// new article (infra/viewer-request.js). Their text is archived in data/retired-posts.json
+// (not loaded) in case one is rewritten later.
+const legacy = [];
 import { expandFramework } from './framework.js';
 
 // New articles live as Markdown in src/articles/. Each file's frontmatter sets its URL (slug),

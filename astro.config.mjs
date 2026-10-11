@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, readdirSync } from 'node:fs';
 
 // Sitemap <lastmod> only where we know the real date a page's content last changed:
-// articles (last commit to the Markdown file), legacy posts (WordPress modified date),
+// articles (last commit to the Markdown file),
 // the complete guide, and the state/city guides (last commit to the requirements data or
 // guide template). Every other page is listed without a lastmod rather than with a guess.
 // The deploy workflow checks out full history (fetch-depth: 0) so these dates are real.
@@ -20,9 +20,6 @@ for (const f of readdirSync('src/articles').filter((f) => f.endsWith('.md'))) {
   const slug = readFileSync(`src/articles/${f}`, 'utf8').match(/^slug:\s*"?([^"\n]+)"?/m)?.[1];
   const d = gitDate(`src/articles/${f}`);
   if (slug && d) LASTMOD.set(`/${slug}/`, d);
-}
-for (const p of JSON.parse(readFileSync('src/data/posts.json', 'utf8'))) {
-  if (!LASTMOD.has(`/${p.slug}/`) && (p.modified || p.published)) LASTMOD.set(`/${p.slug}/`, p.modified || p.published);
 }
 const safetyDate = gitDate('src/pages/teen-driving-safety/');
 if (safetyDate) LASTMOD.set('/teen-driving-safety/', safetyDate);

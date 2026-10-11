@@ -7,7 +7,7 @@ description: "What a teen's first traffic ticket actually changes: insurance, pr
 published: "2026-10-11T15:33:00Z"
 image: "/images/articles/a35-first-ticket.jpg"
 imageSm: "/images/articles/a35-first-ticket-800.jpg"
-imageAlt: "A traffic citation on a wooden table beside car keys and a phone."
+imageAlt: "An Ohio speeding citation on a wooden table beside car keys, a wallet and a phone."
 cluster: "The Handoff"
 sources:
   - ci-speeding-ticket

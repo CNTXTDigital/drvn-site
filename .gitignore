@@ -4,3 +4,4 @@ dist/
 migration/raw/
 preview-*.png
 .DS_Store
+deliverables/

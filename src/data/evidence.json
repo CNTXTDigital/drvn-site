@@ -1,6 +1,13 @@
 {
   "checked": "October 2026",
   "sources": {
+    "iihs-skid-2015": {"org": "IIHS", "title": "Crash and citation records of young drivers with skid avoidance training (Farmer & Wells)", "url": "https://www.iihs.org/topics/bibliography/ref/2098", "date": "2015", "kind": "Controlled study"},
+    "glad-1988": {"org": "Norwegian Institute of Transport Economics (TØI)", "title": "Phase 2 in the driver education: effect on the accident risk (Glad)", "url": "https://trid.trb.org/View/291612", "date": "1988", "kind": "Evaluation study"},
+    "katila-1996": {"org": "Accident Analysis & Prevention", "title": "Conflicting goals of skid training (Katila, Keskinen & Hatakka)", "url": "https://trid.trb.org/View/470750", "date": "1996", "kind": "Peer-reviewed study"},
+    "ny-pirp": {"org": "New York State DMV", "title": "Point and Insurance Reduction Program (PIRP)", "url": "https://dmv.ny.gov/points-and-penalties/point-and-insurance-reduction-program-pirp", "date": "Checked October 2026", "kind": "State program"},
+    "street-survival-faq": {"org": "Tire Rack Street Survival", "title": "Frequently asked questions", "url": "https://streetsurvival.org/schools/frequently-asked-questions/", "date": "Checked October 2026", "kind": "Program details"},
+    "brakes-faq": {"org": "B.R.A.K.E.S.", "title": "FAQs", "url": "https://putonthebrakes.org/faqs", "date": "Checked October 2026", "kind": "Program details"},
+    "midohio-teen": {"org": "The Mid-Ohio School", "title": "Teen Defensive Driving", "url": "https://midohio.com/courses/defensive-driving/teen-defensive-driving", "date": "Checked October 2026", "kind": "Program details"},
     "iihs-teens": { "org": "Insurance Institute for Highway Safety (IIHS)", "title": "Teenagers", "url": "https://www.iihs.org/research-areas/teenagers", "date": "2024 data", "kind": "National crash data" },
     "iihs-ff-teens": { "org": "IIHS", "title": "Fatality Facts 2024: Teenagers", "url": "https://www.iihs.org/topics/fatality-statistics/detail/teenagers", "date": "2024 data", "kind": "National crash data" },
     "iihs-urban-rural": { "org": "IIHS", "title": "Fatality Facts 2024: Urban/rural comparison", "url": "https://www.iihs.org/topics/fatality-statistics/detail/urban-rural-comparison", "date": "2024 data", "kind": "National crash data" },
@@ -456,6 +463,22 @@
           "usedIn": [
             "teen-driving-safety",
             "is-drivers-ed-enough"
+          ]
+        },
+        {
+          "id": "skid-training",
+          "claim": "Hands-on skid and emergency-maneuver training has not been shown to reduce teen crashes.",
+          "evidence": "In an IIHS study, newly licensed teens offered a free skid-avoidance course had a crash rate of 8.7 versus 8.6 for teens never offered it; none of the differences was statistically significant. In Norway, a slippery-road course in the second phase of driver training was followed by more crashes for a couple of years among young men. Scandinavian research suggests the maneuvering drills raise confidence and lead students to underestimate risk.",
+          "strength": "One U.S. controlled study and Scandinavian evaluations",
+          "caveat": "Only 234 of 1,481 teens offered the IIHS course completed it, so the study can't rule out a benefit; the Norwegian findings are from the 1980s and applied only to male drivers.",
+          "supports": "A car-control course is worth doing for calibration and respect for speed, not as a substitute for supervised hours, and parents should watch for overconfidence afterward.",
+          "sources": [
+            "iihs-skid-2015",
+            "glad-1988",
+            "katila-1996"
+          ],
+          "usedIn": [
+            "teen-defensive-driving-course"
           ]
         }
       ]

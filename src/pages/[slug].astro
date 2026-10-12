@@ -8,6 +8,7 @@ import { SITE } from '../site.js';
 import SourceList from '../components/SourceList.astro';
 import HowWeKnow from '../components/HowWeKnow.astro';
 import AuthorBox from '../components/AuthorBox.astro';
+import ShareBlock from '../components/ShareBlock.astro';
 import { sourcesFor, claimsUsedIn, citationLD } from '../lib/evidence.js';
 import { articleLD, breadcrumbLD } from '../lib/schema.js';
 
@@ -33,6 +34,7 @@ const jsonld = {
   title={post.seoTitle || post.title}
   description={post.description}
   image={post.image}
+  imageAlt={post.imageAlt}
   type="article"
   published={post.published}
   modified={post.modified}
@@ -54,6 +56,7 @@ const jsonld = {
       </div>
       {post.image && <img class="hero-img" src={post.image} srcset={post.imageSm ? `${post.imageSm} 800w, ${post.image} 1600w` : undefined} sizes="(max-width: 980px) 100vw, 680px" alt={post.imageAlt || ""} width="1600" height="842" fetchpriority="high" />}
       <div class="prose lede" set:html={post.html} />
+      <ShareBlock url={url} title={post.title} slug={post.slug} />
       {terr && <AuthorBox />}
       {post.howWeKnow && <HowWeKnow />}
       {inTerr.length > 0 && (

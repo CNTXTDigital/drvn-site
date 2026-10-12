@@ -1,0 +1,95 @@
+---
+// End-of-article share block. Desktop shows four labeled links (copy, text, Facebook, email).
+// Phones (narrow or touch screens with the Web Share API) get one button that opens the
+// phone's own share sheet instead. Every share sends a GA4 "share" event with its method.
+const { url, title, slug } = Astro.props;
+const enc = encodeURIComponent;
+const text = `${title} ${url}`;
+const links = {
+  sms: `sms:?&body=${enc(text)}`,
+  facebook: `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`,
+  email: `mailto:?subject=${enc(title)}&body=${enc(`I thought this was worth reading:\n\n${title}\n${url}`)}`,
+};
+---
+<section class="share" aria-labelledby="share-h" data-url={url} data-title={title} data-slug={slug}>
+  <h2 id="share-h">Send this to whoever’s in the passenger seat with you.</h2>
+  <p>Your co-parent, a grandparent, another coach.</p>
+
+  <button type="button" class="native" data-method="native" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" /></svg>
+    Share this article
+  </button>
+
+  <div class="opts">
+    <button type="button" class="opt" data-method="copy">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1" /></svg>
+      <span class="lbl">Copy link</span>
+    </button>
+    <a class="opt" data-method="sms" href={links.sms}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /></svg>
+      <span>Text it</span>
+    </a>
+    <a class="opt" data-method="facebook" href={links.facebook} target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z" /></svg>
+      <span>Facebook</span>
+    </a>
+    <a class="opt" data-method="email" href={links.email}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 6l9 7 9-7" /></svg>
+      <span>Email</span>
+    </a>
+  </div>
+  <p class="status sr-only" role="status" aria-live="polite"></p>
+</section>
+
+<script>
+  const box = document.querySelector('.share');
+  if (box) {
+    const { url, title, slug } = box.dataset;
+    const status = box.querySelector('.status');
+    const track = (method) => {
+      try { if (window.gtag) window.gtag('event', 'share', { method, content_type: 'article', item_id: slug }); } catch (e) {}
+    };
+    const phone = window.matchMedia('(max-width: 640px), (pointer: coarse)').matches;
+    if (phone && navigator.share) {
+      box.querySelector('.native').hidden = false;
+      box.querySelector('.opts').hidden = true;
+    }
+    box.addEventListener('click', async (e) => {
+      const el = e.target.closest('[data-method]');
+      if (!el) return;
+      const method = el.dataset.method;
+      if (method === 'native') {
+        try { await navigator.share({ title, url }); track('native'); } catch (err) {}
+        return;
+      }
+      if (method === 'copy') {
+        try {
+          await navigator.clipboard.writeText(url);
+          el.querySelector('.lbl').textContent = 'Link copied';
+          status.textContent = 'Link copied.';
+          setTimeout(() => { el.querySelector('.lbl').textContent = 'Copy link'; status.textContent = ''; }, 2500);
+        } catch (err) {
+          window.prompt('Copy this link:', url);
+        }
+      }
+      track(method);
+    });
+  }
+</script>
+
+<style>
+  .share { margin-top: 40px; padding: 22px 24px; background: var(--surface-2); border-radius: 14px; }
+  .share h2 { font-size: 21px; font-weight: 800; margin: 0 0 4px; }
+  .share > p { margin: 0 0 16px; font-size: 16px; color: var(--ink-3); }
+  .opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .opts[hidden] { display: none; }
+  .opt, .native { display: flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-size: 15px; font-weight: 700; color: var(--ink-2); background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 12px 10px; text-decoration: none; cursor: pointer; white-space: nowrap; }
+  .opt:hover { color: var(--blue); border-color: var(--cyan); }
+  .opt svg, .native svg { width: 18px; height: 18px; flex: 0 0 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .native { width: 100%; background: var(--green); color: var(--green-ink); border-color: var(--green); font-size: 17px; padding: 14px; }
+  .native[hidden] { display: none; }
+  @media (max-width: 640px) {
+    .share { padding: 20px; }
+    .opts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>

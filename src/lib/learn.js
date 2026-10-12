@@ -19,8 +19,8 @@ export const AREAS = [
     short: 'Build experience across the six driving environments.',
     blurb: 'Coverage matters as much as hours. Learn which roads, conditions, situations and skills your teen should experience before they start driving alone.',
     img: '/images/learn/practice.jpg', alt: 'A long, straight rural two-lane road between fields and trees.',
-    article: 'six-driving-environments-teen-practice',
-    links: ['teen-night-driving', 'teaching-highway-merging'],
+    article: 'how-to-teach-a-teen-to-drive',
+    links: ['six-driving-environments-teen-practice', 'teen-night-driving'],
   },
   {
     id: 'risk', n: 3, tag: 'Risk', label: 'Risk', q: 'What makes new drivers risky?',

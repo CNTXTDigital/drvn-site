@@ -24,7 +24,7 @@ sources:
 
 All four of my kids learned to drive in Ohio. All four hit their 50 hours. And all four spent a day sliding a car around wet pavement on purpose, because I paid someone to let them.
 
-We used two programs: Better Ohio Teen Drivers, a Columbus nonprofit run by Mark Bloom, who has been teaching teens car control since 2006, and the teen program at the Mid-Ohio Sports Car Course. If you've never watched your child lose a car on purpose while a professional calmly tells them where to look, I recommend it. It is terrifying and wonderful, and it is the most useful thing I have ever spent a Saturday watching.
+We used two programs: Better Ohio Teen Drivers, a Columbus nonprofit run by Mark Bloom, a former race car driver who has been teaching teens car control since 2006, and the teen program at the Mid-Ohio Sports Car Course. If you've never watched your child lose a car on purpose while a professional calmly tells them where to look, I recommend it. It is terrifying and wonderful, and it is the most useful thing I have ever spent a Saturday watching.
 
 Our insurance company didn't reward it. It barely acknowledged it. More on that in a minute.
 

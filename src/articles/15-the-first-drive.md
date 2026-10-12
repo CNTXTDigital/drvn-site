@@ -64,6 +64,6 @@ Then tell them one specific thing they did well. They'll be thinking about this 
 
 ## What comes next
 
-The first few weeks belong in empty lots and quiet streets, until stopping, steering and looking ahead stop taking all their attention. After that the permit year opens up into busier roads, then highways, nights and weather. There's a full sequence in [The Permit Year, Month by Month](/permit-year-practice-plan/), and the reason the order matters is in [The Six Environments](/six-driving-environments-teen-practice/).
+The first few weeks belong in empty lots and quiet streets, until stopping, steering and looking ahead stop taking all their attention. After that the permit year opens up into busier roads, then highways, nights and weather. The whole sequence, step by step, is in [How to Teach Your Teen to Drive](/how-to-teach-a-teen-to-drive/), with the calendar version in [The Permit Year, Month by Month](/permit-year-practice-plan/), and the reason the order matters is in [The Six Environments](/six-driving-environments-teen-practice/).
 
 For now, it's just a parking lot. Start there. The rest of the year will be easier for it.

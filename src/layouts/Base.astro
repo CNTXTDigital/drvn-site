@@ -79,9 +79,9 @@ const ogAlt = imageAlt || title;
 
   {!noindex && <script type="application/ld+json" set:html={JSON.stringify(graph)} />}
 
-  <!-- Analytics: Google Tag Manager (existing container) plus GA4 events for G-WJ7SMQ1RRQ.
+  <!-- Analytics: GA4 (G-WJ7SMQ1RRQ) page views and events.
        Runs only on www.drvnapp.com. On staging, add ?ga_debug=1 to test (sends GA4 debug events). -->
-  <script is:inline define:vars={{ gtm: SITE.gtm, ga4: SITE.ga4, readiness: READINESS }}>
+  <script is:inline define:vars={{ ga4: SITE.ga4, readiness: READINESS }}>
     (function(){
       var prod = location.hostname === 'www.drvnapp.com';
       var dbg = false;
@@ -90,15 +90,10 @@ const ogAlt = imageAlt || title;
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
       window.gtag = gtag;
-      if (prod) {
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
-      }
       var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4; document.head.appendChild(g);
       gtag('js', new Date());
-      // gtag sends page views itself. The Tag Manager container (GTM-WBTWZH2) has no GA4 tag;
-      // its only tag loads the old Sumo popup script, so it must not be relied on for analytics.
+      // gtag sends page views itself. Google Tag Manager (GTM-WBTWZH2) was removed in October 2026:
+      // its only tag loaded the old Sumo popup script from the WordPress site.
       gtag('config', ga4, dbg ? { debug_mode: true } : {});
       function send(name, params) { gtag('event', name, Object.assign({ page_path: location.pathname }, params || {})); }
       if (location.pathname === '/app/') send('app_page_view');

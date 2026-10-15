@@ -97,8 +97,9 @@ const ogAlt = imageAlt || title;
       }
       var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4; document.head.appendChild(g);
       gtag('js', new Date());
-      // Page views come from the Tag Manager container in production; on staging debug, gtag sends them.
-      gtag('config', ga4, dbg ? { debug_mode: true } : { send_page_view: false });
+      // gtag sends page views itself. The Tag Manager container (GTM-WBTWZH2) has no GA4 tag;
+      // its only tag loads the old Sumo popup script, so it must not be relied on for analytics.
+      gtag('config', ga4, dbg ? { debug_mode: true } : {});
       function send(name, params) { gtag('event', name, Object.assign({ page_path: location.pathname }, params || {})); }
       if (location.pathname === '/app/') send('app_page_view');
       document.addEventListener('click', function (e) {

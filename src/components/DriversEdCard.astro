@@ -1,22 +1,28 @@
 ---
 // Partner block for online driver's ed. Pass `state` to use that state's offer; otherwise the general Aceable link.
-import { driversEdLink } from '../site.js';
-const { state } = Astro.props;
-const offer = driversEdLink(state);
+import { driversEdLink, DRIVERSED_GENERAL } from '../site.js';
+const { state, variant } = Astro.props;
+// variant="driversed": the general DriversEd.com card for states Aceable doesn't cover.
+const alt = variant === 'driversed';
+const offer = alt ? DRIVERSED_GENERAL : driversEdLink(state);
 const isAceable = offer.provider === 'Aceable';
+const heading = alt ? 'Not seeing your state on Aceable?' : 'State-Approved Online Driving Courses';
+const body = alt
+  ? 'DriversEd.com offers state-approved online driver’s ed in many states. If your state isn’t available on Aceable, check here.'
+  : `${offer.provider} offers state-certified online driving courses designed to make learning safe driving skills engaging and effective.`;
 ---
-<aside class="edcard" aria-label="Online driver's ed partner">
+{offer.url && <aside class="edcard" aria-label="Online driver's ed partner">
   <div class="brand">
     {isAceable
       ? <img class="logo" src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" loading="lazy" />
       : <img class="logo" src="/images/partners/driversed-logo.png" alt="DriversEd.com" width="458" height="101" loading="lazy" />}
     <span class="tag">Partner</span>
   </div>
-  <p class="h">State-Approved Online Driving Courses</p>
-  <p class="s">{offer.provider} offers state-certified online driving courses designed to make learning safe driving skills engaging and effective.</p>
+  <p class="h">{heading}</p>
+  <p class="s">{body}</p>
   <a class="btn btn-sm" href={offer.url} rel="sponsored noopener" target="_blank">Visit {offer.provider}</a>
   <p class="fine">DRVN may earn a referral fee if you enroll through this link.</p>
-</aside>
+</aside>}
 
 <style>
   .edcard { border: 1px solid var(--line-2); border-radius: 16px; padding: 20px; background: var(--surface); display: flex; flex-direction: column; gap: 8px; }

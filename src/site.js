@@ -36,5 +36,9 @@ export const DRIVERS_ED = {
   },
 };
 
+// General DriversEd.com offer (no state), shown as a second partner card on the state guide hub
+// for families whose state Aceable doesn't cover. The card is hidden until `url` is filled in.
+export const DRIVERSED_GENERAL = { url: '', provider: 'DriversEd.com' };
+
 export const driversEdLink = (state) =>
   (state && DRIVERS_ED.states[String(state).toLowerCase().replace(/\s+/g, '-')]) || DRIVERS_ED.default;

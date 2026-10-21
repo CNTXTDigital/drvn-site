@@ -2,10 +2,13 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE } from '../site.js';
+import { SITE, DRIVERS_ED } from '../site.js';
 import { ORG, WEBSITE, breadcrumbLD } from '../lib/schema.js';
 import { allPosts } from '../lib/posts.js';
 // Readiness article paths, for the readiness_click analytics event.
+// State driver's ed offers, so a generic partner link can switch to the parent's state at click time.
+const ED_STATES = Object.fromEntries(Object.entries(DRIVERS_ED.states).map(([k, v]) => [k, v.url]));
+const ED_DEFAULT = DRIVERS_ED.default.url;
 const READINESS = allPosts.filter((p) => p.territory === 'readiness').map((p) => `/${p.slug}/`);
 
 const {
@@ -79,6 +82,29 @@ const ogAlt = imageAlt || title;
 
   {!noindex && <script type="application/ld+json" set:html={JSON.stringify(graph)} />}
 
+  <!-- Partner links: if a parent has chosen or viewed a state, a generic driver's ed link switches to
+       that state's offer at click time; every partner link is tagged with where it was clicked
+       (aff_sub = placement, aff_sub2 = page, aff_sub3 = state) so Aceable's report shows what converts. -->
+  <script is:inline define:vars={{ edStates: ED_STATES, edDefault: ED_DEFAULT }}>
+    (function(){
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        var u; try { u = new URL(a.href, location.href); } catch (err) { return; }
+        if (!/^go\.(aceable|driversed)\.com$/.test(u.hostname)) return;
+        var state = ''; try { state = localStorage.getItem('drvn_state') || ''; } catch (err) {}
+        if (u.href === edDefault && state && edStates[state]) u = new URL(edStates[state]);
+        var holder = a.closest('[data-aff]');
+        var placement = holder ? holder.getAttribute('data-aff') : (a.closest('.prose') ? 'article-inline' : 'other');
+        u.searchParams.set('aff_sub', placement);
+        u.searchParams.set('aff_sub2', location.pathname.slice(0, 90));
+        if (state) u.searchParams.set('aff_sub3', state);
+        a.href = u.href;
+        a.setAttribute('data-placement', placement);
+      }, true);
+    })();
+  </script>
+
   <!-- Analytics: GA4 (G-WJ7SMQ1RRQ) page views and events.
        Runs only on www.drvnapp.com. On staging, add ?ga_debug=1 to test (sends GA4 debug events). -->
   <script is:inline define:vars={{ ga4: SITE.ga4, readiness: READINESS }}>
@@ -106,7 +132,7 @@ const ogAlt = imageAlt || title;
         var host = u.hostname.replace(/^www\./, '');
         if (host === 'apps.apple.com') return send('app_store_click', p);
         if (host === 'play.google.com') return send('google_play_click', p);
-        if (/^go\.(aceable|driversed)\.com$/.test(u.hostname)) { p.provider = u.hostname.split('.')[1]; return send('affiliate_click', p); }
+        if (/^go\.(aceable|driversed)\.com$/.test(u.hostname)) { p.provider = u.hostname.split('.')[1]; p.placement = a.getAttribute('data-placement') || ''; return send('affiliate_click', p); }
         var internal = host === 'drvnapp.com' || u.hostname === location.hostname;
         if (!internal) {
           if (a.closest('.prose, .sources, .src, .claim, .biblio, .verified')) { p.source_domain = host; return send('research_source_click', p); }

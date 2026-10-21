@@ -1,13 +1,15 @@
 ---
 // The six steps to a teen license for one state, from the verified requirements
 // (data/guide/requirements.json). On a city page, pass `city` to localize the headings.
-import { driversEdLink, SITE } from '../site.js';
+import { driversEdLink, DRIVERS_ED, SITE } from '../site.js';
 import { CHECKED_LABEL } from '../lib/guide.js';
 
 const { state: s, city } = Astro.props;
 const r = s.req;
 const name = s.sname;
 const offer = driversEdLink(s.slug);
+const stateOffer = offer.url !== DRIVERS_ED.default.url;
+const parentTaught = /parent-taught/i.test(offer.label || '');
 const host = (u) => {
   try {
     const x = new URL(u);
@@ -59,13 +61,15 @@ const steps = [
           {st.rows.map(([k, v]) => <div class="row"><dt>{k}</dt><dd>{v}</dd></div>)}
         </dl>
         {st.online && (
-          <div class="online">
+          <div class="online" data-aff="state-guide-step1">
             <div>
-              <p class="oh">Online driver’s ed for {name}</p>
-              <p class="os">{offer.provider} offers state-certified online courses your teen can complete at home.</p>
+              <p class="oh">{parentTaught ? `Parent-taught driver’s ed for ${name}` : `Online driver’s ed for ${name}`}</p>
+              <p class="os">{parentTaught
+                ? `${name} lets a parent teach driver’s ed at home. ${offer.provider} offers the state-approved parent-taught course: your teen does the classroom part online, and you handle the driving with them.`
+                : `${offer.provider} offers a state-approved online course your teen can finish at home, on their own schedule.`}</p>
               <p class="os fine-aff">DRVN may earn a referral fee if you enroll through this link.</p>
             </div>
-            <a class="btn btn-sm" href={offer.url} rel="sponsored noopener" target="_blank">Find an online driver’s ed course</a>
+            <a class="btn btn-sm" href={offer.url} rel="sponsored noopener" target="_blank">{stateOffer ? `See the ${name} course` : `Find a course for ${name}`}</a>
           </div>
         )}
         {st.app && (

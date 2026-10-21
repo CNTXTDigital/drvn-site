@@ -41,11 +41,31 @@ function redirect(location) {
   return { statusCode: 301, statusDescription: 'Moved Permanently', headers: { location: { value: location }, 'cache-control': { value: 'max-age=86400' } } };
 }
 
+function gone() {
+  return {
+    statusCode: 410,
+    statusDescription: 'Gone',
+    headers: {
+      'content-type': { value: 'text/html; charset=utf-8' },
+      'cache-control': { value: 'max-age=86400' },
+      'x-robots-tag': { value: 'noindex' },
+    },
+    body: { encoding: 'text', data: '<!doctype html><title>Gone | DRVN</title><meta name="robots" content="noindex"><p>This page no longer exists. <a href="https://www.drvnapp.com/">Go to DRVN</a>.</p>' },
+  };
+}
+
 function handler(event) {
   var req = event.request;
   var host = req.headers.host ? req.headers.host.value : '';
   var uri = req.uri;
   var qs = req.querystring || {};
+
+  // Spam pages injected into the old WordPress site (e.g. /402361-personal-dating-agency/).
+  // Google still has hundreds indexed; 410 Gone tells it to drop them faster than a 404.
+  // Real URLs never start with 4+ digits (legit ones like /50-hour-myth.../ use 1-2).
+  if (/^\/[0-9]{4,}-[^\/]*\/?$/.test(uri)) {
+    return gone();
+  }
 
   if (host === 'drvnapp.com') {
     return redirect('https://www.drvnapp.com' + uri);

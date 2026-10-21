@@ -1,36 +1,94 @@
 ---
-// Partner block for online driver's ed. Pass `state` to use that state's offer; otherwise the general Aceable link.
-import { driversEdLink, DRIVERSED_GENERAL } from '../site.js';
-const { state, variant } = Astro.props;
-// variant="driversed": the general DriversEd.com card for states Aceable doesn't cover.
+// Partner block for online driver's ed.
+// - With `state`: that state's offer (or the general Aceable offer when the state has none).
+// - Without `state`: a state picker that swaps the button to that state's offer, so a click lands
+//   on the right course instead of Aceable's homepage. Remembers the last state a parent chose or
+//   viewed (localStorage 'drvn_state', set by state guide pages and state pickers).
+// - variant="driversed": the general DriversEd.com card for states Aceable doesn't cover.
+// `placement` is sent to the partner as aff_sub so their report shows which block drove the click.
+import { DRIVERS_ED, driversEdLink, DRIVERSED_GENERAL } from '../site.js';
+import { states, stateBySlug } from '../lib/guide.js';
+const { state, variant, placement = 'card' } = Astro.props;
 const alt = variant === 'driversed';
 const offer = alt ? DRIVERSED_GENERAL : driversEdLink(state);
 const isAceable = offer.provider === 'Aceable';
-const heading = alt ? 'Not seeing your state on Aceable?' : 'State-Approved Online Driving Courses';
+const sname = state && stateBySlug[state] ? stateBySlug[state].sname : null;
+const picker = !alt && !state;
+const heading = alt
+  ? 'Not seeing your state on Aceable?'
+  : sname ? `Online driver’s ed for ${sname}` : 'Online driver’s ed for your state';
 const body = alt
   ? 'DriversEd.com offers state-approved online driver’s ed in many states. If your state isn’t available on Aceable, check here.'
-  : `${offer.provider} offers state-certified online driving courses designed to make learning safe driving skills engaging and effective.`;
+  : sname
+    ? `${offer.provider} offers a state-approved online course your teen can finish at home, on their own schedule.`
+    : 'State-approved online courses your teen can finish at home, on their own schedule. Pick your state to see the right course.';
+const button = alt ? `Visit ${offer.provider}` : sname ? `See the ${sname} course` : 'Find your state’s course';
+// Client-side offer map for the picker: slug -> [url, provider, state name]
+const offers = picker
+  ? Object.fromEntries(states.map((s) => { const o = driversEdLink(s.slug); return [s.slug, [o.url, o.provider, s.sname]]; }))
+  : null;
+const fallback = picker ? [DRIVERS_ED.default.url, DRIVERS_ED.default.provider] : null;
 ---
-{offer.url && <aside class="edcard" aria-label="Online driver's ed partner">
+{offer.url && <aside class="edcard" aria-label="Online driver's ed partner" data-aff={placement} data-edcard={picker ? JSON.stringify({ offers, fallback }) : undefined}>
   <div class="brand">
     {isAceable
-      ? <img class="logo" src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" loading="lazy" />
-      : <img class="logo" src="/images/partners/driversed-logo.png" alt="DriversEd.com" width="458" height="101" loading="lazy" />}
+      ? <img class="logo" data-logo="Aceable" src="/images/partners/aceable-logo.png" alt="Aceable" width="640" height="140" loading="lazy" />
+      : <img class="logo" data-logo="DriversEd.com" src="/images/partners/driversed-logo.png" alt="DriversEd.com" width="458" height="101" loading="lazy" />}
+    {picker && <img class="logo" data-logo="DriversEd.com" hidden src="/images/partners/driversed-logo.png" alt="DriversEd.com" width="458" height="101" loading="lazy" />}
     <span class="tag">Partner</span>
   </div>
   <p class="h">{heading}</p>
   <p class="s">{body}</p>
-  <a class="btn btn-sm" href={offer.url} rel="sponsored noopener" target="_blank">Visit {offer.provider}</a>
+  {picker && (
+    <label class="pick">
+      <span class="sr-only">Your state</span>
+      <select data-edstate>
+        <option value="">Choose your state</option>
+        {states.map((s) => <option value={s.slug}>{s.sname}</option>)}
+      </select>
+    </label>
+  )}
+  <a class="btn btn-sm" href={offer.url} rel="sponsored noopener" target="_blank">{button}</a>
   <p class="fine">DRVN may earn a referral fee if you enroll through this link.</p>
 </aside>}
+
+<script>
+  for (const card of document.querySelectorAll<HTMLElement>('[data-edcard]')) {
+    const { offers, fallback } = JSON.parse(card.dataset.edcard || '{}');
+    const sel = card.querySelector<HTMLSelectElement>('[data-edstate]');
+    const btn = card.querySelector<HTMLAnchorElement>('a.btn');
+    const h = card.querySelector('.h');
+    const logos = card.querySelectorAll<HTMLImageElement>('[data-logo]');
+    if (!sel || !btn) continue;
+    const apply = (slug: string) => {
+      const o = offers[slug];
+      const [url, provider] = o ? [o[0], o[1]] : fallback;
+      btn.href = url;
+      btn.textContent = o ? `See the ${o[2]} course` : 'Find your state’s course';
+      if (h) h.textContent = o ? `Online driver’s ed for ${o[2]}` : 'Online driver’s ed for your state';
+      let shown = false;
+      logos.forEach((img) => { const on = !shown && img.dataset.logo === provider; img.hidden = !on; if (on) shown = true; });
+    };
+    let saved = '';
+    try { saved = localStorage.getItem('drvn_state') || ''; } catch {}
+    if (saved && offers[saved]) { sel.value = saved; apply(saved); }
+    sel.addEventListener('change', () => {
+      apply(sel.value);
+      try { if (sel.value) localStorage.setItem('drvn_state', sel.value); } catch {}
+      if (sel.value && (window as any).gtag) (window as any).gtag('event', 'drivers_ed_state_select', { state: sel.value, page_path: location.pathname });
+    });
+  }
+</script>
 
 <style>
   .edcard { border: 1px solid var(--line-2); border-radius: 16px; padding: 20px; background: var(--surface); display: flex; flex-direction: column; gap: 8px; }
   .brand { display: flex; align-items: center; justify-content: space-between; }
   .logo { height: 26px; width: auto; }
+  .logo[hidden] { display: none; }
   .tag { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); }
   .h { margin: 4px 0 0; font-size: 19px; font-weight: 700; color: var(--blue); line-height: 1.25; }
   .s { margin: 0 0 6px; font-size: 15px; line-height: 1.55; color: var(--ink-3); }
+  .pick select { font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--surface); color: var(--ink); width: 100%; max-width: 280px; }
   .btn { align-self: flex-start; }
   .fine { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
 </style>

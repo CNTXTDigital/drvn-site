@@ -1,9 +1,0 @@
----
-// /listing/{id}/ short URLs: forward to the same place as the full listing URL.
-import Redirect from '../../../components/Redirect.astro';
-import { retiredListings } from '../../../lib/guide.js';
-export function getStaticPaths() {
-  return retiredListings.map(([id, , to]) => ({ params: { id: String(id) }, props: { to } }));
-}
----
-<Redirect to={Astro.props.to} />

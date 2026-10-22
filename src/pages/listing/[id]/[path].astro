@@ -1,9 +1,0 @@
----
-// Retired school listing pages: forward to the city guide (or the state guide).
-import Redirect from '../../../components/Redirect.astro';
-import { retiredListings } from '../../../lib/guide.js';
-export function getStaticPaths() {
-  return retiredListings.map(([id, path, to]) => ({ params: { id: String(id), path }, props: { to } }));
-}
----
-<Redirect to={Astro.props.to} />

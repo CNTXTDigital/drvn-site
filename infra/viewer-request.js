@@ -2,6 +2,10 @@
 // 1) Canonical host: drvnapp.com -> www.drvnapp.com
 // 2) Permanent redirects for retired WordPress URLs
 // 3) Trailing-slash normalisation, then map /path/ -> /path/index.html in S3
+// Retired school listings (/listing/{id}/...) 301 to their city guide, looked up in the
+// CloudFront KeyValueStore "drvnapp-listing-redirects" (data: src/data/guide/listing-redirects.json).
+import cf from 'cloudfront';
+var LISTINGS = cf.kvs('79481b66-add2-4e83-af3d-999bc6f7b051');
 var REDIRECTS = {
   '/teendrivingroadmap/': '/guide/',
   '/state-guide/': '/guide/',
@@ -54,7 +58,7 @@ function gone() {
   };
 }
 
-function handler(event) {
+async function handler(event) {
   var req = event.request;
   var host = req.headers.host ? req.headers.host.value : '';
   var uri = req.uri;
@@ -65,6 +69,21 @@ function handler(event) {
   // Real URLs never start with 4+ digits (legit ones like /50-hour-myth.../ use 1-2).
   if (/^\/[0-9]{4,}-[^\/]*\/?$/.test(uri)) {
     return gone();
+  }
+
+  // Retired driving-school listing pages -> the city (or state) guide that replaced them.
+  var lm = uri.match(/^\/listing\/([0-9]+)(\/|$)/);
+  if (lm) {
+    var dest = '/guide/';
+    try { dest = await LISTINGS.get(lm[1]); } catch (e) {}
+    return redirect('https://www.drvnapp.com' + dest);
+  }
+
+  // Junk URLs from the old site, where school websites were linked without "https://"
+  // (e.g. /guide/dwight-il/wwsd209.org/). Send them to the city guide they came from.
+  var gm = uri.match(/^\/guide\/([a-z0-9-]+)\/.+/);
+  if (gm) {
+    return redirect('https://www.drvnapp.com/guide/' + gm[1] + '/');
   }
 
   if (host === 'drvnapp.com') {

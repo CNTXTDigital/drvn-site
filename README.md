@@ -33,6 +33,7 @@ sources:
 | Brand colors and type | `src/styles/global.css` |
 | Links (app stores, affiliates, social) | `src/site.js` |
 | Redirects from old WordPress URLs | `infra/viewer-request.js` (deployed as a CloudFront Function) |
+| Retired school listing redirects (`/listing/{id}/` → city guide) | `src/data/guide/listing-redirects.json`, loaded into the CloudFront KeyValueStore `drvnapp-listing-redirects` |
 
 ## Working locally
 

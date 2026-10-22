@@ -6,6 +6,8 @@
 // CloudFront KeyValueStore "drvnapp-listing-redirects" (data: src/data/guide/listing-redirects.json).
 import cf from 'cloudfront';
 var LISTINGS = cf.kvs('79481b66-add2-4e83-af3d-999bc6f7b051');
+// Two-letter state code -> state guide slug.
+var STATES = {al:'alabama',ak:'alaska',az:'arizona',ar:'arkansas',ca:'california',co:'colorado',ct:'connecticut',de:'delaware',fl:'florida',ga:'georgia',hi:'hawaii',id:'idaho',il:'illinois',in:'indiana',ia:'iowa',ks:'kansas',ky:'kentucky',la:'louisiana',me:'maine',md:'maryland',ma:'massachusetts',mi:'michigan',mn:'minnesota',ms:'mississippi',mo:'missouri',mt:'montana',ne:'nebraska',nv:'nevada',nh:'new-hampshire',nj:'new-jersey',nm:'new-mexico',ny:'new-york',nc:'north-carolina',nd:'north-dakota',oh:'ohio',ok:'oklahoma',or:'oregon',pa:'pennsylvania',ri:'rhode-island',sc:'south-carolina',sd:'south-dakota',tn:'tennessee',tx:'texas',ut:'utah',vt:'vermont',va:'virginia',wa:'washington',wv:'west-virginia',wi:'wisconsin',wy:'wyoming'};
 var REDIRECTS = {
   '/teendrivingroadmap/': '/guide/',
   '/state-guide/': '/guide/',
@@ -80,10 +82,15 @@ async function handler(event) {
   }
 
   // Junk URLs from the old site, where school websites were linked without "https://"
-  // (e.g. /guide/dwight-il/wwsd209.org/). Send them to the city guide they came from.
+  // (e.g. /guide/dwight-il/wwsd209.org/). Send them to their state's guide.
+  // Not every old city still has a guide, so these go to the state guide (always present).
   var gm = uri.match(/^\/guide\/([a-z0-9-]+)\/.+/);
   if (gm) {
-    return redirect('https://www.drvnapp.com/guide/' + gm[1] + '/');
+    var sc = gm[1].match(/-([a-z]{2})$/);
+    var stSlug = sc ? STATES[sc[1]] : null;
+    var isState = false;
+    for (var k in STATES) { if (STATES[k] === gm[1]) { isState = true; break; } }
+    return redirect('https://www.drvnapp.com/guide/' + (stSlug || (isState ? gm[1] : '')) + (stSlug || isState ? '/' : ''));
   }
 
   if (host === 'drvnapp.com') {
